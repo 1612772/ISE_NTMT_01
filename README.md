@@ -6,3 +6,6 @@
 | 1612767       | Trương Quang Tú     | khongthenho304@gmail.com       |          |
 | 1612810       | Phạm Hữu Hoàng Việt | phhoangviet.contact@gmail.com  |          |
 | 1612893       | Phạm Nhựt Thanh     | nhutthanh340@gmail.com         |          |
+
+# Link to Slack: https://convenientmenu.slack.com/messages/CD8RJTUQK/details/
+# Link to Trello: https://trello.com/b/OwkTHYxs/covenientmenu
