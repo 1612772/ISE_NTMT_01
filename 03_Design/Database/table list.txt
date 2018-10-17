@@ -1,0 +1,24 @@
+﻿* dish (*dish_id, dish_name, dish_price, dish_description, dish_home_image_file,
+	dish_more_image_files, dish_type_id, rest_account)
+
+* restaurant (*rest_account, rest_password, rest_name, rest_addresses, rese_description,
+		rest_home_image_file, rest_more_image_files)
+
+* event (*event_id, event_content, event_image_files, begin_date, end_date, rest_account)
+
+* mark (*user_account, *parent_id, is_rest)
+
+* dish_type (*dish_type_id, dish_type_name)
+
+* user (*user_account, user_password, fullname, birthday, phone, avatar_image_file)
+
+* dish_type_in_use (*rest_account, *dish_type_id)
+
+* comment_dish (*cmt_dish_id, cmt_dish_content, cmt_dish_star, cmt_dish_date, dish_id,
+		user_account)
+
+* comment_restaurant (*cmt_rest_id, cmt_rest-content, cmt_rest_star, cmt_rest_date,
+			rest_account, user_account)
+
+--------------------------------------------------
+Chú thích: field nào có dấu * ở đầu là field thuộc khóa chính
