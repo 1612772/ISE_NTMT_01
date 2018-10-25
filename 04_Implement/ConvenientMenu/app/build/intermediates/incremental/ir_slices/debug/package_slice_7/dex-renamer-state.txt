@@ -1,0 +1,4 @@
+#Sat Sep 29 18:49:21 ICT 2018
+base.0=E\:\\documents\\NMCNPM\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex
