@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:textSize="18dp"
         android:text="Title"
         android:layout_toRightOf="@id/imgEvent"/>
     <TextView
