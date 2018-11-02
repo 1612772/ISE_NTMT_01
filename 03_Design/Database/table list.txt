@@ -1,8 +1,8 @@
 ﻿* dish (*dish_id, dish_name, dish_price, dish_description, dish_home_image_file,
-	dish_more_image_files, dish_type_id, rest_account)
+	dish_more_image_files, dish_type_id, rest_account, max_star)
 
 * restaurant (*rest_account, rest_password, rest_name, rest_addresses, rese_description,
-		rest_home_image_file, rest_more_image_files)
+		rest_home_image_file, rest_more_image_files, max_star, viewed_number)
 
 * event (*event_id, event_content, event_image_files, begin_date, end_date, rest_account)
 
