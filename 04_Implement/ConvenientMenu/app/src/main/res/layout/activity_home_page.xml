@@ -47,13 +47,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarStyle="outsideOverlay"
-            android:scrollbarSize="1sp">
+            android:scrollbarSize="1px"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:id="@+id/homePageContent"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:scrollbars="none">
 
                 <LinearLayout
                     android:id="@+id/hightRatingRestaurantWrapper"
@@ -77,7 +79,7 @@
                         android:id="@+id/hightRatingRestaurantListWrapperFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        class="com.example.nguyenhuutu.convenientmenu.homepage.HightRatingRestaurantFragment">
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.HighRatingRestaurantFragment">
 
                     </fragment>
 
@@ -101,25 +103,18 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Nhà hàng được được xem nhiều nhất"/>
 
-                    <HorizontalScrollView
-                        android:id="@+id/muchViewedRestaurantListWrapper"
+                    <fragment
+                        android:id="@+id/muchViewedRestaurantListWrapperFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.MuchViewedRestaurantFragment">
 
-                        <LinearLayout
-                            android:id="@+id/muchViewedRestaurantList"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                        </LinearLayout>
-
-                    </HorizontalScrollView>
+                    </fragment>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/hightRatingDishWrapper"
+                    android:id="@+id/highRatingDishWrapper"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,20 +131,13 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Món ăn được đánh giá cao"/>
 
-                    <HorizontalScrollView
-                        android:id="@+id/hightRatingDishListWrapper"
+                    <fragment
+                        android:id="@+id/hightRatingDishListWrapperFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.HighRatingDishFragment">
 
-                        <LinearLayout
-                            android:id="@+id/hightRatingDishList"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                        </LinearLayout>
-
-                    </HorizontalScrollView>
+                    </fragment>
 
                 </LinearLayout>
 
@@ -171,20 +159,13 @@
                         android:fontFamily="@font/montserrat"
                         android:text="Sự kiện mới"/>
 
-                    <HorizontalScrollView
-                        android:id="@+id/newEventListWrapper"
+                    <fragment
+                        android:id="@+id/newEventListWrapperFragment"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.NewEventFragment">
 
-                        <LinearLayout
-                            android:id="@+id/newEventList"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                        </LinearLayout>
-
-                    </HorizontalScrollView>
+                    </fragment>
 
                 </LinearLayout>
 

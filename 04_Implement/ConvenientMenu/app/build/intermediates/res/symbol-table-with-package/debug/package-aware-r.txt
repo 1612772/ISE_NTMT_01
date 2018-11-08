@@ -925,6 +925,7 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen homepage_rest_item_width
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
@@ -1112,6 +1113,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dish_placeholder
+drawable dot
 drawable event_placeholder
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1271,9 +1273,10 @@ id ghost_view
 id gone
 id group_divider
 id groups
-id hightRatingDishList
-id hightRatingDishListWrapper
-id hightRatingDishWrapper
+id highRatingDishList
+id highRatingDishListWrapper
+id highRatingDishWrapper
+id hightRatingDishListWrapperFragment
 id hightRatingRestaurantList
 id hightRatingRestaurantListWrapper
 id hightRatingRestaurantListWrapperFragment
@@ -1319,12 +1322,14 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id muchViewedRestaurantList
 id muchViewedRestaurantListWrapper
+id muchViewedRestaurantListWrapperFragment
 id muchViewedRestaurantWrapper
 id multiply
 id navigation_header_container
 id never
 id newEventList
 id newEventListWrapper
+id newEventListWrapperFragment
 id newEventWrapper
 id none
 id normal
@@ -1344,6 +1349,8 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id ratComment
+id ratingDish
 id ratingDishWrapper
 id ratingNumber
 id ratingRestaurant
@@ -1439,6 +1446,7 @@ id tvTimeEvent
 id tvTimeRating
 id tvTitleEvent
 id txtComment
+id txtRating
 id underline
 id uniform
 id unlabeled
@@ -1528,7 +1536,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_draft
-layout hight_rating_restaurant_fragment
+layout high_rating_dish_fragment
+layout high_rating_restaurant_fragment
 layout homepage_dish_item
 layout homepage_event_item
 layout homepage_restaurant_item
@@ -1538,6 +1547,8 @@ layout item_event
 layout item_menu
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout much_viewed_restaurant_fragment
+layout new_event_fragment
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action

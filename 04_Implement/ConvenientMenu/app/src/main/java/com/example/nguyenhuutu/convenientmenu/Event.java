@@ -1,33 +1,43 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.app.Dialog;
+import android.support.annotation.NonNull;
+import android.widget.Toast;
+
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Event {
+public class Event implements Comparable{
     /**
      * Properties
      */
     private String eventId;
     private String eventContent;
-    private String eventHomeImage;
-    private List<String> eventMoreImages;
-    private String beginDate;
-    private String endDate;
-    private String restId;
+    private List<String> eventImageFiles;
+    private Date beginDate;
+    private Date endDate;
+    private String restAccount;
+    private Date datePublish;
+
+    public static int compareProperty;
+    public final static int DATE = 0;
 
     /**
      * Constructor methods
      */
-    public Event(String _eventId, String _eventContent, String _eventhomeImage, List<String> _eventMoreImages, String _beginDate, String _endDate, String _restId) {
+    public Event(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount, Date _datePublish) {
         this.eventId = _eventId;
         this.eventContent = _eventContent;
-        this.eventHomeImage = _eventhomeImage;
-        this.eventMoreImages = _eventMoreImages;
+        this.eventImageFiles = _eventImageFiles;
         this.beginDate = _beginDate;
         this.endDate = _endDate;
-        this.restId = _restId;
+        this.restAccount = _restAccount;
+        this.datePublish = _datePublish;
     }
 
     /**
@@ -41,25 +51,23 @@ public class Event {
         return eventContent;
     }
 
-    public String getEventHomeImage() {
-        return eventHomeImage;
+    public List<String> getEventImageFiles() {
+        return eventImageFiles;
     }
 
-    public List<String> getEventMoreImages() {
-        return eventMoreImages;
-    }
-
-    public String getBeginDate() {
+    public Date getBeginDate() {
         return beginDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public String getRestId() {
-        return restId;
+    public String getRestAccount() {
+        return restAccount;
     }
+
+    public Date getDatePublish() { return datePublish; }
 
     /**
      * Other methods
@@ -99,38 +107,52 @@ public class Event {
     public static Event loadEvent(Map<String, Object> document) {
         String _eventId = document.get("event_id").toString();
         String _eventContent = document.get("event_content").toString();
-        String _eventHomeImage = document.get("event_home_image").toString();
-        List<String> _eventMoreImages = (ArrayList)document.get("event_more_images");
-        String _beginDate = document.get("begin_date").toString();
-        String _endDate = document.get("end_date").toString();
-        String _restId = document.get("rest_id").toString();
+        List<String> _eventImageFiles = (ArrayList)document.get("event_image_files");
+        Date _beginDate = (Date)document.get("begin_date");
+        Date _endDate = (Date)document.get("end_date");
+        String _restAccount= document.get("rest_account").toString();
+        Date _datePublish = (Date)document.get("date_publish");
 
-        return new Event(_eventId, _eventContent, _eventHomeImage, _eventMoreImages, _beginDate, _endDate, _restId);
+        return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish);
     }
 
     /**
-     * createEventData()
-     *  - Create Event's data for query
+     * Create event's data for insert to database
      * @param _eventId
      * @param _eventContent
-     * @param _eventhomeImage
-     * @param _eventMoreImages
+     * @param _eventImageFiles
      * @param _beginDate
      * @param _endDate
-     * @param _restId
-     * @return Map<String, Object>
+     * @param _restAccount
+     * @return
      */
-    public static Map<String, Object> createEventData(String _eventId, String _eventContent, String _eventhomeImage, List<String> _eventMoreImages, String _beginDate, String _endDate, String _restId) {
+    public static Map<String, Object> createEventData(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("event_id",_eventId);
         document.put("event_content", _eventContent);
-        document.put("event_home_image", _eventhomeImage);
-        document.put("event_more_images", _eventMoreImages);
-        document.put("begin_date", _beginDate);
-        document.put("end_date", _endDate);
-        document.put("rest_id", _restId);
+        document.put("event_image_files", _eventImageFiles);
+        document.put("begin_date", new Timestamp(_beginDate.getTime()));
+        document.put("end_date", new Timestamp(_endDate.getTime()));
+        document.put("rest_account", _restAccount);
+        document.put("date_publish", new Timestamp((new Date()).getTime()));
 
         return document;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        Event eventCmp = (Event)o;
+        int result = 0;
+
+        if (compareProperty == DATE) {
+            if (this.getDatePublish().compareTo(eventCmp.getDatePublish()) > 1) {
+                result = -1;
+            } else {
+                result = 1;
+            }
+        }
+
+        return result;
     }
 }

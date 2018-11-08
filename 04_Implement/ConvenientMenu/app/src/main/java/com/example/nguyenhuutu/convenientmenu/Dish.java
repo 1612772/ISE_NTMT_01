@@ -1,11 +1,13 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Dish {
+public class Dish implements Comparable{
     /**
      * Properties
      */
@@ -16,14 +18,18 @@ public class Dish {
     private String dishDescription;
     private String dishHomeImage;
     private List<String> dishMoreImages;
-    private String menuId;
     private String dishTypeId;
+    private String restAccount;
+    private double maxStar;
+
+    public static int compareProperty;
+    public final static int STAR = 0;
 
     /**
      * constructor methods
      */
 
-    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _menuId, String _dishTypeId) {
+    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, double _maxStar, String _restAccount) {
         this.dishId = _dishId;
         this.dishName = _dishName;
         this.dishPrice = _dishPrice;
@@ -31,7 +37,8 @@ public class Dish {
         this.dishHomeImage = _dishHomeImage;
         this.dishMoreImages = _dishMoreImages;
         this.dishTypeId = _dishTypeId;
-        this.menuId = _menuId;
+        this.maxStar = _maxStar;
+        this.restAccount = _restAccount;
     }
 
     public Dish(){
@@ -42,7 +49,8 @@ public class Dish {
         this.dishHomeImage = "";
         this.dishMoreImages = new ArrayList<>();
         this.dishTypeId = "";
-        this.menuId = "";
+        this.maxStar = 0;
+        this.restAccount = "";
     }
 
     public Dish(String _dishId) {
@@ -53,36 +61,38 @@ public class Dish {
         this.dishHomeImage = "";
         this.dishMoreImages = new ArrayList<>();
         this.dishTypeId = "";
-        this.menuId = "";
+        this.maxStar = 0;
+        this.restAccount = "";
     }
 
     /**
      * Getter methods for properties
      */
-    protected String getDishId() {
+    public String getDishId() {
         return this.dishId;
     }
-    protected String getDishName() {
+    public String getDishName() {
         return this.dishName;
     }
-    protected String getDishDescription() {
+    public String getDishDescription() {
         return this.dishDescription;
     }
-    protected Integer getDishPrice() {
+    public Integer getDishPrice() {
         return this.dishPrice;
     }
-    protected String getDishHomeImage() {
+    public String getDishHomeImage() {
         return this.dishHomeImage;
     }
-    protected List<String> getDishMoreImages() {
+    public List<String> getDishMoreImages() {
         return this.dishMoreImages;
     }
-    protected String getMenuId() {
-        return this.menuId;
+    public double getMaxStar() {
+        return this.maxStar;
     }
-    protected String getDishTypeId() {
+    public String getDishTypeId() {
         return this.dishTypeId;
     }
+    public String getRestAccount() { return this.restAccount; }
 
     /**
      * createDishId()
@@ -121,39 +131,56 @@ public class Dish {
         String _name = (String)document.get("dish_name");
         Number _price = (Number)document.get("dish_price");
         String _description = (String)document.get("dish_description");
-        String _homeImage = (String)document.get("dish_home_image");
-        List<String> _moreImages = (ArrayList)document.get("dish_more_images");
-        String _menuId = (String)document.get("menu_id");
+        String _homeImage = (String)document.get("dish_home_image_file");
+        List<String> _moreImages = (ArrayList)document.get("dish_more_image_files");
+        double _maxStar = ((Number)document.get("max_star")).doubleValue();
         String _dishTypeId = (String)document.get("dish_type_id");
+        String _restAccount = (String)document.get("rest_account");
 
-        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _menuId, _dishTypeId);
+        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount);
     }
 
     /**
-     * createDishData()
-     *  - Create data for query
+     * Create dish's data for insert to database
      * @param _dishId
      * @param _dishName
      * @param _dishPrice
      * @param _dishDescription
      * @param _dishHomeImage
      * @param _dishMoreImages
-     * @param _menuId
      * @param _dishTypeId
-     * @return Map<String, Object>
+     * @param _maxStar
+     * @param _restAccount
+     * @return
      */
-    public static Map<String, Object> createDishData(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _menuId, String _dishTypeId) {
+    public static Map<String, Object> createDishData(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, double _maxStar, String _restAccount) {
         Map<String, Object> dishData = new HashMap<>(); // Save data of dish
 
         dishData.put("dish_id", _dishId);
         dishData.put("dish_name", _dishName);
         dishData.put("dish_price", _dishPrice);
         dishData.put("dish_description", _dishDescription);
-        dishData.put("dish_home_image", _dishHomeImage);
-        dishData.put("dish_more_images", _dishMoreImages);
-        dishData.put("menu_id", _menuId);
+        dishData.put("dish_home_image_file", _dishHomeImage);
+        dishData.put("dish_more_image_files", _dishMoreImages);
+        dishData.put("max_star", _maxStar);
         dishData.put("dish_type_id", _dishTypeId);
+        dishData.put("rest_account", _restAccount);
 
         return dishData;
+    }
+
+    public int compareTo(@NonNull Object o) {
+        Dish dishCmp = (Dish)o;
+        int result = 0;
+
+        if (compareProperty == STAR) {
+            if (this.getMaxStar() > dishCmp.getMaxStar()) {
+                result = -1;
+            } else {
+                result = 1;
+            }
+        }
+
+        return result;
     }
 }

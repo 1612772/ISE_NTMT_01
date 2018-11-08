@@ -3,21 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="134dp"
-    android:layout_height="wrap_content">
+    android:layout_width="135dp"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imageDish"
         android:layout_width="match_parent"
         android:layout_height="78dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/dish_placeholder"/>
 
     <LinearLayout
         android:id="@+id/shortInfoDish"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/dishName"
@@ -36,7 +37,7 @@
             android:layout_height="wrap_content">
 
             <RatingBar
-                android:id="@+id/ratingRestaurant"
+                android:id="@+id/ratingDish"
                 style="@android:style/Widget.DeviceDefault.Light.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +48,7 @@
                 android:id="@+id/ratingNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textSize="5sp"
+                android:textSize="10sp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="#595342"
                 android:text="(134 phiếu)"
