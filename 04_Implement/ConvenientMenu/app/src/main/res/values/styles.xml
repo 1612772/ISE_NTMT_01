@@ -8,7 +8,7 @@
         <item name="colorAccent">#00ff0d</item>
     </style>
 
-    <style name="AppTheme.ActionBar">
+    <style name="AppTheme.ActionBar" parent="Base.Theme.AppCompat.Light">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
     </style>

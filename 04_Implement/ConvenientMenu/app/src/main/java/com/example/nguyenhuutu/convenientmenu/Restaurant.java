@@ -1,11 +1,13 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Restaurant {
+public class Restaurant implements Comparable {
     /**
      * Properties
      */
@@ -20,6 +22,10 @@ public class Restaurant {
     private String restHomeImage;
     private Double maxStar;
     private Long viewedNumber;
+    public static int compareProperty;
+
+    public final static int STAR = 0;
+    public final static int VIEW = 1;
 
     /**
      * Methods List
@@ -100,8 +106,8 @@ public class Restaurant {
         String _restName = (String)document.get("rest_name");
         String _restDdescription = (String)document.get("rest_description");
         List<String> _restAddresses = (ArrayList)document.get("rest_addresses");
-        String _restHomeImage = (String)document.get("rest_home_image");
-        List<String> _restMoreImages = (ArrayList)document.get("rest_more_images");
+        String _restHomeImage = (String)document.get("rest_home_image_file");
+        List<String> _restMoreImages = (ArrayList)document.get("rest_more_image_files");
         Double _maxStar = ((Number)document.get("max_star")).doubleValue();
         Long _viewedNumber = (Long)document.get("viewed_number");
 
@@ -137,4 +143,26 @@ public class Restaurant {
     }
 
 
+    @Override
+    public int compareTo(@NonNull Object o) {
+        Restaurant restCmp = (Restaurant)o;
+        int result = 0;
+
+        if (compareProperty == STAR) {
+            if (this.getMaxStar() > restCmp.getMaxStar()) {
+                result = -1;
+            } else {
+                result = 1;
+            }
+        }
+        else if (compareProperty == VIEW) {
+            if (this.getViewedNumber() > restCmp.getViewedNumber()) {
+                result = -1;
+            } else {
+                result = 1;
+            }
+        }
+
+        return result;
+    }
 }

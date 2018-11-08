@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="134dp"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/imageEvent"
-        android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:src="@drawable/event_placeholder"/>
-
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/homepage_event_item_width"
+    android:layout_height="match_parent"
+    card_view:contentPadding="@dimen/homepage_event_item_padding"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp">
     <LinearLayout
-        android:id="@+id/shortInfoEvent"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
-
-        <TextView
-            android:id="@+id/eventShortContent"
+        android:layout_width="@dimen/homepage_event_item_content_width"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imageEvent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:textColor="#000"
-            android:maxLines="3"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:ellipsize="end"
-            android:text="Giảm giá 30% cho các mặt hàng"/>
+            android:layout_height="78dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/event_placeholder"/>
 
-        <TextView
-            android:id="@+id/restaurantName"
+        <LinearLayout
+            android:id="@+id/shortInfoEvent"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:singleLine="true"
-            android:text="Hoàng Long Quán"
-            android:textColor="#000"
-            android:textSize="8sp"
-            android:textStyle="bold|italic" />
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/eventShortContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#000"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="Giảm giá 30% cho các mặt hàng"/>
+
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:text="Restaurant"
+                android:textColor="#000"
+                android:textSize="10sp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+
+</android.support.v7.widget.CardView>
