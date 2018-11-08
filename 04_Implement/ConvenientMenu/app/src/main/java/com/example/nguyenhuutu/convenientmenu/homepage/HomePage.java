@@ -2,6 +2,7 @@ package com.example.nguyenhuutu.convenientmenu.homepage;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.HorizontalScrollView;
@@ -20,9 +21,7 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//
-//        ft.replace(R.id.hightRatingRestaurantListWrapperFragment, new HighRatingRestaurantFragment());
-//        ft.commit();
+        ActionBar actionBar = getSupportActionBar();
+
     }
 }

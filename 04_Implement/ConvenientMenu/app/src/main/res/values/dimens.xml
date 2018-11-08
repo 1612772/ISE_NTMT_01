@@ -1,4 +1,12 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="homepage_rest_item_width">16dp</dimen>
+    <dimen name="homepage_rest_item_width">135dp</dimen>
+    <dimen name="homepage_dish_item_width">135dp</dimen>
+    <dimen name="homepage_event_item_width">135dp</dimen>
+    <dimen name="homepage_rest_item_padding">5dp</dimen>
+    <dimen name="homepage_dish_item_padding">5dp</dimen>
+    <dimen name="homepage_event_item_padding">5dp</dimen>
+    <dimen name="homepage_rest_item_content_width">130dp</dimen>
+    <dimen name="homepage_dish_item_content_width">130dp</dimen>
+    <dimen name="homepage_event_item_content_width">130dp</dimen>
 </resources>

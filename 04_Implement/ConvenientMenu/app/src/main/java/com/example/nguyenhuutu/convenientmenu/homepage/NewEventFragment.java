@@ -4,19 +4,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
-import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
@@ -45,7 +44,7 @@ public class NewEventFragment extends Fragment {
         homePage = (HomePage)getActivity();
         dataList = new ArrayList<Event>();
     }
-    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         listContent = (LinearLayout)inflater.inflate(R.layout.new_event_fragment, null);
         // get all dish in database
         CMDB.db.collection("event")
@@ -60,20 +59,21 @@ public class NewEventFragment extends Fragment {
                                     dataList.add(Event.loadEvent(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), "01: " + ex.toString(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
-                            Toast.makeText(getActivity(), "before " + ((Integer)dataList.size()).toString(), Toast.LENGTH_SHORT).show();
+
                             filterEvents(dataList);
                             sortEventFlowDate(dataList);
-                            Toast.makeText(getActivity(), "after " + ((Integer)dataList.size()).toString(), Toast.LENGTH_SHORT).show();
+
                             try {
                                 for (int index = 0; index < dataList.size(); index++) {
                                     if (index >= newEventNumber) {
                                         break;
                                     }
+
                                     final Event event;
-                                    final LinearLayout eventItemLayout = (LinearLayout) inflater.inflate(R.layout.homepage_event_item, null);
+                                    final CardView eventItemLayout = (CardView) inflater.inflate(R.layout.homepage_event_item, container);
                                     event = dataList.get(index);
                                     ((TextView) eventItemLayout.findViewById(R.id.eventShortContent)).setText(event.getEventContent());
 
@@ -92,12 +92,13 @@ public class NewEventFragment extends Fragment {
                                                         Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception exception) {
-                                            Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception exception) {
+                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
 
                                     CMDB.db.collection("restaurant")
                                             .document(event.getRestAccount())
@@ -111,10 +112,10 @@ public class NewEventFragment extends Fragment {
                                                             Restaurant rest = Restaurant.loadRestaurant(document.getData());
                                                             ((TextView)eventItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
                                                         } else {
-
+                                                            ((TextView)eventItemLayout.findViewById(R.id.restaurantName)).setText("Anonymous");
                                                         }
                                                     } else {
-
+                                                        Toast.makeText(getActivity(), "Loading have some error!", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
@@ -128,11 +129,12 @@ public class NewEventFragment extends Fragment {
                                             Toast.makeText(getActivity(), event.getEventId() + "-" + event.getEventContent(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
+
                                     ((LinearLayout) listContent.findViewById(R.id.newEventList)).addView(eventItemLayout);
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), "02" + ex.toString(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

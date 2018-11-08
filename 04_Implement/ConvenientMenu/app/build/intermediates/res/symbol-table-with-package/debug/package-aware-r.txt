@@ -925,6 +925,14 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen homepage_dish_item_content_width
+dimen homepage_dish_item_padding
+dimen homepage_dish_item_width
+dimen homepage_event_item_content_width
+dimen homepage_event_item_padding
+dimen homepage_event_item_width
+dimen homepage_rest_item_content_width
+dimen homepage_rest_item_padding
 dimen homepage_rest_item_width
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
@@ -1142,6 +1150,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable restaurant_placeholder
+drawable search_form_border
 drawable searching_image
 drawable searching_image_placeholder
 drawable tooltip_frame_dark

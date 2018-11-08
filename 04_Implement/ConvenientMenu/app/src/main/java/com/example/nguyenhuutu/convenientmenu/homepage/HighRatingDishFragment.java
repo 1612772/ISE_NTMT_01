@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,18 +59,19 @@ public class HighRatingDishFragment extends Fragment {
                                     dataList.add(Dish.loadDish(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), "01: " + ex.toString(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
                             sortDishFlowStar(dataList);
+
                             try {
                                 for (int index = 0; index < dataList.size(); index++) {
                                     if (index >= highRatingDishNumber) {
                                         break;
                                     }
                                     final Dish dish;
-                                    final LinearLayout dishItemLayout = (LinearLayout) inflater.inflate(R.layout.homepage_dish_item, null);
+                                    final CardView dishItemLayout = (CardView) inflater.inflate(R.layout.homepage_dish_item, null);
                                     dish = dataList.get(index);
                                     ((TextView) dishItemLayout.findViewById(R.id.dishName)).setText(dish.getDishName());
                                     ((RatingBar) dishItemLayout.findViewById(R.id.ratingDish)).setRating(((Number) dish.getMaxStar()).floatValue());
@@ -89,12 +91,13 @@ public class HighRatingDishFragment extends Fragment {
                                                         Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception exception) {
-                                            Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception exception) {
+                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
 
                                     CMDB.db.collection("comment_dish")
                                             .whereEqualTo("cmt_dish_star", dish.getMaxStar())
@@ -106,7 +109,7 @@ public class HighRatingDishFragment extends Fragment {
                                                     if (task.isSuccessful()) {
                                                         ((TextView) dishItemLayout.findViewById(R.id.ratingNumber)).setText("(" + task.getResult().getDocuments().size() + " phiếu)");
                                                     } else {
-
+                                                        ((TextView) dishItemLayout.findViewById(R.id.ratingNumber)).setText("0 phiếu)");
                                                     }
                                                 }
                                             });
@@ -123,10 +126,10 @@ public class HighRatingDishFragment extends Fragment {
                                                             Restaurant rest = Restaurant.loadRestaurant(document.getData());
                                                             ((TextView)dishItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
                                                         } else {
-
+                                                            ((TextView)dishItemLayout.findViewById(R.id.restaurantName)).setText("Anonymous");
                                                         }
                                                     } else {
-
+                                                        Toast.makeText(getActivity(), "Loading has some erors!", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
@@ -145,7 +148,7 @@ public class HighRatingDishFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), "02" + ex.toString(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,6 @@ public class MuchViewedRestaurantFragment extends Fragment {
         dataList = new ArrayList<Restaurant>();
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Toast.makeText(getActivity(), "Much Viewed Restaurant", Toast.LENGTH_SHORT).show();
         listContent = (LinearLayout)inflater.inflate(R.layout.much_viewed_restaurant_fragment, null);
 
         CMDB.db.collection("restaurant")
@@ -51,25 +51,26 @@ public class MuchViewedRestaurantFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 try {
                                     dataList.add(Restaurant.loadRestaurant(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), "01: " + ex.toString(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
+
                             sortRestaurantFlowView(dataList);
+
                             try {
                                 for (int index = 0; index < dataList.size(); index++) {
                                     if (index >= muchViewedRestaurantNumber) {
                                         break;
                                     }
+
                                     final Restaurant rest;
-                                    final LinearLayout restItemLayout = (LinearLayout) inflater.inflate(R.layout.homepage_restaurant_item, null);
+                                    final CardView restItemLayout = (CardView) inflater.inflate(R.layout.homepage_restaurant_item, null);
                                     rest = dataList.get(index);
-                                    Toast.makeText(getActivity(), rest.getRestName(), Toast.LENGTH_SHORT).show();
                                     ((TextView) restItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
                                     ((RatingBar) restItemLayout.findViewById(R.id.ratingRestaurant)).setRating(((Number) rest.getMaxStar()).floatValue());
 
@@ -88,12 +89,13 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                                         Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
-                                            }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception exception) {
-                                            Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception exception) {
+                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
 
 
                                     CMDB.db.collection("comment_restaurant")
@@ -106,11 +108,13 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                                     if (task.isSuccessful()) {
                                                         ((TextView) restItemLayout.findViewById(R.id.ratingNumber)).setText("(" + task.getResult().getDocuments().size() + " phiếu)");
                                                     } else {
-
+                                                        ((TextView) restItemLayout.findViewById(R.id.ratingNumber)).setText("0 phiếu)");
                                                     }
                                                 }
                                             });
+
                                     ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
+
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -120,11 +124,12 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                             Toast.makeText(getActivity(), rest.getRestAccount() + "-" + rest.getRestName(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
+
                                     ((LinearLayout) listContent.findViewById(R.id.muchViewedRestaurantList)).addView(restItemLayout);
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), "02" + ex.toString(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

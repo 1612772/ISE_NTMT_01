@@ -19,26 +19,28 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:outlineProvider="bounds">
+            android:outlineProvider="bounds"
+            android:background="@drawable/search_form_border">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/searching_image_placeholder"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:padding="5dp" />
 
             <EditText
                 android:id="@+id/searchingText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:outlineProvider="none"
                 android:background="@null"
                 android:gravity="center_vertical"
-                android:textSize="15sp"
-                android:focusable="false"
-                android:hint="Tìm kiếm nhà hàng, món ăn..." />
+                android:hint="Tìm kiếm nhà hàng, món ăn..."
+                android:outlineProvider="none"
+                android:textIsSelectable="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -54,14 +56,14 @@
                 android:id="@+id/homePageContent"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:id="@+id/hightRatingRestaurantWrapper"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 
@@ -90,6 +92,7 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 
@@ -118,6 +121,7 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 
@@ -146,6 +150,7 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="100dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp">
 

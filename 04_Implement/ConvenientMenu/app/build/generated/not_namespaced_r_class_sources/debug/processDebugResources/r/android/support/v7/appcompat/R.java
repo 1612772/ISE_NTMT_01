@@ -490,29 +490,29 @@ public final class R {
         public static final int hint_alpha_material_light = 0x7f060098;
         public static final int hint_pressed_alpha_material_dark = 0x7f060099;
         public static final int hint_pressed_alpha_material_light = 0x7f06009a;
-        public static final int notification_action_icon_size = 0x7f0600cf;
-        public static final int notification_action_text_size = 0x7f0600d0;
-        public static final int notification_big_circle_margin = 0x7f0600d1;
-        public static final int notification_content_margin_start = 0x7f0600d2;
-        public static final int notification_large_icon_height = 0x7f0600d3;
-        public static final int notification_large_icon_width = 0x7f0600d4;
-        public static final int notification_main_column_padding_top = 0x7f0600d5;
-        public static final int notification_media_narrow_margin = 0x7f0600d6;
-        public static final int notification_right_icon_size = 0x7f0600d7;
-        public static final int notification_right_side_padding_top = 0x7f0600d8;
-        public static final int notification_small_icon_background_padding = 0x7f0600d9;
-        public static final int notification_small_icon_size_as_large = 0x7f0600da;
-        public static final int notification_subtext_size = 0x7f0600db;
-        public static final int notification_top_pad = 0x7f0600dc;
-        public static final int notification_top_pad_large_text = 0x7f0600dd;
-        public static final int tooltip_corner_radius = 0x7f0600de;
-        public static final int tooltip_horizontal_padding = 0x7f0600df;
-        public static final int tooltip_margin = 0x7f0600e0;
-        public static final int tooltip_precise_anchor_extra_offset = 0x7f0600e1;
-        public static final int tooltip_precise_anchor_threshold = 0x7f0600e2;
-        public static final int tooltip_vertical_padding = 0x7f0600e3;
-        public static final int tooltip_y_offset_non_touch = 0x7f0600e4;
-        public static final int tooltip_y_offset_touch = 0x7f0600e5;
+        public static final int notification_action_icon_size = 0x7f0600d7;
+        public static final int notification_action_text_size = 0x7f0600d8;
+        public static final int notification_big_circle_margin = 0x7f0600d9;
+        public static final int notification_content_margin_start = 0x7f0600da;
+        public static final int notification_large_icon_height = 0x7f0600db;
+        public static final int notification_large_icon_width = 0x7f0600dc;
+        public static final int notification_main_column_padding_top = 0x7f0600dd;
+        public static final int notification_media_narrow_margin = 0x7f0600de;
+        public static final int notification_right_icon_size = 0x7f0600df;
+        public static final int notification_right_side_padding_top = 0x7f0600e0;
+        public static final int notification_small_icon_background_padding = 0x7f0600e1;
+        public static final int notification_small_icon_size_as_large = 0x7f0600e2;
+        public static final int notification_subtext_size = 0x7f0600e3;
+        public static final int notification_top_pad = 0x7f0600e4;
+        public static final int notification_top_pad_large_text = 0x7f0600e5;
+        public static final int tooltip_corner_radius = 0x7f0600e6;
+        public static final int tooltip_horizontal_padding = 0x7f0600e7;
+        public static final int tooltip_margin = 0x7f0600e8;
+        public static final int tooltip_precise_anchor_extra_offset = 0x7f0600e9;
+        public static final int tooltip_precise_anchor_threshold = 0x7f0600ea;
+        public static final int tooltip_vertical_padding = 0x7f0600eb;
+        public static final int tooltip_y_offset_non_touch = 0x7f0600ec;
+        public static final int tooltip_y_offset_touch = 0x7f0600ed;
     }
     public static final class drawable {
         private drawable() {}
@@ -613,8 +613,8 @@ public final class R {
         public static final int notification_template_icon_low_bg = 0x7f070091;
         public static final int notification_tile_bg = 0x7f070092;
         public static final int notify_panel_notification_icon_bg = 0x7f070093;
-        public static final int tooltip_frame_dark = 0x7f070097;
-        public static final int tooltip_frame_light = 0x7f070098;
+        public static final int tooltip_frame_dark = 0x7f070098;
+        public static final int tooltip_frame_light = 0x7f070099;
     }
     public static final class id {
         private id() {}
