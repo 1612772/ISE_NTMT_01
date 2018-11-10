@@ -13,6 +13,7 @@ public class CommentRestaurant {
     private String restAccount;
     private String userAccount;
     private Float cmtRestStar;
+    private String Avatar;
 
     /**
      * Constructor Methods
@@ -52,6 +53,7 @@ public class CommentRestaurant {
     public Float getCmtRestStar() {
         return cmtRestStar;
     }
+    public String getAvatar(){return Avatar;}
 
     /**
      * Other Methods

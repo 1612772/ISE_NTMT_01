@@ -1,4 +1,7 @@
-#Sat Sep 29 18:48:40 ICT 2018
-base.0=E\:\\documents\\NMCNPM\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+#Sat Nov 10 12:18:00 ICT 2018
+base.0=C\:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.1=classes2.dex
+renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
+base.1=C\:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10

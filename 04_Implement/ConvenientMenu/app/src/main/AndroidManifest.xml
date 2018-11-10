@@ -13,8 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.ActionBar">
-        <activity android:name=".homepage.HomePage">
+        android:theme="@style/Theme.Design.NoActionBar">
+        <activity android:name=".Restaurant_Detail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +23,6 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ViewDish" />
-
     </application>
 
 </manifest>
