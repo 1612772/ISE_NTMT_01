@@ -29,6 +29,7 @@
         android:hint="Thêm bình luận"
         android:layout_marginBottom="@dimen/fab_margin"/>
     <ListView
+        android:id="@+id/lvComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtComment"></ListView>

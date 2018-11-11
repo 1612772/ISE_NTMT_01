@@ -7,11 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Dish implements Comparable{
+public class Dish implements Comparable {
     /**
      * Properties
      */
-
+    public static String NEW = "mới";
+    public static String HOT = "hot";
+    public static int colorNew = R.color.yellow;
+    public  static int colorHot = R.color.red;
     private String dishId;
     private String dishName;
     private Integer dishPrice;
@@ -19,8 +22,9 @@ public class Dish implements Comparable{
     private String dishHomeImage;
     private List<String> dishMoreImages;
     private String dishTypeId;
+    private int eventTypeId; // <0:New, >0:Hot
     private String restAccount;
-    private double maxStar;
+    private float maxStar;
 
     public static int compareProperty;
     public final static int STAR = 0;
@@ -29,7 +33,7 @@ public class Dish implements Comparable{
      * constructor methods
      */
 
-    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, double _maxStar, String _restAccount) {
+    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, float _maxStar, String _restAccount) {
         this.dishId = _dishId;
         this.dishName = _dishName;
         this.dishPrice = _dishPrice;
@@ -41,7 +45,7 @@ public class Dish implements Comparable{
         this.restAccount = _restAccount;
     }
 
-    public Dish(){
+    public Dish() {
         this.dishId = "";
         this.dishName = "";
         this.dishPrice = 0;
@@ -71,32 +75,47 @@ public class Dish implements Comparable{
     public String getDishId() {
         return this.dishId;
     }
+
     public String getDishName() {
         return this.dishName;
     }
+
     public String getDishDescription() {
         return this.dishDescription;
     }
+
     public Integer getDishPrice() {
         return this.dishPrice;
     }
+
     public String getDishHomeImage() {
         return this.dishHomeImage;
     }
+
     public List<String> getDishMoreImages() {
         return this.dishMoreImages;
     }
-    public double getMaxStar() {
+
+    public float getMaxStar() {
         return this.maxStar;
     }
+
     public String getDishTypeId() {
         return this.dishTypeId;
     }
-    public String getRestAccount() { return this.restAccount; }
+
+    public String getRestAccount() {
+        return this.restAccount;
+    }
+
+    public int getEventTypeId() {
+        return eventTypeId;
+    }
 
     /**
      * createDishId()
-     *  - generate a new id for new dish
+     * - generate a new id for new dish
+     *
      * @return new id for new dish
      */
     public static String createDishId(Integer idNumber) {
@@ -104,17 +123,13 @@ public class Dish implements Comparable{
 
         if (idNumber < 10) {
             newId = String.format("DISH0000%d", idNumber);
-        }
-        else if (idNumber < 100) {
+        } else if (idNumber < 100) {
             newId = String.format("DISH000%d", idNumber);
-        }
-        else if (idNumber < 1000) {
+        } else if (idNumber < 1000) {
             newId = String.format("DISH00%d", idNumber);
-        }
-        else if (idNumber < 10000) {
+        } else if (idNumber < 10000) {
             newId = String.format("DISH0%d", idNumber);
-        }
-        else {
+        } else {
             newId = String.format("DISH%d", idNumber);
         }
 
@@ -123,25 +138,27 @@ public class Dish implements Comparable{
 
     /**
      * loadDish()
-     *  - Load data of a dish
+     * - Load data of a dish
+     *
      * @return Dish
      */
     public static Dish loadDish(Map<String, Object> document) {
-        String _id = (String)document.get("dish_id");
-        String _name = (String)document.get("dish_name");
-        Number _price = (Number)document.get("dish_price");
-        String _description = (String)document.get("dish_description");
-        String _homeImage = (String)document.get("dish_home_image_file");
-        List<String> _moreImages = (ArrayList)document.get("dish_more_image_files");
-        double _maxStar = ((Number)document.get("max_star")).doubleValue();
-        String _dishTypeId = (String)document.get("dish_type_id");
-        String _restAccount = (String)document.get("rest_account");
+        String _id = (String) document.get("dish_id");
+        String _name = (String) document.get("dish_name");
+        Number _price = (Number) document.get("dish_price");
+        String _description = (String) document.get("dish_description");
+        String _homeImage = (String) document.get("dish_home_image_file");
+        List<String> _moreImages = (ArrayList) document.get("dish_more_image_files");
+        float _maxStar = ((Number) document.get("max_star")).floatValue();
+        String _dishTypeId = (String) document.get("dish_type_id");
+        String _restAccount = (String) document.get("rest_account");
 
         return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount);
     }
 
     /**
      * Create dish's data for insert to database
+     *
      * @param _dishId
      * @param _dishName
      * @param _dishPrice
@@ -170,7 +187,7 @@ public class Dish implements Comparable{
     }
 
     public int compareTo(@NonNull Object o) {
-        Dish dishCmp = (Dish)o;
+        Dish dishCmp = (Dish) o;
         int result = 0;
 
         if (compareProperty == STAR) {

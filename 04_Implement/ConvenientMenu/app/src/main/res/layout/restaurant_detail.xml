@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b65454">
+
+    <RelativeLayout
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_launcher_background" />
+
+    <RelativeLayout
+        android:id="@+id/bannerTop"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@id/imgBackground"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#ffff">
+
+        <TextView
+            android:id="@+id/lbNameRestaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Hoàng Long Quán"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/ratingRestaurant"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/ratingPerTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ratingRestaurant"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/ratingRestaurant"
+            android:text="4.5 (145 phiếu)"
+            android:textColor="#000"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/more" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bannerBottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/bannerTop"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorMAIN">
+
+        <TextView
+            android:id="@+id/addressRestaurantDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Địa chỉ: 119 Nguyễn Thị Minh Khai, TP HCM" />
+
+        <TextView
+            android:id="@+id/phoneRestaurantDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressRestaurantDetail"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="SĐT: 0944956891" />
+
+        <TextView
+            android:id="@+id/facebookRestaurantDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressRestaurantDetail"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/phoneRestaurantDetail"
+            android:text="FB: thanhthanh" />
+    </RelativeLayout>
+
+        android:layout_below="@id/bannerBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bannerBottom">
+    <include layout="@layout/tab_restaurant_detail" />
+    </RelativeLayout>
+
+</RelativeLayout>

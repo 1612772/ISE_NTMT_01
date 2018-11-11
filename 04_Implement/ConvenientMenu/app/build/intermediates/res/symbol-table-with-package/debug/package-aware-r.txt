@@ -652,6 +652,7 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color colorAccent
+color colorMAIN
 color colorPrimary
 color colorPrimaryDark
 color common_google_signin_btn_text_dark
@@ -746,6 +747,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -770,6 +772,7 @@ color vpi__bright_foreground_inverse_holo_dark
 color vpi__bright_foreground_inverse_holo_light
 color vpi__dark_theme
 color vpi__light_theme
+color yellow
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1134,6 +1137,7 @@ drawable image
 drawable image_01
 drawable image_02
 drawable image_03
+drawable more
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1192,14 +1196,16 @@ id actions
 id activity_chooser_view_content
 id add
 id addressRestaurant
+id addressRestaurantDetail
 id adjust_height
 id adjust_width
 id alertTitle
 id all
 id always
-id appbar
 id async
 id auto
+id bannerBottom
+id bannerTop
 id barrier
 id beginning
 id blocking
@@ -1272,6 +1278,7 @@ id eventShortContent
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id facebookRestaurantDetail
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1304,6 +1311,7 @@ id imageEvent
 id imageRestaurant
 id imageSlider
 id imgAvatar
+id imgBackground
 id imgEvent
 id imgFood
 id imgPopupMenu
@@ -1314,12 +1322,16 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id lbNameRestaurant
 id left
 id light
 id line1
 id line3
 id listMode
+id list_drink
+id list_food
 id list_item
+id lvComment
 id lvEvents
 id main_content
 id masked
@@ -1354,6 +1366,7 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id phoneRestaurantDetail
 id pin
 id progress_circular
 id progress_horizontal
@@ -1362,6 +1375,7 @@ id ratComment
 id ratingDish
 id ratingDishWrapper
 id ratingNumber
+id ratingPerTotal
 id ratingRestaurant
 id ratingRestaurantWrapper
 id rating_score
@@ -1380,6 +1394,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id search_Dish
 id search_badge
 id search_bar
 id search_button
@@ -1419,7 +1434,9 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id tabMenu
 id tabMode
+id tabRestaurantDetail
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -1468,7 +1485,8 @@ id user_fullname_1
 id user_rating_date
 id user_rating_date_1
 id view_offset_helper
-id view_pager
+id view_pager_menu
+id view_pager_restaurant_detail
 id visible
 id wide
 id withText
@@ -1573,13 +1591,17 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout restaurant_detail
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 layout tab_comments
+layout tab_drink
 layout tab_events
+layout tab_food
 layout tab_menu
+layout tab_restaurant_detail
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1655,6 +1677,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
