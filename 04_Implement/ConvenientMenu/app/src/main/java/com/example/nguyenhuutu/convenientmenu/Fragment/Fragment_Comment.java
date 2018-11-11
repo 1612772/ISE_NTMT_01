@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class Fragment_Comment extends Fragment {
 
     List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
     ListView listComment;
+
     public Fragment_Comment() {
         // Required empty public constructor
         CMDB.db.collection("comment_restaurant").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -42,8 +44,7 @@ public class Fragment_Comment extends Fragment {
                             Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
-                }else
-                {
+                } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                 }
             }
@@ -61,7 +62,12 @@ public class Fragment_Comment extends Fragment {
         listComment = view.findViewById(R.id.lvComment);
         ListComment adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
         listComment.setAdapter(adapter);
-
+        listComment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //chuyển qua activity bình luận
+            }
+        });
         return view;
     }
 

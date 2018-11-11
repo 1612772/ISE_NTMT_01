@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
+            "outputFile": "C:\\Users\\Thanh\\Desktop\\CMPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\7420460f7b5bcbd68bc3e91ee0e29637\\res\\values-ca\\values-ca.xml",

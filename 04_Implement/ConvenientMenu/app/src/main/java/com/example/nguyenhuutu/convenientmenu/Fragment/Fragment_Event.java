@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -38,6 +39,7 @@ import java.util.List;
 public class Fragment_Event extends Fragment {
     List<Event> dataList = new ArrayList<Event>();
     ListView listEvent;
+
     @SuppressLint("ValidFragment")
     public Fragment_Event() {
         CMDB.db.collection("event").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -52,8 +54,7 @@ public class Fragment_Event extends Fragment {
                             Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
-                }else
-                {
+                } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                 }
             }
@@ -70,7 +71,12 @@ public class Fragment_Event extends Fragment {
         listEvent = view.findViewById(R.id.lvEvents);
         ListEvent adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
         listEvent.setAdapter(adapter);
-
+        listEvent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //chuyển qua activity sự kiện
+            }
+        });
         return view;
     }
 
