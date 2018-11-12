@@ -1,13 +1,17 @@
 package com.example.nguyenhuutu.convenientmenu.homepage;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.register.SwitchRegister;
 
 public class HomePage extends AppCompatActivity {
 
@@ -22,6 +26,5 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         ActionBar actionBar = getSupportActionBar();
-
     }
 }
