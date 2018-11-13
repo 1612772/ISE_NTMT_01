@@ -1,15 +1,15 @@
 #Internal package file, do not edit.
-#Mon Nov 12 13:14:18 ICT 2018
-1.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Nov 13 21:59:42 ICT 2018
+1.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 2.path=classes.dex
 0.baseType=DIRECTORY
-2.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+2.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 2.set=DEX
 1.baseType=DIRECTORY
 count=3
 1.set=DEX
 0.path=classes3.dex
 0.set=DEX
-0.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 2.baseType=DIRECTORY
 1.path=classes2.dex

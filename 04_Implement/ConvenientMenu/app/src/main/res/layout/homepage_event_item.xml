@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     card_view:contentPadding="@dimen/homepage_event_item_padding"
     card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="5dp">
+    card_view:cardElevation="5dp"
+    card_view:cardBackgroundColor="#fff">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="@dimen/homepage_event_item_content_width"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#fff">
         <ImageView
             android:id="@+id/imageEvent"
             android:layout_width="match_parent"

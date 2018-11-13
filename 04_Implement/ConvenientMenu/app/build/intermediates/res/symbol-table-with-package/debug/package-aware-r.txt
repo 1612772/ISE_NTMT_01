@@ -1098,6 +1098,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable comment_btn
@@ -1120,6 +1121,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable customer_register
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1128,6 +1130,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable dish_placeholder
 drawable dot
+drawable edit
+drawable email_shape
 drawable event_placeholder
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1144,7 +1148,10 @@ drawable image_01
 drawable image_02
 drawable image_03
 drawable info
+drawable line
+drawable line_long
 drawable lock
+drawable logo_for_register
 drawable logout
 drawable logup
 drawable managementdish
@@ -1166,15 +1173,19 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable password_shape
 drawable rectangle12
+drawable register_button_border
 drawable res
 drawable restaurant_placeholder
+drawable restaurant_register
 drawable search_form_border
 drawable searching_image
 drawable searching_image_placeholder
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
+drawable user_shape
 drawable vpi__tab_indicator
 drawable vpi__tab_selected_focused_holo
 drawable vpi__tab_selected_holo
@@ -1190,6 +1201,7 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id account
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1215,6 +1227,7 @@ id addressRestaurant
 id addressRestaurantDetail
 id adjust_height
 id adjust_width
+id againPassword
 id alertTitle
 id all
 id always
@@ -1234,6 +1247,7 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id checkRule
 id checkbox
 id chronometer
 id clip_horizontal
@@ -1258,6 +1272,7 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
+id customerRegister
 id cvEvent
 id dark
 id decor_content_parent
@@ -1284,6 +1299,7 @@ id dish_rating
 id dish_rating_wrapper
 id drawer_layout
 id edit_query
+id email
 id end
 id end_padder
 id enterAlways
@@ -1300,6 +1316,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstName
 id fixed
 id forever
 id ghost_view
@@ -1340,6 +1357,8 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id lastFirstName
+id lastName
 id lbNameRestaurant
 id left
 id light
@@ -1408,7 +1427,9 @@ id ratingRestaurantWrapper
 id rating_score
 id rbRating
 id rbRatingItem
+id register
 id restaurantName
+id restaurantRegister
 id right
 id right_icon
 id right_side
@@ -1574,8 +1595,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_customer_register
 layout activity_home_page
 layout activity_main
+layout activity_switch_register
 layout activity_view_dish
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
