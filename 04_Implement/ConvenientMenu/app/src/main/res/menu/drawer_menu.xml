@@ -6,50 +6,55 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/login"
-            android:icon="@drawable/logout"
-            android:title="ĐĂNG NHẬP" />
-        <item
-            android:id="@+id/logup"
-            android:icon="@drawable/logup"
-            android:title="ĐĂNG KÝ" />
-        <item
-            android:id="@+id/info_account"
-            android:icon="@drawable/info"
-            android:title="THÔNG TIN TÀI KHOẢN" />
-        <item
-            android:id="@+id/list_mark"
-            android:icon="@drawable/mark"
-            android:title="DANH SÁCH ĐÁNH DẤU" />
-        <item
-            android:id="@+id/management_dish"
-            android:icon="@drawable/managementdish"
-            android:title="QUẢN LÝ THỰC ĐƠN" />
-        <item
-            android:id="@+id/management_event"
-            android:icon="@drawable/managementevent"
-            android:title="QUẢN LÝ SỰ KIỆN" />
-        <item
-            android:id="@+id/password"
-            android:icon="@drawable/lock"
-            android:title="ĐỔI MẬT KHẨU" />
-        <item
-            android:id="@+id/logout"
-            android:icon="@drawable/logout"
-            android:title="ĐĂNG XUẤT" />
-    </group>
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/home"
+            android:id="@+id/main_menu_home"
             android:icon="@drawable/ic_home"
             android:title="TRANG CHỦ" />
         <item
-            android:id="@+id/list"
-            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+            android:id="@+id/main_menu_restaurant_list"
+            android:icon="@drawable/ic_restaurant_list"
             android:title="DANH SÁCH NHÀ HÀNG" />
+    </group>
+
+    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/setting"
+            android:id="@+id/main_menu_list_mark"
+            android:icon="@drawable/ic_mark"
+            android:title="DANH SÁCH ĐÁNH DẤU" />
+        <item
+            android:id="@+id/main_menu_manage_menu"
+            android:icon="@drawable/ic_manage_menu"
+            android:title="QUẢN LÝ THỰC ĐƠN" />
+        <item
+            android:id="@+id/main_menu_manage_event"
+            android:icon="@drawable/ic_manage_event"
+            android:title="QUẢN LÝ SỰ KIỆN" />
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/main_menu_login"
+            android:icon="@drawable/ic_logout"
+            android:title="ĐĂNG NHẬP" />
+        <item
+            android:id="@+id/main_menu_register"
+            android:icon="@drawable/ic_signup"
+            android:title="ĐĂNG KÝ" />
+        <item
+            android:id="@+id/main_menu_change_password"
+            android:icon="@drawable/ic_lock"
+            android:title="ĐỔI MẬT KHẨU" />
+        <item
+            android:id="@+id/main_menu_info_account"
+            android:icon="@drawable/ic_account_info"
+            android:title="THÔNG TIN TÀI KHOẢN" />
+        <item
+            android:id="@+id/main_menu_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="ĐĂNG XUẤT" />
+        <item
+            android:id="@+id/main_menu_setting"
             android:icon="@drawable/ic_setting"
             android:title="CÀI ĐẶT" />
     </group>
+
 </menu>

@@ -40,10 +40,6 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_format_list_bulleted_black_24dp.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -212,16 +208,16 @@
         "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_lock.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\lock.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_tab_restaurant_detail.xml.flat",
         "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\tab_restaurant_detail.xml"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_restaurant_list.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_btn_checkable.xml.flat",
@@ -258,10 +254,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\color\\abc_search_url_text.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_format_list_bulleted_black_24dp.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_button_bar_material.xml.flat",
@@ -508,10 +500,6 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\ViewPagerIndicator-2.4.1.aar\\978d1e57b1c1e66f946fb110a3728cbe\\res\\drawable-hdpi-v4\\vpi__tab_unselected_focused_holo.9.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_format_list_bulleted_black_24dp.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\59a36e7695ca589e8531eda979fe1113\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
@@ -736,10 +724,6 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\59a36e7695ca589e8531eda979fe1113\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_format_list_bulleted_black_24dp.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
@@ -786,6 +770,14 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_default.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_restaurant_list.xml.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_restaurant_list.xml"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_restaurant_list.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\interpolator-v21_mtrl_fast_out_slow_in.xml.flat",
@@ -862,10 +854,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\layout\\abc_search_view.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mark.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\mark.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1060,6 +1048,10 @@
         "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_setting.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_restaurant_list.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a07ac90756a5640b533055facef97856\\res\\layout\\notification_media_cancel_action.xml"
     },
@@ -1122,6 +1114,10 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mark.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_mark.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1272,6 +1268,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_menu_icon.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\main_menu_icon.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
@@ -1314,6 +1314,10 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_title_item.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_manage_event.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_manage_event.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dot.png.flat",
@@ -1488,6 +1492,14 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_manage_menu.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_manage_menu.png"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_restaurant_list.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1542,6 +1554,10 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_restaurant_list.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_vpi__tab_selected_holo.9.png.flat",
@@ -1656,10 +1672,6 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_managementevent.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\managementevent.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
@@ -1706,10 +1718,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_media.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a07ac90756a5640b533055facef97856\\res\\layout\\notification_template_media.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logup.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\logup.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -1900,6 +1908,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\56177a710aa1228aea3a16127744d673\\res\\animator\\mtrl_fab_transformation_sheet_expand_spec.xml"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_lock.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_lock.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\color\\switch_thumb_material_dark.xml"
     },
@@ -1938,10 +1950,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_layout.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_format_list_bulleted_black_24dp.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -2012,6 +2020,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\56177a710aa1228aea3a16127744d673\\res\\color\\mtrl_chip_text_color.xml"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_restaurant_list.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_restaurant_list.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
@@ -2060,6 +2072,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_account_info.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_account_info.png"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
     },
@@ -2086,10 +2102,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_check_material.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable\\abc_btn_check_material.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_format_list_bulleted_black_24dp.xml.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_format_list_bulleted_black_24dp.xml"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -2120,10 +2132,6 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_format_list_bulleted_black_24dp.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_format_list_bulleted_black_24dp.png"
-    },
-    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\59a36e7695ca589e8531eda979fe1113\\res\\layout-v21\\notification_action_tombstone.xml"
     },
@@ -2148,8 +2156,8 @@
         "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logout.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\logout.png"
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_signup.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_signup.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -2178,6 +2186,10 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\88e7405747ea97c7fe816b5bcf55bf35\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_logout.png.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\ic_logout.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_icon_color_selector_colored.xml.flat",
@@ -2314,10 +2326,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_info.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\info.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_light.xml.flat",
@@ -2558,10 +2566,6 @@
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a07ac90756a5640b533055facef97856\\res\\layout\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_managementdish.png.flat",
-        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\managementdish.png"
     },
     {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility.png.flat",
