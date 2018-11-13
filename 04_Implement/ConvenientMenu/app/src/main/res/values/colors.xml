@@ -6,4 +6,7 @@
     <color name="colorMAIN">#FEC632</color>
     <color name="red">#f70000</color>
     <color name="yellow">#dcfd00</color>
+    <color name="colorYellow">#FFD76B</color>
+    <color name="colorYellow1">#FEE5A2</color>
+    <color name="colorWhile">#ffffff</color>
 </resources>

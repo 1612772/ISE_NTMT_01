@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn=activity_home_page"">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/logout"
+            android:title="ĐĂNG NHẬP" />
+        <item
+            android:id="@+id/logup"
+            android:icon="@drawable/logup"
+            android:title="ĐĂNG KÝ" />
+        <item
+            android:id="@+id/info_account"
+            android:icon="@drawable/info"
+            android:title="THÔNG TIN TÀI KHOẢN" />
+        <item
+            android:id="@+id/list_mark"
+            android:icon="@drawable/mark"
+            android:title="DANH SÁCH ĐÁNH DẤU" />
+        <item
+            android:id="@+id/management_dish"
+            android:icon="@drawable/managementdish"
+            android:title="QUẢN LÝ THỰC ĐƠN" />
+        <item
+            android:id="@+id/management_event"
+            android:icon="@drawable/managementevent"
+            android:title="QUẢN LÝ SỰ KIỆN" />
+        <item
+            android:id="@+id/password"
+            android:icon="@drawable/lock"
+            android:title="ĐỔI MẬT KHẨU" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/logout"
+            android:title="ĐĂNG XUẤT" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="TRANG CHỦ" />
+        <item
+            android:id="@+id/list"
+            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+            android:title="DANH SÁCH NHÀ HÀNG" />
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_setting"
+            android:title="CÀI ĐẶT" />
+    </group>
+</menu>
