@@ -1453,6 +1453,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id tool_bar
 id top
 id topPanel
 id touch_outside
@@ -1903,6 +1904,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style RatingBar
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon

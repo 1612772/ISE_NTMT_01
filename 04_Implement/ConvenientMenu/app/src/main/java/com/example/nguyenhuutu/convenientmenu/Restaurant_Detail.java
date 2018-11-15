@@ -1,11 +1,18 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.app.ActionBar;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Comment;
@@ -31,6 +38,19 @@ public class Restaurant_Detail extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabRestaurantDetail);
@@ -45,4 +65,8 @@ public class Restaurant_Detail extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

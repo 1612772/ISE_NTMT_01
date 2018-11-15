@@ -181,7 +181,7 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Us
 	android:allowBackup
 		ADDED from C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:11:9-35
 	android:theme
-		ADDED from C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:16:9-56
+		ADDED from C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:16:9-62
 	android:name
 		ADDED from C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:10:9-68
 activity#com.example.nguyenhuutu.convenientmenu.Restaurant_Detail
