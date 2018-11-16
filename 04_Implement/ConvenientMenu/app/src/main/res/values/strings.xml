@@ -9,4 +9,15 @@
 
     <string name="open">Open navigation drawer</string>
     <string name="close">Close navigation drawer</string>
+    <string name="main_menu_home">TRANG CHỦ</string>
+    <string name="main_menu_restaurant_list">DANH SÁCH NHÀ HÀNG</string>
+    <string name="main_menu_mark">DANH SÁCH ĐÁNH DẤU</string>
+    <string name="main_menu_manage_menu">QUẢN LÝ THỰC ĐƠN</string>
+    <string name="main_menu_manage_event">QUẢN LÝ SỰ KIỆN</string>
+    <string name="main_menu_change_password">ĐỔI MẬT KHẨU</string>
+    <string name="main_menu_login">ĐĂNG NHẬP</string>
+    <string name="main_menu_logout">ĐĂNG XUẤT</string>
+    <string name="main_menu_register">ĐĂNG KÝ</string>
+    <string name="main_menu_setting">CÀI ĐẶT</string>
+    <string name="main_menu_account_info">THÔNG TIN TÀI KHOẢN</string>
 </resources>

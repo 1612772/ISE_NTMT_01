@@ -16,7 +16,6 @@
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingTop="10dp"
         android:background="#fff">
 
         <android.support.v7.widget.Toolbar
@@ -24,8 +23,7 @@
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
             android:theme="@style/Theme.AppCompat.Light"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <LinearLayout
             android:id="@+id/searchingFormWrapper"
@@ -49,9 +47,10 @@
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:hint="Tìm kiếm nhà hàng, món ăn..."
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
+                android:textColorHint="@color/hintColor"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -193,15 +192,17 @@
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:layout_marginTop="66dp"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/nav_header"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorMainMenu"
+        app:headerLayout="@layout/nav_header_non_login"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Menu"
+        app:itemTextColor="@color/colorTextMainMenu"
         app:menu="@menu/drawer_menu"
-        android:background="@color/colorMAIN"
-        app:itemTextColor="@color/colorPrimary">
+        app:itemIconTint="@color/white">
 
     </android.support.design.widget.NavigationView>
 

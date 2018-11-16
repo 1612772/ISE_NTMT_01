@@ -2,9 +2,9 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn=activity_home_page"">
+    tools:showIn="activity_home_page">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
             android:id="@+id/main_menu_home"
             android:icon="@drawable/ic_home"
@@ -15,14 +15,14 @@
             android:title="DANH SÁCH NHÀ HÀNG" />
     </group>
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
             android:id="@+id/main_menu_list_mark"
-            android:icon="@drawable/ic_mark"
+            android:icon="@drawable/ic_bookmark"
             android:title="DANH SÁCH ĐÁNH DẤU" />
         <item
             android:id="@+id/main_menu_manage_menu"
-            android:icon="@drawable/ic_manage_menu"
+            android:icon="@drawable/ic_menu"
             android:title="QUẢN LÝ THỰC ĐƠN" />
         <item
             android:id="@+id/main_menu_manage_event"
@@ -30,18 +30,18 @@
             android:title="QUẢN LÝ SỰ KIỆN" />
     </group>
 
-    <group>
+    <group android:checkableBehavior="none">
         <item
             android:id="@+id/main_menu_login"
-            android:icon="@drawable/ic_logout"
+            android:icon="@drawable/ic_login"
             android:title="ĐĂNG NHẬP" />
         <item
             android:id="@+id/main_menu_register"
-            android:icon="@drawable/ic_signup"
+            android:icon="@drawable/ic_register"
             android:title="ĐĂNG KÝ" />
         <item
             android:id="@+id/main_menu_change_password"
-            android:icon="@drawable/ic_lock"
+            android:icon="@drawable/ic_change_password"
             android:title="ĐỔI MẬT KHẨU" />
         <item
             android:id="@+id/main_menu_info_account"
