@@ -1,29 +1,16 @@
 package com.example.nguyenhuutu.convenientmenu.helper;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
-
-import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.homepage.HomePage;
-import com.example.nguyenhuutu.convenientmenu.register.SwitchRegister;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
 import static java.lang.Boolean.FALSE;
 
 public class Helper {
@@ -42,84 +29,9 @@ public class Helper {
         return size;
     }
 
-    public static void configMainMenu(final Activity activity, final NavigationView mainMenu, final DrawerLayout mDrawerLayout, Toolbar mToolBar) {
-        View headerView = mainMenu.getHeaderView(0);
 
-        headerView.findViewById(R.id.headerMenu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(activity, "header click", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        List<String> loginedUser = getLoginedUser(activity);
-//        if (loginedUser.size() == 0) {
-//            mainMenu.removeHeaderView(headerView);
-//            headerView = activity.getLayoutInflater().inflate(R.layout.nav_header_non_login, null);
-//            mainMenu.addHeaderView(headerView);
-//        }
-//        else {
-//
-//        }
 
-        //mainMenu.getMenu().findItem(R.id.main_menu_home).setVisible(false);
-        mainMenu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                menuItem.setChecked(false);
-                switch (menuItem.getItemId()) {
-                    case R.id.main_menu_home:
-                        if (!(activity instanceof HomePage)) {
-                            Intent homePageIntent = new Intent(activity, HomePage.class);
-                            activity.startActivity(homePageIntent);
-                        }
-                        break;
-                    case R.id.main_menu_restaurant_list:
-                        break;
-                    case R.id.main_menu_info_account:
-                        break;
-                    case R.id.main_menu_change_password:
-                        break;
-                    case R.id.main_menu_list_mark:
-                        break;
-                    case R.id.main_menu_manage_menu:
-                        break;
-                    case R.id.main_menu_manage_event:
-                        break;
-                    case R.id.main_menu_login:
-                        break;
-                    case R.id.main_menu_register:
-                        if (!(activity instanceof SwitchRegister)) {
-                            Intent switchRegisterIntent = new Intent(activity, SwitchRegister.class);
-                            activity.startActivity(switchRegisterIntent);
-                        }
-                        break;
-                    case R.id.main_menu_logout:
-                        break;
-                    case R.id.main_menu_setting:
-                        break;
-                }
-
-                mDrawerLayout.closeDrawers();
-                return true;
-            }
-        });
-
-        ActionBarDrawerToggle mToggle= new ActionBarDrawerToggle(activity,mDrawerLayout,mToolBar,R.string.open,R.string.close);
-        mDrawerLayout.addDrawerListener(mToggle);
-        mToggle.syncState();
-
-        checkMenuItem(activity, mainMenu);
-    }
-
-    public static void checkMenuItem(final Activity activity, NavigationView mainMenu) {
-        if (activity instanceof HomePage) {
-            mainMenu.setCheckedItem(0);
-        }
-        else if (activity instanceof SwitchRegister) {
-            mainMenu.setCheckedItem(R.id.main_menu_register);
-        }
-    }
 
     public static SQLiteDatabase connectLocalDB(Activity activity) {
         SQLiteDatabase db = SQLiteDatabase.openDatabase(activity.getApplication().getFilesDir() + "/" + LocalDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);

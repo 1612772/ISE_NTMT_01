@@ -17,19 +17,15 @@
         android:theme="@style/Theme.Design.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <!--android:theme="@style/Theme.AppCompat.Light">-->
-        <activity android:name=".homepage.HomePage">
+        <activity android:name=".Restaurant_Detail" />
+        <activity android:name=".main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Restaurant_Detail" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".ViewDish" />
-        <activity
-            android:name=".register.SwitchRegister"
-            android:label="Đăng ký"></activity>
         <activity
             android:name=".register.CustomerRegister"
             android:label="Đăng ký - Thực khách"></activity>

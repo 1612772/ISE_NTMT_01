@@ -1806,7 +1806,7 @@ id list_food
 id list_item
 id lvComment
 id lvEvents
-id mDrawerLayout
+id mainContent
 id main_content
 id main_menu_change_password
 id main_menu_home
@@ -2087,9 +2087,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_customer_register
-layout activity_home_page
 layout activity_main
-layout activity_switch_register
 layout activity_view_dish
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2108,6 +2106,7 @@ layout design_text_input_password_icon
 layout fragment_draft
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
+layout home_page_fragment
 layout homepage_dish_item
 layout homepage_event_item
 layout homepage_restaurant_item
@@ -2143,7 +2142,6 @@ layout mtrl_layout_snackbar_include
 layout much_viewed_restaurant_fragment
 layout nav_header_login
 layout nav_header_non_login
-layout navigation_view_main_menu
 layout new_event_fragment
 layout notification_action
 layout notification_action_tombstone
@@ -2165,13 +2163,16 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout switch_register_fragment
 layout tab_comments
 layout tab_drink
 layout tab_events
 layout tab_food
 layout tab_menu
 layout tab_restaurant_detail
-menu drawer_menu
+menu main_menu_customer_login
+menu main_menu_non_login
+menu main_menu_restaurant_login
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
