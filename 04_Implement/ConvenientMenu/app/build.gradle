@@ -42,4 +42,10 @@ dependencies {
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
     implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'org.jetbrains:annotations-java5:15.0'
+//    implementation "com.mikepenz:materialdrawer:6.1.1"
+    implementation ('com.mikepenz:materialdrawer:5.9.5@aar') {
+        transitive = true
+        exclude group: 'com.android.support'
+    }
+//    implementation group: 'com.mikepenz', name: 'materialdrawer', version: '7.0.0-alpha1'
 }

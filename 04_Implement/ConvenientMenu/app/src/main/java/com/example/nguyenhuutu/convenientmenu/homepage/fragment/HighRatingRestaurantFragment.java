@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.homepage;
+package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,24 +26,29 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MuchViewedRestaurantFragment extends Fragment {
-    private HomePage homePage;
+public class HighRatingRestaurantFragment extends Fragment {
+    //public HomePage homePage;
     private LinearLayout listContent;
     private List<Restaurant> dataList;
-    private static Integer muchViewedRestaurantNumber = 10;
+    private static Integer highRatingRestaurantNumber = 10;
+
+    //public static Restaurant rest;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        homePage = (HomePage)getActivity();
+        //homePage = (Main)getActivity();
         dataList = new ArrayList<Restaurant>();
+
+        //Toast.makeText(getActivity(), "yes", Toast.LENGTH_SHORT).show();
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        listContent = (LinearLayout)inflater.inflate(R.layout.much_viewed_restaurant_fragment, null);
+        listContent = (LinearLayout)inflater.inflate(R.layout.high_rating_restaurant_fragment, null);
 
         CMDB.db.collection("restaurant")
                 .get()
@@ -60,11 +65,11 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                 }
                             }
 
-                            sortRestaurantFlowView(dataList);
+                            sortRestaurantFlowStar(dataList);
 
                             try {
                                 for (int index = 0; index < dataList.size(); index++) {
-                                    if (index >= muchViewedRestaurantNumber) {
+                                    if (index >= highRatingRestaurantNumber) {
                                         break;
                                     }
 
@@ -114,7 +119,6 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                             });
 
                                     ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
-
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -125,7 +129,7 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                         }
                                     });
 
-                                    ((LinearLayout) listContent.findViewById(R.id.muchViewedRestaurantList)).addView(restItemLayout);
+                                    ((LinearLayout) listContent.findViewById(R.id.hightRatingRestaurantList)).addView(restItemLayout);
                                 }
                             }
                             catch(Exception ex){
@@ -141,8 +145,8 @@ public class MuchViewedRestaurantFragment extends Fragment {
         return listContent;
     }
 
-    private void sortRestaurantFlowView(List<Restaurant> restList){
-        Restaurant.compareProperty = Restaurant.VIEW;
+    private void sortRestaurantFlowStar(List<Restaurant> restList){
+        Restaurant.compareProperty = Restaurant.STAR;
         Collections.sort(restList);
     }
 }

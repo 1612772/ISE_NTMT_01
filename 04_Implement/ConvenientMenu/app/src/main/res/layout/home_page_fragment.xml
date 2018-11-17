@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
-    tools:context=".homepage.HomePage">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="10dp"
-        android:background="#fff">
-
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbar"
-            android:theme="@style/Theme.AppCompat.Light"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+    android:orientation="vertical"
+    android:background="#fff">
 
         <LinearLayout
             android:id="@+id/searchingFormWrapper"
@@ -49,9 +33,10 @@
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:hint="Tìm kiếm nhà hàng, món ăn..."
-                android:textColor="#000"
+                android:textColor="@color/black"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
+                android:textColorHint="@color/hintColor"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -93,7 +78,7 @@
                         android:id="@+id/hightRatingRestaurantListWrapperFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        class="com.example.nguyenhuutu.convenientmenu.homepage.HighRatingRestaurantFragment">
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.fragment.HighRatingRestaurantFragment">
 
                     </fragment>
 
@@ -122,7 +107,7 @@
                         android:id="@+id/muchViewedRestaurantListWrapperFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        class="com.example.nguyenhuutu.convenientmenu.homepage.MuchViewedRestaurantFragment">
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.fragment.MuchViewedRestaurantFragment">
 
                     </fragment>
 
@@ -151,7 +136,7 @@
                         android:id="@+id/hightRatingDishListWrapperFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        class="com.example.nguyenhuutu.convenientmenu.homepage.HighRatingDishFragment">
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.fragment.HighRatingDishFragment">
 
                     </fragment>
 
@@ -180,7 +165,7 @@
                         android:id="@+id/newEventListWrapperFragment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        class="com.example.nguyenhuutu.convenientmenu.homepage.NewEventFragment">
+                        class="com.example.nguyenhuutu.convenientmenu.homepage.fragment.NewEventFragment">
 
                     </fragment>
 
@@ -190,19 +175,4 @@
 
         </ScrollView>
 
-    </LinearLayout>
-
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:layout_marginTop="66dp"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/drawer_menu"
-        android:background="@color/colorMAIN"
-        app:itemTextColor="@color/colorPrimary">
-
-    </android.support.design.widget.NavigationView>
-
-</android.support.v4.widget.DrawerLayout>
+</LinearLayout>

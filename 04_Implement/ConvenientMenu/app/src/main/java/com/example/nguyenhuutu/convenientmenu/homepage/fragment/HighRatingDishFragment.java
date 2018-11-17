@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.homepage;
+package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,13 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
-import com.example.nguyenhuutu.convenientmenu.Event;
+import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,25 +30,24 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
-public class NewEventFragment extends Fragment {
-    private HomePage homePage;
+public class HighRatingDishFragment extends Fragment {
+    //private HomePage homePage;
     private LinearLayout listContent;
-    private List<Event> dataList;
-    private static Integer newEventNumber = 10;
+    private List<Dish> dataList;
+    private static Integer highRatingDishNumber = 10;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        homePage = (HomePage)getActivity();
-        dataList = new ArrayList<Event>();
+        //homePage = (HomePage)getActivity();
+        dataList = new ArrayList<Dish>();
     }
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
-        listContent = (LinearLayout)inflater.inflate(R.layout.new_event_fragment, null);
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        listContent = (LinearLayout)inflater.inflate(R.layout.high_rating_dish_fragment, null);
         // get all dish in database
-        CMDB.db.collection("event")
+        CMDB.db.collection("dish")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -56,28 +56,27 @@ public class NewEventFragment extends Fragment {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 try {
-                                    dataList.add(Event.loadEvent(document.getData()));
+                                    dataList.add(Dish.loadDish(document.getData()));
                                 }
                                 catch (Exception ex){
                                     Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
-                            filterEvents(dataList);
-                            sortEventFlowDate(dataList);
+                            sortDishFlowStar(dataList);
 
                             try {
                                 for (int index = 0; index < dataList.size(); index++) {
-                                    if (index >= newEventNumber) {
+                                    if (index >= highRatingDishNumber) {
                                         break;
                                     }
+                                    final Dish dish;
+                                    final CardView dishItemLayout = (CardView) inflater.inflate(R.layout.homepage_dish_item, null);
+                                    dish = dataList.get(index);
+                                    ((TextView) dishItemLayout.findViewById(R.id.dishName)).setText(dish.getDishName());
+                                    ((RatingBar) dishItemLayout.findViewById(R.id.ratingDish)).setRating(((Number) dish.getMaxStar()).floatValue());
 
-                                    final Event event;
-                                    final CardView eventItemLayout = (CardView) inflater.inflate(R.layout.homepage_event_item, container);
-                                    event = dataList.get(index);
-                                    ((TextView) eventItemLayout.findViewById(R.id.eventShortContent)).setText(event.getEventContent());
-
-                                    CMStorage.storage.child("images/event/" + event.getEventImageFiles().get(0).toString())
+                                    CMStorage.storage.child("images/dish/" + dish.getDishHomeImage())
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override
@@ -86,7 +85,7 @@ public class NewEventFragment extends Fragment {
                                                         Glide
                                                                 .with(getContext())
                                                                 .load(uri.toString())
-                                                                .into((ImageView) eventItemLayout.findViewById(R.id.imageEvent));
+                                                                .into((ImageView) dishItemLayout.findViewById(R.id.imageDish));
                                                     }
                                                     catch(Exception ex) {
                                                         Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
@@ -100,8 +99,23 @@ public class NewEventFragment extends Fragment {
                                                 }
                                             });
 
+                                    CMDB.db.collection("comment_dish")
+                                            .whereEqualTo("cmt_dish_star", dish.getMaxStar())
+                                            .whereEqualTo("dish_id", dish.getDishId())
+                                            .get()
+                                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                    if (task.isSuccessful()) {
+                                                        ((TextView) dishItemLayout.findViewById(R.id.ratingNumber)).setText("(" + task.getResult().getDocuments().size() + " phiếu)");
+                                                    } else {
+                                                        ((TextView) dishItemLayout.findViewById(R.id.ratingNumber)).setText("0 phiếu)");
+                                                    }
+                                                }
+                                            });
+
                                     CMDB.db.collection("restaurant")
-                                            .document(event.getRestAccount())
+                                            .document(dish.getRestAccount())
                                             .get()
                                             .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                                 @Override
@@ -110,27 +124,27 @@ public class NewEventFragment extends Fragment {
                                                         DocumentSnapshot document = task.getResult();
                                                         if (document.exists()) {
                                                             Restaurant rest = Restaurant.loadRestaurant(document.getData());
-                                                            ((TextView)eventItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
+                                                            ((TextView)dishItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
                                                         } else {
-                                                            ((TextView)eventItemLayout.findViewById(R.id.restaurantName)).setText("Anonymous");
+                                                            ((TextView)dishItemLayout.findViewById(R.id.restaurantName)).setText("Anonymous");
                                                         }
                                                     } else {
-                                                        Toast.makeText(getActivity(), "Loading have some error!", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getActivity(), "Loading has some erors!", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
 
-                                    eventItemLayout.setOnClickListener(new View.OnClickListener() {
+                                    dishItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            //Intent eventIntent = new Intent(getActivity(), RestaurantDetail.class);
-                                            //restIntent.putExtra("event_id", rest.getEventId());
-                                            //startActivity(eventIntent);
-                                            Toast.makeText(getActivity(), event.getEventId() + "-" + event.getEventContent(), Toast.LENGTH_SHORT).show();
+                                            //Intent dishIntent = new Intent(getActivity(), DishDetail.class);
+                                            //dishIntent.putExtra("dish_id", dish.getDishId());
+                                            //startActivity(dishIntent);
+                                            Toast.makeText(getActivity(), dish.getRestAccount() + "-" + dish.getDishName(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
-                                    ((LinearLayout) listContent.findViewById(R.id.newEventList)).addView(eventItemLayout);
+                                    ((LinearLayout) listContent.findViewById(R.id.highRatingDishList)).addView(dishItemLayout);
                                 }
                             }
                             catch(Exception ex){
@@ -146,23 +160,8 @@ public class NewEventFragment extends Fragment {
         return listContent;
     }
 
-    private void filterEvents(List<Event> eventList) {
-        //List<Event> eventListTemp = new ArrayList<Event>();
-        Date nowDate = new Date();
-
-        for (Event event: eventList){
-            if (event.getEndDate().compareTo(nowDate) < 0) {
-                //eventListTemp.add(event);
-                dataList.remove(event);
-            }
-        }
-
-        //eventList.clear();
-        //eventList = eventListTemp;
-    }
-
-    private void sortEventFlowDate(List<Event> eventList){
-        Event.compareProperty = Event.DATE;
-        Collections.sort(eventList);
+    private void sortDishFlowStar(List<Dish> dishList){
+        Dish.compareProperty = Dish.STAR;
+        Collections.sort(dishList);
     }
 }
