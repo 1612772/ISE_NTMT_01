@@ -730,6 +730,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hintColor
@@ -1423,6 +1424,13 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen register_among_split_name_padding
+dimen register_checkbox_size
+dimen register_content_width
+dimen register_editbox_height
+dimen register_rule_height
+dimen register_split_name_width
+dimen register_textinput_margin_top
 dimen tool_bar_top_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1731,6 +1739,7 @@ id dish_price
 id dish_rating
 id dish_rating_wrapper
 id drawer_layout
+id editInformation
 id edit_query
 id email
 id end
@@ -2320,6 +2329,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
+string rule_check
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat

@@ -8,6 +8,7 @@
     <color name="red">#f70000</color>
     <color name="yellow">#dcfd00</color>
     <color name="black">#000</color>
+    <color name="gray">#999999</color>
     <color name="white">#fff</color>
     <color name="hintColor">#a6a6a6</color>
     <color name="colorMainMenu">#FFD76B</color>
