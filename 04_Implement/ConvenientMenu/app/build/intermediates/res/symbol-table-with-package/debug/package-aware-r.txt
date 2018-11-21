@@ -687,6 +687,7 @@ color colorPrimary
 color colorPrimaryDark
 color colorPrimaryLight
 color colorTextMainMenu
+color colorTextRegister
 color colorWhile
 color colorYellow1
 color common_google_signin_btn_text_dark
@@ -731,6 +732,7 @@ color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
 color gray
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hintColor
@@ -1430,6 +1432,7 @@ dimen register_content_width
 dimen register_editbox_height
 dimen register_rule_height
 dimen register_split_name_width
+dimen register_text_size
 dimen register_textinput_margin_top
 dimen tool_bar_top_padding
 dimen tooltip_corner_radius
@@ -1987,8 +1990,12 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id text
 id text2
+id textInputAccount
+id textInputAgainPassword
+id textInputEmail
 id textInputFirstName
 id textInputLastName
+id textInputPassword
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -2535,6 +2542,8 @@ style BezelImageView
 style CardView
 style CardView_Dark
 style CardView_Light
+style ErrorHintText
+style HintText
 style Material_DrawerArrowStyle
 style Material_Light_DrawerArrowStyle
 style MaterialBaseBaseTheme
