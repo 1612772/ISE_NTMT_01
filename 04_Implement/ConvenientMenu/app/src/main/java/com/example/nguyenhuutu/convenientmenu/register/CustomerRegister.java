@@ -1,7 +1,9 @@
 package com.example.nguyenhuutu.convenientmenu.register;
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +11,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,13 +23,24 @@ import android.widget.Toast;
 import com.example.nguyenhuutu.convenientmenu.Customer;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
+import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
 import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CustomerRegister extends AppCompatActivity implements View.OnClickListener {
+public class CustomerRegister extends AppCompatActivity implements View.OnClickListener, View.OnHoverListener {
     private final int NumberOfEditBox = 7;
     private TextInputEditText lastName;
     private TextInputEditText firstName;
@@ -72,12 +87,17 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
         emailLayout = findViewById(R.id.textInputEmail);
         passwordLayout = findViewById(R.id.textInputPassword);
         againPasswordLayout = findViewById(R.id.textInputAgainPassword);
+
         setTextChangeForAccount();
         setTextChangeForLastName();
         setTextChangeForFirstName();
         setTextChangeForEmail();
         setTextChangeForPassword();
         setTextChangeForAgainPassword();
+
+        registerButton.setOnClickListener(this);
+        registerButton.setOnHoverListener(this);
+        checkRule.setOnClickListener(this);
 
         process = new ProgressDialog(this);
         process.setMessage("Registering. Please Wait for a while.");
@@ -100,6 +120,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.register:
+                checkEmptyInfo();
                 if (checkInfo()) {
                     String lastNameStr = lastName.getText().toString();
                     String firstNameStr = firstName.getText().toString();
@@ -113,6 +134,8 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
 
                     process.show();
 
+                }
+                else {
                 }
                 break;
             case R.id.checkRule:
@@ -220,14 +243,8 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     accountLayout.setError("Không được để trống");
                 }
                 else if (str.matches("^[a-zA-Z0-9]+$")) {
-                    if (Helper.checkAvailableCustomerAccount(CustomerRegister.this, str)) {
-                        accountOk = true;
-                        accountLayout.setError(null);
-                    }
-                    else {
-                        accountOk = false;
-                        accountLayout.setError("Tên tài khoản đã tồn tại");
-                    }
+                    CheckAccountTask checkAccount = new CheckAccountTask();
+                    checkAccount.execute(str);
                 }
                 else {
                     accountOk = false;
@@ -290,14 +307,18 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     passwordOk = false;
                     passwordLayout.setError("Không được để trống");
                 }
-                else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
-                    passwordOk = false;
-                    passwordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
-                }
-                else {
-                    passwordOk = true;
-                    passwordLayout.setError(null);
-                }
+                else if (str.length() < 8) {
+                        passwordOk = false;
+                        passwordLayout.setError("Mật khẩu có độ dài ít nhất 8 ký tự");
+                    }
+                    else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
+                        passwordOk = false;
+                        passwordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
+                    }
+                    else {
+                        passwordOk = true;
+                        passwordLayout.setError(null);
+                    }
             }
         });
     }
@@ -324,6 +345,10 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     againPasswordOk = false;
                     againPasswordLayout.setError("Không được để trống");
                 }
+                else if (str.length() < 8) {
+                    againPasswordOk = false;
+                    againPasswordLayout.setError("Mật khẩu có độ dài ít nhất 8 ký tự");
+                }
                 else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
                     againPasswordOk = false;
                     againPasswordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
@@ -333,7 +358,6 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     againPasswordLayout.setError(null);
                 }
                 else {
-                    Toast.makeText(CustomerRegister.this, str + "\n" + password.getText(), Toast.LENGTH_SHORT).show();
                     againPasswordOk = false;
                     againPasswordLayout.setError("Mật khẩu không trùng khớp");
                 }
@@ -349,4 +373,84 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             return false;
         }
     }
+
+    @Override
+    public boolean onHover(View v, MotionEvent event) {
+        if (v.getId() == R.id.register) {
+            v.setBackgroundColor(getResources().getColor(R.color.hintColor));
+        }
+        return true;
+    }
+
+    private void checkEmptyInfo() {
+        if (lastName.getText().toString().trim().isEmpty()) {
+            lastNameOk = false;
+            lastNameLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+        if (firstName.getText().toString().trim().isEmpty()) {
+            firstNameOk = false;
+            firstNameLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+        if (account.getText().toString().trim().isEmpty()) {
+            accountOk = false;
+            accountLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+        if (email.getText().toString().trim().isEmpty()) {
+            emailOk = false;
+            emailLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+        if (password.getText().toString().trim().isEmpty()) {
+            passwordOk = false;
+            passwordLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+        if (againPassword.getText().toString().trim().isEmpty()) {
+            againPasswordOk = false;
+            againPasswordLayout.setError(getResources().getString(R.string.errorEmptyMessage));
+        }
+    }
+
+    class CheckAccountTask extends AsyncTask<String, Void, String> {
+
+        @Override
+        protected String doInBackground(String... params) {
+            String result = "";
+            String url = "https://convenientmenu.herokuapp.com/check-customer-account-available";
+
+            RequestServer request = new RequestServer(url, "POST");
+            try {
+                request.setParam("account", params[0]);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            result = request.executeRequest();
+            Log.e("account: ", params[0]);
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            try{
+                JSONObject reader = new JSONObject(result);
+                boolean isSuccess = reader.getBoolean("isSuccess");
+
+                if (isSuccess) {
+                    boolean data = reader.getBoolean("data");
+                    if (data) {
+                        accountOk = true;
+                        accountLayout.setError(null);
+                    }
+                    else {
+                        accountOk = false;
+                        accountLayout.setError("Tên tài khoản đã tồn tại");
+                    }
+                }
+            }
+            catch(Exception ex) {
+
+            }
+        }
+    };
 }
