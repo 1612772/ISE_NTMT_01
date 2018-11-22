@@ -18,7 +18,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
-import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

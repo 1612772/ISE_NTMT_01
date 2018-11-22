@@ -32,6 +32,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Design.NoActionBar" >
+
+        <!-- android:theme="@style/Theme.AppCompat.Light"> -->
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.main.MainActivity" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,8 +42,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.MainActivity" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.ViewDish" />
+        <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
+            android:label="Đăng ký - Thực khách" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

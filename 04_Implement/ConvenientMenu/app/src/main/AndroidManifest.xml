@@ -17,8 +17,8 @@
         android:theme="@style/Theme.Design.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <!--android:theme="@style/Theme.AppCompat.Light">-->
-        <activity android:name=".Restaurant_Detail" />
-        <activity android:name=".main.MainActivity" >
+        <activity android:name=".main.MainActivity" />
+        <activity android:name=".Restaurant_Detail" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

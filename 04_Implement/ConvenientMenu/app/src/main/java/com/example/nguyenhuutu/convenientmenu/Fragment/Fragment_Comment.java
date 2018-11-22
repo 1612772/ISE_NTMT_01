@@ -1,8 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
-import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
