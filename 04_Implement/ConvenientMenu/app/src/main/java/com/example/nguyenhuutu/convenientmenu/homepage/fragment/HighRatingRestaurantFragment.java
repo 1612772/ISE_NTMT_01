@@ -32,20 +32,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class HighRatingRestaurantFragment extends Fragment {
-    //public HomePage homePage;
     private LinearLayout listContent;
     private List<Restaurant> dataList;
     private static Integer highRatingRestaurantNumber = 10;
 
-    //public static Restaurant rest;
-
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        //homePage = (Main)getActivity();
         dataList = new ArrayList<Restaurant>();
-
-        //Toast.makeText(getActivity(), "yes", Toast.LENGTH_SHORT).show();
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         listContent = (LinearLayout)inflater.inflate(R.layout.high_rating_restaurant_fragment, null);
@@ -68,11 +62,9 @@ public class HighRatingRestaurantFragment extends Fragment {
                             sortRestaurantFlowStar(dataList);
 
                             try {
-                                for (int index = 0; index < dataList.size(); index++) {
-                                    if (index >= highRatingRestaurantNumber) {
-                                        break;
-                                    }
-
+                                int count = dataList.size();
+                                count = (count > highRatingRestaurantNumber ? highRatingRestaurantNumber : count);
+                                for (int index = 0; index < count; index++) {
                                     final Restaurant rest;
                                     final CardView restItemLayout = (CardView) inflater.inflate(R.layout.homepage_restaurant_item, null);
                                     rest = dataList.get(index);
@@ -137,7 +129,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                             }
                         }
                         else {
-
+                            Toast.makeText(getActivity(), "Have some error in loading from database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
