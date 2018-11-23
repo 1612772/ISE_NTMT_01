@@ -1663,6 +1663,7 @@ id againPassword
 id alertTitle
 id all
 id always
+id app_bar
 id async
 id auto
 id bannerBottom
@@ -1733,6 +1734,7 @@ id dish_rating_wrapper
 id drawer_layout
 id edit_query
 id email
+id empty
 id end
 id end_padder
 id enterAlways
@@ -1880,6 +1882,7 @@ id muchViewedRestaurantWrapper
 id multiply
 id nav_view
 id navigation_header_container
+id nestedScrollView
 id never
 id newEventList
 id newEventListWrapper
@@ -1993,6 +1996,7 @@ id titleDividerNoCustom
 id title_template
 id toolbar
 id toolbarRestaurant
+id toolbar_layout
 id top
 id topPanel
 id touch_outside
@@ -2090,6 +2094,7 @@ layout abc_tooltip
 layout activity_customer_register
 layout activity_main
 layout activity_view_dish
+layout content_restaurant_detail
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2170,7 +2175,6 @@ layout tab_drink
 layout tab_events
 layout tab_food
 layout tab_menu
-layout tab_restaurant_detail
 menu main_menu_customer_login
 menu main_menu_non_login
 menu main_menu_restaurant_login

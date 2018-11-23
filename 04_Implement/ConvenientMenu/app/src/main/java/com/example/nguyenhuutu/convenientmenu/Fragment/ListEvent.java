@@ -25,9 +25,9 @@ class ListEvent extends BaseAdapter {
     Context context;
     int inflat;
     List<Event> event;
-    View row;
 
-    public ListEvent(Context context,int inflat, List<Event> event) {
+
+    public ListEvent(Context context, int inflat, List<Event> event) {
         this.inflat = inflat;
         this.context = context;
         this.event = event;
@@ -51,33 +51,30 @@ class ListEvent extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        row = inflater.inflate(inflat, null);
+        final View row = inflater.inflate(inflat, null);
 
-       // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
+        // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
 
-        TextView tvTitleEvent = (TextView)row.findViewById(R.id.tvTitleEvent);
-        TextView tvTimeEvent = (TextView)row.findViewById(R.id.tvTimeEvent);
-        TextView tvDescriptionEvent = (TextView)row.findViewById(R.id.tvDescriptionEvent);
+        TextView tvTitleEvent = (TextView) row.findViewById(R.id.tvTitleEvent);
+        TextView tvTimeEvent = (TextView) row.findViewById(R.id.tvTimeEvent);
+        TextView tvDescriptionEvent = (TextView) row.findViewById(R.id.tvDescriptionEvent);
 
         Event item = event.get(position);
 
         tvDescriptionEvent.setText(item.getEventContent());// Không thấy thuộc tính title
         tvTitleEvent.setText(item.getEventContent());
-        tvTimeEvent.setText(item.getBeginDate().toString()+" đến "+item.getEndDate().toString());
-        //imgEvent.setImageResource(R.drawable.more);
-       // Toast.makeText(context, item.getEventImageFiles().get(0), Toast.LENGTH_SHORT).show();
+        tvTimeEvent.setText(item.getBeginDate().toString() + " đến " + item.getEndDate().toString());
         CMStorage.storage.child("images/event/" + item.getEventImageFiles().get(0))
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        try{
+                        try {
                             Glide
                                     .with(context)
                                     .load(uri.toString())
-                                    .into((ImageView)row.findViewById(R.id.imgEvent));
-                        }
-                        catch(Exception ex) {
+                                    .into((ImageView) row.findViewById(R.id.imgEvent));
+                        } catch (Exception ex) {
                             Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }

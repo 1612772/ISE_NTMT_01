@@ -35,10 +35,12 @@
             android:layout_below="@id/ratComment"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="@dimen/fab_margin"
+            android:singleLine="true"
             android:drawableRight="@android:drawable/ic_menu_send"
             android:hint="Thêm bình luận"
             android:textColor="#000"
-            android:textColorHint="#646464" />
+            android:textColorHint="#646464"
+            android:background="@drawable/search_form_border"/>
 
         <ListView
             android:id="@+id/lvComment"

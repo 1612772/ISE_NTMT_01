@@ -3,6 +3,7 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
@@ -22,13 +23,15 @@ import com.example.nguyenhuutu.convenientmenu.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class ListDish extends BaseAdapter {
     Context context;
     int inflat;
     List<Dish> dish;
-    View row;
+    /*List<Bitmap> bitmapList = new ArrayList<Bitmap>();*/
+
 
     public ListDish(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
@@ -55,7 +58,7 @@ class ListDish extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        row = inflater.inflate(inflat, null);
+        final View row = inflater.inflate(inflat, null);
 
         // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
 
@@ -83,6 +86,7 @@ class ListDish extends BaseAdapter {
         }
         rbRatingItem.setRating(item.getMaxStar());
         tvPrice.setText("$ "+item.getDishPrice()+" đ");
+
         CMStorage.storage.child("images/dish/" + item.getDishHomeImage())
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -93,6 +97,8 @@ class ListDish extends BaseAdapter {
                                     .with(context)
                                     .load(uri.toString())
                                     .into((ImageView) row.findViewById(R.id.imgFood));
+                            /*ImageView imageView = (ImageView) row.findViewById(R.id.imgFood);
+                            Bitmap bmap = imageView.getDrawingCache();*/
                         } catch (Exception ex) {
                             Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
                         }
@@ -104,6 +110,7 @@ class ListDish extends BaseAdapter {
                         Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
         return row;
     }
 }// CustomAdapter

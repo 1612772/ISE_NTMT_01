@@ -18,13 +18,14 @@ public class CommentRestaurant {
     /**
      * Constructor Methods
      */
-    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar) {
+    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
         this.cmtRestid = _cmtRestId;
         this.cmtRestContent = _cmtRestContent;
         this.cmtRestDate = _cmtRestDate;
         this.restAccount = _restAccount;
         this.userAccount = _userAccount;
         this.cmtRestStar = _cmtRestStar;
+        this.Avatar = _avatar;
     }
 
     /**
@@ -100,8 +101,9 @@ public class CommentRestaurant {
         String _restAccount = document.get("rest_account").toString();
         String _userAccount = document.get("user_account").toString();
         Float _cmtRestStar = ((Number)document.get("cmt_rest_star")).floatValue();
+        String _avatar = (String)document.get("user_avatar");
 
-        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar);
+        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar,_avatar);
     }
 
     /**
@@ -115,7 +117,7 @@ public class CommentRestaurant {
      * @param _cmtRestStar
      * @return
      */
-    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar) {
+    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("cmt_rest_id", _cmtRestId);
@@ -124,7 +126,7 @@ public class CommentRestaurant {
         document.put("rest_account", _restAccount);
         document.put("user_account", _userAccount);
         document.put("cmt_rest_star", _cmtRestStar);
-
+        document.put("user_avatar", _avatar);
         return document;
     }
 }

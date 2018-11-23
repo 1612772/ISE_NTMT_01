@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <AutoCompleteTextView
+    <EditText
         android:id="@+id/search_Dish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,8 @@
         android:drawableLeft="@android:drawable/ic_menu_search"
         android:hint="Tìm kiếm món ăn, thức uống"
         android:textColorHint="#949494"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        android:background="@drawable/search_form_border"/>
     <android.support.design.widget.TabLayout
         android:id="@+id/tabMenu"
         android:layout_below="@id/search_Dish"
@@ -23,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         app:tabTextColor="#000"
         android:background="#ffff"/>
 
@@ -31,6 +33,9 @@
         android:layout_below="@id/tabMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </RelativeLayout>

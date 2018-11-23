@@ -238,12 +238,12 @@
                 {
                     "source": "C:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "3,-1,-1,-1,-1,25",
-                        "startColumns": "4,-1,-1,-1,-1,4",
-                        "startOffsets": "57,-1,-1,-1,-1,902",
-                        "endLines": "8,-1,-1,-1,-1,28",
-                        "endColumns": "12,-1,-1,-1,-1,12",
-                        "endOffsets": "354,-1,-1,-1,-1,1086"
+                        "startLines": "3,-1,15,-1,-1,-1",
+                        "startColumns": "4,-1,4,-1,-1,-1",
+                        "startOffsets": "57,-1,552,-1,-1,-1",
+                        "endLines": "8,-1,16,-1,-1,-1",
+                        "endColumns": "12,-1,57,-1,-1,-1",
+                        "endOffsets": "354,-1,647,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2662,2668,2672,2673,2677,4614",

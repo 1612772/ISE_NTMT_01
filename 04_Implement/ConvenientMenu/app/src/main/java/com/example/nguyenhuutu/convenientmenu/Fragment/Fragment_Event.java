@@ -1,18 +1,22 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -26,9 +30,12 @@ import java.util.List;
 public class Fragment_Event extends Fragment {
     List<Event> dataList = new ArrayList<Event>();
     ListView listEvent;
+    View view;
+    ListEvent adapter;
+
     @SuppressLint("ValidFragment")
     public Fragment_Event() {
-        CMDB.db.collection("event").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        CMDB.db.collection("event").whereEqualTo("rest_account",Restaurant_Detail.idRestaurant).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -40,8 +47,10 @@ public class Fragment_Event extends Fragment {
                             Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
-                }else
-                {
+                    /*adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
+                    listEvent.setAdapter(adapter);*/
+
+                } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                 }
             }
@@ -49,17 +58,21 @@ public class Fragment_Event extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.tab_events, container, false);
+        view = inflater.inflate(R.layout.tab_events, container, false);
         listEvent = view.findViewById(R.id.lvEvents);
-        ListEvent adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
+        adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
         listEvent.setAdapter(adapter);
 
+        listEvent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Nhấp vào Item Event
+            }
+        });
         return view;
     }
-
 }

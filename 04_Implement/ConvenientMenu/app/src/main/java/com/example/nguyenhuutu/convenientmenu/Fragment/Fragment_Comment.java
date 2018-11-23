@@ -4,15 +4,21 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.AppCompatRatingBar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -25,41 +31,91 @@ public class Fragment_Comment extends Fragment {
 
     List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
     ListView listComment;
+    AppCompatRatingBar rbRating;
+    EditText txtComment;
+    ListComment adapter;
+    boolean isLoaded = false;
+
     public Fragment_Comment() {
         // Required empty public constructor
-        CMDB.db.collection("comment_restaurant").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
+        CMDB.db.collection("comment_restaurant")
+                .whereEqualTo("rest_account", Restaurant_Detail.idRestaurant)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
 
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        try {
-                            dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
-                        } catch (Exception ex) {
-                            Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                try {
+                                    dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
+                                } catch (Exception ex) {
+                                    Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
                     }
-                }else
-                {
-                    Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-
+                });
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.tab_comments, container, false);
         listComment = view.findViewById(R.id.lvComment);
-        ListComment adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
+        if (!isLoaded) {
+            adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
+            isLoaded=true;
+        }
         listComment.setAdapter(adapter);
 
+        txtComment = view.findViewById(R.id.txtComment);
+        rbRating = view.findViewById(R.id.rbRating);
+        txtComment.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    switch (keyCode) {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            SendComment();
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
+        txtComment.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_RIGHT = 2;
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (txtComment.getRight() - txtComment.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        // your action here
+                        SendComment();
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+        listComment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Nhấp vào item comment
+            }
+        });
         return view;
+    }
+
+    void SendComment() {
+        // CommentRestaurant.createCommentRestaurantData()
     }
 
 }
