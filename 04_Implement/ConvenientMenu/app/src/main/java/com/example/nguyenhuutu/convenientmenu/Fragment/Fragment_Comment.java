@@ -143,7 +143,7 @@ public class Fragment_Comment extends Fragment {
     }
 
     void SendComment() {
-       CommentRestaurant commentRestaurant = CommentRestaurant.createCommentRestaurantData(CommentRestaurant.createCommentRestId())
+      // CommentRestaurant commentRestaurant = CommentRestaurant.createCommentRestaurantData(CommentRestaurant.createCommentRestId())
     }
 
 }
