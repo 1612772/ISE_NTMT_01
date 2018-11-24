@@ -31,17 +31,13 @@ import java.util.List;
 class ListComment extends BaseAdapter {
     Context context;
     int inflat;
-    View row;
-    boolean isLoaded = false;
-    List<Drawable> bitmapList = new ArrayList<Drawable>();
-
     List<CommentRestaurant> commentRestaurants;
+    List<Bitmap> bitmapList = new ArrayList<Bitmap>();
 
     public ListComment(Context context, int inflat, List<CommentRestaurant> commentRestaurants) {
         this.inflat = inflat;
         this.context = context;
         this.commentRestaurants = commentRestaurants;
-        LoadImage();
     }
 
     @Override
@@ -62,15 +58,13 @@ class ListComment extends BaseAdapter {
     @Override
     public View getView(int position, final View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        row = inflater.inflate(inflat, null);
+        View row = inflater.inflate(inflat, null);
 
         CircularImageView imgComment = (CircularImageView) row.findViewById(R.id.imgAvatar);
-
         TextView tvName = (TextView) row.findViewById(R.id.tvName);
         TextView tvTimeRating = (TextView) row.findViewById(R.id.tvTimeRating);
         TextView tvComment = (TextView) row.findViewById(R.id.tvComment);
         RatingBar rbRating = (RatingBar) row.findViewById(R.id.rbRating);
-        ImageView imgAvatar = (ImageView) row.findViewById(R.id.imgAvatar);
 
         CommentRestaurant item = commentRestaurants.get(position);
 
@@ -78,62 +72,9 @@ class ListComment extends BaseAdapter {
         tvTimeRating.setText(item.getCmtRestDate());
         tvComment.setText(item.getCmtRestContent());
         rbRating.setRating(item.getCmtRestStar());
-/*        if(bitmapList.get(0) != null)
-        {
-            imgAvatar.setImageDrawable(bitmapList.get(0));
-        }*/
-        /*if (!isLoaded) {
 
-            CMStorage.storage.child("images/comment/" + item.getAvatar())
-                    .getDownloadUrl()
-                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            try {
-                                Glide
-                                        .with(context)
-                                        .load(uri.toString())
-                                        .into((ImageView) row.findViewById(R.id.imgAvatar));
-                            } catch (Exception ex) {
-                                Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+        imgComment.setImageBitmap(item.getImageAvatar(context));
 
-        }*/
-        //imgComment.setImageResource(R.drawable.more);
         return row;
-    }
-
-    void LoadImage() {
-        int mount = getCount();
-        for (int i = 0; i < mount; i++) {
-            CommentRestaurant item = commentRestaurants.get(i);
-
-            CMStorage.storage.child("images/comment/" + item.getAvatar())
-                    .getDownloadUrl()
-                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            try {
-
-                            } catch (Exception ex) {
-                                Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
     }
 }// CustomAdapter

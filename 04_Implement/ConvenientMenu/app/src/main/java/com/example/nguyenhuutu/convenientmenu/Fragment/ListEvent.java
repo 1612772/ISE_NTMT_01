@@ -2,30 +2,24 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
-import android.support.annotation.NonNull;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class ListEvent extends BaseAdapter {
     Context context;
     int inflat;
     List<Event> event;
-
+    List<Bitmap> bitmapList = new ArrayList<Bitmap>();
 
     public ListEvent(Context context, int inflat, List<Event> event) {
         this.inflat = inflat;
@@ -51,10 +45,9 @@ class ListEvent extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        final View row = inflater.inflate(inflat, null);
+        View row = inflater.inflate(inflat, null);
 
-        // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
-
+        ImageView imgEvent = (ImageView) row.findViewById(R.id.imgEvent);
         TextView tvTitleEvent = (TextView) row.findViewById(R.id.tvTitleEvent);
         TextView tvTimeEvent = (TextView) row.findViewById(R.id.tvTimeEvent);
         TextView tvDescriptionEvent = (TextView) row.findViewById(R.id.tvDescriptionEvent);
@@ -63,28 +56,9 @@ class ListEvent extends BaseAdapter {
 
         tvDescriptionEvent.setText(item.getEventContent());// Không thấy thuộc tính title
         tvTitleEvent.setText(item.getEventContent());
-        tvTimeEvent.setText(item.getBeginDate().toString() + " đến " + item.getEndDate().toString());
-        CMStorage.storage.child("images/event/" + item.getEventImageFiles().get(0))
-                .getDownloadUrl()
-                .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        try {
-                            Glide
-                                    .with(context)
-                                    .load(uri.toString())
-                                    .into((ImageView) row.findViewById(R.id.imgEvent));
-                        } catch (Exception ex) {
-                            Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        tvTimeEvent.setText(item.getBeginDateFormat() + " đến " + item.getEndDateFormat());
+        imgEvent.setImageBitmap(item.getImageEvent(context));
+
         return row;
     }
 }// CustomAdapter

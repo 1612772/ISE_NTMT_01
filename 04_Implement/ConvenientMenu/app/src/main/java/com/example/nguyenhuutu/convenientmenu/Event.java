@@ -1,18 +1,31 @@
 package com.example.nguyenhuutu.convenientmenu;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.icu.text.DateFormat;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
-public class Event implements Comparable{
+public class Event implements Comparable {
     /**
      * Properties
      */
@@ -23,7 +36,7 @@ public class Event implements Comparable{
     private Date endDate;
     private String restAccount;
     private Date datePublish;
-
+    private Bitmap imageEvent;
     public static int compareProperty;
     public final static int DATE = 0;
 
@@ -56,26 +69,58 @@ public class Event implements Comparable{
     }
 
     public Date getBeginDate() {
-        return beginDate;
+        return this.beginDate;
     }
 
     public Date getEndDate() {
-        return endDate;
+        return this.endDate;
+    }
+
+    public String getBeginDateFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return simpleDateFormat.format(beginDate);
+    }
+
+    public String getEndDateFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return simpleDateFormat.format(endDate);
     }
 
     public String getRestAccount() {
         return restAccount;
     }
 
-    public Date getDatePublish() { return datePublish; }
+    public Date getDatePublish() {
+        return datePublish;
+    }
 
+
+    public Bitmap getImageEvent() {
+        return imageEvent;
+    }
+
+    public void setImageEvent(Bitmap imageEvent) {
+        this.imageEvent = imageEvent;
+    }
+
+    public Bitmap getImageEvent(Context context) {
+        if (imageEvent != null) {
+            return imageEvent;
+        }else
+        {
+            return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
+        }
+    }
     /**
      * Other methods
      */
 
     /**
      * createEventId()
-     *  - Create new id for event
+     * - Create new id for event
+     *
      * @param idNum
      * @return String
      */
@@ -84,14 +129,11 @@ public class Event implements Comparable{
 
         if (idNum < 10) {
             newId = String.format("EVENT000%d", idNum);
-        }
-        else if (idNum < 100) {
+        } else if (idNum < 100) {
             newId = String.format("EVENT00%d", idNum);
-        }
-        else if (idNum < 1000) {
+        } else if (idNum < 1000) {
             newId = String.format("EVENT0%d", idNum);
-        }
-        else {
+        } else {
             newId = String.format("EVENT%d", idNum);
         }
 
@@ -100,24 +142,25 @@ public class Event implements Comparable{
 
     /**
      * loadEvent()
-     *  - Load Event data from document
+     * - Load Event data from document
+     *
      * @param document
      * @return Event
      */
     public static Event loadEvent(Map<String, Object> document) {
         String _eventId = document.get("event_id").toString();
         String _eventContent = document.get("event_content").toString();
-        List<String> _eventImageFiles = (ArrayList)document.get("event_image_files");
-        Date _beginDate = (Date)document.get("begin_date");
-        Date _endDate = (Date)document.get("end_date");
-        String _restAccount= document.get("rest_account").toString();
-        Date _datePublish = (Date)document.get("date_publish");
-
+        List<String> _eventImageFiles = (ArrayList) document.get("event_image_files");
+        Date _beginDate = (Date) document.get("begin_date");
+        Date _endDate = (Date) document.get("end_date");
+        String _restAccount = document.get("rest_account").toString();
+        Date _datePublish = (Date) document.get("date_publish");
         return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish);
     }
 
     /**
      * Create event's data for insert to database
+     *
      * @param _eventId
      * @param _eventContent
      * @param _eventImageFiles
@@ -129,7 +172,7 @@ public class Event implements Comparable{
     public static Map<String, Object> createEventData(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount) {
         Map<String, Object> document = new HashMap<>();
 
-        document.put("event_id",_eventId);
+        document.put("event_id", _eventId);
         document.put("event_content", _eventContent);
         document.put("event_image_files", _eventImageFiles);
         document.put("begin_date", new Timestamp(_beginDate.getTime()));
@@ -137,12 +180,14 @@ public class Event implements Comparable{
         document.put("rest_account", _restAccount);
         document.put("date_publish", new Timestamp((new Date()).getTime()));
 
+        // thiếu upload ảnh
+
         return document;
     }
 
     @Override
     public int compareTo(@NonNull Object o) {
-        Event eventCmp = (Event)o;
+        Event eventCmp = (Event) o;
         int result = 0;
 
         if (compareProperty == DATE) {

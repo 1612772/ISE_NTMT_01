@@ -1,5 +1,9 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +18,7 @@ public class CommentRestaurant {
     private String userAccount;
     private Float cmtRestStar;
     private String Avatar;
+    private Bitmap imageAvatar;
 
     /**
      * Constructor Methods
@@ -31,6 +36,18 @@ public class CommentRestaurant {
     /**
      * Getter methods
      */
+    public Bitmap getImageAvatar(Context context) {
+        if (imageAvatar != null) {
+            return imageAvatar;
+        }else
+        {
+            return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
+        }
+    }
+
+    public void setImageAvatar(Bitmap imageAvatar) {
+        this.imageAvatar = imageAvatar;
+    }
     public String getCmtRestid() {
         return cmtRestid;
     }

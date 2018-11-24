@@ -1,10 +1,12 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatRatingBar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -16,10 +18,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
+import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
+import com.example.nguyenhuutu.convenientmenu.Const;
+import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -29,12 +36,11 @@ import java.util.List;
 
 public class Fragment_Comment extends Fragment {
 
-    List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
+    public static List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
     ListView listComment;
     AppCompatRatingBar rbRating;
     EditText txtComment;
     ListComment adapter;
-    boolean isLoaded = false;
 
     public Fragment_Comment() {
         // Required empty public constructor
@@ -49,10 +55,35 @@ public class Fragment_Comment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 try {
                                     dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
+
                                 } catch (Exception ex) {
                                     Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
+                            int mount = dataList.size();
+                            for (int i = 0; i < mount; i++) {
+                                final int finalI = i;
+
+                                CMStorage.storage.child("images/comment/" + dataList.get(i).getAvatar())
+                                        .getDownloadUrl()
+                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                            @Override
+                                            public void onSuccess(Uri uri) {
+                                                try {
+
+                                                    LoadImage loadImage = new LoadImage();
+                                                    loadImage.execute(uri.toString(), finalI, Const.COMMENT);
+                                                } catch (Exception ex) {
+                                                }
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception exception) {
+                                            }
+                                        });
+                            }
+
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
@@ -67,10 +98,7 @@ public class Fragment_Comment extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_comments, container, false);
         listComment = view.findViewById(R.id.lvComment);
-        if (!isLoaded) {
-            adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
-            isLoaded=true;
-        }
+        adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
         listComment.setAdapter(adapter);
 
         txtComment = view.findViewById(R.id.txtComment);
@@ -115,7 +143,7 @@ public class Fragment_Comment extends Fragment {
     }
 
     void SendComment() {
-        // CommentRestaurant.createCommentRestaurantData()
+       CommentRestaurant commentRestaurant = CommentRestaurant.createCommentRestaurantData(CommentRestaurant.createCommentRestId())
     }
 
 }

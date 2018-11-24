@@ -58,10 +58,9 @@ class ListDish extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        final View row = inflater.inflate(inflat, null);
+        View row = inflater.inflate(inflat, null);
 
-        // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
-
+        ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
@@ -86,31 +85,7 @@ class ListDish extends BaseAdapter {
         }
         rbRatingItem.setRating(item.getMaxStar());
         tvPrice.setText("$ "+item.getDishPrice()+" đ");
-
-        CMStorage.storage.child("images/dish/" + item.getDishHomeImage())
-                .getDownloadUrl()
-                .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        try {
-                            Glide
-                                    .with(context)
-                                    .load(uri.toString())
-                                    .into((ImageView) row.findViewById(R.id.imgFood));
-                            /*ImageView imageView = (ImageView) row.findViewById(R.id.imgFood);
-                            Bitmap bmap = imageView.getDrawingCache();*/
-                        } catch (Exception ex) {
-                            Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
+        imgFoodDrink.setImageBitmap(item.getDishImage(context));
         return row;
     }
 }// CustomAdapter

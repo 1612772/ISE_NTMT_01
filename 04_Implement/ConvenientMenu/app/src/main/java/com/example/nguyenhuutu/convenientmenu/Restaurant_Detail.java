@@ -89,6 +89,22 @@ public class Restaurant_Detail extends AppCompatActivity {
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pagerAdapterRestaurant.getItem(tab.getPosition()).onStart();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                onTabSelected(tab);
+            }
+        });
         imgBackground = (ImageView)findViewById(R.id.imgBackground);
         lbNameRestaurant =(TextView)findViewById(R.id.lbNameRestaurant);
         ratingPerTotal = (TextView)findViewById(R.id.ratingPerTotal);

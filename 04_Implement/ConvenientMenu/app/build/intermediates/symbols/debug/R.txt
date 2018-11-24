@@ -1785,7 +1785,7 @@ int id imageSlider 0x7f09009b
 int id imgAvatar 0x7f09009c
 int id imgBackground 0x7f09009d
 int id imgEvent 0x7f09009e
-int id imgFood 0x7f09009f
+int id imgFoodDrink 0x7f09009f
 int id imgPopupMenu 0x7f0900a0
 int id indicator 0x7f0900a1
 int id info 0x7f0900a2
