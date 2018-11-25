@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -114,10 +116,9 @@ public class HighRatingRestaurantFragment extends Fragment {
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            //Intent restIntent = new Intent(getActivity(), RestaurantDetail.class);
-                                            //restIntent.putExtra("rest_account", rest.getRestAccount());
-                                            //startActivity(restIntent);
-                                            Toast.makeText(getActivity(), rest.getRestAccount() + "-" + rest.getRestName(), Toast.LENGTH_SHORT).show();
+                                            Intent restIntent = new Intent(getActivity(), Restaurant_Detail.class);
+                                            restIntent.putExtra("rest_account", rest.getRestAccount());
+                                            startActivity(restIntent);
                                         }
                                     });
 
