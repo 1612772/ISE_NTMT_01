@@ -54,6 +54,9 @@ public class Restaurant_Detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
 
+        Bundle data = getIntent().getExtras();
+        idRestaurant = data.getString("rest_account");
+
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);
         tabLayout = (TabLayout) findViewById(R.id.tabRestaurantDetail);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarRestaurant);
