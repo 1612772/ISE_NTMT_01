@@ -107,11 +107,11 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int bottom = 0x7f09002b;
-        public static final int none = 0x7f090103;
-        public static final int top = 0x7f090172;
-        public static final int triangle = 0x7f09017a;
-        public static final int underline = 0x7f090186;
+        public static final int bottom = 0x7f09002c;
+        public static final int none = 0x7f090106;
+        public static final int top = 0x7f090177;
+        public static final int triangle = 0x7f09017f;
+        public static final int underline = 0x7f09018b;
     }
     public static final class integer {
         private integer() {}
@@ -125,11 +125,11 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int TextAppearance_TabPageIndicator = 0x7f10016c;
-        public static final int Theme_PageIndicatorDefaults = 0x7f1001a0;
-        public static final int Widget = 0x7f1001b4;
-        public static final int Widget_IconPageIndicator = 0x7f100209;
-        public static final int Widget_TabPageIndicator = 0x7f100230;
+        public static final int TextAppearance_TabPageIndicator = 0x7f10016d;
+        public static final int Theme_PageIndicatorDefaults = 0x7f1001a1;
+        public static final int Widget = 0x7f1001b5;
+        public static final int Widget_IconPageIndicator = 0x7f10020a;
+        public static final int Widget_TabPageIndicator = 0x7f100231;
     }
     public static final class styleable {
         private styleable() {}

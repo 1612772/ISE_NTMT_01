@@ -22,6 +22,9 @@ public class Restaurant implements Comparable {
     private String restHomeImage;
     private Double maxStar;
     private Long viewedNumber;
+    private String restPhone;
+    private String restFacebook;
+    private Long totalRating;
     public static int compareProperty;
 
     public final static int STAR = 0;
@@ -43,7 +46,7 @@ public class Restaurant implements Comparable {
         this.viewedNumber = ZERO.longValue();
     }
 
-    public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber) {
+    public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber, Long _totalRating, String _restPhone, String _restFacebook) {
 
         this.restAccount = _restAccount;
         this.restPassword = _restPassword;
@@ -54,6 +57,9 @@ public class Restaurant implements Comparable {
         this.restMoreImages = _restMoreImages;
         this.maxStar = _maxStar;
         this.viewedNumber = _viewedNumber;
+        this.totalRating = _totalRating;
+        this.restPhone = _restPhone;
+        this.restFacebook = _restFacebook;
     }
 
     /**
@@ -94,6 +100,9 @@ public class Restaurant implements Comparable {
     public Long getViewedNumber() {
         return viewedNumber;
     }
+    public  Long getTotalRating(){return this.totalRating;}
+    public String getRestPhone(){return this.restPhone;}
+    public String getRestFacebook(){return this.restFacebook;}
 
     /**
      * loadRestaurant()
@@ -110,8 +119,11 @@ public class Restaurant implements Comparable {
         List<String> _restMoreImages = (ArrayList)document.get("rest_more_image_files");
         Double _maxStar = ((Number)document.get("max_star")).doubleValue();
         Long _viewedNumber = (Long)document.get("viewed_number");
+        Long _totalRating = (Long)document.get("rest_total_rating");
+        String _restPhone = (String)document.get("rest_phone");
+        String _restFacebook = (String)document.get("rest_facebook");
 
-        return new Restaurant(_restAccount, _restPassword, _restName, _restDdescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber);
+        return new Restaurant(_restAccount, _restPassword, _restName, _restDdescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber,_totalRating,_restPhone,_restFacebook);
     }
 
     /**
@@ -126,7 +138,7 @@ public class Restaurant implements Comparable {
      * @param _restMoreImages
      * @return Map<String, Object>
      */
-    public static Map<String, Object> createRestaurantData(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber) {
+    public static Map<String, Object> createRestaurantData(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber,Long _totalRating, String _restPhone, String _restFacebook) {
         Map<String, Object> restData = new HashMap<>(); // Save data of dish
 
         restData.put("rest_account", _restAccount);
@@ -138,7 +150,9 @@ public class Restaurant implements Comparable {
         restData.put("rest_more_images", _restMoreImages);
         restData.put("max_star", _maxStar);
         restData.put("viewed_number", _viewedNumber);
-
+        restData.put("rest_total_rating",_totalRating);
+        restData.put("rest_phone",_restPhone);
+        restData.put("rest_facebook",_restFacebook);
         return restData;
     }
 

@@ -46,6 +46,7 @@ public class HighRatingDishFragment extends Fragment {
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         listContent = (LinearLayout)inflater.inflate(R.layout.high_rating_dish_fragment, null);
+
         // get all dish in database
         CMDB.db.collection("dish")
                 .get()

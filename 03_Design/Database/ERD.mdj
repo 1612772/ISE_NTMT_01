@@ -756,11 +756,11 @@
 									"containerExtending": false,
 									"left": 760,
 									"top": 45,
-									"width": 157.181640625,
+									"width": 186.8125,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "User",
+									"text": "Customer",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -795,7 +795,7 @@
 											"containerExtending": false,
 											"left": 765,
 											"top": 68,
-											"width": 147.181640625,
+											"width": 176.8125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -819,7 +819,7 @@
 											"containerExtending": false,
 											"left": 765,
 											"top": 83,
-											"width": 147.181640625,
+											"width": 176.8125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -843,7 +843,7 @@
 											"containerExtending": false,
 											"left": 765,
 											"top": 98,
-											"width": 147.181640625,
+											"width": 176.8125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -867,7 +867,7 @@
 											"containerExtending": false,
 											"left": 765,
 											"top": 113,
-											"width": 147.181640625,
+											"width": 176.8125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -891,7 +891,31 @@
 											"containerExtending": false,
 											"left": 765,
 											"top": 128,
-											"width": 147.181640625,
+											"width": 176.8125,
+											"height": 13,
+											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFnO6Hx+9L+OPM=",
+											"_parent": {
+												"$ref": "AAAAAAFl/x2wNwCVG44="
+											},
+											"model": {
+												"$ref": "AAAAAAFnO6Hw6tL7yqo="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 765,
+											"top": 143,
+											"width": 176.8125,
 											"height": 13,
 											"autoResize": false
 										}
@@ -907,8 +931,8 @@
 									"containerExtending": false,
 									"left": 760,
 									"top": 63,
-									"width": 157.181640625,
-									"height": 83,
+									"width": 186.8125,
+									"height": 98,
 									"autoResize": false
 								}
 							],
@@ -923,8 +947,8 @@
 							"containerExtending": false,
 							"left": 760,
 							"top": 40,
-							"width": 157.181640625,
-							"height": 113,
+							"width": 186.8125,
+							"height": 121,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFl/x2wKQCUQSk="
@@ -2082,7 +2106,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 941,
+									"left": 971,
 									"top": 75,
 									"width": 0,
 									"height": 13,
@@ -2146,7 +2170,7 @@
 								"$ref": "AAAAAAFl/x2wJgCTKxw="
 							},
 							"lineStyle": 2,
-							"points": "916:96;976:96;976:192",
+							"points": "946:96;976:96;976:192",
 							"nameLabel": {
 								"$ref": "AAAAAAFmcrK3/1qHDd4="
 							},
@@ -2215,7 +2239,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 826,
-									"top": 171,
+									"top": 179,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -2278,7 +2302,7 @@
 								"$ref": "AAAAAAFl/x2wJgCTKxw="
 							},
 							"lineStyle": 2,
-							"points": "811:152;811:384;766:384",
+							"points": "811:160;811:384;766:384",
 							"nameLabel": {
 								"$ref": "AAAAAAFmcrPaEVqneWo="
 							},
@@ -2479,7 +2503,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 871,
-									"top": 171,
+									"top": 179,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -2542,7 +2566,7 @@
 								"$ref": "AAAAAAFl/x2wJgCTKxw="
 							},
 							"lineStyle": 2,
-							"points": "856:152;856:397;920:397",
+							"points": "856:160;856:397;920:397",
 							"nameLabel": {
 								"$ref": "AAAAAAFmcrUBgFrcXlo="
 							},
@@ -3535,7 +3559,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFl/wTOBP9jC4s="
 					},
-					"name": "User",
+					"name": "Customer",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -3638,7 +3662,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFl/x2wIgCR2mA="
 							},
-							"name": "user_account",
+							"name": "cus_account",
 							"length": 0,
 							"primaryKey": true,
 							"foreignKey": false,
@@ -3651,7 +3675,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFl/x2wIgCR2mA="
 							},
-							"name": "user_password",
+							"name": "cus_password",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
@@ -3664,7 +3688,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFl/x2wIgCR2mA="
 							},
-							"name": "fullname",
+							"name": "cus_firstname",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
@@ -3677,7 +3701,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFl/x2wIgCR2mA="
 							},
-							"name": "user_email",
+							"name": "cus_email",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
@@ -3690,7 +3714,20 @@
 							"_parent": {
 								"$ref": "AAAAAAFl/x2wIgCR2mA="
 							},
-							"name": "avatar_image_file",
+							"name": "cus_avatar_image_file",
+							"length": 0,
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFnO6Hw6tL7yqo=",
+							"_parent": {
+								"$ref": "AAAAAAFl/x2wIgCR2mA="
+							},
+							"name": "cus_lastname",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
