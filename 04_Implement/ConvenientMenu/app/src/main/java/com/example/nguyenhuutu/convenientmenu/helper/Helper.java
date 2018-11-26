@@ -3,22 +3,13 @@ package com.example.nguyenhuutu.convenientmenu.helper;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
-import android.util.Log;
 import android.view.Display;
-import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.google.android.gms.flags.impl.SharedPreferencesFactory.getSharedPreferences;
-import static java.lang.Boolean.FALSE;
+import static org.json.JSONObject.NULL;
 
 public class Helper {
     public static String LocalDbName = "convenient_menu";
@@ -35,7 +26,6 @@ public class Helper {
 
         return size;
     }
-
 //    public static SQLiteDatabase connectLocalDB(Activity activity) {
 //        SQLiteDatabase db = SQLiteDatabase.openDatabase(activity.getApplication().getFilesDir() + "/" + LocalDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);
 //        return db;
@@ -55,42 +45,43 @@ public class Helper {
 
     public static JSONObject getLoginedUser(Activity activity) {
         JSONObject result = new JSONObject();
+        // init
+        try {
+            result.put("logined", false);
+            result.put("username", "");
+            result.put("password", "");
+            result.put("isRest", false);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
 
-        if (pref.contains("usersString")) {
+        if (pref.contains("logined_user")) {
             try {
-                JSONObject user;
-                JSONArray usersArr = new JSONArray(pref.getString("usersString","[]").toString());
-                int count = usersArr.length();
-                boolean flag = false;
-                for (int index = 0; index < count; index++) {
-                    user = usersArr.getJSONObject(index);
-                    if (user.getBoolean("logined") == true) {
-                        flag = true;
-                        result.put("exists", true);
-                        result.put("username", user.getString("username"));
-                        result.put("password", user.getString("password"));
-                        result.put("isRest", user.getBoolean("isRest"));
-                        break;
-                    }
-                }
-
-                if (flag == false) {
-                    result.put("exists", false);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        else {
-            try {
-                result.put("exists", false);
+                result = new JSONObject(pref.getString("logined_user", "").toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
         return result;
+    }
+
+    public static void setSampleUserInLocal(Activity activity) {
+        SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
+        JSONObject user = new JSONObject();
+        try {
+            user.put("logined", true);
+            user.put("username", "tunh");
+            user.put("password", "Nht13101997");
+            user.put("isRest", false);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("logined_user", user.toString());
+        editor.commit();
     }
 }

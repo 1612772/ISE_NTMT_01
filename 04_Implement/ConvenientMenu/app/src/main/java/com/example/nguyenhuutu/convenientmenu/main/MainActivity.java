@@ -1,5 +1,7 @@
 package com.example.nguyenhuutu.convenientmenu.main;
 
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -11,12 +13,19 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
+import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.main_menu_icon);
 
+        Helper.setSampleUserInLocal(this);
         setMainMenu();
         configMainMenu();
 
@@ -57,14 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setMainMenu() {
         JSONObject loginedUserJson = new JSONObject();
+
         try{
             loginedUserJson = Helper.getLoginedUser(this);
-        }
-        catch(Exception ex) {
 
-        }
-        try{
-            if (loginedUserJson.getBoolean("exists") == true) {
+            if (loginedUserJson.getBoolean("logined") == true) {
                 if (loginedUserJson.getBoolean("isRest") == true) {
                     mainMenu.inflateMenu(R.menu.main_menu_restaurant_login);
                 }
@@ -78,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 setHeaderOfMainMenu(R.layout.nav_header_non_login, loginedUserJson);
             }
         }
-        catch(Exception ex){
-
+        catch(Exception ex) {
+            Toast.makeText(this, "get logined user error: " + ex.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -88,7 +95,13 @@ public class MainActivity extends AppCompatActivity {
         mainMenu.addHeaderView(getLayoutInflater().inflate(id, null));
 
         if (id == R.layout.nav_header_login) {
-            Toast.makeText(this, "user logined", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "header login", Toast.LENGTH_SHORT).show();
+            try {
+                UserInfoTask userInfo = new UserInfoTask();
+                userInfo.execute(data.getString("username"), data.getBoolean("isRest"));
+            } catch (JSONException e) {
+                Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -167,5 +180,104 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.mainContent, frag);
         ft.commit();
+    }
+
+    private void updateInfoHeaderMainMenu(String data) {
+        try{
+            JSONObject result = new JSONObject(data);
+            View headerView = mainMenu.getHeaderView(0);
+            final ImageView userAvatar = headerView.findViewById(R.id.userAvatar);
+            TextView userAccountName = headerView.findViewById(R.id.userAccountName);
+            Toast.makeText(this, "update", Toast.LENGTH_SHORT).show();
+            if (result.getBoolean("isSuccess") == true) {
+                if (result.getJSONObject("data").getBoolean("isRest") == true) {
+                    userAccountName.setText(result.getJSONObject("data").getString("name"));
+
+                    CMStorage.storage.child("images/restaurant/" + result.getJSONObject("data").getString("homeImageFile"))
+                            .getDownloadUrl()
+                            .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    try{
+                                        Glide
+                                                .with(getApplicationContext())
+                                                .load(uri.toString())
+                                                .into(userAvatar);
+                                    }
+                                    catch(Exception ex) {
+                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+                else {
+                    String name = result.getJSONObject("data").getString("lastname");
+                    name += " ";
+                    name += result.getJSONObject("data").getString("firstname");
+                    userAccountName.setText(name);
+
+                    CMStorage.storage.child("images/customer/" + result.getJSONObject("data").getString("avatarImageFile"))
+                            .getDownloadUrl()
+                            .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    try{
+                                        Glide
+                                                .with(getApplicationContext())
+                                                .load(uri.toString())
+                                                .into(userAvatar);
+                                    }
+                                    catch(Exception ex) {
+                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            }
+            else {
+                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch(Exception ex){
+            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    class UserInfoTask extends AsyncTask<Object, Void, String> {
+
+        @Override
+        protected String doInBackground(Object... data) {
+            String result = "";
+            String url = "https://convenientmenu.herokuapp.com/user/";
+            if ((boolean)data[1] == true) {
+                url += "restaurant/" + data[0];
+            }
+            else {
+                url += "customer/" + data[0];
+            }
+            RequestServer request = new RequestServer(url, "GET");
+            result = request.executeRequest();
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            updateInfoHeaderMainMenu(result);
+        }
     }
 }
