@@ -56,25 +56,25 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int default_circle_indicator_fill_color = 0x7f050041;
-        public static final int default_circle_indicator_page_color = 0x7f050042;
-        public static final int default_circle_indicator_stroke_color = 0x7f050043;
-        public static final int default_line_indicator_selected_color = 0x7f050044;
-        public static final int default_line_indicator_unselected_color = 0x7f050045;
-        public static final int default_title_indicator_footer_color = 0x7f050046;
-        public static final int default_title_indicator_selected_color = 0x7f050047;
-        public static final int default_title_indicator_text_color = 0x7f050048;
-        public static final int default_underline_indicator_selected_color = 0x7f050049;
-        public static final int vpi__background_holo_dark = 0x7f0501d6;
-        public static final int vpi__background_holo_light = 0x7f0501d7;
-        public static final int vpi__bright_foreground_disabled_holo_dark = 0x7f0501d8;
-        public static final int vpi__bright_foreground_disabled_holo_light = 0x7f0501d9;
-        public static final int vpi__bright_foreground_holo_dark = 0x7f0501da;
-        public static final int vpi__bright_foreground_holo_light = 0x7f0501db;
-        public static final int vpi__bright_foreground_inverse_holo_dark = 0x7f0501dc;
-        public static final int vpi__bright_foreground_inverse_holo_light = 0x7f0501dd;
-        public static final int vpi__dark_theme = 0x7f0501de;
-        public static final int vpi__light_theme = 0x7f0501df;
+        public static final int default_circle_indicator_fill_color = 0x7f050042;
+        public static final int default_circle_indicator_page_color = 0x7f050043;
+        public static final int default_circle_indicator_stroke_color = 0x7f050044;
+        public static final int default_line_indicator_selected_color = 0x7f050045;
+        public static final int default_line_indicator_unselected_color = 0x7f050046;
+        public static final int default_title_indicator_footer_color = 0x7f050047;
+        public static final int default_title_indicator_selected_color = 0x7f050048;
+        public static final int default_title_indicator_text_color = 0x7f050049;
+        public static final int default_underline_indicator_selected_color = 0x7f05004a;
+        public static final int vpi__background_holo_dark = 0x7f0501d9;
+        public static final int vpi__background_holo_light = 0x7f0501da;
+        public static final int vpi__bright_foreground_disabled_holo_dark = 0x7f0501db;
+        public static final int vpi__bright_foreground_disabled_holo_light = 0x7f0501dc;
+        public static final int vpi__bright_foreground_holo_dark = 0x7f0501dd;
+        public static final int vpi__bright_foreground_holo_light = 0x7f0501de;
+        public static final int vpi__bright_foreground_inverse_holo_dark = 0x7f0501df;
+        public static final int vpi__bright_foreground_inverse_holo_light = 0x7f0501e0;
+        public static final int vpi__dark_theme = 0x7f0501e1;
+        public static final int vpi__light_theme = 0x7f0501e2;
     }
     public static final class dimen {
         private dimen() {}
@@ -108,10 +108,10 @@ public final class R {
         private id() {}
 
         public static final int bottom = 0x7f09002c;
-        public static final int none = 0x7f090105;
-        public static final int top = 0x7f090172;
-        public static final int triangle = 0x7f09017a;
-        public static final int underline = 0x7f090186;
+        public static final int none = 0x7f090106;
+        public static final int top = 0x7f090177;
+        public static final int triangle = 0x7f09017f;
+        public static final int underline = 0x7f09018b;
     }
     public static final class integer {
         private integer() {}
@@ -125,11 +125,11 @@ public final class R {
     public static final class style {
         private style() {}
 
-        public static final int TextAppearance_TabPageIndicator = 0x7f10016b;
-        public static final int Theme_PageIndicatorDefaults = 0x7f10019f;
-        public static final int Widget = 0x7f1001b3;
-        public static final int Widget_IconPageIndicator = 0x7f100208;
-        public static final int Widget_TabPageIndicator = 0x7f10022f;
+        public static final int TextAppearance_TabPageIndicator = 0x7f10016d;
+        public static final int Theme_PageIndicatorDefaults = 0x7f1001a1;
+        public static final int Widget = 0x7f1001b5;
+        public static final int Widget_IconPageIndicator = 0x7f10020a;
+        public static final int Widget_TabPageIndicator = 0x7f100231;
     }
     public static final class styleable {
         private styleable() {}
