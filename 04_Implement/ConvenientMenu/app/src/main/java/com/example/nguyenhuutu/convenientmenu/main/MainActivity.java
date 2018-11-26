@@ -11,9 +11,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static org.json.JSONObject.NULL;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -48,13 +56,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setMainMenu() {
-        mainMenu.inflateMenu(R.menu.main_menu_non_login);
-        setHeaderOfMainMenu();
+        JSONObject loginedUserJson = new JSONObject();
+        try{
+            loginedUserJson = Helper.getLoginedUser(this);
+        }
+        catch(Exception ex) {
+
+        }
+        try{
+            if (loginedUserJson.getBoolean("exists") == true) {
+                if (loginedUserJson.getBoolean("isRest") == true) {
+                    mainMenu.inflateMenu(R.menu.main_menu_restaurant_login);
+                }
+                else {
+                    mainMenu.inflateMenu(R.menu.main_menu_customer_login);
+                }
+                setHeaderOfMainMenu(R.layout.nav_header_login, loginedUserJson);
+            }
+            else {
+                mainMenu.inflateMenu(R.menu.main_menu_non_login);
+                setHeaderOfMainMenu(R.layout.nav_header_non_login, loginedUserJson);
+            }
+        }
+        catch(Exception ex){
+
+        }
     }
 
-    private void setHeaderOfMainMenu() {
+    private void setHeaderOfMainMenu(int id, JSONObject data) {
         mainMenu.removeHeaderView(mainMenu.getHeaderView(0));
-        mainMenu.addHeaderView(getLayoutInflater().inflate(R.layout.nav_header_non_login, null));
+        mainMenu.addHeaderView(getLayoutInflater().inflate(id, null));
+
+        if (id == R.layout.nav_header_login) {
+            Toast.makeText(this, "user logined", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void configMainMenu() {
@@ -66,16 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-//        List<String> loginedUser = getLoginedUser(activity);
-//        if (loginedUser.size() == 0) {
-//            mainMenu.removeHeaderView(headerView);
-//            headerView = activity.getLayoutInflater().inflate(R.layout.nav_header_non_login, null);
-//            mainMenu.addHeaderView(headerView);
-//        }
-//        else {
-//
-//        }
 
         //mainMenu.getMenu().findItem(R.id.main_menu_home).setVisible(false);
         mainMenu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
