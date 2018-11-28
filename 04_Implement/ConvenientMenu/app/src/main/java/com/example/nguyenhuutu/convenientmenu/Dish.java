@@ -1,8 +1,5 @@
 package com.example.nguyenhuutu.convenientmenu;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
@@ -23,11 +20,9 @@ public class Dish implements Comparable {
     private Integer dishPrice;
     private String dishDescription;
     private String dishHomeImage;
-    private Bitmap dishImage;
     private List<String> dishMoreImages;
     private String dishTypeId;
     private int eventTypeId; // <0:New, >0:Hot
-
     private String restAccount;
     private float maxStar;
 
@@ -77,10 +72,6 @@ public class Dish implements Comparable {
     /**
      * Getter methods for properties
      */
-
-    public void setDishImage(Bitmap dishImage) {
-        this.dishImage = dishImage;
-    }
     public String getDishId() {
         return this.dishId;
     }
@@ -119,15 +110,6 @@ public class Dish implements Comparable {
 
     public int getEventTypeId() {
         return eventTypeId;
-    }
-
-    public Bitmap getDishImage(Context context){
-        if (dishImage != null) {
-            return dishImage;
-        }else
-        {
-            return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
-        }
     }
 
     /**

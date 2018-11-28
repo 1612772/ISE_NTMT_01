@@ -46,7 +46,6 @@ public class NewEventFragment extends Fragment {
     }
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         listContent = (LinearLayout)inflater.inflate(R.layout.new_event_fragment, null);
-
         // get all dish in database
         CMDB.db.collection("event")
                 .get()
@@ -60,7 +59,7 @@ public class NewEventFragment extends Fragment {
                                     dataList.add(Event.loadEvent(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), "Load event error. Please reload", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -90,7 +89,7 @@ public class NewEventFragment extends Fragment {
                                                                 .into((ImageView) eventItemLayout.findViewById(R.id.imageEvent));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), "Image can not be load because of server's error", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
@@ -148,18 +147,18 @@ public class NewEventFragment extends Fragment {
     }
 
     private void filterEvents(List<Event> eventList) {
-        Date nowDate = new Date(); // get now date
+        //List<Event> eventListTemp = new ArrayList<Event>();
+        Date nowDate = new Date();
 
-        int count = eventList.size();
-        int index = 0;
-        while (index < count) {
-            if (eventList.get(index).getEndDate().compareTo(nowDate) < 0) {
-                dataList.remove(index);
-                count--;
-            } else {
-                index++;
+        for (Event event: eventList){
+            if (event.getEndDate().compareTo(nowDate) < 0) {
+                //eventListTemp.add(event);
+                dataList.remove(event);
             }
         }
+
+        //eventList.clear();
+        //eventList = eventListTemp;
     }
 
     private void sortEventFlowDate(List<Event> eventList){

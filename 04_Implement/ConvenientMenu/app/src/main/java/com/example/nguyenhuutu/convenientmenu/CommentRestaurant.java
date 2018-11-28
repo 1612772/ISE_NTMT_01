@@ -1,9 +1,5 @@
 package com.example.nguyenhuutu.convenientmenu;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,36 +14,22 @@ public class CommentRestaurant {
     private String userAccount;
     private Float cmtRestStar;
     private String Avatar;
-    private Bitmap imageAvatar;
 
     /**
      * Constructor Methods
      */
-    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
+    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar) {
         this.cmtRestid = _cmtRestId;
         this.cmtRestContent = _cmtRestContent;
         this.cmtRestDate = _cmtRestDate;
         this.restAccount = _restAccount;
         this.userAccount = _userAccount;
         this.cmtRestStar = _cmtRestStar;
-        this.Avatar = _avatar;
     }
 
     /**
      * Getter methods
      */
-    public Bitmap getImageAvatar(Context context) {
-        if (imageAvatar != null) {
-            return imageAvatar;
-        }else
-        {
-            return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
-        }
-    }
-
-    public void setImageAvatar(Bitmap imageAvatar) {
-        this.imageAvatar = imageAvatar;
-    }
     public String getCmtRestid() {
         return cmtRestid;
     }
@@ -118,9 +100,8 @@ public class CommentRestaurant {
         String _restAccount = document.get("rest_account").toString();
         String _userAccount = document.get("user_account").toString();
         Float _cmtRestStar = ((Number)document.get("cmt_rest_star")).floatValue();
-        String _avatar = (String)document.get("user_avatar");
 
-        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar,_avatar);
+        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar);
     }
 
     /**
@@ -134,7 +115,7 @@ public class CommentRestaurant {
      * @param _cmtRestStar
      * @return
      */
-    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
+    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("cmt_rest_id", _cmtRestId);
@@ -143,7 +124,7 @@ public class CommentRestaurant {
         document.put("rest_account", _restAccount);
         document.put("user_account", _userAccount);
         document.put("cmt_rest_star", _cmtRestStar);
-        document.put("user_avatar", _avatar);
+
         return document;
     }
 }

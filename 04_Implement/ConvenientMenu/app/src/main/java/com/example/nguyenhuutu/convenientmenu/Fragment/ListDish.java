@@ -3,7 +3,6 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
@@ -19,19 +18,18 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
+import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-import java.util.ArrayList;
 import java.util.List;
 
 class ListDish extends BaseAdapter {
     Context context;
     int inflat;
     List<Dish> dish;
-    /*List<Bitmap> bitmapList = new ArrayList<Bitmap>();*/
-
+    View row;
 
     public ListDish(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
@@ -58,9 +56,10 @@ class ListDish extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        View row = inflater.inflate(inflat, null);
+        row = inflater.inflate(inflat, null);
 
-        ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
+        // ImageView imgEvent = (ImageView)row.findViewById(R.id.imgEvent);
+
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
@@ -85,7 +84,27 @@ class ListDish extends BaseAdapter {
         }
         rbRatingItem.setRating(item.getMaxStar());
         tvPrice.setText("$ "+item.getDishPrice()+" đ");
-        imgFoodDrink.setImageBitmap(item.getDishImage(context));
+        CMStorage.storage.child("images/dish/" + item.getDishHomeImage())
+                .getDownloadUrl()
+                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        try {
+                            Glide
+                                    .with(context)
+                                    .load(uri.toString())
+                                    .into((ImageView) row.findViewById(R.id.imgFood));
+                        } catch (Exception ex) {
+                            Toast.makeText(context, ex.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Toast.makeText(context, exception.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
         return row;
     }
 }// CustomAdapter
