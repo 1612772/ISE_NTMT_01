@@ -1,6 +1,7 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
@@ -23,6 +25,7 @@ import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.Restaurant;
 import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,15 +33,24 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class Fragment_Comment extends Fragment {
 
     ListView listComment;
     public static ListComment adapter;
-    AppCompatRatingBar rbRating;
+    RatingBar rbRating;
     EditText txtComment;
 
     public Fragment_Comment() {
@@ -102,7 +114,9 @@ public class Fragment_Comment extends Fragment {
         listComment.setAdapter(adapter);
 
         txtComment = view.findViewById(R.id.txtComment);
-        rbRating = view.findViewById(R.id.rbRating);
+        rbRating = view.findViewById(R.id.ratComment);
+
+
         txtComment.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -143,7 +157,65 @@ public class Fragment_Comment extends Fragment {
     }
 
     void SendComment() {
-      // CommentRestaurant commentRestaurant = CommentRestaurant.createCommentRestaurantData(CommentRestaurant.createCommentRestId())
+        if (rbRating.getRating() != 0 && txtComment.getText().toString()!="") {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = new Date(); // lấy thời gian hệ thống
+            final String stringDate = dateFormat.format(date);
+            Map<String, Object> commentRestaurant = CommentRestaurant.createCommentRestaurantData(
+                    CommentRestaurant.createCommentRestId(10),
+                    txtComment.getText().toString(),
+                    stringDate,
+                    Restaurant_Detail.idRestaurant,
+                    Restaurant_Detail.idUser,
+                    rbRating.getRating(),
+                    Restaurant_Detail.avatarUser
+            );
+
+            CMDB.db.collection("comment_restaurant").document().set(commentRestaurant).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    FirebaseStorage storage = FirebaseStorage.getInstance();
+                    StorageReference mountainImagesRef = storage.getReference().child("images/comment/"+Restaurant_Detail.avatarUser+Restaurant_Detail.idUser);
+
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    Restaurant_Detail.imageAvatarUser.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] data = baos.toByteArray();
+
+                    UploadTask uploadTask = mountainImagesRef.putBytes(data);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                            Toast.makeText(getContext(),"Xảy ra lỗi khi gửi bình luận",Toast.LENGTH_LONG).show();
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                            // ...
+                            CommentRestaurant addComment = new CommentRestaurant(
+                                    CommentRestaurant.createCommentRestId(10),
+                                    txtComment.getText().toString(),
+                                    stringDate,
+                                    Restaurant_Detail.idRestaurant,
+                                    Restaurant_Detail.idUser,
+                                    rbRating.getRating(),
+                                    Restaurant_Detail.avatarUser
+                            );
+                            addComment.setImageAvatar(Restaurant_Detail.imageAvatarUser);
+                            adapter.commentRestaurants.add(addComment);
+                            adapter.notifyDataSetChanged();
+                            Toast.makeText(getContext(),"Bình luận của bạn đã được gửi",Toast.LENGTH_LONG).show();
+                            txtComment.setText("");
+                            rbRating.setRating(0);
+                        }
+                    });
+                }
+            });
+
+        }else {
+            Toast.makeText(getContext(),"Bạn chưa đánh giá sao cho chúng tôi hoặc chưa nhập lời bình luận",Toast.LENGTH_LONG).show();
+        }
     }
 
 }

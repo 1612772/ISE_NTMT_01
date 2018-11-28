@@ -14,7 +14,6 @@ import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
-import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
@@ -31,7 +30,7 @@ import java.util.List;
 public class Fragment_Food extends Fragment {
 
     ListView listDish;
-    public static ListDish adapter;
+    public static ListFood adapter;
     public Fragment_Food() {
         // Required empty public constructor
         final List<Dish> dataList = new ArrayList<Dish>();
@@ -72,7 +71,7 @@ public class Fragment_Food extends Fragment {
                                     }
                                 });
                     }
-                    adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
+                    adapter = new ListFood(getActivity(), R.layout.item_menu, dataList);
                     listDish.setAdapter(adapter);
                 } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
@@ -91,5 +90,6 @@ public class Fragment_Food extends Fragment {
         listDish.setAdapter(adapter);
         return view;
     }
+
 
 }

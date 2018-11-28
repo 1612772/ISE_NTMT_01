@@ -29,7 +29,7 @@ import java.util.List;
 
 public class Fragment_Drink extends Fragment {
     ListView listDish;
-    public static ListDish adapter;
+    public static ListDrink adapter;
     public Fragment_Drink() {
         // Required empty public constructor
         final List<Dish> dataList = new ArrayList<Dish>();
@@ -70,7 +70,7 @@ public class Fragment_Drink extends Fragment {
                                             }
                                         });
                             }
-                            adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
+                            adapter = new ListDrink(getActivity(), R.layout.item_menu, dataList);
                             listDish.setAdapter(adapter);
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();

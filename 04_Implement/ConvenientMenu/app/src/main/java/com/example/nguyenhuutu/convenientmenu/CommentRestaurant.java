@@ -144,6 +144,7 @@ public class CommentRestaurant {
         document.put("user_account", _userAccount);
         document.put("cmt_rest_star", _cmtRestStar);
         document.put("user_avatar", _avatar);
+
         return document;
     }
 }

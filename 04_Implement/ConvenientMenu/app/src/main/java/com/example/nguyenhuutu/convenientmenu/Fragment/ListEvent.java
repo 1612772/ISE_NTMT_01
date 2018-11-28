@@ -60,5 +60,6 @@ public class ListEvent extends BaseAdapter {
 
         return row;
     }
+
 }// CustomAdapter
 

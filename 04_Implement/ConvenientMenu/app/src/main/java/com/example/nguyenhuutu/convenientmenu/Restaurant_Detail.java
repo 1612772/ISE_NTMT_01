@@ -1,5 +1,8 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,15 +36,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import org.w3c.dom.Text;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class Restaurant_Detail extends AppCompatActivity {
     ViewPager viewpager;
-    Fragment_Event event = new Fragment_Event();
-    Fragment_Menu menu = new Fragment_Menu();
-    Fragment_Comment comment = new Fragment_Comment();
+    Fragment_Event event;
+    Fragment_Menu menu;
+    Fragment_Comment comment;
     PagerAdapterRestaurant pagerAdapterRestaurant;
     ImageView imgBackground;
     TextView lbNameRestaurant,ratingPerTotal,addressRestaurantDetail,phoneRestaurantDetail,facebookRestaurantDetail;
@@ -49,15 +54,27 @@ public class Restaurant_Detail extends AppCompatActivity {
     TabLayout tabLayout;
     AppCompatRatingBar ratingRestaurant;
     Restaurant infoRestaurant;
-    public static String idRestaurant="restphuongdong";
+    public static String idRestaurant,idUser="user1",avatarUser = "avatar.png";
+    public  static Bitmap imageAvatarUser;
+    public static String covertToUnsigned(String str) {
+        try {
+            String temp = Normalizer.normalize(str, Normalizer.Form.NFD);
+            Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+            return pattern.matcher(temp).replaceAll("").toLowerCase().replaceAll(" ", "-").replaceAll("đ", "d");
+        } catch (Exception e) {
+            return null;
+        }
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
-
+        imageAvatarUser = BitmapFactory.decodeResource(getResources(), R.drawable.app_logo);
         Bundle data = getIntent().getExtras();
         idRestaurant = data.getString("rest_account");
-
+        event = new Fragment_Event();
+        menu = new Fragment_Menu();
+        comment = new Fragment_Comment();
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);
         tabLayout = (TabLayout) findViewById(R.id.tabRestaurantDetail);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarRestaurant);
@@ -142,7 +159,7 @@ public class Restaurant_Detail extends AppCompatActivity {
                             lbNameRestaurant.setText(infoRestaurant.getRestName());
                             addressRestaurantDetail.setText("Địa chỉ: "+infoRestaurant.getRestAddresses().get(0));
                             phoneRestaurantDetail.setText("SĐT: "+infoRestaurant.getRestPhone());
-                            facebookRestaurantDetail.setText("FB: "+infoRestaurant.getRestFacebook());
+                            facebookRestaurantDetail.setText("Facebook: "+infoRestaurant.getRestFacebook());
                             ratingPerTotal.setText(infoRestaurant.getMaxStar()+" ("+infoRestaurant.getTotalRating()+" phiếu)");
                             ratingRestaurant.setRating(infoRestaurant.getMaxStar().floatValue());
                         } catch (Exception ex) {
@@ -156,5 +173,4 @@ public class Restaurant_Detail extends AppCompatActivity {
             }
         });
     }
-
 }
