@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_List;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
 
@@ -91,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_restaurant_list:
+                        if (!(contentFragment instanceof Restaurant_List)) {
+                            setTitle("momo");
+                            contentFragment = new Restaurant_List();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_info_account:
                         break;

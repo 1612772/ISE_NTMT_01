@@ -1668,6 +1668,7 @@ id activity_chooser_view_content
 id add
 id addressRestaurant
 id addressRestaurantDetail
+id addressRestaurantListH
 id adjust_height
 id adjust_width
 id againPassword
@@ -1794,6 +1795,7 @@ id image
 id imageDish
 id imageEvent
 id imageRestaurant
+id imageRestaurantH
 id imageSlider
 id imgAvatar
 id imgBackground
@@ -1818,8 +1820,10 @@ id listMode
 id list_drink
 id list_food
 id list_item
+id lvAllRestaurant
 id lvComment
 id lvEvents
+id lvRecentRestaurant
 id mainContent
 id main_content
 id main_menu_change_password
@@ -1916,6 +1920,7 @@ id parent_matrix
 id password
 id percent
 id phoneRestaurantDetail
+id phoneRestaurantListH
 id pin
 id progress_circular
 id progress_horizontal
@@ -1924,14 +1929,17 @@ id ratComment
 id ratingDish
 id ratingDishWrapper
 id ratingNumber
+id ratingNumberH
 id ratingPerTotal
 id ratingRestaurant
+id ratingRestaurantH
 id ratingRestaurantWrapper
 id rating_score
 id rbRating
 id rbRatingItem
 id register
 id restaurantName
+id restaurantNameH
 id restaurantRegister
 id right
 id right_icon
@@ -1963,6 +1971,7 @@ id selected
 id shortInfoDish
 id shortInfoEvent
 id shortInfoRestaurant
+id shortInfoRestaurantH
 id shortcut
 id showCustom
 id showHome
@@ -1988,6 +1997,7 @@ id submit_area
 id tabMenu
 id tabMode
 id tabRestaurantDetail
+id tabRestaurantList
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -2046,6 +2056,7 @@ id user_fullname
 id user_fullname_1
 id user_rating_date
 id user_rating_date_1
+id viewPagerRestaurantList
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
@@ -2136,6 +2147,7 @@ layout image_slider
 layout item_comment
 layout item_event
 layout item_menu
+layout list_restaurant_item
 layout main_menu
 layout material_drawer
 layout material_drawer_compact_header
@@ -2181,6 +2193,9 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout restaurant_detail
+layout restaurant_list
+layout restaurant_list_tab_all
+layout restaurant_list_tab_recently
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2191,6 +2206,7 @@ layout tab_drink
 layout tab_events
 layout tab_food
 layout tab_menu
+layout tab_restaurant_list
 menu main_menu_customer_login
 menu main_menu_non_login
 menu main_menu_restaurant_login
