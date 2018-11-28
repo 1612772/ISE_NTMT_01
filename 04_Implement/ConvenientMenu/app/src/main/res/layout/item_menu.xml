@@ -7,14 +7,21 @@
     android:id="@+id/imgFoodDrink"
     android:layout_width="120dp"
     android:layout_height="90dp"
+<<<<<<< HEAD
     android:scaleType="fitXY"
+=======
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     android:layout_marginRight="@dimen/fab_margin"/>
     <TextView
         android:id="@+id/tvFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name Food"
+<<<<<<< HEAD
         android:layout_toRightOf="@id/imgFoodDrink"
+=======
+        android:layout_toRightOf="@id/imgFood"
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
         android:textStyle="bold"
         android:textColor="#000"/>
 

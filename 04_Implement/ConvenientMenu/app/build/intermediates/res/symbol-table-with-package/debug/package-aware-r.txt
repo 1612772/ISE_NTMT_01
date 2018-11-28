@@ -1994,9 +1994,13 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+<<<<<<< HEAD
 id toolbar
 id toolbarRestaurant
 id toolbar_layout
+=======
+id tool_bar
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 id top
 id topPanel
 id touch_outside

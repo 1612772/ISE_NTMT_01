@@ -15,8 +15,12 @@
         android:drawableLeft="@android:drawable/ic_menu_search"
         android:hint="Tìm kiếm món ăn, thức uống"
         android:textColorHint="#949494"
+<<<<<<< HEAD
         android:textColor="#000"
         android:background="@drawable/search_form_border"/>
+=======
+        android:textColor="#000"/>
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     <android.support.design.widget.TabLayout
         android:id="@+id/tabMenu"
         android:layout_below="@id/search_Dish"
@@ -24,7 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
+<<<<<<< HEAD
         android:layout_marginTop="10dp"
+=======
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
         app:tabTextColor="#000"
         android:background="#ffff"/>
 

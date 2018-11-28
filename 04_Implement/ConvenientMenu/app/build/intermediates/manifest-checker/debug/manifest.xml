@@ -31,10 +31,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
+<<<<<<< HEAD
         android:theme="@style/Theme.Design.NoActionBar" >
 
         <!-- android:theme="@style/Theme.AppCompat.Light"> -->
         <activity android:name="com.example.nguyenhuutu.convenientmenu.main.MainActivity" />
+=======
+        android:theme="@style/Theme.Design.Light.NoActionBar" >
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
         <activity android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

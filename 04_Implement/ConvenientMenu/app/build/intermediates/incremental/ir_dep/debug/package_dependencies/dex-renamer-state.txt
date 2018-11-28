@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 #Sat Nov 24 13:55:03 ICT 2018
 base.0=C\:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+=======
+#Thu Nov 15 11:38:26 ICT 2018
+base.0=C\:\\Users\\Thanh\\Desktop\\CMPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Thanh\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+base.1=C\:\\Users\\Thanh\\Desktop\\CMPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10

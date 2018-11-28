@@ -107,11 +107,19 @@ public final class R {
     public static final class id {
         private id() {}
 
+<<<<<<< HEAD
         public static final int bottom = 0x7f09002c;
         public static final int none = 0x7f090105;
         public static final int top = 0x7f090172;
         public static final int triangle = 0x7f09017a;
         public static final int underline = 0x7f090186;
+=======
+        public static final int bottom = 0x7f090029;
+        public static final int none = 0x7f0900b8;
+        public static final int top = 0x7f09011e;
+        public static final int triangle = 0x7f090126;
+        public static final int underline = 0x7f090132;
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     }
     public static final class integer {
         private integer() {}
@@ -125,11 +133,19 @@ public final class R {
     public static final class style {
         private style() {}
 
+<<<<<<< HEAD
         public static final int TextAppearance_TabPageIndicator = 0x7f10016b;
         public static final int Theme_PageIndicatorDefaults = 0x7f10019f;
         public static final int Widget = 0x7f1001b3;
         public static final int Widget_IconPageIndicator = 0x7f100208;
         public static final int Widget_TabPageIndicator = 0x7f10022f;
+=======
+        public static final int TextAppearance_TabPageIndicator = 0x7f0f013a;
+        public static final int Theme_PageIndicatorDefaults = 0x7f0f016e;
+        public static final int Widget = 0x7f0f0182;
+        public static final int Widget_IconPageIndicator = 0x7f0f01d7;
+        public static final int Widget_TabPageIndicator = 0x7f0f01fd;
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     }
     public static final class styleable {
         private styleable() {}

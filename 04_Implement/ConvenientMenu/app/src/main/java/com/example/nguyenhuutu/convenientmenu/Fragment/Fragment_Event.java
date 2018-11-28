@@ -12,8 +12,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ImageView;
+=======
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,7 +47,10 @@ import java.util.List;
 public class Fragment_Event extends Fragment {
 
     ListView listEvent;
+<<<<<<< HEAD
     public static ListEvent adapter;
+=======
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 
     @SuppressLint("ValidFragment")
     public Fragment_Event() {
@@ -59,6 +68,7 @@ public class Fragment_Event extends Fragment {
                             Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
+<<<<<<< HEAD
                     int mount = dataList.size();
                     for (int i = 0; i < mount; i++) {
                         final int finalI = i;
@@ -82,6 +92,8 @@ public class Fragment_Event extends Fragment {
                     }
                     adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
                     listEvent.setAdapter(adapter);
+=======
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
                 } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                 }
@@ -99,7 +111,11 @@ public class Fragment_Event extends Fragment {
         listEvent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+<<<<<<< HEAD
                 // Nhấp vào Item Event
+=======
+                //chuyển qua activity sự kiện
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
             }
         });
         return view;

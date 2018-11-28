@@ -15,7 +15,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+<<<<<<< HEAD
 import android.widget.EditText;
+=======
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,10 +41,14 @@ import java.util.List;
 
 public class Fragment_Comment extends Fragment {
     ListView listComment;
+<<<<<<< HEAD
     public static ListComment adapter;
 
     AppCompatRatingBar rbRating;
     EditText txtComment;
+=======
+
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     public Fragment_Comment() {
         final List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
         CMDB.db.collection("comment_restaurant")
@@ -52,9 +59,24 @@ public class Fragment_Comment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
 
+<<<<<<< HEAD
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 try {
                                     dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
+=======
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        try {
+                            dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
+                        } catch (Exception ex) {
+                            Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
 
                                 } catch (Exception ex) {
                                     Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
@@ -98,6 +120,7 @@ public class Fragment_Comment extends Fragment {
         View view = inflater.inflate(R.layout.tab_comments, container, false);
         listComment = view.findViewById(R.id.lvComment);
         listComment.setAdapter(adapter);
+<<<<<<< HEAD
         txtComment = view.findViewById(R.id.txtComment);
         rbRating = view.findViewById(R.id.rbRating);
         txtComment.setOnKeyListener(new View.OnKeyListener() {
@@ -134,6 +157,12 @@ public class Fragment_Comment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Nhấp vào item comment
+=======
+        listComment.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //chuyển qua activity bình luận
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
             }
         });
         return view;

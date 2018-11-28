@@ -5,20 +5,31 @@
     build-mode="COLD"
     density="560dpi"
     format="10"
+<<<<<<< HEAD
     ir-eligibility="COMPATIBLE"
     plugin-version="3.2.1"
     timestamp="1543399099849"
     token="5005152277475502374"
+=======
+    plugin-version="3.2.1"
+    timestamp="1542258690631"
+    token="-3983994314531471077"
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
+<<<<<<< HEAD
         duration="555" />
+=======
+        duration="0" />
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
+<<<<<<< HEAD
         duration="35" />
     <task
         name="verifier"
@@ -26,10 +37,20 @@
 
     <artifact
         location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+=======
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
         type="SPLIT" />
 
     <build
         build-mode="FULL"
+<<<<<<< HEAD
         timestamp="1543383741467"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
@@ -46,31 +67,57 @@
             type="SPLIT" />
         <artifact
             location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+=======
+        timestamp="1542251864283"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+<<<<<<< HEAD
             location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+=======
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
+<<<<<<< HEAD
         ir-eligibility="FIELD_REMOVED"
         timestamp="1543398969515"
         verifier="COLD_SWAP_REQUESTED" >
@@ -86,6 +133,60 @@
         <artifact
             location="C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
+=======
+        timestamp="1542256702553"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1542257945789"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1542258690631"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Thanh\Desktop\CMPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+>>>>>>> 7b142cfae920723b89c51a33d0b9094227de17eb
     </build>
 
 </instant-run>
