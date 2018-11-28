@@ -1,9 +1,11 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatRatingBar;
 import android.util.Log;
@@ -35,15 +37,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_Comment extends Fragment {
-
-    public static List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
     ListView listComment;
+    public static ListComment adapter;
+
     AppCompatRatingBar rbRating;
     EditText txtComment;
-    ListComment adapter;
-
     public Fragment_Comment() {
-        // Required empty public constructor
+        final List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
         CMDB.db.collection("comment_restaurant")
                 .whereEqualTo("rest_account", Restaurant_Detail.idRestaurant)
                 .get()
@@ -70,8 +70,7 @@ public class Fragment_Comment extends Fragment {
                                             @Override
                                             public void onSuccess(Uri uri) {
                                                 try {
-
-                                                    LoadImage loadImage = new LoadImage();
+                                                    LoadImage loadImage = new LoadImage(getContext());
                                                     loadImage.execute(uri.toString(), finalI, Const.COMMENT);
                                                 } catch (Exception ex) {
                                                 }
@@ -83,7 +82,8 @@ public class Fragment_Comment extends Fragment {
                                             }
                                         });
                             }
-
+                            adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
+                            listComment.setAdapter(adapter);
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
@@ -95,12 +95,9 @@ public class Fragment_Comment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.tab_comments, container, false);
         listComment = view.findViewById(R.id.lvComment);
-        adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
         listComment.setAdapter(adapter);
-
         txtComment = view.findViewById(R.id.txtComment);
         rbRating = view.findViewById(R.id.rbRating);
         txtComment.setOnKeyListener(new View.OnKeyListener() {

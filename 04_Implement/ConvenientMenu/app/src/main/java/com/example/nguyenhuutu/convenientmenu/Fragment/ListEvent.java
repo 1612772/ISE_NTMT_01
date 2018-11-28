@@ -15,11 +15,10 @@ import com.example.nguyenhuutu.convenientmenu.R;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListEvent extends BaseAdapter {
+public class ListEvent extends BaseAdapter {
     Context context;
     int inflat;
-    List<Event> event;
-    List<Bitmap> bitmapList = new ArrayList<Bitmap>();
+    public static List<Event> event;
 
     public ListEvent(Context context, int inflat, List<Event> event) {
         this.inflat = inflat;

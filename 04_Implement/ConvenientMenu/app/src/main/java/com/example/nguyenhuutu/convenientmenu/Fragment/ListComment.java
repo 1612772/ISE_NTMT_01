@@ -28,11 +28,10 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListComment extends BaseAdapter {
+public class ListComment extends BaseAdapter {
     Context context;
     int inflat;
-    List<CommentRestaurant> commentRestaurants;
-    List<Bitmap> bitmapList = new ArrayList<Bitmap>();
+    public static List<CommentRestaurant> commentRestaurants;
 
     public ListComment(Context context, int inflat, List<CommentRestaurant> commentRestaurants) {
         this.inflat = inflat;

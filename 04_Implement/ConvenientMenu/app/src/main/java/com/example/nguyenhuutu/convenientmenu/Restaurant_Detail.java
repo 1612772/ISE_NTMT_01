@@ -38,14 +38,14 @@ import java.util.List;
 
 public class Restaurant_Detail extends AppCompatActivity {
     ViewPager viewpager;
-    Fragment_Event event = new Fragment_Event();
-    Fragment_Menu menu = new Fragment_Menu();
-    Fragment_Comment comment = new Fragment_Comment();
+    Fragment_Event event;
+    Fragment_Menu menu;
+    Fragment_Comment comment;
     PagerAdapterRestaurant pagerAdapterRestaurant;
     ImageView imgBackground;
     TextView lbNameRestaurant,ratingPerTotal,addressRestaurantDetail,phoneRestaurantDetail,facebookRestaurantDetail;
     AppBarLayout app_bar;
-    TabLayout tabLayout;
+    public static TabLayout tabLayout;
     AppCompatRatingBar ratingRestaurant;
     Restaurant infoRestaurant;
     public static String idRestaurant="restphuongdong";
@@ -53,6 +53,10 @@ public class Restaurant_Detail extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
+
+        event = new Fragment_Event();
+        menu = new Fragment_Menu();
+        comment = new Fragment_Comment();
 
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);
         tabLayout = (TabLayout) findViewById(R.id.tabRestaurantDetail);
@@ -88,7 +92,8 @@ public class Restaurant_Detail extends AppCompatActivity {
 
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
-
+        //tabLayout.getTabAt(1).select();
+        viewpager.setOffscreenPageLimit(3);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

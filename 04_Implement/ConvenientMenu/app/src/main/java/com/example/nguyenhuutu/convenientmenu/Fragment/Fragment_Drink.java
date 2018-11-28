@@ -28,11 +28,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_Drink extends Fragment {
-    public static List<Dish> dataList = new ArrayList<Dish>();
     ListView listDish;
-    ListDish adapter;
+    public static ListDish adapter;
     public Fragment_Drink() {
         // Required empty public constructor
+        final List<Dish> dataList = new ArrayList<Dish>();
         CMDB.db.collection("dish")
                 .whereEqualTo("rest_account",Restaurant_Detail.idRestaurant)
                 .whereEqualTo("dish_type_id","DTYPE2")
@@ -58,7 +58,7 @@ public class Fragment_Drink extends Fragment {
                                             @Override
                                             public void onSuccess(Uri uri) {
                                                 try {
-                                                    LoadImage loadImage = new LoadImage();
+                                                    LoadImage loadImage = new LoadImage(getContext());
                                                     loadImage.execute(uri.toString(), finalI, Const.DRINK);
                                                 } catch (Exception ex) {
                                                 }
@@ -70,8 +70,8 @@ public class Fragment_Drink extends Fragment {
                                             }
                                         });
                             }
-                            /*adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
-                            listDish.setAdapter(adapter);*/
+                            adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
+                            listDish.setAdapter(adapter);
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
@@ -86,15 +86,8 @@ public class Fragment_Drink extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_drink, container, false);
         listDish = view.findViewById(R.id.list_drink);
-        adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
         listDish.setAdapter(adapter);
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapter = new ListDish(getActivity(), R.layout.item_menu, dataList);
-        listDish.setAdapter(adapter);
-    }
 }

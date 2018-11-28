@@ -11,6 +11,7 @@ import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Comment;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Drink;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Event;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Food;
+import com.example.nguyenhuutu.convenientmenu.Fragment.ListEvent;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +19,11 @@ import java.net.URL;
 
 public class LoadImage extends AsyncTask<Object, String, Bitmap> {
     private final static String TAG = "AsyncTaskLoadImage";
-
+   Context context;
+    public LoadImage(Context context)
+    {
+        this.context = context;
+    }
     @Override
     protected Bitmap doInBackground(Object... params) {
         Bitmap bitmap = null;
@@ -31,18 +36,39 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
             Log.e(TAG, e.getMessage());
         }
         if (Const.EVENT == id) {
-            Fragment_Event.dataList.get(i).setImageEvent(bitmap);
+            Fragment_Event.adapter.event.get(i).setImageEvent(bitmap);
+
+            //Fragment_Event.adapter.notifyDataSetChanged();
         }else if(Const.DRINK==id)
         {
-            Fragment_Drink.dataList.get(i).setDishImage(bitmap);
+            Fragment_Drink.adapter.dishList.get(i).setDishImage(bitmap);
         }else if(Const.COMMENT==id)
         {
-            Fragment_Comment.dataList.get(i).setImageAvatar(bitmap);
+            Fragment_Comment.adapter.commentRestaurants.get(i).setImageAvatar(bitmap);
         }else if(Const.FOOD ==id)
         {
-            Fragment_Food.dataList.get(i).setDishImage(bitmap);
+            Fragment_Food.adapter.dishList.get(i).setDishImage(bitmap);
         }
+        publishProgress(String.valueOf(id));
         return bitmap;
+    }
+
+    @Override
+    protected void onProgressUpdate(String... values) {
+        int id = Integer.parseInt(values[0]);
+
+        if (Const.EVENT == id) {
+            Fragment_Event.adapter.notifyDataSetChanged();
+        }else if(Const.FOOD==id)
+        {
+            Fragment_Food.adapter.notifyDataSetChanged();
+        }else if(Const.COMMENT==id)
+        {
+            Fragment_Comment.adapter.notifyDataSetChanged();
+        }else if(Const.DRINK ==id)
+        {
+            Fragment_Drink.adapter.notifyDataSetChanged();
+        }
     }
 
     @Override

@@ -26,27 +26,26 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListDish extends BaseAdapter {
+public class ListDish extends BaseAdapter {
     Context context;
     int inflat;
-    List<Dish> dish;
-    /*List<Bitmap> bitmapList = new ArrayList<Bitmap>();*/
+    public static List<Dish> dishList;
 
 
     public ListDish(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
         this.context = context;
-        this.dish = dish;
+        this.dishList = dish;
     }
 
     @Override
     public int getCount() {
-        return dish.size();
+        return dishList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return dish.get(position);
+        return dishList.get(position);
     }
 
     @Override
@@ -68,7 +67,7 @@ class ListDish extends BaseAdapter {
         RatingBar rbRatingItem = (RatingBar) row.findViewById(R.id.rbRatingItem);
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
 
-        Dish item = dish.get(position);
+        Dish item = dishList.get(position);
 
         tvFood.setText(item.getDishName());
         if (item.getEventTypeId() < 0) //new

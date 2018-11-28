@@ -35,7 +35,7 @@ public class Fragment_Menu extends Fragment {
     PagerAdapterRestaurant pagerAdapterRestaurant;
     Fragment_Food food;
     Fragment_Drink drink;
-    TabLayout tabLayout;
+
     public Fragment_Menu() {
         // Required empty public constructor
           food = new Fragment_Food();
@@ -59,29 +59,7 @@ public class Fragment_Menu extends Fragment {
         
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pagerAdapterRestaurant.getItem(tab.getPosition()).onStart();
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                onTabSelected(tab);
-            }
-        });
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    /*    food.onStart();
-        drink.onStart();*/
     }
 }
