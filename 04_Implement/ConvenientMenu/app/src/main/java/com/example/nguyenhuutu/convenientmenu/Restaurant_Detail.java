@@ -12,6 +12,7 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
@@ -79,7 +80,12 @@ public class Restaurant_Detail extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         NestedScrollView scrollView = (NestedScrollView) findViewById (R.id.nestedScrollView);
         scrollView.setFillViewport (true);
 
@@ -92,22 +98,8 @@ public class Restaurant_Detail extends AppCompatActivity {
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pagerAdapterRestaurant.getItem(tab.getPosition()).onStart();
-            }
+        viewpager.setOffscreenPageLimit(3);
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                onTabSelected(tab);
-            }
-        });
         imgBackground = (ImageView)findViewById(R.id.imgBackground);
         lbNameRestaurant =(TextView)findViewById(R.id.lbNameRestaurant);
         ratingPerTotal = (TextView)findViewById(R.id.ratingPerTotal);

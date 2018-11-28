@@ -56,32 +56,10 @@ public class Fragment_Menu extends Fragment {
 
         pagerAdapterRestaurant.AddFragment(food,"Món ăn");
         pagerAdapterRestaurant.AddFragment(drink,"Thức uống");
-        
+        viewpager.setOffscreenPageLimit(2);
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pagerAdapterRestaurant.getItem(tab.getPosition()).onStart();
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                onTabSelected(tab);
-            }
-        });
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    /*    food.onStart();
-        drink.onStart();*/
     }
 }

@@ -36,14 +36,14 @@ import java.util.List;
 
 public class Fragment_Comment extends Fragment {
 
-    public static List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
     ListView listComment;
+    public static ListComment adapter;
     AppCompatRatingBar rbRating;
     EditText txtComment;
-    ListComment adapter;
 
     public Fragment_Comment() {
         // Required empty public constructor
+        final List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
         CMDB.db.collection("comment_restaurant")
                 .whereEqualTo("rest_account", Restaurant_Detail.idRestaurant)
                 .get()
@@ -83,7 +83,8 @@ public class Fragment_Comment extends Fragment {
                                             }
                                         });
                             }
-
+                            adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
+                            listComment.setAdapter(adapter);
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
@@ -98,7 +99,6 @@ public class Fragment_Comment extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_comments, container, false);
         listComment = view.findViewById(R.id.lvComment);
-        adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
         listComment.setAdapter(adapter);
 
         txtComment = view.findViewById(R.id.txtComment);

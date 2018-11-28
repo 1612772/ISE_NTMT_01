@@ -31,18 +31,36 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
             Log.e(TAG, e.getMessage());
         }
         if (Const.EVENT == id) {
-            Fragment_Event.dataList.get(i).setImageEvent(bitmap);
+            Fragment_Event.adapter.event.get(i).setImageEvent(bitmap);
         }else if(Const.DRINK==id)
         {
-            Fragment_Drink.dataList.get(i).setDishImage(bitmap);
+            Fragment_Drink.adapter.dish.get(i).setDishImage(bitmap);
         }else if(Const.COMMENT==id)
         {
-            Fragment_Comment.dataList.get(i).setImageAvatar(bitmap);
+            Fragment_Comment.adapter.commentRestaurants.get(i).setImageAvatar(bitmap);
         }else if(Const.FOOD ==id)
         {
-            Fragment_Food.dataList.get(i).setDishImage(bitmap);
+            Fragment_Food.adapter.dish.get(i).setDishImage(bitmap);
         }
+        publishProgress(String.valueOf(id));
         return bitmap;
+    }
+
+    @Override
+    protected void onProgressUpdate(String... values) {
+        int id = Integer.parseInt(values[0]);
+        if (Const.EVENT == id) {
+            Fragment_Event.adapter.notifyDataSetChanged();
+        }else if(Const.DRINK==id)
+        {
+            Fragment_Drink.adapter.notifyDataSetChanged();
+        }else if(Const.COMMENT==id)
+        {
+            Fragment_Comment.adapter.notifyDataSetChanged();
+        }else if(Const.FOOD ==id)
+        {
+            Fragment_Food.adapter.notifyDataSetChanged();
+        }
     }
 
     @Override

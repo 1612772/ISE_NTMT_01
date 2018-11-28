@@ -26,12 +26,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListDish extends BaseAdapter {
+public class ListDish extends BaseAdapter {
     Context context;
     int inflat;
-    List<Dish> dish;
-    /*List<Bitmap> bitmapList = new ArrayList<Bitmap>();*/
-
+    public static List<Dish> dish;
 
     public ListDish(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
