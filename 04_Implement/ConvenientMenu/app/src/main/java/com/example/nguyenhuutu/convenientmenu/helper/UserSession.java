@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.login;
+package com.example.nguyenhuutu.convenientmenu.helper;
 
 import android.content.Context;
 import android.content.SharedPreferences;

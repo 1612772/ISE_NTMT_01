@@ -23,6 +23,7 @@ import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
+import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.main_menu_icon);
 
-        Helper.setSampleUserInLocal(this);
         setMainMenu();
         configMainMenu();
 
@@ -141,6 +141,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_menu_manage_event:
                         break;
                     case R.id.main_menu_login:
+                        if (!(contentFragment instanceof LoginFragment)) {
+                            setTitle("Đăng nhập");
+                            contentFragment = new LoginFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_register:
                         if (!(contentFragment instanceof SwitchRegisterFragment)) {
