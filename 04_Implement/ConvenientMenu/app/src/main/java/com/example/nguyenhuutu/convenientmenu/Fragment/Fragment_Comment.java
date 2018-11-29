@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
@@ -52,7 +53,8 @@ public class Fragment_Comment extends Fragment {
     public static ListComment adapter;
     RatingBar rbRating;
     EditText txtComment;
-
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+    ProgressBar progressBarComment;
     public Fragment_Comment() {
         // Required empty public constructor
         final List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
@@ -115,7 +117,7 @@ public class Fragment_Comment extends Fragment {
 
         txtComment = view.findViewById(R.id.txtComment);
         rbRating = view.findViewById(R.id.ratComment);
-
+        progressBarComment = view.findViewById(R.id.progressBarComment);
 
         txtComment.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -157,6 +159,7 @@ public class Fragment_Comment extends Fragment {
     }
 
     void SendComment() {
+        progressBarComment.setVisibility(View.VISIBLE);
         if (rbRating.getRating() != 0 && txtComment.getText().toString()!="") {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date date = new Date(); // lấy thời gian hệ thống
@@ -168,14 +171,14 @@ public class Fragment_Comment extends Fragment {
                     Restaurant_Detail.idRestaurant,
                     Restaurant_Detail.idUser,
                     rbRating.getRating(),
-                    Restaurant_Detail.avatarUser
+                    Restaurant_Detail.idUser+Restaurant_Detail.avatarUser
             );
 
             CMDB.db.collection("comment_restaurant").document().set(commentRestaurant).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    FirebaseStorage storage = FirebaseStorage.getInstance();
-                    StorageReference mountainImagesRef = storage.getReference().child("images/comment/"+Restaurant_Detail.avatarUser+Restaurant_Detail.idUser);
+
+                    StorageReference mountainImagesRef = storage.getReference().child("images/comment/"+Restaurant_Detail.idUser+Restaurant_Detail.avatarUser);
 
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
                     Restaurant_Detail.imageAvatarUser.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -187,12 +190,13 @@ public class Fragment_Comment extends Fragment {
                         public void onFailure(@NonNull Exception exception) {
                             // Handle unsuccessful uploads
                             Toast.makeText(getContext(),"Xảy ra lỗi khi gửi bình luận",Toast.LENGTH_LONG).show();
+                            progressBarComment.setVisibility(View.INVISIBLE);
                         }
                     }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                            // ...
+                            Toast.makeText(getContext(),"Bình luận của bạn đã được gửi",Toast.LENGTH_LONG).show();
+
                             CommentRestaurant addComment = new CommentRestaurant(
                                     CommentRestaurant.createCommentRestId(10),
                                     txtComment.getText().toString(),
@@ -200,20 +204,22 @@ public class Fragment_Comment extends Fragment {
                                     Restaurant_Detail.idRestaurant,
                                     Restaurant_Detail.idUser,
                                     rbRating.getRating(),
-                                    Restaurant_Detail.avatarUser
+                                    Restaurant_Detail.idUser+Restaurant_Detail.avatarUser
                             );
                             addComment.setImageAvatar(Restaurant_Detail.imageAvatarUser);
                             adapter.commentRestaurants.add(addComment);
                             adapter.notifyDataSetChanged();
-                            Toast.makeText(getContext(),"Bình luận của bạn đã được gửi",Toast.LENGTH_LONG).show();
+
                             txtComment.setText("");
                             rbRating.setRating(0);
+                            progressBarComment.setVisibility(View.INVISIBLE);
                         }
                     });
                 }
             });
 
         }else {
+            progressBarComment.setVisibility(View.INVISIBLE);
             Toast.makeText(getContext(),"Bạn chưa đánh giá sao cho chúng tôi hoặc chưa nhập lời bình luận",Toast.LENGTH_LONG).show();
         }
     }

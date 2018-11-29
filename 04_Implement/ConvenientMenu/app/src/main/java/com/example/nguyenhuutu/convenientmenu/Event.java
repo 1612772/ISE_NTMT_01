@@ -102,14 +102,16 @@ public class Event implements Comparable {
     }
 
     public void setImageEvent(Bitmap imageEvent) {
-        this.imageEvent = imageEvent;
+        try {
+            this.imageEvent = imageEvent;
+        } catch (Exception ex) {
+        }
     }
 
     public Bitmap getImageEvent(Context context) {
         if (imageEvent != null) {
             return imageEvent;
-        }else
-        {
+        } else {
             return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
         }
     }

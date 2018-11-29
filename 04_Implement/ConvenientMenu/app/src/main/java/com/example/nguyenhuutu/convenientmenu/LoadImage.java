@@ -20,6 +20,11 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
     private final static String TAG = "AsyncTaskLoadImage";
 
     @Override
+    protected void onCancelled() {
+        super.onCancelled();
+    }
+
+    @Override
     protected Bitmap doInBackground(Object... params) {
         Bitmap bitmap = null;
         int i = (int) params[1];
@@ -27,22 +32,37 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
         try {
             URL url = new URL((String) params[0]);
             bitmap = BitmapFactory.decodeStream((InputStream) url.getContent());
+            if (Const.EVENT == id) {
+                try {
+                    Fragment_Event.adapter.event.get(i).setImageEvent(bitmap);
+                } catch (Exception ex) {
+                    onCancelled();
+                }
+            } else if (Const.DRINK == id) {
+                try {
+                    Fragment_Drink.adapter.dish.get(i).setDishImage(bitmap);
+                } catch (Exception ex) {
+                    onCancelled();
+                }
+            } else if (Const.COMMENT == id) {
+                try {
+                    Fragment_Comment.adapter.commentRestaurants.get(i).setImageAvatar(bitmap);
+                } catch (Exception ex) {
+                    onCancelled();
+                }
+            } else if (Const.FOOD == id) {
+                try {
+                    Fragment_Food.adapter.dish.get(i).setDishImage(bitmap);
+                } catch (Exception ex) {
+                    onCancelled();
+                }
+            }
+            publishProgress(String.valueOf(id));
         } catch (IOException e) {
+            onCancelled();
             Log.e(TAG, e.getMessage());
         }
-        if (Const.EVENT == id) {
-            Fragment_Event.adapter.event.get(i).setImageEvent(bitmap);
-        }else if(Const.DRINK==id)
-        {
-            Fragment_Drink.adapter.dish.get(i).setDishImage(bitmap);
-        }else if(Const.COMMENT==id)
-        {
-            Fragment_Comment.adapter.commentRestaurants.get(i).setImageAvatar(bitmap);
-        }else if(Const.FOOD ==id)
-        {
-            Fragment_Food.adapter.dish.get(i).setDishImage(bitmap);
-        }
-        publishProgress(String.valueOf(id));
+
         return bitmap;
     }
 
@@ -51,14 +71,11 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
         int id = Integer.parseInt(values[0]);
         if (Const.EVENT == id) {
             Fragment_Event.adapter.notifyDataSetChanged();
-        }else if(Const.DRINK==id)
-        {
+        } else if (Const.DRINK == id) {
             Fragment_Drink.adapter.notifyDataSetChanged();
-        }else if(Const.COMMENT==id)
-        {
+        } else if (Const.COMMENT == id) {
             Fragment_Comment.adapter.notifyDataSetChanged();
-        }else if(Const.FOOD ==id)
-        {
+        } else if (Const.FOOD == id) {
             Fragment_Food.adapter.notifyDataSetChanged();
         }
     }
