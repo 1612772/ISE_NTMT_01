@@ -1195,6 +1195,9 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen button_height
+dimen button_margin_top
+dimen button_width
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -1284,9 +1287,16 @@ dimen homepage_event_item_width
 dimen homepage_rest_item_content_width
 dimen homepage_rest_item_padding
 dimen homepage_rest_item_width
+dimen input_height
+dimen input_margin_top
+dimen input_width
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen logo_height
+dimen logo_margin_top
+dimen logo_width
+dimen margin_default
 dimen material_drawer_account_header_compact
 dimen material_drawer_account_header_dropdown
 dimen material_drawer_account_header_dropdown_margin_bottom
@@ -1363,6 +1373,7 @@ dimen materialize_typography_display1
 dimen materialize_typography_headline
 dimen materialize_typography_subheading
 dimen materialize_typography_title
+dimen mini_icon_dimension
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -1530,6 +1541,9 @@ drawable abc_vector_test
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
+drawable border_input_bottom
+drawable button_primary_background
+drawable button_secondary_background
 drawable checkbox_border
 drawable comment_btn
 drawable common_full_open_on_phone
@@ -1616,6 +1630,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable password
 drawable password_shape
 drawable rectangle12
 drawable register_button_border
@@ -1629,6 +1644,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user
 drawable user_shape
+drawable username
 drawable vpi__tab_indicator
 drawable vpi__tab_selected_focused_holo
 drawable vpi__tab_selected_holo
@@ -1675,6 +1691,7 @@ id alertTitle
 id all
 id always
 id app_bar
+id app_logo
 id async
 id auto
 id bannerBottom
@@ -1818,6 +1835,7 @@ id listMode
 id list_drink
 id list_food
 id list_item
+id loginBtn
 id lvComment
 id lvEvents
 id mainContent
@@ -1914,6 +1932,7 @@ id parent
 id parentPanel
 id parent_matrix
 id password
+id passwordBound
 id percent
 id phoneRestaurantDetail
 id pin
@@ -2046,6 +2065,8 @@ id user_fullname
 id user_fullname_1
 id user_rating_date
 id user_rating_date_1
+id username
+id usernameBound
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
@@ -2126,6 +2147,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_draft
+layout fragment_login
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
 layout home_page_fragment
@@ -2321,6 +2343,8 @@ string library_materialize_licenseId
 string library_materialize_owner
 string library_materialize_repositoryLink
 string library_materialize_year
+string login
+string logo_description
 string main_menu_account_info
 string main_menu_change_password
 string main_menu_home
@@ -2336,15 +2360,20 @@ string material_drawer_close
 string material_drawer_open
 string mtrl_chip_close_icon_content_description
 string open
+string password_hint
+string password_icon_description
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
+string registry
 string rule_check
 string search_menu_title
 string status_bar_notification_info_overflow
+string username_hint
+string username_icon_description
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

@@ -79,39 +79,39 @@ public final class R {
     public static final class dimen {
         private dimen() {}
 
-        public static final int default_circle_indicator_radius = 0x7f060055;
-        public static final int default_circle_indicator_stroke_width = 0x7f060056;
-        public static final int default_line_indicator_gap_width = 0x7f060057;
-        public static final int default_line_indicator_line_width = 0x7f060058;
-        public static final int default_line_indicator_stroke_width = 0x7f060059;
-        public static final int default_title_indicator_clip_padding = 0x7f06005a;
-        public static final int default_title_indicator_footer_indicator_height = 0x7f06005b;
-        public static final int default_title_indicator_footer_indicator_underline_padding = 0x7f06005c;
-        public static final int default_title_indicator_footer_line_height = 0x7f06005d;
-        public static final int default_title_indicator_footer_padding = 0x7f06005e;
-        public static final int default_title_indicator_text_size = 0x7f06005f;
-        public static final int default_title_indicator_title_padding = 0x7f060060;
-        public static final int default_title_indicator_top_padding = 0x7f060061;
+        public static final int default_circle_indicator_radius = 0x7f060058;
+        public static final int default_circle_indicator_stroke_width = 0x7f060059;
+        public static final int default_line_indicator_gap_width = 0x7f06005a;
+        public static final int default_line_indicator_line_width = 0x7f06005b;
+        public static final int default_line_indicator_stroke_width = 0x7f06005c;
+        public static final int default_title_indicator_clip_padding = 0x7f06005d;
+        public static final int default_title_indicator_footer_indicator_height = 0x7f06005e;
+        public static final int default_title_indicator_footer_indicator_underline_padding = 0x7f06005f;
+        public static final int default_title_indicator_footer_line_height = 0x7f060060;
+        public static final int default_title_indicator_footer_padding = 0x7f060061;
+        public static final int default_title_indicator_text_size = 0x7f060062;
+        public static final int default_title_indicator_title_padding = 0x7f060063;
+        public static final int default_title_indicator_top_padding = 0x7f060064;
     }
     public static final class drawable {
         private drawable() {}
 
-        public static final int vpi__tab_indicator = 0x7f0700c1;
-        public static final int vpi__tab_selected_focused_holo = 0x7f0700c2;
-        public static final int vpi__tab_selected_holo = 0x7f0700c3;
-        public static final int vpi__tab_selected_pressed_holo = 0x7f0700c4;
-        public static final int vpi__tab_unselected_focused_holo = 0x7f0700c5;
-        public static final int vpi__tab_unselected_holo = 0x7f0700c6;
-        public static final int vpi__tab_unselected_pressed_holo = 0x7f0700c7;
+        public static final int vpi__tab_indicator = 0x7f0700c6;
+        public static final int vpi__tab_selected_focused_holo = 0x7f0700c7;
+        public static final int vpi__tab_selected_holo = 0x7f0700c8;
+        public static final int vpi__tab_selected_pressed_holo = 0x7f0700c9;
+        public static final int vpi__tab_unselected_focused_holo = 0x7f0700ca;
+        public static final int vpi__tab_unselected_holo = 0x7f0700cb;
+        public static final int vpi__tab_unselected_pressed_holo = 0x7f0700cc;
     }
     public static final class id {
         private id() {}
 
-        public static final int bottom = 0x7f09002c;
-        public static final int none = 0x7f090106;
-        public static final int top = 0x7f090177;
-        public static final int triangle = 0x7f09017f;
-        public static final int underline = 0x7f09018b;
+        public static final int bottom = 0x7f09002d;
+        public static final int none = 0x7f090108;
+        public static final int top = 0x7f09017a;
+        public static final int triangle = 0x7f090182;
+        public static final int underline = 0x7f09018e;
     }
     public static final class integer {
         private integer() {}

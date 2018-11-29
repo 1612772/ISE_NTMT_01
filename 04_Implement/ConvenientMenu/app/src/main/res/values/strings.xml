@@ -22,4 +22,13 @@
     <string name="main_menu_account_info">THÔNG TIN TÀI KHOẢN</string>
     <string name="rule_check">Tôi đồng ý với các điều khoản của ứng dụng</string>
     <string name="errorEmptyMessage">Không được để trống</string>
+
+    <!--strings use in login screen-->
+    <string name="password_hint">Password&#8230;&#8230;&#8230;</string>
+    <string name="username_hint">User name&#8230;&#8230;&#8230;</string>
+    <string name="logo_description">App Logo</string>
+    <string name="username_icon_description">User Name Icon</string>
+    <string name="password_icon_description">Password Icon</string>
+    <string name="login">Đăng nhập</string>
+    <string name="registry">Đăng ký</string>
 </resources>
