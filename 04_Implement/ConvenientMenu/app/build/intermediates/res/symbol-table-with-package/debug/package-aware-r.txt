@@ -25,6 +25,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+animator scale_with_alpha
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -152,6 +153,15 @@ attr chipStartPadding
 attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
+attr ci_animator
+attr ci_animator_reverse
+attr ci_drawable
+attr ci_drawable_unselected
+attr ci_gravity
+attr ci_height
+attr ci_margin
+attr ci_orientation
+attr ci_width
 attr circleCrop
 attr civ_border
 attr civ_border_color
@@ -1445,6 +1455,10 @@ dimen register_rule_height
 dimen register_split_name_width
 dimen register_text_size
 dimen register_textinput_margin_top
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen tool_bar_top_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1652,6 +1666,7 @@ drawable vpi__tab_selected_pressed_holo
 drawable vpi__tab_unselected_focused_holo
 drawable vpi__tab_unselected_holo
 drawable vpi__tab_unselected_pressed_holo
+drawable white_radius
 font font
 font montserrat
 id ALT
@@ -1714,17 +1729,9 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
-id comment_content
-id comment_content_1
-id comment_date
-id comment_date_1
 id comment_dish
-id comment_dish_content
-id comment_dish_content_1
-id comment_dish_list
 id comment_dish_list_wrapper
 id comment_form
-id comment_number
 id comment_text
 id comment_title
 id container
@@ -1802,6 +1809,7 @@ id home
 id homeAsUp
 id homePageContent
 id homePageContentWrapper__scrollable
+id horizontal
 id icon
 id icon_group
 id icon_only
@@ -1812,6 +1820,7 @@ id imageDish
 id imageEvent
 id imageRestaurant
 id imageSlider
+id imageView
 id imgAvatar
 id imgBackground
 id imgEvent
@@ -1923,8 +1932,6 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id number_of_star
-id number_of_star_1
 id outline
 id packed
 id parallax
@@ -2059,18 +2066,14 @@ id up
 id useLogo
 id userAccountName
 id userAvatar
-id user_avatar
-id user_avatar_1
-id user_fullname
-id user_fullname_1
-id user_rating_date
-id user_rating_date_1
 id username
 id usernameBound
+id vertical
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
 id visible
+id vote
 id wide
 id withText
 id wrap
@@ -2146,6 +2149,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dish_items
 layout fragment_draft
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
@@ -2962,6 +2966,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleIndicator ci_animator ci_animator_reverse ci_drawable ci_drawable_unselected ci_gravity ci_height ci_margin ci_orientation ci_width
 styleable CirclePageIndicator android_orientation android_background centered fillColor pageColor radius snap strokeColor strokeWidth
 styleable CircularImageView civ_border civ_border_color civ_border_width civ_shadow civ_shadow_color civ_shadow_radius
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId

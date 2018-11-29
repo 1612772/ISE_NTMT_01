@@ -27,7 +27,7 @@
         <activity android:name=".Restaurant_Detail" >
 
         </activity>
-        <activity android:name=".ViewDish" />
+        <activity android:name=".ViewDish.ViewDish" />
         <activity
             android:name=".register.CustomerRegister"
             android:label="Đăng ký - Thực khách"></activity>

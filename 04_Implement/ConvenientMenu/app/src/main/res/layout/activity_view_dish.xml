@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDish">
+    tools:context=".ViewDish.ViewDish">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,25 +29,20 @@
                     android:layout_height="151dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="0dp"
-                    android:background="@color/colorPrimary"/>
+                    />
 
-                <com.viewpagerindicator.CirclePageIndicator
+                <me.relex.circleindicator.CircleIndicator
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="bottom"
-                    android:padding="10dip"
-                    app:centered="true"
-                    app:fillColor="#df0623"
-                    app:pageColor="#fff"
-                    app:snap="false"
-                    android:background="@color/colorAccent"/>
+                    android:layout_height="44dp"
+                    android:layout_alignBottom="@+id/dish_images_viewer"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
 
             </RelativeLayout>
 
-            <LinearLayout
+
+           <LinearLayout
                 android:id="@+id/dish_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +50,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:layout_marginTop="10dp">
-                <!-- Dish's name -->
+
                 <TextView
                     android:id="@+id/dish_name"
                     android:layout_width="match_parent"
@@ -67,7 +62,7 @@
                     android:textColor="#595342"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-                <!-- Dish rating info -->
+
                 <LinearLayout
                     android:id="@+id/dish_rating_wrapper"
                     android:layout_width="match_parent"
@@ -92,13 +87,13 @@
                         android:text="4.5 of 5" />
 
                     <TextView
-                        android:id="@+id/comment_number"
+                        android:id="@+id/vote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="(132 phiếu)" />
                 </LinearLayout>
-                <!-- Dish's price -->
+
                 <TextView
                     android:id="@+id/dish_price"
                     android:layout_width="match_parent"
@@ -158,8 +153,9 @@
                         android:textStyle="normal" />
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
-        <!-- Comment dish -->
+
         <LinearLayout
             android:id="@+id/comment_dish_list_wrapper"
             android:layout_width="match_parent"
@@ -168,7 +164,7 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-            <!-- Evaluate dish -->
+
             <LinearLayout
                 android:id="@+id/evaluate_dish"
                 android:layout_width="match_parent"
@@ -195,7 +191,7 @@
                     android:layout_marginTop="4dp"
                     android:isIndicator="false" />
             </LinearLayout>
-            <!-- Comment dish -->
+
             <LinearLayout
                 android:id="@+id/comment_dish"
                 android:layout_width="match_parent"
@@ -245,15 +241,15 @@
                         android:src="@drawable/comment_btn" />
                 </LinearLayout>
             </LinearLayout>
-            <!-- Comment list -->
-            <LinearLayout
+
+            <!--<LinearLayout
                 android:id="@+id/comment_dish_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
-                <!-- tieu bieu -->
-                <LinearLayout
+                &lt;!&ndash; tieu bieu &ndash;&gt;
+               &lt;!&ndash; <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -413,8 +409,8 @@
                             android:textStyle="normal"
                             android:text="Lorem ipsum is simple dummy text of the printing and typesetting industry." />
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+                </LinearLayout>&ndash;&gt;
+            </LinearLayout>-->
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

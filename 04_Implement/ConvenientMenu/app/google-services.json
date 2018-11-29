@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "710612735854-av3adp0vm47bpb838smer1011rvek1i4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nguyenhuutu.convenientmenu",
+            "certificate_hash": "3a795046c046678dcfea0e117f6c83d7c65a310f"
+          }
+        },
+        {
           "client_id": "710612735854-c9j742reqgmjmvjqt53amgptgrmtmup3.apps.googleusercontent.com",
           "client_type": 3
         }
