@@ -1936,6 +1936,7 @@ id passwordBound
 id percent
 id phoneRestaurantDetail
 id pin
+id progressBarComment
 id progress_circular
 id progress_horizontal
 id radio

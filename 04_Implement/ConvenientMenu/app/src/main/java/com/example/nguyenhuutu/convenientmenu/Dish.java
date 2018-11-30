@@ -79,7 +79,8 @@ public class Dish implements Comparable {
      */
 
     public void setDishImage(Bitmap dishImage) {
-        this.dishImage = dishImage;
+        try{
+        this.dishImage = dishImage;}catch (Exception ex){}
     }
     public String getDishId() {
         return this.dishId;

@@ -8,9 +8,12 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
@@ -47,41 +50,42 @@ public class Fragment_Menu extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.tab_menu, container, false);
+        final View view = inflater.inflate(R.layout.tab_menu, container, false);
 
         viewpager = (ViewPager) view.findViewById(R.id.view_pager_menu);
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabMenu);
+        final TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tabMenu);
 
         pagerAdapterRestaurant = new PagerAdapterRestaurant(getChildFragmentManager());
 
         pagerAdapterRestaurant.AddFragment(food,"Món ăn");
         pagerAdapterRestaurant.AddFragment(drink,"Thức uống");
-        
+        viewpager.setOffscreenPageLimit(2);
         viewpager.setAdapter(pagerAdapterRestaurant);
         tabLayout.setupWithViewPager(viewpager);
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                pagerAdapterRestaurant.getItem(tab.getPosition()).onStart();
-            }
 
+        EditText search_Dish = (EditText)view.findViewById(R.id.search_Dish);
+        search_Dish.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-                onTabSelected(tab);
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(tabLayout.getTabAt(0).isSelected())
+                {
+                    Fragment_Food.adapter.filter(s);
+                }else
+                {
+                    Fragment_Drink.adapter.filter(s);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
         return view;
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    /*    food.onStart();
-        drink.onStart();*/
     }
 }

@@ -38,13 +38,12 @@ import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class Fragment_Event extends Fragment {
-    static public List<Event> dataList = new ArrayList<Event>();
     ListView listEvent;
-    ListEvent adapter;
+    public  static ListEvent adapter;
 
     @SuppressLint("ValidFragment")
     public Fragment_Event() {
-
+        final List<Event> dataList = new ArrayList<Event>();
         CMDB.db.collection("event").whereEqualTo("rest_account", Restaurant_Detail.idRestaurant).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -79,6 +78,8 @@ public class Fragment_Event extends Fragment {
                                     }
                                 });
                     }
+                    adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
+                    listEvent.setAdapter(adapter);
                 } else {
                     Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                 }
@@ -92,7 +93,6 @@ public class Fragment_Event extends Fragment {
 
         View view = inflater.inflate(R.layout.tab_events, container, false);
         listEvent = view.findViewById(R.id.lvEvents);
-        adapter = new ListEvent(getActivity(), R.layout.item_event, dataList);
         listEvent.setAdapter(adapter);
         listEvent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="fill_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <android.support.v7.widget.AppCompatRatingBar
+        <RatingBar
             android:id="@+id/ratComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,14 @@
         <ListView
             android:id="@+id/lvComment"
             android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/txtComment"
+            android:nestedScrollingEnabled="true"/>
+        <ProgressBar
+            android:id="@+id/progressBarComment"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtComment"></ListView>
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -23,7 +23,7 @@ public class CommentRestaurant {
     /**
      * Constructor Methods
      */
-    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
+    public CommentRestaurant(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar, String _avatar) {
         this.cmtRestid = _cmtRestId;
         this.cmtRestContent = _cmtRestContent;
         this.cmtRestDate = _cmtRestDate;
@@ -39,15 +39,18 @@ public class CommentRestaurant {
     public Bitmap getImageAvatar(Context context) {
         if (imageAvatar != null) {
             return imageAvatar;
-        }else
-        {
+        } else {
             return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
         }
     }
 
     public void setImageAvatar(Bitmap imageAvatar) {
-        this.imageAvatar = imageAvatar;
+        try {
+            this.imageAvatar = imageAvatar;
+        } catch (Exception ex) {
+        }
     }
+
     public String getCmtRestid() {
         return cmtRestid;
     }
@@ -71,7 +74,10 @@ public class CommentRestaurant {
     public Float getCmtRestStar() {
         return cmtRestStar;
     }
-    public String getAvatar(){return Avatar;}
+
+    public String getAvatar() {
+        return Avatar;
+    }
 
     /**
      * Other Methods
@@ -79,7 +85,8 @@ public class CommentRestaurant {
 
     /**
      * createCommentRestId()
-     *  - Create new id for CommentRestaurant
+     * - Create new id for CommentRestaurant
+     *
      * @param idNum
      * @return String
      */
@@ -88,17 +95,13 @@ public class CommentRestaurant {
 
         if (idNum < 10) {
             newId = String.format("MENU0000%d", idNum);
-        }
-        else if (idNum < 100) {
+        } else if (idNum < 100) {
             newId = String.format("MENU000%d", idNum);
-        }
-        else if (idNum < 1000) {
+        } else if (idNum < 1000) {
             newId = String.format("MENU00%d", idNum);
-        }
-        else if (idNum < 10000) {
+        } else if (idNum < 10000) {
             newId = String.format("MENU0%d", idNum);
-        }
-        else {
+        } else {
             newId = String.format("MENU%d", idNum);
         }
 
@@ -107,7 +110,8 @@ public class CommentRestaurant {
 
     /**
      * loadCommentRestaurant()
-     *  - Load information of a CommentRestaurant
+     * - Load information of a CommentRestaurant
+     *
      * @param document
      * @return CommentRestaurant
      */
@@ -117,15 +121,16 @@ public class CommentRestaurant {
         String _cmtRestDate = document.get("cmt_rest_date").toString();
         String _restAccount = document.get("rest_account").toString();
         String _userAccount = document.get("user_account").toString();
-        Float _cmtRestStar = ((Number)document.get("cmt_rest_star")).floatValue();
-        String _avatar = (String)document.get("user_avatar");
+        Float _cmtRestStar = ((Number) document.get("cmt_rest_star")).floatValue();
+        String _avatar = (String) document.get("user_avatar");
 
-        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar,_avatar);
+        return new CommentRestaurant(_cmtRestId, _cmtRestContent, _cmtRestDate, _restAccount, _userAccount, _cmtRestStar, _avatar);
     }
 
     /**
      * createCommentRestaurantData()
-     *  -   Create CommentRestaurant's data for query
+     * -   Create CommentRestaurant's data for query
+     *
      * @param _cmtRestId
      * @param _cmtRestContent
      * @param _cmtRestDate
@@ -134,7 +139,7 @@ public class CommentRestaurant {
      * @param _cmtRestStar
      * @return
      */
-    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar,String _avatar) {
+    public static Map<String, Object> createCommentRestaurantData(String _cmtRestId, String _cmtRestContent, String _cmtRestDate, String _restAccount, String _userAccount, Float _cmtRestStar, String _avatar) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("cmt_rest_id", _cmtRestId);
@@ -144,6 +149,7 @@ public class CommentRestaurant {
         document.put("user_account", _userAccount);
         document.put("cmt_rest_star", _cmtRestStar);
         document.put("user_avatar", _avatar);
+
         return document;
     }
 }
