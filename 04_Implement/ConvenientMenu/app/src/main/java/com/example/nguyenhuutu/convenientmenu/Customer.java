@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.register.CustomerRegister;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,7 +25,7 @@ public class Customer extends User {
         this.cus_firstname = firstName;
         this.cus_account = account;
         this.cus_email = email;
-        this.cus_password = password;
+        this.cus_password = Helper.md5(password);
         this.cus_avatar_file = "anonymous.png";
     }
     @Override

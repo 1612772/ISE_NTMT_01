@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import static org.json.JSONObject.NULL;
 
 public class Helper {
@@ -83,5 +86,27 @@ public class Helper {
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("logined_user", user.toString());
         editor.commit();
+    }
+
+    public static String md5(String inputString) {
+        String outputString = "";
+
+        try {
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            digest.update(inputString.getBytes());
+
+            byte messageDigest[] = digest.digest();
+
+            StringBuilder hexString = new StringBuilder();
+            for (int index = 0; index < messageDigest.length; index++) {
+                hexString.append(Integer.toHexString(0xFF & messageDigest[index]));
+            }
+
+            outputString = hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return outputString;
     }
 }

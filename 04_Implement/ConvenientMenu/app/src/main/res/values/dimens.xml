@@ -9,6 +9,7 @@
     <dimen name="homepage_rest_item_content_width">130dp</dimen>
     <dimen name="homepage_dish_item_content_width">130dp</dimen>
     <dimen name="homepage_event_item_content_width">130dp</dimen>
+    <!-- Register -->
     <dimen name="register_content_width">300dp</dimen>
     <dimen name="register_split_name_width">120dp</dimen>
     <dimen name="register_among_split_name_padding">30dp</dimen>

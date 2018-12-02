@@ -1,6 +1,5 @@
 package com.example.nguyenhuutu.convenientmenu.register;
 
-import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -12,13 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.Customer;
 import com.example.nguyenhuutu.convenientmenu.R;
@@ -141,9 +137,12 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             case R.id.checkRule:
                 if (((CheckBox) v).isChecked()) {
                     checkRuleOk = true;
+
+                    checkRule.setButtonDrawable(android.R.drawable.checkbox_on_background);
                 }
                 else {
                     checkRuleOk = false;
+                    checkRule.setButtonDrawable(android.R.drawable.checkbox_off_background);
                 }
                 break;
         }

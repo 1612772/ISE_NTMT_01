@@ -24,9 +24,10 @@
 
         <LinearLayout
             android:id="@+id/editInformation"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/register_content_width"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
             android:paddingLeft="20dp"
             android:paddingTop="20dp"
             android:paddingRight="20dp"
@@ -178,12 +179,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginTop="@dimen/register_textinput_margin_top"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/rule_check"
+                android:button="@android:drawable/checkbox_off_background"
                 android:fontFamily="@font/montserrat"
+                android:text="@string/rule_check"
+                android:textColor="@color/black"
+                android:textColorHint="@color/accent"
+                android:textSelectHandleRight="@android:drawable/radiobutton_off_background"
                 android:textSize="10sp"
-                android:textColor="@color/black"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/register"

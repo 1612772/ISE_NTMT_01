@@ -1545,6 +1545,8 @@ drawable border_input_bottom
 drawable button_primary_background
 drawable button_secondary_background
 drawable checkbox_border
+drawable checkbox_no
+drawable checkbox_yes
 drawable comment_btn
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
