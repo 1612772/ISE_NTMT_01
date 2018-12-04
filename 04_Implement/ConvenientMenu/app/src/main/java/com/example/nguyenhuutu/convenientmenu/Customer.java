@@ -25,8 +25,8 @@ public class Customer extends User {
         this.cus_firstname = firstName;
         this.cus_account = account;
         this.cus_email = email;
-        this.cus_password = Helper.md5(password);
-        this.cus_avatar_file = "anonymous.png";
+        this.cus_password = Helper.getCompressPassword(password);
+        this.cus_avatar_file = "cus_anonymous.png";
     }
     @Override
     public void login(Activity activity) {

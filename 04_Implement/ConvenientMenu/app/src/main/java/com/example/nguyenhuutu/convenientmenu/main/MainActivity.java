@@ -22,6 +22,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
+import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
@@ -66,42 +67,51 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setMainMenu() {
-        JSONObject loginedUserJson = new JSONObject();
+        UserSession loginedUserJson = Helper.getLoginedUser(this);
 
-        try{
-            loginedUserJson = Helper.getLoginedUser(this);
-
-            if (loginedUserJson.getBoolean("logined") == true) {
-                if (loginedUserJson.getBoolean("isRest") == true) {
-                    mainMenu.inflateMenu(R.menu.main_menu_restaurant_login);
-                }
-                else {
-                    mainMenu.inflateMenu(R.menu.main_menu_customer_login);
-                }
-                setHeaderOfMainMenu(R.layout.nav_header_login, loginedUserJson);
+        if (loginedUserJson.isExists() == true) {
+            if (loginedUserJson.isRest()) {
+                mainMenu.inflateMenu(R.menu.main_menu_restaurant_login);
             }
             else {
-                mainMenu.inflateMenu(R.menu.main_menu_non_login);
-                setHeaderOfMainMenu(R.layout.nav_header_non_login, loginedUserJson);
+                mainMenu.inflateMenu(R.menu.main_menu_customer_login);
             }
+            setHeaderOfMainMenu(R.layout.nav_header_login, loginedUserJson);
         }
-        catch(Exception ex) {
-            Toast.makeText(this, "get logined user error: " + ex.toString(), Toast.LENGTH_SHORT).show();
+        else {
+            mainMenu.inflateMenu(R.menu.main_menu_non_login);
+            setHeaderOfMainMenu(R.layout.nav_header_non_login, loginedUserJson);
         }
+
+//        try{
+//            loginedUserJson = Helper.getLoginedUser(this);
+//
+//            if (loginedUserJson.getBoolean("logined") == true) {
+//                if (loginedUserJson.getBoolean("isRest") == true) {
+//                    mainMenu.inflateMenu(R.menu.main_menu_restaurant_login);
+//                }
+//                else {
+//                    mainMenu.inflateMenu(R.menu.main_menu_customer_login);
+//                }
+//                setHeaderOfMainMenu(R.layout.nav_header_login, loginedUserJson);
+//            }
+//            else {
+//                mainMenu.inflateMenu(R.menu.main_menu_non_login);
+//                setHeaderOfMainMenu(R.layout.nav_header_non_login, loginedUserJson);
+//            }
+//        }
+//        catch(Exception ex) {
+//            Toast.makeText(this, "get logined user error: " + ex.toString(), Toast.LENGTH_SHORT).show();
+//        }
     }
 
-    private void setHeaderOfMainMenu(int id, JSONObject data) {
+    private void setHeaderOfMainMenu(int id, UserSession userSession) {
         mainMenu.removeHeaderView(mainMenu.getHeaderView(0));
         mainMenu.addHeaderView(getLayoutInflater().inflate(id, null));
 
         if (id == R.layout.nav_header_login) {
-            Toast.makeText(this, "header login", Toast.LENGTH_SHORT).show();
-            try {
-                UserInfoTask userInfo = new UserInfoTask();
-                userInfo.execute(data.getString("username"), data.getBoolean("isRest"));
-            } catch (JSONException e) {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-            }
+            UserInfoTask userInfo = new UserInfoTask();
+            userInfo.execute(userSession.getUsername(), userSession.isRest());
         }
     }
 
@@ -155,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_logout:
+                        Helper.changeUserSession(MainActivity.this, new UserSession());
+                        updateMainMenu();
                         break;
                     case R.id.main_menu_setting:
                         break;
@@ -185,6 +197,43 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.mainContent, frag);
         ft.commit();
+    }
+
+    public void setContent(Fragment frag) {
+        if (frag instanceof HomePageFragment) {
+            setTitle(getResources().getString(R.string.home_page_title));
+        }
+        else if (frag instanceof SwitchRegisterFragment) {
+            setTitle(getResources().getString(R.string.switch_register_title));
+        }
+        else if (frag instanceof LoginFragment) {
+            setTitle(getResources().getString(R.string.login_title));
+        }
+        else if (frag instanceof SwitchRegisterFragment) {
+            setTitle(getResources().getString(R.string.switch_register_title));
+        }
+
+        contentFragment = frag;
+        switchContent(contentFragment);
+    }
+
+    public void updateMainMenu() {
+        removeOldMainMenu();
+        setMainMenu();
+    }
+
+    public void removeOldMainMenu() {
+        mainMenu.getMenu().removeItem(R.id.main_menu_home);
+        mainMenu.getMenu().removeItem(R.id.main_menu_restaurant_list);
+        mainMenu.getMenu().removeItem(R.id.main_menu_list_mark);
+        mainMenu.getMenu().removeItem(R.id.main_menu_login);
+        mainMenu.getMenu().removeItem(R.id.main_menu_logout);
+        mainMenu.getMenu().removeItem(R.id.main_menu_register);
+        mainMenu.getMenu().removeItem(R.id.main_menu_manage_event);
+        mainMenu.getMenu().removeItem(R.id.main_menu_manage_menu);
+        mainMenu.getMenu().removeItem(R.id.main_menu_setting);
+        mainMenu.getMenu().removeItem(R.id.main_menu_change_password);
+        mainMenu.getMenu().removeItem(R.id.main_menu_info_account);
     }
 
     private void updateInfoHeaderMainMenu(String data) {

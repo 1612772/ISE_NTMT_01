@@ -1344,6 +1344,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_transparent.xml.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\transparent.xml"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_main_menu_icon.png.flat",
         "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\main_menu_icon.png"
     },

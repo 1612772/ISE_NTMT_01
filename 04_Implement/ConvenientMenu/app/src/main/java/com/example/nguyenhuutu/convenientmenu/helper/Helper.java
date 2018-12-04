@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.view.Display;
+
+import com.example.nguyenhuutu.convenientmenu.User;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,7 +18,10 @@ import java.security.NoSuchAlgorithmException;
 import static org.json.JSONObject.NULL;
 
 public class Helper {
-    public static String LocalDbName = "convenient_menu";
+    private static String LocalDbName = "convenient_menu";
+    private static String UserSessionSharedDocument = "UserSession";
+    private static String LoginedUserSessionSharedDocument = "LoginedUser";
+    private static String LoginedRecentUserSessionSharedDocument = "LoinedRecentUser";
     public static float getOneDP() {
         float oneDP = 1;
 
@@ -46,30 +52,43 @@ public class Helper {
 //        }
 //    }
 
-    public static JSONObject getLoginedUser(Activity activity) {
-        JSONObject result = new JSONObject();
-        // init
-        try {
-            result.put("logined", false);
-            result.put("username", "");
-            result.put("password", "");
-            result.put("isRest", false);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
-
-        if (pref.contains("logined_user")) {
-            try {
-                result = new JSONObject(pref.getString("logined_user", "").toString());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return result;
+    public static void changeUserSession(Activity activity, UserSession userSession) {
+        SharedPreferences pref = activity.getSharedPreferences(UserSessionSharedDocument, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(LoginedUserSessionSharedDocument, userSession.createSharedDocumentData());
+        editor.commit();
     }
+
+    public static UserSession getLoginedUser(Activity activity) {
+        SharedPreferences pref = activity.getSharedPreferences(UserSessionSharedDocument, Context.MODE_PRIVATE);
+        String loginedUserJson = pref.getString(LoginedUserSessionSharedDocument, "{}");
+
+        return new UserSession(loginedUserJson);
+    }
+//    public static JSONObject getLoginedUser(Activity activity) {
+//        JSONObject result = new JSONObject();
+//        // init
+//        try {
+//            result.put("logined", false);
+//            result.put("username", "");
+//            result.put("password", "");
+//            result.put("isRest", false);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
+//
+//        if (pref.contains("logined_user")) {
+//            try {
+//                result = new JSONObject(pref.getString("logined_user", "").toString());
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        return result;
+//    }
 
     public static void setSampleUserInLocal(Activity activity) {
         SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
@@ -108,5 +127,9 @@ public class Helper {
         }
 
         return outputString;
+    }
+
+    public static String getCompressPassword(String inputString) {
+        return md5("CM" + inputString);
     }
 }
