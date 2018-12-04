@@ -17,4 +17,5 @@
     <color name="colorYellow1">#FEE5A2</color>
     <color name="colorWhile">#ffffff</color>
     <color name="colorTextRegister">#000</color>
+    <color name="colorLoginButton">#ff9900</color>
 </resources>
