@@ -1,19 +1,19 @@
 #Internal package file, do not edit.
-#Fri Nov 30 23:36:37 ICT 2018
-1.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Wed Dec 05 17:31:26 ICT 2018
+1.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
 2.path=classes2.dex
 0.baseType=DIRECTORY
 3.baseType=DIRECTORY
-2.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+2.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 3.set=DEX
 2.set=DEX
 1.baseType=DIRECTORY
 3.path=classes.dex
 count=4
-1.set=DEX
-0.path=fonts/materialdrawerfont-font-v5.0.0.ttf
-3.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-0.set=ASSET
-0.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+1.set=ASSET
+0.path=classes3.dex
+3.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.set=DEX
+0.base=C\:\\Users\\truong quang tu\\Desktop\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 2.baseType=DIRECTORY
-1.path=classes3.dex
+1.path=fonts/materialdrawerfont-font-v5.0.0.ttf

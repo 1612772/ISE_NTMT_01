@@ -30,7 +30,10 @@
         <activity android:name=".ViewDish" />
         <activity
             android:name=".register.CustomerRegister"
-            android:label="Đăng ký - Thực khách"></activity>
+            android:label="Đăng ký - Thực khách"/>
+        <activity
+            android:name=".register.RestaurantRegister"
+            android:label="Đăng ký - Nhà hàng"/>
     </application>
 
 </manifest>

@@ -99,7 +99,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
         process.setMessage("Registering. Please Wait for a while.");
         process.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
-        mToolbar= findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
@@ -130,8 +130,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
 
                     process.show();
 
-                }
-                else {
+                } else {
                 }
                 break;
             case R.id.checkRule:
@@ -139,8 +138,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     checkRuleOk = true;
 
                     checkRule.setButtonDrawable(android.R.drawable.checkbox_on_background);
-                }
-                else {
+                } else {
                     checkRuleOk = false;
                     checkRule.setButtonDrawable(android.R.drawable.checkbox_off_background);
                 }
@@ -153,13 +151,13 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             process.hide();
             Intent homepageIntent = new Intent(this, MainActivity.class);
             startActivity(homepageIntent);
-        }
-        else {
+        } else {
 
         }
     }
 
-    private void setTextChangeForLastName(){
+    private void setTextChangeForLastName() {
+
         lastName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -178,19 +176,18 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     lastNameOk = false;
                     lastNameLayout.setError("Không được để trống");
-                }
-                else if (str.matches("^[a-zA-Z]+$")) {
+                } else if (str.matches("^[a-zA-Z]+$")) {
                     lastNameOk = true;
                     lastNameLayout.setError(null);
-                }
-                else {
+                } else {
                     lastNameOk = false;
                     lastNameLayout.setError("Không được chứa số và khoảng trắng");
                 }
             }
         });
     }
-    private void setTextChangeForFirstName(){
+
+    private void setTextChangeForFirstName() {
         firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -209,19 +206,18 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     firstNameOk = false;
                     firstNameLayout.setError("Không được để trống");
-                }
-                else if (str.matches("^[a-zA-Z]+$")) {
+                } else if (str.matches("^[a-zA-Z]+$")) {
                     firstNameOk = true;
                     firstNameLayout.setError(null);
-                }
-                else {
+                } else {
                     firstNameOk = false;
                     firstNameLayout.setError("Không được chứa số và khoảng trắng");
                 }
             }
         });
     }
-    private void setTextChangeForAccount(){
+
+    private void setTextChangeForAccount() {
         account.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -240,19 +236,18 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     accountOk = false;
                     accountLayout.setError("Không được để trống");
-                }
-                else if (str.matches("^[a-zA-Z0-9]+$")) {
+                } else if (str.matches("^[a-zA-Z0-9]+$")) {
                     CheckAccountTask checkAccount = new CheckAccountTask();
                     checkAccount.execute(str);
-                }
-                else {
+                } else {
                     accountOk = false;
                     accountLayout.setError("Không được khoảng trắng và ký tự đặc biệt");
                 }
             }
         });
     }
-    private void setTextChangeForEmail(){
+
+    private void setTextChangeForEmail() {
         email.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -271,19 +266,18 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     emailOk = false;
                     emailLayout.setError("Không được để trống");
-                }
-                else if (str.matches("^[_A-Za-z0-9-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$")) {
+                } else if (str.matches("^[_A-Za-z0-9-]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$")) {
                     emailOk = true;
                     emailLayout.setError(null);
-                }
-                else {
+                } else {
                     emailOk = false;
                     emailLayout.setError("Email không đúng");
                 }
             }
         });
     }
-    private void setTextChangeForPassword(){
+
+    private void setTextChangeForPassword() {
         password.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -305,22 +299,20 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     passwordOk = false;
                     passwordLayout.setError("Không được để trống");
+                } else if (str.length() < 8) {
+                    passwordOk = false;
+                    passwordLayout.setError("Mật khẩu có độ dài ít nhất 8 ký tự");
+                } else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
+                    passwordOk = false;
+                    passwordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
+                } else {
+                    passwordOk = true;
+                    passwordLayout.setError(null);
                 }
-                else if (str.length() < 8) {
-                        passwordOk = false;
-                        passwordLayout.setError("Mật khẩu có độ dài ít nhất 8 ký tự");
-                    }
-                    else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
-                        passwordOk = false;
-                        passwordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
-                    }
-                    else {
-                        passwordOk = true;
-                        passwordLayout.setError(null);
-                    }
             }
         });
     }
+
     private void setTextChangeForAgainPassword() {
         againPassword.addTextChangedListener(new TextWatcher() {
             @Override
@@ -343,20 +335,16 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (str.isEmpty()) {
                     againPasswordOk = false;
                     againPasswordLayout.setError("Không được để trống");
-                }
-                else if (str.length() < 8) {
+                } else if (str.length() < 8) {
                     againPasswordOk = false;
                     againPasswordLayout.setError("Mật khẩu có độ dài ít nhất 8 ký tự");
-                }
-                else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
+                } else if (!patternUpper.matcher(str).find() || !patternNumber.matcher(str).find()) {
                     againPasswordOk = false;
                     againPasswordLayout.setError("Mật khẩu phải chứa ký tự in hoa và số");
-                }
-                else if (str.equals(new String(password.getText().toString()))) {
+                } else if (str.equals(new String(password.getText().toString()))) {
                     againPasswordOk = true;
                     againPasswordLayout.setError(null);
-                }
-                else {
+                } else {
                     againPasswordOk = false;
                     againPasswordLayout.setError("Mật khẩu không trùng khớp");
                 }
@@ -367,8 +355,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
     private boolean checkInfo() {
         if (lastNameOk && firstNameOk && accountOk && passwordOk && againPasswordOk && emailOk && checkRuleOk) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -431,7 +418,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
 
-            try{
+            try {
                 JSONObject reader = new JSONObject(result);
                 boolean isSuccess = reader.getBoolean("isSuccess");
 
@@ -440,16 +427,16 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     if (data) {
                         accountOk = true;
                         accountLayout.setError(null);
-                    }
-                    else {
+                    } else {
                         accountOk = false;
                         accountLayout.setError("Tên tài khoản đã tồn tại");
                     }
                 }
-            }
-            catch(Exception ex) {
+            } catch (Exception ex) {
 
             }
         }
-    };
+    }
+
+    ;
 }
