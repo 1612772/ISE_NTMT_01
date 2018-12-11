@@ -1799,7 +1799,6 @@ id imgAvatar
 id imgBackground
 id imgEvent
 id imgFoodDrink
-id imgPopupMenu
 id indicator
 id info
 id invisible

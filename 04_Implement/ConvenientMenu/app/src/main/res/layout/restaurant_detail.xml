@@ -59,7 +59,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:text="Pham Nhut Thanh"
                             android:textColor="#000"
                             android:textSize="20dp"
                             android:textStyle="bold" />
@@ -83,7 +82,6 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginBottom="5dp"
                             android:layout_toRightOf="@id/ratingRestaurant"
-                            android:text="4.5 (145 phiếu)"
                             android:textColor="#000" />
 
                         <ImageView
@@ -107,7 +105,6 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
-                            android:text="Pham Nhut Thanh"
                             android:textColor="#fff" />
 
                         <TextView
@@ -118,7 +115,6 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Pham Nhut Thanh"
                             android:textColor="#fff" />
 
                         <TextView
@@ -130,7 +126,6 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:layout_toRightOf="@id/phoneRestaurantDetail"
-                            android:text="Pham Nhut Thanh"
                             android:textColor="#fff" />
                     </RelativeLayout>
 
@@ -149,7 +144,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Nhà hàng"
                     android:textStyle="bold"
                     android:textSize="25dp"/>
             </android.support.v7.widget.Toolbar>
