@@ -231,11 +231,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void afterTextChanged(Editable s) {
-                // bao nhiu 800k,ssd nữa là 1.5 củ
 
-
-                // lỗi này do, tài khoản nó gửi lên để check trùng trong khi người dùng vẫn nhập vào, nếu nhập vào lỗi mà sau đó có kết
-                 // quả trả về từ server thì nó bị v
                 String str = account.getText().toString();
                 if(checkAccount!=null) checkAccount.cancel(false);
                 if (str.isEmpty()) {
