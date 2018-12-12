@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/ratComment"
             android:layout_marginTop="10dp"
+            android:padding="10dp"
             android:layout_marginBottom="@dimen/fab_margin"
             android:singleLine="true"
             android:drawableRight="@android:drawable/ic_menu_send"

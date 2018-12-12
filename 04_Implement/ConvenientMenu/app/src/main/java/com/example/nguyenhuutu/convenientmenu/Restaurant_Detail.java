@@ -160,7 +160,9 @@ public class Restaurant_Detail extends AppCompatActivity {
                                 lbNameRestaurant.setText(infoRestaurant.getRestName());
                                 addressRestaurantDetail.setText("Địa chỉ: " + infoRestaurant.getRestAddresses().get(0));
                                 phoneRestaurantDetail.setText("SĐT: " + infoRestaurant.getRestPhone());
-                                facebookRestaurantDetail.setText("Facebook: " + infoRestaurant.getRestFacebook());
+                                if (!infoRestaurant.getRestFacebook().isEmpty()) {
+                                    facebookRestaurantDetail.setText("Facebook: " + infoRestaurant.getRestFacebook());
+                                }
                                 ratingPerTotal.setText(infoRestaurant.getMaxStar() + " (" + infoRestaurant.getTotalRating() + " phiếu)");
                                 ratingRestaurant.setRating(infoRestaurant.getMaxStar().floatValue());
                             } catch (Exception ex) {

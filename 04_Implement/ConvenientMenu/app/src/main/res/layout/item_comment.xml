@@ -20,22 +20,24 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:textColor="#000"
-        android:layout_toLeftOf="@id/rbRating"
         android:layout_toRightOf="@id/imgAvatar"/>
     <RatingBar
         android:id="@+id/rbRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
         style="?android:attr/ratingBarStyleSmall"
-        android:layout_toLeftOf="@id/tvTimeRating"/>
+        android:layout_below="@id/tvName"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignLeft="@id/tvName"/>
     <TextView
         android:id="@+id/tvTimeRating"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="dd/mm/yyyy"
+        android:textStyle="italic"
         android:layout_alignParentRight="true"/>
     <TextView
         android:id="@+id/tvComment"
@@ -43,8 +45,9 @@
         android:layout_height="wrap_content"
         android:text="Content Comment"
         android:textColor="#000"
+
         android:layout_toRightOf="@id/imgAvatar"
-        android:layout_below="@id/tvName"
+        android:layout_below="@id/rbRating"
         android:layout_marginTop="10dp"
         android:layout_alignBottom="@id/imgAvatar"/>
 

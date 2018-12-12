@@ -62,7 +62,6 @@ public class ListFood extends BaseAdapter {
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
-        ImageView imgPopupMenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
         RatingBar rbRatingItem = (RatingBar) row.findViewById(R.id.rbRatingItem);
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
 
