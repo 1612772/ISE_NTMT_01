@@ -14,6 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name Food"
+        android:singleLine="true"
+        android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/imgFoodDrink"
         android:textStyle="bold"
         android:textColor="#000"/>
@@ -21,12 +23,12 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cvEvent"
         android:layout_width="wrap_content"
-
+android:layout_below="@id/tvFood"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tvFood"
-        android:layout_marginLeft="5dp"
-        app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="#ff0000">
+        android:layout_alignLeft="@id/tvFood"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#ff0000"
+        app:cardCornerRadius="10dp">
         <TextView
             android:id="@+id/tvEvent"
             android:paddingLeft="10dp"
@@ -48,12 +50,11 @@
         android:id="@+id/rbRatingItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_above="@id/tvPrice"
         android:layout_toRightOf="@id/imgFoodDrink"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_toLeftOf="@id/tvTimeRating"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="5dp" />
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="match_parent"

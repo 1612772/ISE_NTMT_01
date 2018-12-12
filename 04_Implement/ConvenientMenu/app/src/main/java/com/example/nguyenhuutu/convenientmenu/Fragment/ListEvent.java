@@ -53,9 +53,9 @@ public class ListEvent extends BaseAdapter {
 
         Event item = event.get(position);
 
-        tvDescriptionEvent.setText(item.getEventContent());// Không thấy thuộc tính title
-        tvTitleEvent.setText(item.getEventContent());
-        tvTimeEvent.setText(item.getBeginDateFormat() + " đến " + item.getEndDateFormat());
+        tvDescriptionEvent.setText(item.getEventContent());
+        tvTitleEvent.setText(item.getEventName());
+        tvTimeEvent.setText(item.getBeginDateFormat() + " - " + item.getEndDateFormat());
         imgEvent.setImageBitmap(item.getImageEvent(context));
 
         return row;

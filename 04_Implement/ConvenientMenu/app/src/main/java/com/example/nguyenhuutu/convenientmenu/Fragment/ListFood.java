@@ -68,14 +68,14 @@ public class ListFood extends BaseAdapter {
         Dish item = search.get(position);
 
         tvFood.setText(item.getDishName());
-        if (item.getEventTypeId() < 0) //new
+        if (item.getEventType() < 0) //new
         {
             tvEvent.setText(Dish.NEW);
-            cvEvent.setCardBackgroundColor(Dish.colorNew);
-        } else if (item.getEventTypeId() > 0) //hot
+            //cvEvent.setCardBackgroundColor(Dish.colorNew);
+        } else if (item.getEventType() > 0) //hot
         {
             tvEvent.setText(Dish.HOT);
-            cvEvent.setCardBackgroundColor(Dish.colorHot);
+            //cvEvent.setCardBackgroundColor(Dish.colorHot);
         }else
         {
             cvEvent.setVisibility(View.INVISIBLE);

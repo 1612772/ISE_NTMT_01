@@ -3,6 +3,7 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,14 +64,14 @@ public class ListDrink extends BaseAdapter {
         Dish item = search.get(position);
 
         tvFood.setText(item.getDishName());
-        if (item.getEventTypeId() < 0) //new
+        if (item.getEventType() < 0) //new
         {
             tvEvent.setText(Dish.NEW);
-            cvEvent.setCardBackgroundColor(Dish.colorNew);
-        } else if (item.getEventTypeId() > 0) //hot
+            //cvEvent.setCardBackgroundColor(Color.rgb(0,0,0));
+        } else if (item.getEventType() > 0) //hot
         {
             tvEvent.setText(Dish.HOT);
-            cvEvent.setCardBackgroundColor(Dish.colorHot);
+           // cvEvent.setCardBackgroundColor(Dish.colorHot);
         }else
         {
             cvEvent.setVisibility(View.INVISIBLE);

@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Restaurant_Detail" >
+        <activity android:name=".Restaurant_Detail"
+            android:screenOrientation="portrait" >
 
         </activity>
         <activity android:name=".ViewDish" />

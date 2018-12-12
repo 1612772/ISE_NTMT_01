@@ -83,22 +83,26 @@ public class Restaurant_Detail extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabRestaurantDetail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRestaurant);
         app_bar = (AppBarLayout) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setTitle("Nhà hàng");
+
         app_bar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
 
                 if (Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0) {
                     //  Collapsed
+                    getSupportActionBar().setTitle("Nhà hàng");
 
                 } else {
-
+                    getSupportActionBar().setTitle("");
                 }
             }
         });
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,27 +150,28 @@ public class Restaurant_Detail extends AppCompatActivity {
                                                             .load(uri.toString())
                                                             .into((ImageView) imgBackground.findViewById(R.id.imgBackground));
                                                 } catch (Exception ex) {
-                                                    Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception exception) {
-                                                Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
                                             }
                                         });
 
                                 lbNameRestaurant.setText(infoRestaurant.getRestName());
-                                addressRestaurantDetail.setText("Địa chỉ: " + infoRestaurant.getRestAddresses().get(0));
-                                phoneRestaurantDetail.setText("SĐT: " + infoRestaurant.getRestPhone());
+                                if (!infoRestaurant.getRestAddresses().get(0).isEmpty()) {
+                                    addressRestaurantDetail.setText("Địa chỉ: " + infoRestaurant.getRestAddresses().get(0));
+                                }
+                                if (!infoRestaurant.getRestPhone().isEmpty()) {
+                                    phoneRestaurantDetail.setText("SĐT: " + infoRestaurant.getRestPhone());
+                                }
                                 if (!infoRestaurant.getRestFacebook().isEmpty()) {
                                     facebookRestaurantDetail.setText("Facebook: " + infoRestaurant.getRestFacebook());
                                 }
                                 ratingPerTotal.setText(infoRestaurant.getMaxStar() + " (" + infoRestaurant.getTotalRating() + " phiếu)");
                                 ratingRestaurant.setRating(infoRestaurant.getMaxStar().floatValue());
                             } catch (Exception ex) {
-                                Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                             //}
                         } else {

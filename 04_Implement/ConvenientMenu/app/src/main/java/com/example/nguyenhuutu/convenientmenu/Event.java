@@ -30,6 +30,7 @@ public class Event implements Comparable {
      * Properties
      */
     private String eventId;
+    private String eventName;
     private String eventContent;
     private List<String> eventImageFiles;
     private Date beginDate;
@@ -43,7 +44,7 @@ public class Event implements Comparable {
     /**
      * Constructor methods
      */
-    public Event(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount, Date _datePublish) {
+    public Event(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount, Date _datePublish,String _eventName) {
         this.eventId = _eventId;
         this.eventContent = _eventContent;
         this.eventImageFiles = _eventImageFiles;
@@ -51,11 +52,19 @@ public class Event implements Comparable {
         this.endDate = _endDate;
         this.restAccount = _restAccount;
         this.datePublish = _datePublish;
+        this.eventName = _eventName;
     }
 
     /**
      * Getter methods
      */
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
     public String getEventId() {
         return eventId;
     }
@@ -157,7 +166,8 @@ public class Event implements Comparable {
         Date _endDate = (Date) document.get("end_date");
         String _restAccount = document.get("rest_account").toString();
         Date _datePublish = (Date) document.get("date_publish");
-        return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish);
+        String _eventName = document.get("event_name").toString();
+        return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish,_eventName);
     }
 
     /**
