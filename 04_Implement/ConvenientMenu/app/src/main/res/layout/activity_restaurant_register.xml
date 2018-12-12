@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/register_textinput_margin_top"
-                android:hint="Tên đăng nhập"
+                android:hint="Tên tài khoản"
                 android:textColorHint="@color/hintColor"
                 app:errorEnabled="true"
                 app:errorTextAppearance="@style/ErrorHintText"
@@ -156,12 +156,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginTop="@dimen/register_textinput_margin_top"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="@string/rule_check"
+                android:button="@android:drawable/checkbox_off_background"
                 android:fontFamily="@font/montserrat"
+                android:text="@string/rule_check"
+                android:textColor="@color/black"
+                android:textColorHint="@color/accent"
+                android:textSelectHandleRight="@android:drawable/radiobutton_off_background"
                 android:textSize="10sp"
-                android:textColor="@color/black"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <Button
                 android:id="@+id/register"

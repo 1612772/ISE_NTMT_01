@@ -231,13 +231,19 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void afterTextChanged(Editable s) {
-                String str = account.getText().toString();
+                // bao nhiu 800k,ssd nữa là 1.5 củ
 
+
+                // lỗi này do, tài khoản nó gửi lên để check trùng trong khi người dùng vẫn nhập vào, nếu nhập vào lỗi mà sau đó có kết
+                 // quả trả về từ server thì nó bị v
+                String str = account.getText().toString();
+                if(checkAccount!=null) checkAccount.cancel(false);
                 if (str.isEmpty()) {
                     accountOk = false;
                     accountLayout.setError("Không được để trống");
                 } else if (str.matches("^[a-zA-Z0-9]+$")) {
-                    CheckAccountTask checkAccount = new CheckAccountTask();
+                    accountLayout.setError(null);
+                    checkAccount = new CheckAccountTask();
                     checkAccount.execute(str);
                 } else {
                     accountOk = false;
@@ -246,7 +252,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             }
         });
     }
-
+    CheckAccountTask checkAccount;
     private void setTextChangeForEmail() {
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -396,9 +402,12 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
     }
 
     class CheckAccountTask extends AsyncTask<String, Void, String> {
+        private String oldString;
 
         @Override
         protected String doInBackground(String... params) {
+            oldString = params[0];
+
             String result = "";
             String url = "https://convenientmenu.herokuapp.com/check-customer-account-available";
 
@@ -425,8 +434,11 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (isSuccess) {
                     boolean data = reader.getBoolean("data");
                     if (data) {
-                        accountOk = true;
-                        accountLayout.setError(null);
+
+                        if(accountLayout.getEditText().toString().equals(oldString)) {
+                            accountOk = true;
+                            accountLayout.setError(null);
+                        }
                     } else {
                         accountOk = false;
                         accountLayout.setError("Tên tài khoản đã tồn tại");

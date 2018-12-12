@@ -174,13 +174,9 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
                     resNameOk = false;
                     resNameLayout.setError("Không được để trống");
                 }
-                else if (str.matches("^[a-zA-Z]+$")) {
+                else {
                     resNameOk = true;
                     resNameLayout.setError(null);
-                }
-                else {
-                    resNameOk = false;
-                    resNameLayout.setError("Không được chứa số và khoảng trắng");
                 }
             }
         });
@@ -201,12 +197,14 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
             public void afterTextChanged(Editable s) {
                 String str = account.getText().toString();
 
+                if(checkAccount!=null) checkAccount.cancel(false);
                 if (str.isEmpty()) {
                     accountOk = false;
                     accountLayout.setError("Không được để trống");
                 }
                 else if (str.matches("^[a-zA-Z0-9]+$")) {
-                    CheckAccountTask checkAccount = new CheckAccountTask();
+                    accountLayout.setError(null);
+                    checkAccount = new CheckAccountTask();
                     checkAccount.execute(str);
                 }
                 else {
@@ -216,6 +214,7 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
             }
         });
     }
+    CheckAccountTask checkAccount;
     private void setTextChangeForEmail(){
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -360,9 +359,11 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
     }
 
     class CheckAccountTask extends AsyncTask<String, Void, String> {
+        private String oldString;
 
         @Override
         protected String doInBackground(String... params) {
+            oldString = params[0];
             String result = "";
             String url = "https://convenientmenu.herokuapp.com/check-restaurant-account-available";
 
@@ -389,8 +390,10 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
                 if (isSuccess) {
                     boolean data = reader.getBoolean("data");
                     if (data) {
-                        accountOk = true;
-                        accountLayout.setError(null);
+                        if(accountLayout.getEditText().toString().equals(oldString)) {
+                            accountOk = true;
+                            accountLayout.setError(null);
+                        }
                     } else {
                         accountOk = false;
                         accountLayout.setError("Tên tài khoản đã tồn tại");
