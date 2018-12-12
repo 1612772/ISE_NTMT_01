@@ -240,9 +240,9 @@ public class MainActivity extends AppCompatActivity {
         try{
             JSONObject result = new JSONObject(data);
             View headerView = mainMenu.getHeaderView(0);
+
             final ImageView userAvatar = headerView.findViewById(R.id.userAvatar);
             TextView userAccountName = headerView.findViewById(R.id.userAccountName);
-            Toast.makeText(this, "update", Toast.LENGTH_SHORT).show();
             if (result.getBoolean("isSuccess") == true) {
                 if (result.getJSONObject("data").getBoolean("isRest") == true) {
                     userAccountName.setText(result.getJSONObject("data").getString("name"));
@@ -259,14 +259,14 @@ public class MainActivity extends AppCompatActivity {
                                                 .into(userAvatar);
                                     }
                                     catch(Exception ex) {
-                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception exception) {
-                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
@@ -288,24 +288,24 @@ public class MainActivity extends AppCompatActivity {
                                                 .into(userAvatar);
                                     }
                                     catch(Exception ex) {
-                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception exception) {
-                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
             }
             else {
-                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
             }
         }
         catch(Exception ex){
-            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 

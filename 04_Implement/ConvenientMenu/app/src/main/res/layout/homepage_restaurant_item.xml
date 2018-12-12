@@ -31,13 +31,14 @@
                 android:id="@+id/restaurantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:ellipsize="end"
                 android:fontFamily="@font/montserrat"
                 android:textColor="#000"
-                android:textSize="10sp"
+                android:textSize="@dimen/textSizeItemTitle"
                 android:textStyle="bold"
-                android:text="Restaurant"/>
+                android:text="Restaurant"
+                android:layout_marginTop="5dp"/>
 
             <LinearLayout
                 android:id="@+id/ratingRestaurantWrapper"
@@ -66,16 +67,16 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/addressRestaurant"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:singleLine="true"
-                android:ellipsize="end"
-                android:textSize="8sp"
-                android:text="address address"/>
+            <!--<TextView-->
+                <!--android:id="@+id/addressRestaurant"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:paddingTop="5dp"-->
+                <!--android:paddingBottom="5dp"-->
+                <!--android:singleLine="true"-->
+                <!--android:ellipsize="end"-->
+                <!--android:textSize="8sp"-->
+                <!--android:text="address address"/>-->
 
         </LinearLayout>
     </LinearLayout>

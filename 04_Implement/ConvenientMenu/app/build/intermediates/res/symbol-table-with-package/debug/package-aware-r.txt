@@ -1446,6 +1446,8 @@ dimen register_rule_height
 dimen register_split_name_width
 dimen register_text_size
 dimen register_textinput_margin_top
+dimen textSizeItemTitle
+dimen textSizeRestaurantNameReference
 dimen tool_bar_top_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1686,7 +1688,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addressRestaurant
 id addressRestaurantDetail
 id adjust_height
 id adjust_width
@@ -1775,7 +1776,7 @@ id enterAlwaysCollapsed
 id evaluate_dish
 id evaluate_dish_rating
 id evaluate_title
-id eventShortContent
+id eventName
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

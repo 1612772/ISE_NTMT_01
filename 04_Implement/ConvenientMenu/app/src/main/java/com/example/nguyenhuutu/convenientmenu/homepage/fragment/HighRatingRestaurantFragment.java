@@ -57,7 +57,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                     dataList.add(Restaurant.loadRestaurant(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -85,14 +85,14 @@ public class HighRatingRestaurantFragment extends Fragment {
                                                                 .into((ImageView) restItemLayout.findViewById(R.id.imageRestaurant));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception exception) {
-                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -112,7 +112,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                                 }
                                             });
 
-                                    ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
+                                    //((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -126,7 +126,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

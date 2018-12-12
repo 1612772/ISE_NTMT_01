@@ -86,12 +86,11 @@ public class Restaurant_Detail extends AppCompatActivity {
         app_bar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-
                 if (Math.abs(verticalOffset) - appBarLayout.getTotalScrollRange() == 0) {
                     //  Collapsed
-
+                    getSupportActionBar().setTitle("Nha hang");
                 } else {
-
+                    getSupportActionBar().setTitle("");
                 }
             }
         });

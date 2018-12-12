@@ -31,4 +31,8 @@
     <dimen name="button_margin_top">30dp</dimen>
     <dimen name="mini_icon_dimension">16dp</dimen>
     <dimen name="margin_default">8dp</dimen>
+
+    <!--Restaurant Item, Dish Item, Event Item-->
+    <dimen name="textSizeRestaurantNameReference">8sp</dimen>
+    <dimen name="textSizeItemTitle">10sp</dimen>
 </resources>

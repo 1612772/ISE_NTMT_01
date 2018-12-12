@@ -60,7 +60,7 @@ public class HighRatingDishFragment extends Fragment {
                                     dataList.add(Dish.loadDish(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -89,14 +89,14 @@ public class HighRatingDishFragment extends Fragment {
                                                                 .into((ImageView) dishItemLayout.findViewById(R.id.imageDish));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception exception) {
-                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -149,7 +149,7 @@ public class HighRatingDishFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

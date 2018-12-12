@@ -75,7 +75,7 @@ public class NewEventFragment extends Fragment {
                                     final Event event;
                                     final CardView eventItemLayout = (CardView) inflater.inflate(R.layout.homepage_event_item, container);
                                     event = dataList.get(index);
-                                    ((TextView) eventItemLayout.findViewById(R.id.eventShortContent)).setText(event.getEventContent());
+                                    ((TextView) eventItemLayout.findViewById(R.id.eventName)).setText(event.getEventName());
 
                                     CMStorage.storage.child("images/event/" + event.getEventImageFiles().get(0).toString())
                                             .getDownloadUrl()
@@ -126,7 +126,7 @@ public class NewEventFragment extends Fragment {
                                             //Intent eventIntent = new Intent(getActivity(), RestaurantDetail.class);
                                             //restIntent.putExtra("event_id", rest.getEventId());
                                             //startActivity(eventIntent);
-                                            Toast.makeText(getActivity(), event.getEventId() + "-" + event.getEventContent(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), event.getEventId() + "-" + event.getEventName(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
 
@@ -134,7 +134,7 @@ public class NewEventFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

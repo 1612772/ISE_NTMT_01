@@ -27,16 +27,17 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/eventShortContent"
+                android:id="@+id/eventName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:textColor="#000"
-                android:maxLines="2"
+                android:maxLines="1"
                 android:ellipsize="end"
-                android:textSize="10sp"
+                android:textSize="@dimen/textSizeItemTitle"
                 android:textStyle="bold"
-                android:text="Giảm giá 30% cho các mặt hàng"/>
+                android:text="Giảm giá 30% cho các mặt hàng"
+                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:id="@+id/restaurantName"
@@ -48,7 +49,7 @@
                 android:singleLine="true"
                 android:text="Restaurant"
                 android:textColor="#000"
-                android:textSize="10sp"
+                android:textSize="@dimen/textSizeRestaurantNameReference"
                 android:textStyle="bold|italic" />
 
         </LinearLayout>
