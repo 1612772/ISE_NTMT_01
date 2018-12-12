@@ -32,6 +32,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file leaf-file-name="item_menu.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu.xml">
@@ -41,6 +42,14 @@
               <folding>
                 <element signature="e#425#444#0" expanded="true" />
               </folding>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Fragment_Drink.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -78,8 +87,13 @@
       <file leaf-file-name="restaurant_detail.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-35">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
+=======
+            <state relative-caret-position="351">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -92,7 +106,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\Thanh\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\NGUYENHUUTU\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -170,10 +184,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -867,10 +877,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -1049,10 +1055,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="processDebugResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -1736,10 +1738,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="transformNativeLibsWithStripDebugSymbolForDebug" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="compileDebugNdk" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -2383,7 +2381,7 @@
         <entry key="$PROJECT_DIR$/../../../GoogleMaps-Directions-master" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../GoogleMapsDirections-master" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../GoogleMapsDrawRoute" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$" value="IMPORT" />
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../../../MOBI_TTT_6/04_Implement/02" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../MapDirectionSample" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../New folder/MOBI_TTT_6/04_Implement/02" value="PREVIEW" />
@@ -2422,8 +2420,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -2435,44 +2436,39 @@
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Fragment" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+<<<<<<< HEAD
+=======
             </path>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
+<<<<<<< HEAD
     <property name="device.picker.selection" value="Pixel_2_XL_API_24" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="device.picker.selection" value="110198339a5aa24a" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../QLCH/build.gradle" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -2601,10 +2597,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Android Profiler" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
@@ -2631,15 +2628,78 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Build Variants" order="2" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Preview" order="3" visible="true" weight="0.3295107" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32961783" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32961783" />
+      <window_info anchor="bottom" id="Logcat" order="7" />
+      <window_info id="Captures" order="2" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24923548" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.06462035" />
+      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+<<<<<<< HEAD
+=======
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Build" order="0" visible="true" weight="0.06528662" />
+      <window_info id="Designer" order="0" />
+      <window_info id="Build Variants" order="1" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.32961783" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Android Profiler" order="1" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Captures" order="7" weight="0.25" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="right" id="Preview" order="1" visible="true" weight="0.32980332" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="3" />
+      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="5" weight="0.32961783" />
+      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
+    </layout-to-restore>
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -2650,6 +2710,29 @@
             <element signature="e#1828#1829#0" expanded="true" />
             <element signature="e#1870#1871#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_event.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant_Detail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="165" column="32" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
         </state>
       </provider>
     </entry>
@@ -2685,9 +2768,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="522">
           <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
         </state>
+=======
+        <state />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
@@ -2724,8 +2811,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="323">
           <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+=======
+        <state relative-caret-position="1215">
+          <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
         </state>
       </provider>
     </entry>
@@ -2789,8 +2881,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="221">
           <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+=======
+        <state relative-caret-position="351">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
         </state>
       </provider>
     </entry>
