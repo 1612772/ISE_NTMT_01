@@ -111,7 +111,7 @@ public final class R {
         public static final int none = 0x7f090105;
         public static final int top = 0x7f090177;
         public static final int triangle = 0x7f09017f;
-        public static final int underline = 0x7f09018b;
+        public static final int underline = 0x7f09018a;
     }
     public static final class integer {
         private integer() {}

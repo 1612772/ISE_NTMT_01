@@ -2023,7 +2023,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvComment
-id tvDescriptionEvent
 id tvEvent
 id tvFood
 id tvName

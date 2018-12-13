@@ -67,7 +67,7 @@ public class ListDrink extends BaseAdapter {
         if (item.getEventType() < 0) //new
         {
             tvEvent.setText(Dish.NEW);
-            //cvEvent.setCardBackgroundColor(Color.rgb(0,0,0));
+           // cvEvent.setCardBackgroundColor(Color.rgb(0,0,0));
         } else if (item.getEventType() > 0) //hot
         {
             tvEvent.setText(Dish.HOT);
