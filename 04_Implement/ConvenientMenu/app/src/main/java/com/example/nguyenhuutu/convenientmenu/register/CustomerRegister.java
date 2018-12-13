@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.Customer;
 import com.example.nguyenhuutu.convenientmenu.R;
@@ -37,6 +38,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CustomerRegister extends AppCompatActivity implements View.OnClickListener, View.OnHoverListener {
+    private static final String TAG = "CustomerRegister";
     private final int NumberOfEditBox = 7;
     private TextInputEditText lastName;
     private TextInputEditText firstName;
@@ -116,8 +118,11 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.register:
+
+
                 checkEmptyInfo();
                 if (checkInfo()) {
+
                     String lastNameStr = lastName.getText().toString();
                     String firstNameStr = firstName.getText().toString();
                     String accountStr = account.getText().toString();
@@ -131,6 +136,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     process.show();
 
                 } else {
+
                 }
                 break;
             case R.id.checkRule:
@@ -233,7 +239,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             public void afterTextChanged(Editable s) {
 
                 String str = account.getText().toString();
-                if(checkAccount!=null) checkAccount.cancel(false);
+                if (checkAccount != null) checkAccount.cancel(false);
                 if (str.isEmpty()) {
                     accountOk = false;
                     accountLayout.setError("Không được để trống");
@@ -248,7 +254,9 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
             }
         });
     }
+
     CheckAccountTask checkAccount;
+
     private void setTextChangeForEmail() {
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -430,10 +438,14 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                 if (isSuccess) {
                     boolean data = reader.getBoolean("data");
                     if (data) {
+                        Log.d(TAG, "onPostExecute: oldString is [" + oldString + "]");
+                        Log.d(TAG, "onPostExecute: current is [" + account);
+                        if (account.getText().toString().equals(oldString)) {
 
-                        if(accountLayout.getEditText().toString().equals(oldString)) {
                             accountOk = true;
                             accountLayout.setError(null);
+                        } else {
+                            Log.d(TAG, "onPostExecute: Not equal");
                         }
                     } else {
                         accountOk = false;

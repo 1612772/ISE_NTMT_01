@@ -37,32 +37,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RestaurantRegister.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RestaurantRegister.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+            <state relative-caret-position="201">
+              <caret line="406" column="17" lean-forward="true" selection-start-line="406" selection-start-column="17" selection-end-line="406" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3641#3783#0" expanded="true" />
+                <element signature="e#3782#3783#0" expanded="true" />
+                <element signature="e#12116#12168#0" expanded="true" />
+                <element signature="e#12308#12360#0" expanded="true" />
+                <element signature="e#12494#12546#0" expanded="true" />
+                <element signature="e#12689#12741#0" expanded="true" />
+                <element signature="e#12899#12951#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerRegister.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomerRegister.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="243" column="24" lean-forward="true" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AsyncTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://E:/AS_SDK/sources/android-28/android/os/AsyncTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10183">
-              <caret line="641" column="35" selection-start-line="641" selection-start-column="35" selection-end-line="641" selection-end-column="35" />
+            <state relative-caret-position="208">
+              <caret line="444" column="45" selection-start-line="444" selection-start-column="45" selection-end-line="444" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -2366,13 +2364,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/fragment/SwitchRegisterFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_register.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="46" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -2384,6 +2382,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2458,6 +2458,19 @@
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="nguyenhuutu" type="462c0819:PsiDirectoryNode" />
               <item name="convenientmenu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ConvenientMenu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="nguyenhuutu" type="462c0819:PsiDirectoryNode" />
+              <item name="convenientmenu" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ConvenientMenu" type="b2602c69:ProjectViewProjectNode" />
@@ -2555,13 +2568,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="MFS86SAUHAUWNNMN" />
+    <property name="device.picker.selection" value="Galaxy_Nexus_API_23" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -2612,7 +2623,7 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -2691,30 +2702,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="46" y="-8" width="1346" height="688" extended-state="0" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="1" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Build Variants" order="1" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.26948053" />
       <window_info id="Captures" order="7" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.49837664" visible="true" weight="0.24962178" />
-      <window_info anchor="bottom" id="Build" order="0" weight="0.24675325" />
+      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.49837664" visible="true" weight="0.25660965" />
+      <window_info active="true" anchor="bottom" id="Build" order="0" visible="true" weight="0.27636364" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="5" sideWeight="0.5016234" side_tool="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="right" id="Device File Explorer" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="right" id="Commander" order="5" weight="0.4" />
       <window_info anchor="right" id="Preview" order="1" weight="0.32980332" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -2731,10 +2742,89 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_customer_register.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3570">
+          <caret line="210" column="13" selection-start-line="210" selection-start-column="13" selection-end-line="210" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/AS_SDK/sources/android-28/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10897">
+          <caret line="641" column="35" selection-start-line="641" selection-start-column="35" selection-end-line="641" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="132" column="71" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3536">
+          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/AS_SDK/sources/android-28/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10897">
+          <caret line="641" column="35" selection-start-line="641" selection-start-column="35" selection-end-line="641" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4131">
+          <caret line="243" column="24" lean-forward="true" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3536">
           <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2759,6 +2849,13 @@
           <caret line="208" column="38" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2783,6 +2880,13 @@
           <caret line="208" column="38" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2800,6 +2904,13 @@
           <caret line="208" column="38" lean-forward="true" selection-start-line="208" selection-start-column="38" selection-end-line="208" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2817,6 +2928,13 @@
           <caret line="368" column="31" selection-start-line="368" selection-start-column="31" selection-end-line="368" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2848,18 +2966,25 @@
           <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_register.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/fragment/SwitchRegisterFragment.java">
@@ -2891,13 +3016,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/switch_register_fragment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://E:/AS_SDK/sources/android-28/android/text/NoCopySpan.java">
@@ -2943,13 +3068,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/fragment/SwitchRegisterFragment.java">
@@ -2973,47 +3098,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/AS_SDK/sources/android-28/android/os/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10183">
-          <caret line="641" column="35" selection-start-line="641" selection-start-column="35" selection-end-line="641" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_customer_register.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="95" column="30" lean-forward="true" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_register.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_register.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="63" column="51" lean-forward="true" selection-start-line="62" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_customer_register.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="3570">
+          <caret line="210" column="13" selection-start-line="210" selection-start-column="13" selection-end-line="210" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/AS_SDK/sources/android-28/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="641" column="35" selection-start-line="641" selection-start-column="35" selection-end-line="641" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/login/LoginFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1207">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="243" column="24" lean-forward="true" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
+        <state relative-caret-position="208">
+          <caret line="444" column="45" selection-start-line="444" selection-start-column="45" selection-end-line="444" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/RestaurantRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="406" column="17" lean-forward="true" selection-start-line="406" selection-start-column="17" selection-end-line="406" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3641#3783#0" expanded="true" />
+            <element signature="e#3782#3783#0" expanded="true" />
+            <element signature="e#12116#12168#0" expanded="true" />
+            <element signature="e#12308#12360#0" expanded="true" />
+            <element signature="e#12494#12546#0" expanded="true" />
+            <element signature="e#12689#12741#0" expanded="true" />
+            <element signature="e#12899#12951#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

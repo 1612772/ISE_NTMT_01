@@ -29,6 +29,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RestaurantRegister extends AppCompatActivity implements View.OnClickListener , View.OnHoverListener{
+    private static final String TAG="RestaurantRegister";
     private final int NumberOfEditBox = 7;
     private TextInputEditText resName;
     private TextInputEditText account;
@@ -390,9 +391,14 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
                 if (isSuccess) {
                     boolean data = reader.getBoolean("data");
                     if (data) {
-                        if(accountLayout.getEditText().toString().equals(oldString)) {
+                        Log.d(TAG, "onPostExecute: oldString is ["+oldString+"]");
+                        Log.d(TAG, "onPostExecute: current is ["+account);
+                        if(account.getText().toString().equals(oldString)) {
+                            Log.d(TAG, "onPostExecute: Equal");
                             accountOk = true;
                             accountLayout.setError(null);
+                        } else {
+                            Log.d(TAG, "onPostExecute: Not equal");
                         }
                     } else {
                         accountOk = false;
