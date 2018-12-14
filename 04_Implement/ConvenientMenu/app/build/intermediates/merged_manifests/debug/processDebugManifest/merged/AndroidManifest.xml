@@ -41,12 +41,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail" >
-        </activity>
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.ViewDish" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
             android:label="Đăng ký - Thực khách" />
+        <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.AddDish"
+            android:label="Thêm món ăn" >
+        </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

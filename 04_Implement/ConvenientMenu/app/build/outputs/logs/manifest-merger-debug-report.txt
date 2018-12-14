@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\2623d66e522699bfd7f152deb3975461\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c00a2f58a39fd366de92b16d324c08de\AndroidManifest.xml:17:1-22:12
@@ -70,22 +70,22 @@ MERGED from [com.mikepenz:materialize:1.0.3] C:\Users\NGUYENHUUTU\.gradle\caches
 MERGED from [com.mikepenz:iconics-core:2.9.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\iconics-core-2.9.1.aar\8ee1d62b88629c9b54a4f507b42d5dab\AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:2.6.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\fastadapter-2.6.3.aar\63135a74a9fd6f3a3dc9d7e03b80037b\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\b38a2101aecb4f197f7e87123c1341b1\AndroidManifest.xml:2:1-9:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:4:5-53
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:11-69
@@ -122,7 +122,7 @@ ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\m
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:8:22-78
 application
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:10:5-34:19
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:10:5-37:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:22:5-20
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:11:5-13:38
@@ -196,33 +196,39 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Us
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:11:9-68
 activity#com.example.nguyenhuutu.convenientmenu.main.MainActivity
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:20:9-26:20
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:21:9-27:20
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:20:19-52
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:21:19-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:25:27-74
 activity#com.example.nguyenhuutu.convenientmenu.Restaurant_Detail
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:9-29:20
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:28:9-64
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:19-52
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:28:19-52
 activity#com.example.nguyenhuutu.convenientmenu.ViewDish
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:9-46
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:9-46
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:19-43
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:19-43
 activity#com.example.nguyenhuutu.convenientmenu.register.CustomerRegister
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:31:9-33:61
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:9-32:52
 	android:label
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:33:13-49
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:13-54
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:31:13-54
+activity#com.example.nguyenhuutu.convenientmenu.AddDish
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:33:9-36:20
+	android:label
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:35:13-40
+	android:name
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:34:13-36
 uses-sdk
 INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml

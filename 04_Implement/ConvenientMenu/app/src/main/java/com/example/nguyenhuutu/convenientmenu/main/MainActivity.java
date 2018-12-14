@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.main;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.AddDish;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
@@ -169,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
                         updateMainMenu();
                         break;
                     case R.id.main_menu_setting:
+                        Intent inte = new Intent(getApplicationContext(), AddDish.class);
+                        startActivity(inte);
                         break;
                 }
 
