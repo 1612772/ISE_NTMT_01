@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Dec 14 15:44:11 ICT 2018
+#Fri Dec 14 23:21:03 ICT 2018
 1.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 2.path=classes2.dex
 0.baseType=DIRECTORY

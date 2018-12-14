@@ -4,9 +4,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Point;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Display;
 
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.User;
+import com.example.nguyenhuutu.convenientmenu.register.CustomerRegister;
+import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,6 +26,18 @@ import java.security.NoSuchAlgorithmException;
 import static org.json.JSONObject.NULL;
 
 public class Helper {
+    public static final int FRAGMENT_HOMEPAGE = 0;
+    public static final int FRAGMENT_RESTAURANT_LIST = 1;
+    public static final int FRAGMENT_LOGIN = 2;
+    public static final int FRAGMENT_LOGOUT = 3;
+    public static final int FRAGMENT_REGISTER = 4;
+    public static final int FRAGMENT_SETTING = 5;
+    public static final int FRAGMENT_MARK_LIST = 6;
+    public static final int FRAGMENT_MANAGE_MENU = 7;
+    public static final int FRAGMENT_MANAGE_EVENT = 8;
+    public static final int FRAGMENT_ACCOUNT_INFO = 9;
+    public static final int FRAGMENT_CHANGE_PASSWORD = 10;
+
     private static String LocalDbName = "convenient_menu";
     private static String UserSessionSharedDocument = "UserSession";
     private static String LoginedUserSessionSharedDocument = "LoginedUser";
@@ -35,22 +55,6 @@ public class Helper {
 
         return size;
     }
-//    public static SQLiteDatabase connectLocalDB(Activity activity) {
-//        SQLiteDatabase db = SQLiteDatabase.openDatabase(activity.getApplication().getFilesDir() + "/" + LocalDbName, null, SQLiteDatabase.CREATE_IF_NECESSARY);
-//        return db;
-//    }
-//
-//    public static Boolean checkTableExists(Activity activity, SQLiteDatabase db, String tableName) {
-//        String query = "SELECT logined_user FROM " + LocalDbName + " WHERE type='table' AND name=" + tableName;
-//        Cursor mCursor = db.rawQuery(query, null);
-//
-//        if (mCursor.getCount() == 0) {
-//            return FALSE;
-//        }
-//        else {
-//            return Boolean.TRUE;
-//        }
-//    }
 
     public static void changeUserSession(Activity activity, UserSession userSession) {
         SharedPreferences pref = activity.getSharedPreferences(UserSessionSharedDocument, Context.MODE_PRIVATE);
@@ -65,30 +69,6 @@ public class Helper {
 
         return new UserSession(loginedUserJson);
     }
-//    public static JSONObject getLoginedUser(Activity activity) {
-//        JSONObject result = new JSONObject();
-//        // init
-//        try {
-//            result.put("logined", false);
-//            result.put("username", "");
-//            result.put("password", "");
-//            result.put("isRest", false);
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
-//
-//        if (pref.contains("logined_user")) {
-//            try {
-//                result = new JSONObject(pref.getString("logined_user", "").toString());
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        return result;
-//    }
 
     public static void setSampleUserInLocal(Activity activity) {
         SharedPreferences pref = activity.getSharedPreferences("recent_logined_user", Context.MODE_PRIVATE);
@@ -131,5 +111,52 @@ public class Helper {
 
     public static String getCompressPassword(String inputString) {
         return md5("CM" + inputString);
+    }
+
+    public static void checkExistsAccount(final Activity activity, final String accountString) {
+        CMDB.db
+                .collection("customer")
+                .document(accountString)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                if (activity instanceof CustomerRegister) {
+                                    ((CustomerRegister)activity).notifyExistsAccount();
+                                }
+                                else {
+                                    ((RestaurantRegister)activity).notifyExistsAccount();
+                                }
+                            } else {
+                                CMDB.db
+                                        .collection("restaurant")
+                                        .document(accountString)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                if (task.isSuccessful()) {
+                                                    DocumentSnapshot document = task.getResult();
+                                                    if (document.exists()) {
+                                                        if (activity instanceof CustomerRegister) {
+                                                            ((CustomerRegister) activity).notifyExistsAccount();
+                                                        } else {
+                                                            ((RestaurantRegister) activity).notifyExistsAccount();
+                                                        }
+                                                    } else {
+
+                                                    }
+                                                }
+                                            }
+                                        });
+                            }
+                        } else {
+
+                        }
+                    }
+                });
     }
 }

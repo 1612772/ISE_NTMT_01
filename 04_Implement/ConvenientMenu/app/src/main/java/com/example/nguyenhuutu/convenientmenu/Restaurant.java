@@ -3,6 +3,7 @@ package com.example.nguyenhuutu.convenientmenu;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -55,7 +56,7 @@ public class Restaurant extends User implements Comparable {
 
     public Restaurant(String accountStr,String passwordStr,String emailStr,String resNameStr){
         this.restAccount = accountStr;
-        this.restPassword = passwordStr;
+        this.restPassword = Helper.getCompressPassword(passwordStr);
         this.restName = resNameStr;
         this.restEmail=emailStr;
         this.restAddresses = new ArrayList<>();
@@ -69,7 +70,7 @@ public class Restaurant extends User implements Comparable {
     public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber, Long _totalRating, String _restPhone, String _restFacebook,String _restEmail) {
 
         this.restAccount = _restAccount;
-        this.restPassword = _restPassword;
+        this.restPassword = Helper.getCompressPassword(_restPassword);
         this.restName = _restName;
         this.restAddresses = _restAddresses;
         this.restDescription = _restDescription;

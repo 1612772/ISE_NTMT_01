@@ -118,8 +118,6 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.register:
-
-
                 checkEmptyInfo();
                 if (checkInfo()) {
 
@@ -156,6 +154,7 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
         if (status) {
             process.hide();
             Intent homepageIntent = new Intent(this, MainActivity.class);
+            homepageIntent.putExtra("fragment", Helper.FRAGMENT_LOGIN);
             startActivity(homepageIntent);
         } else {
 
@@ -244,15 +243,22 @@ public class CustomerRegister extends AppCompatActivity implements View.OnClickL
                     accountOk = false;
                     accountLayout.setError("Không được để trống");
                 } else if (str.matches("^[a-zA-Z0-9]+$")) {
+                    accountOk = true;
                     accountLayout.setError(null);
-                    checkAccount = new CheckAccountTask();
-                    checkAccount.execute(str);
+                    Helper.checkExistsAccount(CustomerRegister.this, str);
+                    //checkAccount = new CheckAccountTask();
+                    //checkAccount.execute(str);
                 } else {
                     accountOk = false;
                     accountLayout.setError("Không được khoảng trắng và ký tự đặc biệt");
                 }
             }
         });
+    }
+
+    public void notifyExistsAccount() {
+        accountOk = false;
+        accountLayout.setError("Tên tài khoản đã tồn tại");
     }
 
     CheckAccountTask checkAccount;

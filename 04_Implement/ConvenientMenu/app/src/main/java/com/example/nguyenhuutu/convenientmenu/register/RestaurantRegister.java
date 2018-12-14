@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -19,8 +20,10 @@ import android.widget.CheckBox;
 
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
 import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
+import com.example.nguyenhuutu.convenientmenu.register.fragment.ConfirmCodeDialogFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -105,18 +108,9 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
             case R.id.register:
                 checkEmptyInfo();
                 if (checkInfo()) {
-                    String resNameStr = resName.getText().toString();
-                    String accountStr = account.getText().toString();
-                    String emailStr = email.getText().toString();
-                    String passwordStr = password.getText().toString();
-                    String againPasswordStr = againPassword.getText().toString();
-
-                    Restaurant restaurant = new Restaurant(
-                    accountStr, passwordStr, emailStr,  resNameStr);
-                    restaurant.register(this);
-
-                    process.show();
-
+                    FragmentManager fm = getSupportFragmentManager();
+                    ConfirmCodeDialogFragment cf = new ConfirmCodeDialogFragment();
+                    cf.show(fm, "Confirm Restaurant");
                 } else {
                 }
                 break;
@@ -133,7 +127,18 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
         }
     }
 
+    public void notifyConfirmedRestaurant() {
+        String resNameStr = resName.getText().toString();
+        String accountStr = account.getText().toString();
+        String emailStr = email.getText().toString();
+        String passwordStr = password.getText().toString();
+        String againPasswordStr = againPassword.getText().toString();
 
+        Restaurant restaurant = new Restaurant(accountStr, passwordStr, emailStr,  resNameStr);
+        restaurant.register(this);
+
+        process.show();
+    }
 
     @Override
     public boolean onHover(View v, MotionEvent event) {
@@ -147,6 +152,7 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
         if (status) {
             process.hide();
             Intent homepageIntent = new Intent(this, MainActivity.class);
+            homepageIntent.putExtra("fragment", Helper.FRAGMENT_LOGIN);
             startActivity(homepageIntent);
         }
         else {
@@ -204,9 +210,11 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
                     accountLayout.setError("Không được để trống");
                 }
                 else if (str.matches("^[a-zA-Z0-9]+$")) {
+                    accountOk = true;
                     accountLayout.setError(null);
-                    checkAccount = new CheckAccountTask();
-                    checkAccount.execute(str);
+                    Helper.checkExistsAccount(RestaurantRegister.this, str);
+                    //checkAccount = new CheckAccountTask();
+                    //checkAccount.execute(str);
                 }
                 else {
                     accountOk = false;
@@ -214,6 +222,10 @@ public class RestaurantRegister extends AppCompatActivity implements View.OnClic
                 }
             }
         });
+    }
+    public void notifyExistsAccount() {
+        accountOk = false;
+        accountLayout.setError("Tên tài khoản đã tồn tại");
     }
     CheckAccountTask checkAccount;
     private void setTextChangeForEmail(){

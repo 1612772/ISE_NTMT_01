@@ -1718,6 +1718,7 @@ id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
+id code
 id collapseActionView
 id comment_content
 id comment_content_1
@@ -1732,6 +1733,7 @@ id comment_form
 id comment_number
 id comment_text
 id comment_title
+id confirmButton
 id container
 id content
 id contentPanel
@@ -2139,6 +2141,7 @@ layout activity_customer_register
 layout activity_main
 layout activity_restaurant_register
 layout activity_view_dish
+layout confirm_restaurant
 layout content_restaurant_detail
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

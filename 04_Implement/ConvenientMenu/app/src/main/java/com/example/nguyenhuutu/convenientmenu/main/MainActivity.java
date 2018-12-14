@@ -32,7 +32,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static org.json.JSONObject.NULL;
+//import static org.json.JSONObject.NULL;
+import static android.os.Bundle.EMPTY;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -44,8 +45,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bundle dataIntent = getIntent().getExtras();
 
-        contentFragment = new HomePageFragment();
+        if (dataIntent == null || !dataIntent.containsKey("fragment")) {
+            contentFragment = new HomePageFragment();
+        }
+        else {
+            contentFragment = getChosenFragment(dataIntent.getInt("fragment"));
+        }
 
         mToolbar= findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -182,6 +189,37 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
 
 //        checkMenuItem();
+    }
+
+    private Fragment getChosenFragment(int fragmentId) {
+        Fragment fragment = new HomePageFragment();
+
+        switch (fragmentId) {
+            case Helper.FRAGMENT_RESTAURANT_LIST:
+                break;
+            case Helper.FRAGMENT_ACCOUNT_INFO:
+                break;
+            case Helper.FRAGMENT_CHANGE_PASSWORD:
+                break;
+            case Helper.FRAGMENT_MARK_LIST:
+                break;
+            case Helper.FRAGMENT_MANAGE_MENU:
+                break;
+            case Helper.FRAGMENT_MANAGE_EVENT:
+                break;
+            case Helper.FRAGMENT_LOGIN:
+                fragment = new LoginFragment();
+                break;
+            case Helper.FRAGMENT_LOGOUT:
+                break;
+            case Helper.FRAGMENT_REGISTER:
+                fragment = new SwitchRegisterFragment();
+                break;
+            case Helper.FRAGMENT_SETTING:
+                break;
+        }
+
+        return fragment;
     }
 
 //    public void checkMenuItem() {
