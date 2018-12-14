@@ -16,9 +16,13 @@
   </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="3cae5d70-21c7-4687-9798-ebe927799b6f" name="Default" comment="" />
 =======
     <list default="true" id="8ac02465-6205-4c94-bb43-8c37f842c27c" name="Default" comment="" />
+>>>>>>> Thanh_Edit_UI
+=======
+    <list default="true" id="fe064cd4-04c2-4c5b-a620-b73ff77575d0" name="Default" comment="" />
 >>>>>>> Thanh_Edit_UI
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,6 +44,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <leaf>
@@ -67,12 +72,25 @@
               <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
 >>>>>>> Thanh_Fix_LoadImage
 =======
+=======
+    <leaf>
+      <file leaf-file-name="item_menu.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+              <folding>
+                <element signature="e#425#444#0" expanded="true" />
+              </folding>
+=======
+>>>>>>> Thanh_Edit_UI
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="Fragment_Drink.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1215">
               <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+<<<<<<< HEAD
 >>>>>>> Thanh_Edit_UI
             </state>
           </provider>
@@ -133,6 +151,11 @@
 =======
       <file leaf-file-name="item_event.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_event.xml">
+>>>>>>> Thanh_Edit_UI
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+            </state>
+          </provider>
 >>>>>>> Thanh_Edit_UI
           <provider editor-type-id="android-designer2">
             <state />
@@ -260,6 +283,7 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="LoginFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/login/LoginFragment.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -277,13 +301,57 @@
               <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
 >>>>>>> Thanh_Fix_LoadImage
 =======
+=======
+      <file leaf-file-name="ListDrink.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java">
+>>>>>>> Thanh_Edit_UI
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListFood.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListFood.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dish.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Dish.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-410">
+              <caret line="177" column="152" selection-start-line="177" selection-start-column="152" selection-end-line="177" selection-end-column="152" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restaurant_detail.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-35">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+=======
             <state relative-caret-position="351">
               <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+<<<<<<< HEAD
 >>>>>>> Thanh_Edit_UI
             </state>
           </provider>
 >>>>>>> master
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+>>>>>>> Thanh_Edit_UI
         </entry>
       </file>
     </leaf>
@@ -2601,6 +2669,7 @@
       <list>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_event.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/tab_menu.xml" />
@@ -2640,8 +2709,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListFood.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/search_form_border.xml" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Event.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_event.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+>>>>>>> Thanh_Edit_UI
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Dish.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_menu.xml" />
+<<<<<<< HEAD
+>>>>>>> Thanh_Edit_UI
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Event.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Food.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant_Detail.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListFood.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java" />
 >>>>>>> Thanh_Edit_UI
       </list>
     </option>
@@ -2657,8 +2743,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+=======
+<<<<<<< HEAD
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+      <pane id="Scope" />
+>>>>>>> Thanh_Edit_UI
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2706,17 +2801,23 @@
 =======
 >>>>>>> Thanh_Edit_UI
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+<<<<<<< HEAD
+=======
             </path>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+<<<<<<< HEAD
               <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+>>>>>>> Thanh_Edit_UI
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
@@ -2736,11 +2837,15 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> Thanh_Edit_UI
 =======
       <pane id="PackagesPane" />
 >>>>>>> Thanh_Edit_UI
       <pane id="ProjectPane" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2769,8 +2874,13 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
+<<<<<<< HEAD
+    <property name="device.picker.selection" value="Pixel_2_XL_API_24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
     <property name="device.picker.selection" value="110198339a5aa24a" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../QLCH/build.gradle" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
 >>>>>>> Thanh_Edit_UI
@@ -2892,6 +3002,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <changelist id="3cae5d70-21c7-4687-9798-ebe927799b6f" name="Default" comment="" />
       <created>1543459435721</created>
       <option name="number" value="Default" />
@@ -2903,6 +3014,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544516169616</updated>
+>>>>>>> Thanh_Edit_UI
+=======
+      <changelist id="fe064cd4-04c2-4c5b-a620-b73ff77575d0" name="Default" comment="" />
+      <created>1544624639909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544624639909</updated>
 >>>>>>> Thanh_Edit_UI
     </task>
     <servers />
@@ -2954,6 +3072,34 @@
 =======
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Android Profiler" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Preview" weight="0.1785174" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info id="Captures" order="2" weight="0.25" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.09235669" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+=======
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
@@ -2990,11 +3136,14 @@
       <window_info anchor="right" id="Preview" order="4" weight="0.33055976" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+<<<<<<< HEAD
+=======
     <layout-to-restore>
 <<<<<<< HEAD
       <window_info anchor="bottom" id="Build" order="7" weight="0.28503186" />
@@ -3067,14 +3216,19 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
 >>>>>>> Thanh_Edit_UI
     </layout-to-restore>
+<<<<<<< HEAD
 =======
     </layout>
 >>>>>>> master
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+>>>>>>> Thanh_Edit_UI
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3148,6 +3302,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_restaurant_detail.xml" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="46" column="175" selection-start-line="46" selection-start-column="175" selection-end-line="46" selection-end-column="175" />
+          <folding>
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+            <element signature="e#1828#1829#0" expanded="true" />
+            <element signature="e#1870#1871#0" expanded="true" />
+          </folding>
+>>>>>>> Thanh_Edit_UI
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
 >>>>>>> Thanh_Edit_UI
@@ -3316,15 +3482,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="165" column="32" selection-start-line="165" selection-start-column="32" selection-end-line="165" selection-end-column="32" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Comment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_event.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        <state relative-caret-position="299">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
         </state>
       </provider>
+<<<<<<< HEAD
     </entry>
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/home_page_fragment.xml">
@@ -3358,12 +3526,20 @@
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/search_form_border.xml">
 >>>>>>> Thanh_Edit_UI
+=======
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListEvent.java">
+>>>>>>> Thanh_Edit_UI
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="510">
+          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/helper/Helper.java">
 >>>>>>> Thanh_Fix_LoadImage
@@ -3462,27 +3638,44 @@
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+>>>>>>> Thanh_Edit_UI
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="429">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
           <folding>
-            <element signature="e#277#296#0" expanded="true" />
-            <element signature="e#678#697#0" expanded="true" />
+            <element signature="e#627#645#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/register/CustomerRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider editor-type-id="android-manifest">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_comment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="522">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        </state>
+=======
+        <state />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
+      </provider>
+<<<<<<< HEAD
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_menu.xml">
+>>>>>>> Thanh_Edit_UI
+=======
 >>>>>>> Thanh_Edit_UI
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_events.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="330">
           <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
@@ -3504,19 +3697,26 @@
         <state relative-caret-position="323">
           <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
         </state>
+=======
+        <state />
+>>>>>>> Thanh_Edit_UI
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+<<<<<<< HEAD
+>>>>>>> Thanh_Edit_UI
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListComment.java">
 >>>>>>> Thanh_Edit_UI
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        <state relative-caret-position="68">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tab_food.xml">
       <provider editor-type-id="android-designer2">
@@ -3657,37 +3857,58 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml">
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="151" column="36" lean-forward="true" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+        <state relative-caret-position="-1515">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+>>>>>>> Thanh_Edit_UI
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Drink.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="323">
+          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+=======
         <state relative-caret-position="1215">
           <caret line="70" column="43" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Menu.java">
 >>>>>>> Thanh_Edit_UI
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-423">
+        <state relative-caret-position="85">
           <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListFood.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
-          <caret line="64" column="66" selection-start-line="64" selection-start-column="66" selection-end-line="64" selection-end-column="66" />
+        <state relative-caret-position="259">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#425#444#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant_Detail.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="1944">
           <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
@@ -3695,11 +3916,16 @@
         <state relative-caret-position="311">
           <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
 >>>>>>> Thanh_Edit_UI
+=======
+        <state relative-caret-position="412">
+          <caret line="151" column="72" selection-start-line="151" selection-start-column="72" selection-end-line="151" selection-end-column="72" />
+>>>>>>> Thanh_Edit_UI
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/LoadImage.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Dish.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="2079">
           <caret line="77" selection-start-line="77" selection-end-line="77" />
@@ -3760,16 +3986,49 @@
 =======
         <state relative-caret-position="391">
           <caret line="42" column="76" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="76" />
+=======
+        <state relative-caret-position="-410">
+          <caret line="177" column="152" selection-start-line="177" selection-start-column="152" selection-end-line="177" selection-end-column="152" />
+>>>>>>> Thanh_Edit_UI
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_event.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Food.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListFood.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/ListDrink.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="221">
+          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+=======
         <state relative-caret-position="351">
           <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+<<<<<<< HEAD
+>>>>>>> Thanh_Edit_UI
+=======
+>>>>>>> 1068b10a4d155a4c259b6bffe4dd45a21f327a92
 >>>>>>> Thanh_Edit_UI
         </state>
       </provider>

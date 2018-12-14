@@ -47,7 +47,6 @@ public class Fragment_Food extends Fragment {
                         try {
                             dataList.add(Dish.loadDish(document.getData()));
                         } catch (Exception ex) {
-                            Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                     int mount = dataList.size();

@@ -49,13 +49,13 @@ public class ListEvent extends BaseAdapter {
         ImageView imgEvent = (ImageView) row.findViewById(R.id.imgEvent);
         TextView tvTitleEvent = (TextView) row.findViewById(R.id.tvTitleEvent);
         TextView tvTimeEvent = (TextView) row.findViewById(R.id.tvTimeEvent);
-        TextView tvDescriptionEvent = (TextView) row.findViewById(R.id.tvDescriptionEvent);
+        //TextView tvDescriptionEvent = (TextView) row.findViewById(R.id.tvDescriptionEvent);
 
         Event item = event.get(position);
 
-        tvDescriptionEvent.setText(item.getEventContent());// Không thấy thuộc tính title
-        tvTitleEvent.setText(item.getEventContent());
-        tvTimeEvent.setText(item.getBeginDateFormat() + " đến " + item.getEndDateFormat());
+       // tvDescriptionEvent.setText(item.getEventContent());
+        tvTitleEvent.setText(item.getEventName());
+        tvTimeEvent.setText(item.getBeginDateFormat() + " - " + item.getEndDateFormat());
         imgEvent.setImageBitmap(item.getImageEvent(context));
 
         return row;

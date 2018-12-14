@@ -24,9 +24,10 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/imgEvent"
         android:textColor="#000"
+        android:textStyle="italic"
         android:layout_below="@id/tvTitleEvent"
         android:text="Time"/>
-    <TextView
+    <!--<TextView
         android:id="@+id/tvDescriptionEvent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,5 +36,5 @@
         android:layout_below="@id/tvTimeEvent"
         android:textColor="#000"
         android:text="Description"
-        android:layout_alignBottom="@id/imgEvent"/>
+        android:layout_alignBottom="@id/imgEvent"/>-->
 </RelativeLayout>

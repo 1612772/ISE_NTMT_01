@@ -4,11 +4,18 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class Dish implements Comparable {
     /**
@@ -26,7 +33,8 @@ public class Dish implements Comparable {
     private Bitmap dishImage;
     private List<String> dishMoreImages;
     private String dishTypeId;
-    private int eventTypeId; // <0:New, >0:Hot
+    private Date CreateDate;
+    private int eventType; // <0:New, >0:Hot
 
     private String restAccount;
     private float maxStar;
@@ -38,7 +46,17 @@ public class Dish implements Comparable {
      * constructor methods
      */
 
-    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, float _maxStar, String _restAccount) {
+    public Dish(String _dishId,
+                String _dishName,
+                Integer _dishPrice,
+                String _dishDescription,
+                String _dishHomeImage,
+                List<String> _dishMoreImages,
+                String _dishTypeId,
+                float _maxStar,
+                String _restAccount,
+                Date _createdate) {
+
         this.dishId = _dishId;
         this.dishName = _dishName;
         this.dishPrice = _dishPrice;
@@ -48,6 +66,20 @@ public class Dish implements Comparable {
         this.dishTypeId = _dishTypeId;
         this.maxStar = _maxStar;
         this.restAccount = _restAccount;
+        this.CreateDate=_createdate;
+        //DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date(); // lấy thời gian hệ thống
+        long getDiff = date.getTime() - _createdate.getTime();
+        // using TimeUnit class from java.util.concurrent package
+        long getDaysDiff = TimeUnit.MILLISECONDS.toDays(getDiff);
+        Log.d("THOI GIAN KHOI TAO", String.valueOf(getDaysDiff));
+        if(getDaysDiff<=7)
+        {
+            this.eventType = -1;
+        }else
+        {
+            this.eventType=0;
+        }
     }
 
     public Dish() {
@@ -77,6 +109,17 @@ public class Dish implements Comparable {
     /**
      * Getter methods for properties
      */
+
+    public String getCreateDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        return simpleDateFormat.format(CreateDate);
+    }
+
+    public void setCreateDate(Date createDate) {
+        CreateDate = createDate;
+    }
 
     public void setDishImage(Bitmap dishImage) {
         try{
@@ -118,8 +161,8 @@ public class Dish implements Comparable {
         return this.restAccount;
     }
 
-    public int getEventTypeId() {
-        return eventTypeId;
+    public int getEventType() {
+        return eventType;
     }
 
     public Bitmap getDishImage(Context context){
@@ -171,8 +214,9 @@ public class Dish implements Comparable {
         float _maxStar = ((Number) document.get("max_star")).floatValue();
         String _dishTypeId = (String) document.get("dish_type_id");
         String _restAccount = (String) document.get("rest_account");
-
-        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount);
+        //Number _event_type = (Number)document.get("event_type");
+        Date _createdate = (Date) document.get("create_date");
+        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount,_createdate);
     }
 
     /**
