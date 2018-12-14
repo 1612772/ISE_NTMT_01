@@ -1752,6 +1752,10 @@
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_restaurant_register.xml.flat",
+        "source": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\activity_restaurant_register.xml"
+    },
+    {
         "merged": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_vpi__tab_indicator.xml.flat",
         "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\ViewPagerIndicator-2.4.1.aar\\978d1e57b1c1e66f946fb110a3728cbe\\res\\drawable\\vpi__tab_indicator.xml"
     },

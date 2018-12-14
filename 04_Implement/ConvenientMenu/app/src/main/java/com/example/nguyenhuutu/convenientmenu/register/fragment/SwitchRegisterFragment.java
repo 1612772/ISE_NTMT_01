@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.register.CustomerRegister;
+import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
 
 public class SwitchRegisterFragment extends Fragment implements View.OnClickListener {
     private ImageButton restaurantRegister;
@@ -35,8 +36,8 @@ public class SwitchRegisterFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.restaurantRegister:
-//                Intent restaurantRegisterIntent = new Intent(getActivity(), RestaurantRegister.class);
-//                startActivity(restaurantRegisterIntent);
+                Intent restaurantRegisterIntent = new Intent(getActivity(), RestaurantRegister.class);
+                startActivity(restaurantRegisterIntent);
                 break;
             case R.id.customerRegister:
                 Intent customerRegisterIntent = new Intent(getActivity(), CustomerRegister.class);
