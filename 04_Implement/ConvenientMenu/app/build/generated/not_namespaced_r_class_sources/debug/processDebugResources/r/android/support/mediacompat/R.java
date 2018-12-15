@@ -95,22 +95,22 @@ public final class R {
         public static final int forever = 0x7f090083;
         public static final int icon = 0x7f090095;
         public static final int icon_group = 0x7f090096;
-        public static final int info = 0x7f0900a4;
-        public static final int italic = 0x7f0900a6;
-        public static final int line1 = 0x7f0900af;
-        public static final int line3 = 0x7f0900b0;
-        public static final int media_actions = 0x7f0900f5;
-        public static final int normal = 0x7f090109;
-        public static final int notification_background = 0x7f09010a;
-        public static final int notification_main_column = 0x7f09010b;
-        public static final int notification_main_column_container = 0x7f09010c;
-        public static final int right_icon = 0x7f09012e;
-        public static final int right_side = 0x7f09012f;
-        public static final int status_bar_latest_event_content = 0x7f09015d;
-        public static final int text = 0x7f090167;
-        public static final int text2 = 0x7f090168;
-        public static final int time = 0x7f090177;
-        public static final int title = 0x7f090178;
+        public static final int info = 0x7f0900a5;
+        public static final int italic = 0x7f0900a7;
+        public static final int line1 = 0x7f0900b0;
+        public static final int line3 = 0x7f0900b1;
+        public static final int media_actions = 0x7f0900f6;
+        public static final int normal = 0x7f09010a;
+        public static final int notification_background = 0x7f09010b;
+        public static final int notification_main_column = 0x7f09010c;
+        public static final int notification_main_column_container = 0x7f09010d;
+        public static final int right_icon = 0x7f09012f;
+        public static final int right_side = 0x7f090130;
+        public static final int status_bar_latest_event_content = 0x7f09015e;
+        public static final int text = 0x7f090168;
+        public static final int text2 = 0x7f090169;
+        public static final int time = 0x7f090178;
+        public static final int title = 0x7f090179;
     }
     public static final class integer {
         private integer() {}
