@@ -16,22 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <!--android:theme="@style/Theme.AppCompat.Light">-->
-        <activity android:name=".main.MainActivity" >
+
+        <!-- android:theme="@style/Theme.AppCompat.Light"> -->
+        <activity android:name=".Manage_Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Restaurant_Detail"
-            android:screenOrientation="portrait" >
-
-        </activity>
+        <activity
+            android:name=".Restaurant_Detail"
+            android:screenOrientation="portrait" />
         <activity android:name=".ViewDish" />
         <activity
             android:name=".register.CustomerRegister"
-            android:label="Đăng ký - Thực khách"></activity>
+            android:label="Đăng ký - Thực khách" />
+        <activity android:name=".main.MainActivity" />
+        <activity android:name=".Update_Dish"></activity>
     </application>
 
 </manifest>

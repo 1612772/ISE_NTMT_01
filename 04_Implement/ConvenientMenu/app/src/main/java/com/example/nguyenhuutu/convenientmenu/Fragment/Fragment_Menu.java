@@ -41,8 +41,8 @@ public class Fragment_Menu extends Fragment {
     TabLayout tabLayout;
     public Fragment_Menu() {
         // Required empty public constructor
-          food = new Fragment_Food();
-          drink = new Fragment_Drink();
+          food = new Fragment_Food(Restaurant_Detail.idRestaurant);
+          drink = new Fragment_Drink(Restaurant_Detail.idRestaurant);
     }
 
     @Override

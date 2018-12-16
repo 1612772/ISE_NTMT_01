@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Update_Dish">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarAddOrUpdate"/>
+        <EditText
+            android:layout_below="@id/toolbarAddOrUpdate"
+            android:id="@+id/txtNameDish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:background="@drawable/search_form_border"
+            android:hint="Tên món ăn, thức uống"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textColorHint="#646464" />
+
+        <EditText
+            android:id="@+id/txtPriceDish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtNameDish"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:background="@drawable/search_form_border"
+            android:drawableRight="@drawable/price"
+            android:hint="Giá"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#000"
+            android:textColorHint="#646464" />
+
+        <EditText
+            android:id="@+id/txtDesDish"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/txtPriceDish"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:background="@drawable/search_form_border"
+            android:gravity="start"
+            android:hint="Thông tin chi tiết"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textColorHint="#646464" />
+
+        <HorizontalScrollView
+            android:id="@+id/listImageDish"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/txtDesDish" />
+
+        <Button
+            android:id="@+id/btnUpdateOrAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listImageDish"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/search_form_border"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="Thêm" />
+
+</RelativeLayout>

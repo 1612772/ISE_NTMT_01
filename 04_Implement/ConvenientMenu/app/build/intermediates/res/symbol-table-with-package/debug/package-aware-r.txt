@@ -1617,6 +1617,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable password_shape
+drawable price
 drawable rectangle12
 drawable register_button_border
 drawable res
@@ -1683,6 +1684,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnUpdateOrAdd
 id btn_comment_dish
 id btn_more
 id buttonPanel
@@ -1722,6 +1724,7 @@ id cvEvent
 id dark
 id decor_content_parent
 id default_activity_button
+id delete
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1743,6 +1746,7 @@ id dish_price
 id dish_rating
 id dish_rating_wrapper
 id drawer_layout
+id edit
 id editInformation
 id edit_query
 id email
@@ -1770,6 +1774,7 @@ id fixed
 id forever
 id ghost_view
 id gone
+id groupSearch
 id group_divider
 id groups
 id headerMenu
@@ -1795,10 +1800,12 @@ id imageDish
 id imageEvent
 id imageRestaurant
 id imageSlider
+id imgAdd
 id imgAvatar
 id imgBackground
 id imgEvent
 id imgFoodDrink
+id imgPopupMenu
 id indicator
 id info
 id invisible
@@ -1813,6 +1820,7 @@ id left
 id light
 id line1
 id line3
+id listImageDish
 id listMode
 id list_drink
 id list_food
@@ -2011,6 +2019,8 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbarAddOrUpdate
+id toolbarManage
 id toolbarRestaurant
 id toolbar_layout
 id top
@@ -2031,6 +2041,9 @@ id tvTimeEvent
 id tvTimeRating
 id tvTitleEvent
 id txtComment
+id txtDesDish
+id txtNameDish
+id txtPriceDish
 id txtRating
 id underline
 id uniform
@@ -2108,6 +2121,8 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_customer_register
 layout activity_main
+layout activity_manage__menu
+layout activity_update__dish
 layout activity_view_dish
 layout content_restaurant_detail
 layout design_bottom_navigation_item
@@ -2193,6 +2208,7 @@ layout tab_menu
 menu main_menu_customer_login
 menu main_menu_non_login
 menu main_menu_restaurant_login
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

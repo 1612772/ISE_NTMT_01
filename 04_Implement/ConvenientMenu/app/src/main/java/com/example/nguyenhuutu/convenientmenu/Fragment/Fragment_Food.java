@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -31,11 +32,16 @@ public class Fragment_Food extends Fragment {
 
     ListView listDish;
     public static ListFood adapter;
-    public Fragment_Food() {
+    public Fragment_Food()
+    {
+
+    }
+    @SuppressLint("ValidFragment")
+    public Fragment_Food(String ID) {
         // Required empty public constructor
         final List<Dish> dataList = new ArrayList<Dish>();
         CMDB.db.collection("dish")
-                .whereEqualTo("rest_account",Restaurant_Detail.idRestaurant)
+                .whereEqualTo("rest_account",ID)
                 .whereEqualTo("dish_type_id","DTYPE1")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
