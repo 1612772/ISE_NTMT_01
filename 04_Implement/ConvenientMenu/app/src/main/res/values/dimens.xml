@@ -35,4 +35,5 @@
     <!--Restaurant Item, Dish Item, Event Item-->
     <dimen name="textSizeRestaurantNameReference">8sp</dimen>
     <dimen name="textSizeItemTitle">10sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

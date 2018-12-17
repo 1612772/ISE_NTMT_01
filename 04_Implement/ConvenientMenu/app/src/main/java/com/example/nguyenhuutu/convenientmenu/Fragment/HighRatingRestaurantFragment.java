@@ -64,6 +64,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                 }
                             }
 
+
                             sortRestaurantFlowStar(dataList);
 
                             try {

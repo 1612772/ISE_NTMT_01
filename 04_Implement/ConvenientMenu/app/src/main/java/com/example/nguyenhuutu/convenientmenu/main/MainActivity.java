@@ -26,6 +26,7 @@ import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
+import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -146,6 +147,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_restaurant_list:
+                        if (!(contentFragment instanceof RestaurantList)) {
+                            setTitle("Restaurant List");
+                            contentFragment = new RestaurantList();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_info_account:
                         break;

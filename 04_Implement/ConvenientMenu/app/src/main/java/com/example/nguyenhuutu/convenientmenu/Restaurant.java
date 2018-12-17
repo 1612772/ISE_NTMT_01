@@ -40,6 +40,18 @@ public class Restaurant extends User implements Comparable {
     /**
      * Methods List
      */
+    public Restaurant(String name){
+        this.restAccount = "";
+        this.restPassword = "";
+        this.restName = name;
+        this.restEmail= "";
+        this.restAddresses = new ArrayList<>();
+        this.restDescription = "";
+        this.restHomeImage = "";
+        this.restMoreImages = new ArrayList<>();
+        this.maxStar = ZERO.doubleValue();
+        this.viewedNumber = ZERO.longValue();
+    }
 
     public Restaurant(){
         this.restAccount = "";
