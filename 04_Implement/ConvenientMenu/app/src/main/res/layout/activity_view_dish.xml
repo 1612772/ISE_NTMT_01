@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDish">
+    tools:context=".ViewDish.ViewDish">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,23 +29,18 @@
                     android:layout_height="151dp"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="0dp"
-                    android:background="@color/colorPrimary"/>
+                    />
 
-                <com.viewpagerindicator.CirclePageIndicator
+                <me.relex.circleindicator.CircleIndicator
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="bottom"
-                    android:padding="10dip"
-                    app:centered="true"
-                    app:fillColor="#df0623"
-                    app:pageColor="#fff"
-                    app:snap="false"
-                    android:background="@color/colorAccent"/>
+                    android:layout_height="44dp"
+                    android:layout_alignBottom="@+id/dish_images_viewer"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true" />
 
             </RelativeLayout>
+
 
             <LinearLayout
                 android:id="@+id/dish_info"
@@ -55,7 +50,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:layout_marginTop="10dp">
-                <!-- Dish's name -->
+
                 <TextView
                     android:id="@+id/dish_name"
                     android:layout_width="match_parent"
@@ -67,7 +62,7 @@
                     android:textColor="#595342"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-                <!-- Dish rating info -->
+
                 <LinearLayout
                     android:id="@+id/dish_rating_wrapper"
                     android:layout_width="match_parent"
@@ -84,21 +79,21 @@
                         android:isIndicator="true"
                         android:rating="4.5"/>
 
-                    <TextView
+                    <!--<TextView
                         android:id="@+id/rating_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:text="4.5 of 5" />
-
-                    <TextView
-                        android:id="@+id/comment_number"
+-->
+                   <!-- <TextView
+                        android:id="@+id/vote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:text="(132 phiếu)" />
+                        android:text="(132 phiếu)" />-->
                 </LinearLayout>
-                <!-- Dish's price -->
+
                 <TextView
                     android:id="@+id/dish_price"
                     android:layout_width="match_parent"
@@ -158,8 +153,9 @@
                         android:textStyle="normal" />
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
-        <!-- Comment dish -->
+
         <LinearLayout
             android:id="@+id/comment_dish_list_wrapper"
             android:layout_width="match_parent"
@@ -168,7 +164,7 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-            <!-- Evaluate dish -->
+
             <LinearLayout
                 android:id="@+id/evaluate_dish"
                 android:layout_width="match_parent"
@@ -189,13 +185,13 @@
 
                 <RatingBar
                     android:id="@+id/evaluate_dish_rating"
-                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:theme="@style/RatingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:isIndicator="false" />
+                    />
             </LinearLayout>
-            <!-- Comment dish -->
+
             <LinearLayout
                 android:id="@+id/comment_dish"
                 android:layout_width="match_parent"
@@ -245,176 +241,23 @@
                         android:src="@drawable/comment_btn" />
                 </LinearLayout>
             </LinearLayout>
-            <!-- Comment list -->
+
             <LinearLayout
                 android:id="@+id/comment_dish_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
-                <!-- tieu bieu -->
-                <LinearLayout
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ListView
+                    android:id="@+id/listComment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp">
-
-                    <ImageView
-                        android:id="@+id/user_avatar_1"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/common_google_signin_btn_text_light_normal"
-                        android:scaleType="center"/>
-
-                    <LinearLayout
-                        android:id="@+id/comment_dish_content_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:id="@+id/user_rating_date_1"
-                            android:layout_width="match_parent"
-                            android:layout_height="15dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/user_fullname_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="left"
-                                android:lineHeight="15sp"
-                                android:paddingLeft="5dp"
-                                android:text="Le Van Tu"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/number_of_star_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="5dp"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="left"
-                                android:lineHeight="15sp"
-                                android:text="(4\u2605)"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="normal" />
-
-                            <TextView
-                                android:id="@+id/comment_date_1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="right"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="right"
-                                android:lineHeight="15sp"
-                                android:text="03/12/2018"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="normal" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/comment_content_1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:paddingLeft="5dp"
-                            android:fontFamily="@font/montserrat"
-                            android:gravity="right"
-                            android:lineHeight="15sp"
-                            android:textColor="#595342"
-                            android:textSize="12sp"
-                            android:textStyle="normal"
-                            android:text="Lorem ipsum is simple dummy text of the printing and typesetting industry." />
-                    </LinearLayout>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp">
-
-                    <ImageView
-                        android:id="@+id/user_avatar"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/common_google_signin_btn_text_light_normal" />
-
-                    <LinearLayout
-                        android:id="@+id/comment_dish_content"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:id="@+id/user_rating_date"
-                            android:layout_width="match_parent"
-                            android:layout_height="15dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/user_fullname"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="left"
-                                android:lineHeight="15sp"
-                                android:paddingLeft="5dp"
-                                android:text="Le Van Tu"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/number_of_star"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="5dp"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="left"
-                                android:lineHeight="15sp"
-                                android:text="(4\u2605)"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="normal" />
-
-                            <TextView
-                                android:id="@+id/comment_date"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_gravity="right"
-                                android:fontFamily="@font/montserrat"
-                                android:gravity="right"
-                                android:lineHeight="15sp"
-                                android:text="03/12/2018"
-                                android:textColor="#595342"
-                                android:textSize="12sp"
-                                android:textStyle="normal" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/comment_content"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:paddingLeft="5dp"
-                            android:fontFamily="@font/montserrat"
-                            android:gravity="right"
-                            android:lineHeight="15sp"
-                            android:textColor="#595342"
-                            android:textSize="12sp"
-                            android:textStyle="normal"
-                            android:text="Lorem ipsum is simple dummy text of the printing and typesetting industry." />
-                    </LinearLayout>
-                </LinearLayout>
+                    android:layout_height="wrap_content"></ListView>
+            </ScrollView>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 </ScrollView>
