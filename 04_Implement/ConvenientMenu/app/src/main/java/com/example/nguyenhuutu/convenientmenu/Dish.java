@@ -1,10 +1,22 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
+import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,6 +43,8 @@ public class Dish implements Comparable {
     private String restAccount;
     private float maxStar;
 
+    protected Integer dishNumber = 0;
+
     public static int compareProperty;
     public final static int STAR = 0;
 
@@ -47,6 +61,18 @@ public class Dish implements Comparable {
         this.dishMoreImages = _dishMoreImages;
         this.dishTypeId = _dishTypeId;
         this.maxStar = _maxStar;
+        this.restAccount = _restAccount;
+    }
+
+    public Dish(String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, String _restAccount) {
+        this.dishId = "";
+        this.dishName = _dishName;
+        this.dishPrice = _dishPrice;
+        this.dishDescription = _dishDescription;
+        this.dishHomeImage = _dishHomeImage;
+        this.dishMoreImages = _dishMoreImages;
+        this.dishTypeId = _dishTypeId;
+        this.maxStar = 0;
         this.restAccount = _restAccount;
     }
 
@@ -203,6 +229,106 @@ public class Dish implements Comparable {
         dishData.put("rest_account", _restAccount);
 
         return dishData;
+    }
+
+    public Map<String, Object> createDishData() {
+        Map<String, Object> dishData = new HashMap<>(); // Save data of dish
+
+        dishData.put("dish_id", this.dishId);
+        dishData.put("dish_name", this.dishName);
+        dishData.put("dish_price", this.dishPrice);
+        dishData.put("dish_description", this.dishDescription);
+        dishData.put("dish_home_image_file", this.dishHomeImage);
+        dishData.put("dish_more_image_files", this.dishMoreImages);
+        dishData.put("max_star", this.maxStar);
+        dishData.put("dish_type_id", this.dishTypeId);
+        dishData.put("rest_account", this.restAccount);
+
+        return dishData;
+    }
+
+    private String getExtensionOfFile(String fileName){
+        String extension = "";
+
+        extension = fileName.substring(fileName.lastIndexOf('.'));
+
+        return extension;
+    }
+
+    private String createImageFileName(String oldFileName, Integer position) {
+        return dishId + "_" + position.toString() + getExtensionOfFile(oldFileName);
+    }
+
+    private String uploadImageFile(Uri file, Integer position) {
+        String fileName = createImageFileName(file.getLastPathSegment(), position);
+
+        CMStorage.storage
+                .child("images/dish/" + dishId + "/" + fileName)
+                .putFile(file)
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        Log.e("Upload file failed: ", exception.toString());
+                    }
+                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+            }
+        });
+
+        return fileName;
+    }
+
+    public void addDish(final Activity activity) {
+        CMDB.db
+                .collection("dish")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            dishNumber = task.getResult().size();
+                            dishId = createDishId(dishNumber);
+
+                            Integer imageNumber = 1;
+
+                            Uri file = Uri.fromFile(new File(dishHomeImage));
+                            dishHomeImage = uploadImageFile(file, imageNumber);
+
+                            ArrayList<String> dishImagesTemp = new ArrayList<String>();
+                            int count = dishMoreImages.size();
+                            for (int index = 0; index < count; index++) {
+                                imageNumber++;
+                                file = Uri.fromFile(new File(dishMoreImages.get(index).toString()));
+                                dishImagesTemp.add(uploadImageFile(file, imageNumber));
+                            }
+
+                            dishMoreImages.clear();
+                            dishMoreImages = dishImagesTemp;
+
+                            CMDB.db
+                                    .collection("dish")
+                                    .document(dishId)
+                                    .set(createDishData())
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            ((AddDish)activity).notifyAddDishSuccess();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            ((AddDish)activity).notifyAddDishFailed();
+                                        }
+                                    });
+
+                        } else {
+
+                        }
+                    }
+                });
     }
 
     public int compareTo(@NonNull Object o) {

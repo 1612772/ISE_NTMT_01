@@ -1764,6 +1764,7 @@ id dishName
 id dishNameBound
 id dishPrice
 id dishPriceBound
+id dishType
 id dish_description
 id dish_description_title
 id dish_description_wrapper
@@ -2164,6 +2165,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dish_type_spinner_item
 layout fragment_draft
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
@@ -2171,6 +2173,7 @@ layout home_page_fragment
 layout homepage_dish_item
 layout homepage_event_item
 layout homepage_restaurant_item
+layout image_item
 layout image_slider
 layout item_comment
 layout item_event
