@@ -58,14 +58,9 @@ public class HighRatingDishFragment extends Fragment {
                         if (task.isSuccessful()) {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                try {
-                                    dataList.add(Dish.loadDish(document.getData()));
-                                }
-                                catch (Exception ex){
-                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
-                                }
+                                dataList.add(Dish.loadDish(document.getData()));
                             }
-
+                            Toast.makeText(getActivity(), "dish count" + String.valueOf(dataList.size()), Toast.LENGTH_SHORT).show();
                             sortDishFlowStar(dataList);
 
                             try {

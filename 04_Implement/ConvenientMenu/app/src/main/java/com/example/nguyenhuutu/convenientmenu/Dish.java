@@ -33,7 +33,7 @@ public class Dish implements Comparable {
     private Bitmap dishImage;
     private List<String> dishMoreImages;
     private String dishTypeId;
-    private Date CreateDate;
+    private Date createDate;
     private int eventType; // <0:New, >0:Hot
 
     private String restAccount;
@@ -66,7 +66,7 @@ public class Dish implements Comparable {
         this.dishTypeId = _dishTypeId;
         this.maxStar = _maxStar;
         this.restAccount = _restAccount;
-        this.CreateDate=_createdate;
+        this.createDate=_createdate;
         //DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date(); // lấy thời gian hệ thống
         long getDiff = date.getTime() - _createdate.getTime();
@@ -114,11 +114,11 @@ public class Dish implements Comparable {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
 
-        return simpleDateFormat.format(CreateDate);
+        return simpleDateFormat.format(createDate);
     }
 
     public void setCreateDate(Date createDate) {
-        CreateDate = createDate;
+        createDate = createDate;
     }
 
     public void setDishImage(Bitmap dishImage) {
