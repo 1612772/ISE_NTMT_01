@@ -1,28 +1,24 @@
-package com.example.nguyenhuutu.convenientmenu.ViewDish;
+package com.example.nguyenhuutu.convenientmenu.viewdish;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CommentDish;
-import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
-import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -32,24 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
+
 public class ViewDish extends AppCompatActivity {
     private ViewPager dishImagesViewer;
     private ViewPageImageAdapter adapter;
 
     private List<String> listImage = new ArrayList<>();
-    Dish dish = new Dish();
+    private Dish dish;
     private  ArrayList<CommentDish> listComment = new ArrayList<>();
-    CommentDish cmtDish = new CommentDish();
-    //dish information
-    //dish name
     private TextView mdish_name;
-    //dish rating
     private RatingBar mdish_rating;
-    private TextView mdish_ratingScore;
-    private TextView mdish_Vote;
-    //dish price
     private TextView mdish_price;
-    //dish description
     private TextView mdish_descriptionDish;
     private Button mdish_viewMore;
 
@@ -62,69 +51,82 @@ public class ViewDish extends AppCompatActivity {
     //list comment
     private ListView lView;
     DishCommentAdapter adapterC;
+
+    private Toolbar viewDishToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_dish);
+        // Get dish id from intent
+        String dishId = getDishIdFromIntent();
+        // init for dish detail
         initInfoDish();
-        getDataFromFireBase();
+        // get dish data from database
+        getDataFromFireBase(dishId);
         //get comment and store in firebase
-        initCommentDish();
+        initCommentDish(dishId);
 
+        viewDishToolbar = findViewById(R.id.viewDishToolbar);
+        setSupportActionBar(viewDishToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        viewDishToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    private void getDataFromFireBase() {
-        //phhviet: Lấy tạm DISH1
+    private String getDishIdFromIntent() {
+        return getIntent().getExtras().get("dish_id").toString();
+    }
 
-        try{
-            CMDB.db.collection("dish").document("DISH1")
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                            if (task.isSuccessful()) {
-                                DocumentSnapshot document = task.getResult();
-                                if (document.exists()) {
-                                    // Có dữ liệu của DISH1
-                                    dish = Dish.loadDish(document.getData());
+    private void getDataFromFireBase(String dishId) {
+        CMDB.db.collection("dish").document(dishId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // Có dữ liệu của dish
+                                dish = Dish.loadDish(document.getData());
 
-                                    listImage.add(dish.getDishHomeImage());
-                                    for (String s: dish.getDishMoreImages()) {
-                                        listImage.add(s);
-                                    }
-                                    initDishImage();
-                                    mdish_name.setText(dish.getDishName());
-                                    mdish_rating.setRating(dish.getMaxStar());
-                                    mdish_descriptionDish.setText(dish.getDishDescription());
-                                    mdish_price.setText(dish.getDishPrice().toString());
-                                } else {
-                                    // code here
+                                listImage.add(dish.getDishHomeImage());
+                                for (String s: dish.getDishMoreImages()) {
+                                    listImage.add(s);
                                 }
+
+                                initDishImage();
+                                mdish_name.setText(dish.getDishName());
+                                mdish_rating.setRating(dish.getMaxStar());
+                                mdish_descriptionDish.setText(dish.getDishDescription());
+                                mdish_price.setText("$" + dish.getDishPrice().toString());
                             } else {
                                 // code here
                             }
+                        } else {
+                            // code here
                         }
-                    });
-        }
-        catch(Exception ex) {
-            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
-        }
+                    }
+                });
     }
-    private void initCommentDish() {
+
+    private void initCommentDish(String dishId) {
         mdish_evaluteDish = findViewById(R.id.evaluate_dish_rating);
         mdish_txtComment = findViewById(R.id.comment_text);
         mdish_btnComment = findViewById(R.id.btn_comment_dish);
-        //Send comment to database
+
         lView = findViewById(R.id.listComment);
-        getDataComment();
-
-
+        getDataComment(dishId);
     }
 
-    private void getDataComment() {
-        //thiếu điều kiện user_account.
+    private void getDataComment(String dishId) {
         CMDB.db.collection("comment_dish")
-                .whereEqualTo("dish_id","DISH1")
+                .whereEqualTo("dish_id", dishId)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -134,10 +136,8 @@ public class ViewDish extends AppCompatActivity {
                                         listComment.add(CommentDish.loadCommentDish(document.getData()));
                                 }
 
-                            try {
                                 adapterC = new DishCommentAdapter(getApplicationContext(),R.layout.dish_comment_item ,listComment);
                                 lView.setAdapter(adapterC);
-                            }catch (Exception ex) {Log.e("test1",ex.toString());}
                         }
                     }
                 });
@@ -147,8 +147,6 @@ public class ViewDish extends AppCompatActivity {
         dishImagesViewer = (ViewPager) findViewById(R.id.dish_images_viewer);
         mdish_name = findViewById(R.id.dish_name);
         mdish_rating = findViewById(R.id.dish_rating);
-        /*mdish_ratingScore = findViewById(R.id.rating_score);
-        mdish_Vote = findViewById(R.id.vote);*/
         mdish_price = findViewById(R.id.dish_price);
         mdish_descriptionDish = findViewById(R.id.dish_description);
         //chưa xử lí

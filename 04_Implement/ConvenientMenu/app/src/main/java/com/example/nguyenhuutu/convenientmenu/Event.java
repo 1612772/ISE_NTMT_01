@@ -30,6 +30,7 @@ public class Event implements Comparable {
      * Properties
      */
     private String eventId;
+    private String eventName;
     private String eventContent;
     private List<String> eventImageFiles;
     private Date beginDate;
@@ -43,21 +44,32 @@ public class Event implements Comparable {
     /**
      * Constructor methods
      */
-    public Event(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount, Date _datePublish) {
+    public Event(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount, Date _datePublish,String _eventName) {
         this.eventId = _eventId;
+        this.eventName = _eventName;
         this.eventContent = _eventContent;
         this.eventImageFiles = _eventImageFiles;
         this.beginDate = _beginDate;
         this.endDate = _endDate;
         this.restAccount = _restAccount;
         this.datePublish = _datePublish;
+        this.eventName = _eventName;
     }
 
     /**
      * Getter methods
      */
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
     public String getEventId() {
         return eventId;
+    }
+
+    public String getEventName() {
+        return eventName;
     }
 
     public String getEventContent() {
@@ -157,7 +169,9 @@ public class Event implements Comparable {
         Date _endDate = (Date) document.get("end_date");
         String _restAccount = document.get("rest_account").toString();
         Date _datePublish = (Date) document.get("date_publish");
-        return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish);
+        String _eventName = document.get("event_name").toString();
+
+        return new Event(_eventId, _eventContent, _eventImageFiles, _beginDate, _endDate, _restAccount, _datePublish,_eventName);
     }
 
     /**
@@ -171,10 +185,11 @@ public class Event implements Comparable {
      * @param _restAccount
      * @return
      */
-    public static Map<String, Object> createEventData(String _eventId, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount) {
+    public static Map<String, Object> createEventData(String _eventId, String _eventName, String _eventContent, List<String> _eventImageFiles, Date _beginDate, Date _endDate, String _restAccount) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("event_id", _eventId);
+        document.put("event_name", _eventName);
         document.put("event_content", _eventContent);
         document.put("event_image_files", _eventImageFiles);
         document.put("begin_date", new Timestamp(_beginDate.getTime()));

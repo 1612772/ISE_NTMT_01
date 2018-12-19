@@ -113,7 +113,7 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                                 }
                                             });
 
-                                    ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
+                                    //((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
 
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override

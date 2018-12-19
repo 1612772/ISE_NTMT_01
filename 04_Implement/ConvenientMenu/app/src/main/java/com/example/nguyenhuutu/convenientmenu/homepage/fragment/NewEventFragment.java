@@ -76,7 +76,7 @@ public class NewEventFragment extends Fragment {
                                     final Event event;
                                     final CardView eventItemLayout = (CardView) inflater.inflate(R.layout.homepage_event_item, container);
                                     event = dataList.get(index);
-                                    ((TextView) eventItemLayout.findViewById(R.id.eventShortContent)).setText(event.getEventContent());
+                                    ((TextView) eventItemLayout.findViewById(R.id.eventName)).setText(event.getEventName());
 
                                     CMStorage.storage.child("images/event/" + event.getEventImageFiles().get(0).toString())
                                             .getDownloadUrl()
@@ -90,14 +90,14 @@ public class NewEventFragment extends Fragment {
                                                                 .into((ImageView) eventItemLayout.findViewById(R.id.imageEvent));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), "Image can not be load because of server's error", Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getActivity(), "Image can not be load because of server's error", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception exception) {
-                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -135,7 +135,7 @@ public class NewEventFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

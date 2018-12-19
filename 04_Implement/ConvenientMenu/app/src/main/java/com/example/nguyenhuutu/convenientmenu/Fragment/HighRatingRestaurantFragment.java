@@ -64,6 +64,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                 }
                             }
 
+
                             sortRestaurantFlowStar(dataList);
 
                             try {
@@ -117,7 +118,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                                 }
                                             });
 
-                                    ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
+                                    //((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {

@@ -4,19 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDish.ViewDish">
+    tools:context=".viewdish.ViewDish">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:orientation="vertical">
-
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/viewDishToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"></android.support.v7.widget.Toolbar>
         <LinearLayout
             android:id="@+id/dish_info_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:fitsSystemWindows="false">
 
             <RelativeLayout
                 android:id="@+id/dish_images_viewer_wrapper"
@@ -215,7 +220,8 @@
                     android:id="@+id/comment_form"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/comment_box_border">
 
                     <EditText
                         android:id="@+id/comment_text"
@@ -223,14 +229,15 @@
                         android:layout_height="43dp"
                         android:layout_weight="9"
                         android:fontFamily="@font/montserrat"
-                        android:gravity="left"
+                        android:gravity="center_vertical"
                         android:hint="Thêm bình luận..."
-                        android:lineHeight="12sp"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         android:textColor="#000000"
-                        android:textSize="10sp"
-                        android:textStyle="normal" />
+                        android:textColorHint="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        android:background="@null"/>
 
                     <ImageButton
                         android:id="@+id/btn_comment_dish"
@@ -251,10 +258,14 @@
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ListView
-                    android:id="@+id/listComment"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></ListView>
+                    android:layout_height="wrap_content">
+                    <ListView
+                        android:id="@+id/listComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ListView>
+                </LinearLayout>
             </ScrollView>
             </LinearLayout>
         </LinearLayout>

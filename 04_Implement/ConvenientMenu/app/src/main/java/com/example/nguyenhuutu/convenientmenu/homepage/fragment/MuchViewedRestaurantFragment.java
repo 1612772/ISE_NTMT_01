@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -56,7 +58,7 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                     dataList.add(Restaurant.loadRestaurant(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -86,14 +88,14 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                                                 .into((ImageView) restItemLayout.findViewById(R.id.imageRestaurant));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception exception) {
-                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -113,15 +115,14 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                                 }
                                             });
 
-                                    ((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
+                                    //((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
 
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            //Intent restIntent = new Intent(getActivity(), RestaurantDetail.class);
-                                            //restIntent.putExtra("rest_account", rest.getRestAccount());
-                                            //startActivity(restIntent);
-                                            Toast.makeText(getActivity(), rest.getRestAccount() + "-" + rest.getRestName(), Toast.LENGTH_SHORT).show();
+                                            Intent restIntent = new Intent(getActivity(), Restaurant_Detail.class);
+                                            restIntent.putExtra("rest_account", rest.getRestAccount());
+                                            startActivity(restIntent);
                                         }
                                     });
 
@@ -129,7 +130,7 @@ public class MuchViewedRestaurantFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {

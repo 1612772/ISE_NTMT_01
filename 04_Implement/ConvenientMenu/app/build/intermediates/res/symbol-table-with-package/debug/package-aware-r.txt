@@ -1456,6 +1456,9 @@ dimen register_rule_height
 dimen register_split_name_width
 dimen register_text_size
 dimen register_textinput_margin_top
+dimen textSizeItemTitle
+dimen textSizeRestaurantNameReference
+dimen text_margin
 dimen tool_bar_top_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1558,6 +1561,7 @@ drawable button_secondary_background
 drawable checkbox_border
 drawable checkbox_no
 drawable checkbox_yes
+drawable comment_box_border
 drawable comment_btn
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1697,7 +1701,6 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addressRestaurant
 id addressRestaurantDetail
 id adjust_height
 id adjust_width
@@ -1728,6 +1731,7 @@ id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
+id code
 id collapseActionView
 id comment_content
 id comment_date
@@ -1737,6 +1741,7 @@ id comment_dish_list_wrapper
 id comment_form
 id comment_text
 id comment_title
+id confirmButton
 id container
 id content
 id contentPanel
@@ -1781,7 +1786,7 @@ id enterAlwaysCollapsed
 id evaluate_dish
 id evaluate_dish_rating
 id evaluate_title
-id eventShortContent
+id eventName
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1817,6 +1822,7 @@ id icon
 id icon_group
 id icon_only
 id iconics_tag_id
+id id
 id ifRoom
 id image
 id imageDish
@@ -1842,6 +1848,7 @@ id left
 id light
 id line1
 id line3
+id list
 id listComment
 id listMode
 id list_drink
@@ -1922,6 +1929,7 @@ id muchViewedRestaurantListWrapper
 id muchViewedRestaurantListWrapperFragment
 id muchViewedRestaurantWrapper
 id multiply
+id my_recycler_view
 id nav_view
 id navigation_header_container
 id nestedScrollView
@@ -1962,8 +1970,14 @@ id rbRating
 id rbRatingItem
 id register
 id registerBtn
+id rest_list_holder
+id rest_list_image
+id rest_list_name
+id rest_list_rating_bar
+id rest_list_rating_number
 id restaurantName
 id restaurantRegister
+id restaurant_name
 id right
 id right_icon
 id right_side
@@ -2019,6 +2033,7 @@ id submit_area
 id tabMenu
 id tabMode
 id tabRestaurantDetail
+id tabRestaurantList
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
@@ -2030,6 +2045,7 @@ id textInputEmail
 id textInputFirstName
 id textInputLastName
 id textInputPassword
+id textRestaurantName
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -2054,7 +2070,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvComment
-id tvDescriptionEvent
 id tvEvent
 id tvFood
 id tvName
@@ -2076,6 +2091,8 @@ id user_fullname
 id username
 id usernameBound
 id vertical
+id viewDishToolbar
+id viewPagerRestaurantList
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
@@ -2139,7 +2156,10 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_customer_register
 layout activity_main
+layout activity_restaurant_register
 layout activity_view_dish
+layout all_restaurant_fragment
+layout confirm_restaurant
 layout content_restaurant_detail
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2158,6 +2178,7 @@ layout design_text_input_password_icon
 layout dish_comment_item
 layout dish_items
 layout fragment_draft
+layout fragment_recentrestaurant_list
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
 layout home_page_fragment
@@ -2168,6 +2189,7 @@ layout image_slider
 layout item_comment
 layout item_event
 layout item_menu
+layout list_restaurant_item
 layout login_fragment
 layout main_menu
 layout material_drawer
@@ -2214,6 +2236,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout restaurant_detail
+layout restaurant_list_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

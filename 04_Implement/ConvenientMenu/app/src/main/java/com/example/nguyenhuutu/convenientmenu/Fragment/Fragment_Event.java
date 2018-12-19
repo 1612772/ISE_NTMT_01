@@ -54,7 +54,6 @@ public class Fragment_Event extends Fragment {
                             dataList.add(item);
 
                         } catch (Exception ex) {
-                            Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
                         }
                     }
                     int mount = dataList.size();

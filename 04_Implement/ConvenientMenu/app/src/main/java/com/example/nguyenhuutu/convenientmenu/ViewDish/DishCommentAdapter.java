@@ -1,29 +1,27 @@
-package com.example.nguyenhuutu.convenientmenu.ViewDish;
+package com.example.nguyenhuutu.convenientmenu.viewdish;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.Layout;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.CommentDish;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-
-import org.w3c.dom.Comment;
-import org.w3c.dom.Text;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DishCommentAdapter extends BaseAdapter {
     Context context;
@@ -67,16 +65,35 @@ public class DishCommentAdapter extends BaseAdapter {
         commentDate.setText(commentDishList.get(position).getCmtDishDate());
         content.setText(commentDishList.get(position).getCmtDishContent());
 
-        CMStorage.storage.child("images/comment/avatar.png")
-                .getDownloadUrl()
-                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+        CMDB.db.collection("customer").document(commentDishList.get(position).getUsername())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onSuccess(Uri uri) {
-                        Glide.with(context)
-                                .load(uri.toString())
-                                .into(avatar);
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                String avatarStr = document.getString("cus_avatar_image_file").toString();
+
+                                CMStorage.storage.child("images/customer/" + avatarStr)
+                                        .getDownloadUrl()
+                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                            @Override
+                                            public void onSuccess(Uri uri) {
+                                                Glide.with(context)
+                                                        .load(uri.toString())
+                                                        .into(avatar);
+                                            }
+                                        });
+                            } else {
+                                // code here
+                            }
+                        } else {
+                            // code here
+                        }
                     }
                 });
+
         return v;
     }
 }

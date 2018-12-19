@@ -26,13 +26,15 @@ import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
+import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static org.json.JSONObject.NULL;
+//import static org.json.JSONObject.NULL;
+import static android.os.Bundle.EMPTY;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -44,8 +46,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bundle dataIntent = getIntent().getExtras();
 
-        contentFragment = new HomePageFragment();
+        if (dataIntent == null || !dataIntent.containsKey("fragment")) {
+            contentFragment = new HomePageFragment();
+        }
+        else {
+            contentFragment = getChosenFragment(dataIntent.getInt("fragment"));
+        }
 
         mToolbar= findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -139,6 +147,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_restaurant_list:
+                        if (!(contentFragment instanceof RestaurantList)) {
+                            setTitle("Restaurant List");
+                            contentFragment = new RestaurantList();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_info_account:
                         break;
@@ -182,6 +195,37 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
 
 //        checkMenuItem();
+    }
+
+    private Fragment getChosenFragment(int fragmentId) {
+        Fragment fragment = new HomePageFragment();
+
+        switch (fragmentId) {
+            case Helper.FRAGMENT_RESTAURANT_LIST:
+                break;
+            case Helper.FRAGMENT_ACCOUNT_INFO:
+                break;
+            case Helper.FRAGMENT_CHANGE_PASSWORD:
+                break;
+            case Helper.FRAGMENT_MARK_LIST:
+                break;
+            case Helper.FRAGMENT_MANAGE_MENU:
+                break;
+            case Helper.FRAGMENT_MANAGE_EVENT:
+                break;
+            case Helper.FRAGMENT_LOGIN:
+                fragment = new LoginFragment();
+                break;
+            case Helper.FRAGMENT_LOGOUT:
+                break;
+            case Helper.FRAGMENT_REGISTER:
+                fragment = new SwitchRegisterFragment();
+                break;
+            case Helper.FRAGMENT_SETTING:
+                break;
+        }
+
+        return fragment;
     }
 
 //    public void checkMenuItem() {
@@ -240,9 +284,9 @@ public class MainActivity extends AppCompatActivity {
         try{
             JSONObject result = new JSONObject(data);
             View headerView = mainMenu.getHeaderView(0);
+
             final ImageView userAvatar = headerView.findViewById(R.id.userAvatar);
             TextView userAccountName = headerView.findViewById(R.id.userAccountName);
-            Toast.makeText(this, "update", Toast.LENGTH_SHORT).show();
             if (result.getBoolean("isSuccess") == true) {
                 if (result.getJSONObject("data").getBoolean("isRest") == true) {
                     userAccountName.setText(result.getJSONObject("data").getString("name"));
@@ -259,14 +303,14 @@ public class MainActivity extends AppCompatActivity {
                                                 .into(userAvatar);
                                     }
                                     catch(Exception ex) {
-                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception exception) {
-                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
@@ -288,24 +332,24 @@ public class MainActivity extends AppCompatActivity {
                                                 .into(userAvatar);
                                     }
                                     catch(Exception ex) {
-                                        Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(getApplicationContext(), ex.toString(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception exception) {
-                                    Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), exception.toString(), Toast.LENGTH_SHORT).show();
                                 }
                             });
                 }
             }
             else {
-                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
             }
         }
         catch(Exception ex){
-            Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 

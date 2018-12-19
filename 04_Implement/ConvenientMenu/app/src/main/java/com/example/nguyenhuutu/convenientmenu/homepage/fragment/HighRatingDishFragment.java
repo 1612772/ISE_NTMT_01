@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.viewdish.ViewDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,7 +62,7 @@ public class HighRatingDishFragment extends Fragment {
                                     dataList.add(Dish.loadDish(document.getData()));
                                 }
                                 catch (Exception ex){
-                                    Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                                 }
                             }
 
@@ -89,14 +91,14 @@ public class HighRatingDishFragment extends Fragment {
                                                                 .into((ImageView) dishItemLayout.findViewById(R.id.imageDish));
                                                     }
                                                     catch(Exception ex) {
-                                                        Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
+                                                        //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception exception) {
-                                                    Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
+                                                    //Toast.makeText(getActivity(), exception.toString(), Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 
@@ -138,10 +140,9 @@ public class HighRatingDishFragment extends Fragment {
                                     dishItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            //Intent dishIntent = new Intent(getActivity(), DishDetail.class);
-                                            //dishIntent.putExtra("dish_id", dish.getDishId());
-                                            //startActivity(dishIntent);
-                                            Toast.makeText(getActivity(), dish.getRestAccount() + "-" + dish.getDishName(), Toast.LENGTH_SHORT).show();
+                                            Intent dishIntent = new Intent(getActivity(), ViewDish.class);
+                                            dishIntent.putExtra("dish_id", dish.getDishId());
+                                            startActivity(dishIntent);
                                         }
                                     });
 
@@ -149,7 +150,7 @@ public class HighRatingDishFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
                             }
                         }
                         else {
