@@ -17,13 +17,14 @@
         android:theme="@style/Theme.Design.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <!--android:theme="@style/Theme.AppCompat.Light">-->
-        <activity android:name=".ViewDish.ViewDish" >
+        <activity android:name=".main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ViewDish.ViewDish"></activity>
         <activity android:name=".Restaurant_Detail" >
 
         </activity>
