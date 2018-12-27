@@ -1710,6 +1710,7 @@ id all
 id always
 id app_bar
 id app_logo
+id appbar_layout
 id async
 id auto
 id bannerBottom
@@ -1718,7 +1719,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id btn_comment_dish
 id btn_more
 id buttonPanel
 id cancel_action
@@ -1736,9 +1736,7 @@ id collapseActionView
 id comment_content
 id comment_date
 id comment_dish
-id comment_dish_list
 id comment_dish_list_wrapper
-id comment_form
 id comment_text
 id comment_title
 id confirmButton
@@ -1933,6 +1931,7 @@ id my_recycler_view
 id nav_view
 id navigation_header_container
 id nestedScrollView
+id nestedScrollViewDish
 id never
 id newEventList
 id newEventListWrapper
@@ -2058,6 +2057,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toolbar
+id toolbarDish_layout
 id toolbarRestaurant
 id toolbar_layout
 id top
@@ -2177,6 +2177,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dish_comment_item
 layout dish_items
+layout evaluate_comment_dish
 layout fragment_draft
 layout fragment_recentrestaurant_list
 layout high_rating_dish_fragment

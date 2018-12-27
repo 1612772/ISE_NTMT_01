@@ -171,10 +171,11 @@ public class Fragment_Comment extends Fragment {
                     Restaurant_Detail.idRestaurant,
                     Restaurant_Detail.idUser,
                     rbRating.getRating(),
-                    Restaurant_Detail.idUser+Restaurant_Detail.avatarUser
+                    Restaurant_Detail.idUser + Restaurant_Detail.avatarUser
             );
 
-            CMDB.db.collection("comment_restaurant").document().set(commentRestaurant).addOnSuccessListener(new OnSuccessListener<Void>() {
+            CMDB.db.collection("comment_restaurant").document().set(commentRestaurant)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
 

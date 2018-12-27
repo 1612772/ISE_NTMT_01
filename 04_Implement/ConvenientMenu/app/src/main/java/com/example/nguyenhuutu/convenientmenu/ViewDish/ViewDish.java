@@ -1,11 +1,15 @@
 package com.example.nguyenhuutu.convenientmenu.viewdish;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,19 +17,33 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CommentDish;
+import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
+import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
+import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -41,27 +59,59 @@ public class ViewDish extends AppCompatActivity {
     private TextView mdish_price;
     private TextView mdish_descriptionDish;
     private Button mdish_viewMore;
-
+    private AppBarLayout app_bar;
     //comment on view dish
     //evaluate dish
     private RatingBar mdish_evaluteDish;
     //comment form
     private EditText mdish_txtComment;
-    private ImageButton mdish_btnComment;
     //list comment
     private ListView lView;
     DishCommentAdapter adapterC;
 
     private Toolbar viewDishToolbar;
-
+    UserSession user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_dish);
+
+        app_bar = findViewById(R.id.appbar_layout);
         // Get dish id from intent
         String dishId = getDishIdFromIntent();
         // init for dish detail
         initInfoDish();
+
+        mdish_txtComment.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    switch (keyCode) {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            SendComment();
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
+        mdish_txtComment.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_RIGHT = 2;
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (mdish_txtComment.getRight() - mdish_txtComment.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        // your action here
+                        SendComment();
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
         // get dish data from database
         getDataFromFireBase(dishId);
         //get comment and store in firebase
@@ -69,14 +119,16 @@ public class ViewDish extends AppCompatActivity {
 
         viewDishToolbar = findViewById(R.id.viewDishToolbar);
         setSupportActionBar(viewDishToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         viewDishToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                onBackPressed();
             }
         });
+
     }
 
     private String getDishIdFromIntent() {
@@ -116,12 +168,63 @@ public class ViewDish extends AppCompatActivity {
     }
 
     private void initCommentDish(String dishId) {
-        mdish_evaluteDish = findViewById(R.id.evaluate_dish_rating);
-        mdish_txtComment = findViewById(R.id.comment_text);
-        mdish_btnComment = findViewById(R.id.btn_comment_dish);
-
         lView = findViewById(R.id.listComment);
         getDataComment(dishId);
+    }
+
+    private void SendComment() {
+    //err get user logined
+        user = Helper.getLoginedUser(this);
+        Log.e("user",user.getUsername());
+        if(user.isExists()== true) {
+            if (mdish_evaluteDish.getRating() != 0) {
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = new Date();
+                final String stringDate = dateFormat.format(date);
+                final Map<String ,Object> commentDish = CommentDish.createCommentDishData(
+                        CommentDish.createCommentDishId(10),
+                        mdish_txtComment.getText().toString(),
+                        stringDate,
+                        dish.getDishId(),
+                        user.getUsername(),
+                        mdish_evaluteDish.getRating()
+                );
+                //save in database
+                CMDB.db.collection("comment_dish").document()
+                        .set(commentDish)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                CommentDish addCmt = new CommentDish(
+                                        CommentDish.createCommentDishId(10),
+                                        mdish_txtComment.getText().toString(),
+                                        stringDate,
+                                        dish.getDishId(),
+                                        user.getUsername(),
+                                        mdish_evaluteDish.getRating()
+                                );
+                                //set dieu kien
+
+                                adapterC.commentDishList.add(0,addCmt);
+                                adapterC.notifyDataSetChanged();
+                                Toast.makeText(getApplicationContext(),"Gửi bình luận thành công",Toast.LENGTH_LONG).show();
+                                mdish_txtComment.setText("");
+                                mdish_evaluteDish.setRating(0);
+                            }
+                            })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(getApplicationContext(),"Gửi bình luận thất bại",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+
+            } else
+                Toast.makeText(getApplicationContext(), "Mời bạn đánh giá ", Toast.LENGTH_LONG).show();
+        }
+        else
+             Toast.makeText(getApplicationContext(), "Mời bạn đăng nhập", Toast.LENGTH_LONG).show();
     }
 
     private void getDataComment(String dishId) {
@@ -135,13 +238,14 @@ public class ViewDish extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                         listComment.add(CommentDish.loadCommentDish(document.getData()));
                                 }
-
+                                //Log.e("testc",String.valueOf(listComment.size()));
                                 adapterC = new DishCommentAdapter(getApplicationContext(),R.layout.dish_comment_item ,listComment);
                                 lView.setAdapter(adapterC);
                         }
                     }
                 });
     }
+
     private void initInfoDish() {
 
         dishImagesViewer = (ViewPager) findViewById(R.id.dish_images_viewer);
@@ -151,14 +255,20 @@ public class ViewDish extends AppCompatActivity {
         mdish_descriptionDish = findViewById(R.id.dish_description);
         //chưa xử lí
         mdish_viewMore = findViewById(R.id.btn_more);
+        //comment
+        mdish_evaluteDish = findViewById(R.id.evaluate_dish_rating);
+        mdish_txtComment = findViewById(R.id.comment_text);
+
 
     }
+
     private void initDishImage() {
         //Image dish
         //phhviet: Code view pager
 
         adapter = new ViewPageImageAdapter(listImage, this,dish);
         dishImagesViewer.setAdapter(adapter);
+
         //phhviet: use lib 'me.relex:circleindicator:1.2.2' draw circle indicator
         try {
             CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);

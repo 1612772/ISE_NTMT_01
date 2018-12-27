@@ -121,15 +121,15 @@ public class CommentDish {
      * @param _score
      * @return Map<String, Object>
      */
-    public static Map<String, Object> createCommentDishData(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Integer _score) {
+    public static Map<String, Object> createCommentDishData(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Float _score) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("cmt_dish_id", _cmtDishId);
         document.put("cmt_dish_content", _cmtDishContent);
         document.put("cmt_dish_date", _cmtDishDate);
         document.put("dish_id", _dishId);
-        document.put("username", _username);
-        document.put("score", _score);
+        document.put("user_account", _username);
+        document.put("cmt_dish_star", _score);
 
         return document;
     }
