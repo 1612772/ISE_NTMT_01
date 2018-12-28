@@ -37,11 +37,14 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import org.w3c.dom.Comment;
+
 import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -65,6 +68,7 @@ public class ViewDish extends AppCompatActivity {
     private RatingBar mdish_evaluteDish;
     //comment form
     private EditText mdish_txtComment;
+    private String idCmt;
     //list comment
     private ListView lView;
     DishCommentAdapter adapterC;
@@ -177,51 +181,73 @@ public class ViewDish extends AppCompatActivity {
         user = Helper.getLoginedUser(this);
         Log.e("user",user.getUsername());
         if(user.isExists()== true) {
-            if (mdish_evaluteDish.getRating() != 0) {
-                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-                Date date = new Date();
-                final String stringDate = dateFormat.format(date);
-                final Map<String ,Object> commentDish = CommentDish.createCommentDishData(
-                        CommentDish.createCommentDishId(10),
-                        mdish_txtComment.getText().toString(),
-                        stringDate,
-                        dish.getDishId(),
-                        user.getUsername(),
-                        mdish_evaluteDish.getRating()
-                );
-                //save in database
-                CMDB.db.collection("comment_dish").document()
-                        .set(commentDish)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                CommentDish addCmt = new CommentDish(
-                                        CommentDish.createCommentDishId(10),
-                                        mdish_txtComment.getText().toString(),
-                                        stringDate,
-                                        dish.getDishId(),
-                                        user.getUsername(),
-                                        mdish_evaluteDish.getRating()
-                                );
-                                //set dieu kien
 
-                                adapterC.commentDishList.add(0,addCmt);
-                                adapterC.notifyDataSetChanged();
-                                Toast.makeText(getApplicationContext(),"Gửi bình luận thành công",Toast.LENGTH_LONG).show();
-                                mdish_txtComment.setText("");
-                                mdish_evaluteDish.setRating(0);
+            CMDB.db.collection("information").document("cmt_dish_max_id")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            if(task.isSuccessful())
+                            {
+                                DocumentSnapshot document = task.getResult();
+                                if(document.exists())
+                                {
+                                    Integer maxId = ((Number)document.get("cmt_dish_max_id")).intValue();
+                                    maxId++;
+                                    idCmt = CommentDish.createCommentDishId(maxId);
+                                    //phải đánh giá mới đc tính
+                                    if (mdish_evaluteDish.getRating() != 0) {
+                                        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                                        Date date = new Date();
+                                        final String stringDate = dateFormat.format(date);
+                                        final Map<String ,Object> commentDish = CommentDish.createCommentDishData(
+                                                idCmt,
+                                                mdish_txtComment.getText().toString(),
+                                                stringDate,
+                                                dish.getDishId(),
+                                                user.getUsername(),
+                                                mdish_evaluteDish.getRating()
+                                        );
+
+                                        CMDB.db.collection("comment_dish").document()
+                                                .set(commentDish)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        CommentDish addCmt = new CommentDish(
+                                                                idCmt,
+                                                                mdish_txtComment.getText().toString(),
+                                                                stringDate,
+                                                                dish.getDishId(),
+                                                                user.getUsername(),
+                                                                mdish_evaluteDish.getRating()
+                                                        );
+                                                        //set dieu kien
+
+                                                        adapterC.commentDishList.add(0,addCmt);
+                                                        adapterC.notifyDataSetChanged();
+                                                        Toast.makeText(getApplicationContext(),"Gửi bình luận thành công",Toast.LENGTH_LONG).show();
+                                                        mdish_txtComment.setText("");
+                                                        mdish_evaluteDish.setRating(0);
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Toast.makeText(getApplicationContext(),"Gửi bình luận thất bại",Toast.LENGTH_LONG).show();
+                                                    }
+                                                });
+
+
+                                    } else
+                                        Toast.makeText(getApplicationContext(), "Mời bạn đánh giá ", Toast.LENGTH_LONG).show();
+                                    //update lại max id
+                                    CMDB.db.collection("information").document("cmt_dish_max_id").update("cmt_dish_max_id",maxId);
+                                }
                             }
-                            })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getApplicationContext(),"Gửi bình luận thất bại",Toast.LENGTH_LONG).show();
-                            }
-                        });
+                        }
+                    });
 
-
-            } else
-                Toast.makeText(getApplicationContext(), "Mời bạn đánh giá ", Toast.LENGTH_LONG).show();
         }
         else
              Toast.makeText(getApplicationContext(), "Mời bạn đăng nhập", Toast.LENGTH_LONG).show();
@@ -238,7 +264,7 @@ public class ViewDish extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                         listComment.add(CommentDish.loadCommentDish(document.getData()));
                                 }
-                                //Log.e("testc",String.valueOf(listComment.size()));
+
                                 adapterC = new DishCommentAdapter(getApplicationContext(),R.layout.dish_comment_item ,listComment);
                                 lView.setAdapter(adapterC);
                         }
