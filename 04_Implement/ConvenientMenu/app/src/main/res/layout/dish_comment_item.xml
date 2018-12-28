@@ -45,10 +45,8 @@ android:layout_margin="5dp">
     android:layout_height="wrap_content"
     android:text="Content Comment"
     android:textColor="#000"
-
     android:layout_toRightOf="@id/user_avatar"
     android:layout_below="@id/number_of_star"
-    android:layout_marginTop="10dp"
     android:layout_alignBottom="@id/imgAvatar"/>
 
 </RelativeLayout>

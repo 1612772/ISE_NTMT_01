@@ -58,7 +58,7 @@ public class ViewDish extends AppCompatActivity {
     private RatingBar mdish_rating;
     private TextView mdish_price;
     private TextView mdish_descriptionDish;
-    private Button mdish_viewMore;
+
     private AppBarLayout app_bar;
     //comment on view dish
     //evaluate dish
@@ -253,8 +253,8 @@ public class ViewDish extends AppCompatActivity {
         mdish_rating = findViewById(R.id.dish_rating);
         mdish_price = findViewById(R.id.dish_price);
         mdish_descriptionDish = findViewById(R.id.dish_description);
-        //chưa xử lí
-        mdish_viewMore = findViewById(R.id.btn_more);
+
+
         //comment
         mdish_evaluteDish = findViewById(R.id.evaluate_dish_rating);
         mdish_txtComment = findViewById(R.id.comment_text);

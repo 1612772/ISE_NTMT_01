@@ -186,6 +186,7 @@ attr color
 attr colorAccent
 attr colorBackgroundFloating
 attr colorButtonNormal
+attr colorClickableText
 attr colorControlActivated
 attr colorControlHighlight
 attr colorControlNormal
@@ -495,6 +496,7 @@ attr showDividers
 attr showMotionSpec
 attr showText
 attr showTitle
+attr showTrimExpandedText
 attr singleChoiceItemLayout
 attr singleLine
 attr singleSelection
@@ -615,6 +617,11 @@ attr topPadding
 attr track
 attr trackTint
 attr trackTintMode
+attr trimCollapsedText
+attr trimExpandedText
+attr trimLength
+attr trimLines
+attr trimMode
 attr ttcIndex
 attr unselectedColor
 attr useCompatPadding
@@ -1719,7 +1726,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id btn_more
 id buttonPanel
 id cancel_action
 id center
@@ -2069,6 +2075,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id trimModeLength
+id trimModeLine
 id tvComment
 id tvEvent
 id tvFood
@@ -2413,6 +2421,8 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
+string read_less
+string read_more
 string registry
 string restaurant_list_title
 string rule_check
@@ -3051,6 +3061,7 @@ styleable MenuView android_windowAnimationStyle android_itemTextAppearance andro
 styleable NavigationView android_background android_fitsSystemWindows android_maxWidth elevation headerLayout itemBackground itemHorizontalPadding itemIconPadding itemIconTint itemTextAppearance itemTextColor menu
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable ReadMoreTextView colorClickableText showTrimExpandedText trimCollapsedText trimExpandedText trimLength trimLines trimMode
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground

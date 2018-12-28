@@ -70,37 +70,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!--<LinearLayout
-                android:id="@+id/comment_form"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/comment_box_border">
 
-                <EditText
-                    android:id="@+id/comment_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="43dp"
-                    android:layout_weight="9"
-                    android:fontFamily="@font/montserrat"
-                    android:gravity="center_vertical"
-                    android:hint="Thêm bình luận..."
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="normal"
-                    android:background="@null"/>
-
-                <ImageButton
-                    android:id="@+id/btn_comment_dish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="43dp"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/common_google_play_services_enable_text"
-                    android:src="@drawable/comment_btn" />
-            </LinearLayout>-->
             <EditText
                 android:id="@+id/comment_text"
                 android:layout_width="match_parent"

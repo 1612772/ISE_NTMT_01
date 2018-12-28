@@ -146,31 +146,19 @@
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/dish_description"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_marginTop="3dp"
-                            android:fontFamily="@font/montserrat"
-                            android:gravity="left"
-                            android:lineHeight="15sp"
-                            android:text="Lorem ipsum is simple dummy text of the printing and typesetting industry."
-                            android:textColor="#000000"
-                            android:textSize="12sp"
-                            android:textStyle="normal" />
 
-                        <Button
-                            android:id="@+id/btn_more"
+                        <com.borjabravo.readmoretextview.ReadMoreTextView
+                            android:layout_height="wrap_content"
                             android:layout_width="match_parent"
-                            android:layout_height="15dp"
-                            android:background="#ffffff"
-                            android:fontFamily="@font/montserrat"
-                            android:gravity="center"
-                            android:lineHeight="15sp"
-                            android:text="Readmore"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="12sp"
-                            android:textStyle="normal" />
+                            android:id="@+id/dish_description"
+                            app:trimExpandedText="Show more"
+                            app:trimCollapsedText=" Show less"
+                            app:trimMode="trimModeLength"
+                            app:trimLength="50"
+                            app:colorClickableText="@color/md_blue_A400">
+
+                        </com.borjabravo.readmoretextview.ReadMoreTextView>
+
                     </LinearLayout>
                 </LinearLayout>
 
