@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 #Sat Dec 29 20:43:19 ICT 2018
 path.1=classes.dex
+=======
+#Wed Dec 19 22:49:27 ICT 2018
+path.2=classes3.dex
+path.1=classes2.dex
+>>>>>>> master
 path.0=classes.dex
 renamed.10=classes11.dex
 renamed.9=classes10.dex
