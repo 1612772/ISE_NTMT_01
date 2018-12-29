@@ -41,8 +41,8 @@
       <file leaf-file-name="ViewDish.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1092">
-              <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
+            <state relative-caret-position="71">
+              <caret line="154" column="73" lean-forward="true" selection-start-line="154" selection-start-column="73" selection-end-line="154" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
@@ -54,10 +54,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Helper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/helper/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CommentDish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1323">
+            <state relative-caret-position="1365">
               <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#1303#1304#0" expanded="true" />
@@ -2394,8 +2403,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/evaluate_comment_dish.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/TestDB.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/helper/Helper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java" />
       </list>
     </option>
   </component>
@@ -2410,7 +2420,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2440,10 +2450,39 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="viewdish" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2599,11 +2638,11 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286638" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="7" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="Logcat" order="7" visible="true" weight="0.3286638" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49920633" weight="0.35560346" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2955,13 +2994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/helper/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Restaurant_Detail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-84">
@@ -3051,7 +3083,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
+        <state relative-caret-position="1365">
           <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
           <folding>
             <element signature="e#1303#1304#0" expanded="true" />
@@ -3070,10 +3102,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/helper/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1092">
-          <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
+        <state relative-caret-position="71">
+          <caret line="154" column="73" lean-forward="true" selection-start-line="154" selection-start-column="73" selection-end-line="154" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />

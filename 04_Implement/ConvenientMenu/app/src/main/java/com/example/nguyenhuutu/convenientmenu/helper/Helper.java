@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -48,6 +49,12 @@ public class Helper {
         return oneDP;
     }
 
+    public static double round(double unrounded, int precision, int roundingMode)
+    {
+        BigDecimal bd = new BigDecimal(unrounded);
+        BigDecimal rounded = bd.setScale(precision, roundingMode);
+        return rounded.doubleValue();
+    }
     public static Point getDisplaySize(Display display) {
         // display size in pixels
         Point size = new Point();

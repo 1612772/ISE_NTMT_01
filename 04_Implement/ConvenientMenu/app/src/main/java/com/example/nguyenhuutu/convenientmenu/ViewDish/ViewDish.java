@@ -40,6 +40,7 @@ import com.google.firebase.storage.UploadTask;
 import org.w3c.dom.Comment;
 
 import java.io.ByteArrayOutputStream;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -164,7 +165,7 @@ public class ViewDish extends AppCompatActivity {
                                 mdish_descriptionDish.setText(dish.getDishDescription());
                                 mdish_price.setText("$" + dish.getDishPrice().toString());
                                 if(rating*10 %10!=0)
-                                    totalRate.setText("("+rating.toString()+"/5)");
+                                    totalRate.setText("("+Helper.round(rating,2,BigDecimal.ROUND_HALF_UP)+"/5)");
                                 else
                                     totalRate.setText("("+Math.round(rating)+"/5)");
                             } else {
