@@ -1971,6 +1971,7 @@ id ratingNumber
 id ratingPerTotal
 id ratingRestaurant
 id ratingRestaurantWrapper
+id rating_score
 id rbRating
 id rbRatingItem
 id register
@@ -2105,6 +2106,7 @@ id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
 id visible
+id vote
 id wide
 id withText
 id wrap

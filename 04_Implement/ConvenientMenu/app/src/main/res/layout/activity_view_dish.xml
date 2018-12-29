@@ -99,19 +99,28 @@
                             android:isIndicator="true"
                             android:rating="4.5"/>
 
-                        <!--<TextView
+                        <TextView
                             android:id="@+id/rating_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:text="4.5 of 5" />
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="2dp"
+                            android:textColor="@color/md_blue_500"
+                            android:textStyle="italic"
+                            android:textSize="10sp"
+                            android:textAlignment="center"
+                            android:text="(4.5/5)" />
 
                         <TextView
                              android:id="@+id/vote"
                              android:layout_width="wrap_content"
                              android:layout_height="wrap_content"
-                             android:layout_marginLeft="5dp"
-                             android:text="(132 phiếu)" />-->
+                             android:textColor="@color/md_blue_500"
+                             android:textStyle="italic"
+                             android:textSize="10sp"
+                             android:layout_marginLeft="4dp"
+                            android:layout_marginTop="2dp"
+                             android:text="(132 phiếu)" />
                     </LinearLayout>
 
                     <TextView
@@ -131,7 +140,7 @@
                         android:id="@+id/dish_description_wrapper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="15dp"
                         android:orientation="vertical">
 
                         <TextView

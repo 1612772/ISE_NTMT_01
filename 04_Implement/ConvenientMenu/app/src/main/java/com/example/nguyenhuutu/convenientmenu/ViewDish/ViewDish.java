@@ -61,7 +61,8 @@ public class ViewDish extends AppCompatActivity {
     private RatingBar mdish_rating;
     private TextView mdish_price;
     private TextView mdish_descriptionDish;
-
+    private TextView totalRate;
+    private TextView totalCmt;
     private AppBarLayout app_bar;
     //comment on view dish
     //evaluate dish
@@ -69,6 +70,7 @@ public class ViewDish extends AppCompatActivity {
     //comment form
     private EditText mdish_txtComment;
     private String idCmt;
+    private Float rating;
     //list comment
     private ListView lView;
     DishCommentAdapter adapterC;
@@ -155,12 +157,16 @@ public class ViewDish extends AppCompatActivity {
                                 for (String s: dish.getDishMoreImages()) {
                                     listImage.add(s);
                                 }
-
+                                rating = dish.getMaxStar();
                                 initDishImage();
                                 mdish_name.setText(dish.getDishName());
                                 mdish_rating.setRating(dish.getMaxStar());
                                 mdish_descriptionDish.setText(dish.getDishDescription());
                                 mdish_price.setText("$" + dish.getDishPrice().toString());
+                                if(rating*10 %10!=0)
+                                    totalRate.setText("("+rating.toString()+"/5)");
+                                else
+                                    totalRate.setText("("+Math.round(rating)+"/5)");
                             } else {
                                 // code here
                             }
@@ -196,6 +202,15 @@ public class ViewDish extends AppCompatActivity {
                                     maxId++;
                                     idCmt = CommentDish.createCommentDishId(maxId);
                                     //phải đánh giá mới đc tính
+                                    Log.e("rateTrue",String.valueOf(mdish_evaluteDish.getRating()));
+                                    if(rating == 0)
+                                    {
+                                        rating = mdish_evaluteDish.getRating();
+                                    }
+                                    else
+                                    {
+                                        rating = (rating+mdish_evaluteDish.getRating())/2;
+                                    }
                                     if (mdish_evaluteDish.getRating() != 0) {
                                         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                                         Date date = new Date();
@@ -243,6 +258,9 @@ public class ViewDish extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), "Mời bạn đánh giá ", Toast.LENGTH_LONG).show();
                                     //update lại max id
                                     CMDB.db.collection("information").document("cmt_dish_max_id").update("cmt_dish_max_id",maxId);
+                                    Log.e("rate",rating.toString());
+                                    Log.e("rateID",dish.getDishId());
+                                    CMDB.db.collection("dish").document(dish.getDishId()).update("max_star",rating);
                                 }
                             }
                         }
@@ -264,7 +282,7 @@ public class ViewDish extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                         listComment.add(CommentDish.loadCommentDish(document.getData()));
                                 }
-
+                                totalCmt.setText("("+String.valueOf(listComment.size())+" phiếu)");
                                 adapterC = new DishCommentAdapter(getApplicationContext(),R.layout.dish_comment_item ,listComment);
                                 lView.setAdapter(adapterC);
                         }
@@ -279,7 +297,8 @@ public class ViewDish extends AppCompatActivity {
         mdish_rating = findViewById(R.id.dish_rating);
         mdish_price = findViewById(R.id.dish_price);
         mdish_descriptionDish = findViewById(R.id.dish_description);
-
+        totalCmt = findViewById(R.id.vote);
+        totalRate = findViewById(R.id.rating_score);
 
         //comment
         mdish_evaluteDish = findViewById(R.id.evaluate_dish_rating);

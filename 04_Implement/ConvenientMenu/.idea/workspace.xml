@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="user" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="rate" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -41,18 +41,13 @@
       <file leaf-file-name="ViewDish.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="256" column="42" lean-forward="true" selection-start-line="256" selection-start-column="42" selection-end-line="256" selection-end-column="42" />
+            <state relative-caret-position="911">
+              <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4812#4961#0" expanded="true" />
-                <element signature="e#4960#4961#0" expanded="true" />
                 <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-                <element signature="e#5256#6586#0" expanded="true" />
-                <element signature="e#6585#6586#0" expanded="true" />
                 <element signature="method#initCommentDish#0;class#ViewDish#0" />
-                <element signature="e#7073#11233#0" expanded="true" />
-                <element signature="e#11232#11233#0" expanded="true" />
+                <element signature="method#initInfoDish#0;class#ViewDish#0" />
                 <element signature="method#initDishImage#0;class#ViewDish#0" />
               </folding>
             </state>
@@ -62,7 +57,7 @@
       <file leaf-file-name="CommentDish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
+            <state relative-caret-position="-485">
               <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#1303#1304#0" expanded="true" />
@@ -75,25 +70,11 @@
       <file leaf-file-name="Dish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Dish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2499">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fragment_Comment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Comment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+            <state relative-caret-position="-546">
+              <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
               <folding>
-                <element signature="method#SendComment#0;class#Fragment_Comment#0" />
-                <element signature="e#7922#10378#0" expanded="true" />
-                <element signature="e#8560#8996#0" expanded="true" />
-                <element signature="e#8995#8996#0" expanded="true" />
-                <element signature="e#9019#10344#0" expanded="true" />
-                <element signature="e#10343#10344#0" expanded="true" />
-                <element signature="e#10377#10378#0" expanded="true" />
+                <element signature="e#4217#4218#0" expanded="true" />
+                <element signature="e#4252#4253#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,25 +82,25 @@
       </file>
       <file leaf-file-name="evaluate_comment_dish.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/evaluate_comment_dish.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1512">
               <caret line="72" selection-start-line="72" selection-end-line="72" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_view_dish.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3528">
-              <caret line="168" column="59" selection-start-line="168" selection-start-column="59" selection-end-line="168" selection-end-column="59" />
-            </state>
-          </provider>
           <provider editor-type-id="android-designer2">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1162">
+              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -2412,9 +2393,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dish_comment_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/evaluate_comment_dish.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/TestDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml" />
       </list>
     </option>
   </component>
@@ -2429,26 +2410,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2486,6 +2450,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2621,7 +2587,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-331" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2630,14 +2595,15 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50079364" side_tool="true" weight="0.35603714" />
+      <window_info anchor="right" id="Preview" order="3" weight="0.23614073" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286638" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="7" weight="0.3286638" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" visible="true" weight="0.3286638" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49920633" weight="0.35560346" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2646,7 +2612,6 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Preview" order="3" weight="0.23614073" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2664,25 +2629,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3276">
-          <caret line="156" column="74" lean-forward="true" selection-start-line="156" selection-start-column="74" selection-end-line="156" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
-            <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
-            <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/evaluate_comment_dish.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
@@ -2716,14 +2662,9 @@
           <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
@@ -2735,14 +2676,9 @@
           <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
@@ -2785,14 +2721,9 @@
           <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
@@ -2818,14 +2749,9 @@
           <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
@@ -2857,14 +2783,9 @@
           <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
@@ -2954,13 +2875,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/restaurant_detail.xml">
@@ -3071,16 +2992,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3528">
-          <caret line="168" column="59" selection-start-line="168" selection-start-column="59" selection-end-line="168" selection-end-column="59" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dish_comment_item.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
@@ -3100,16 +3011,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Fragment/Fragment_Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
+        <state relative-caret-position="399">
           <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
           <folding>
             <element signature="method#SendComment#0;class#Fragment_Comment#0" />
-            <element signature="e#7922#10378#0" expanded="true" />
-            <element signature="e#8560#8996#0" expanded="true" />
-            <element signature="e#8995#8996#0" expanded="true" />
-            <element signature="e#9019#10344#0" expanded="true" />
-            <element signature="e#10343#10344#0" expanded="true" />
-            <element signature="e#10377#10378#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3128,16 +3033,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/RatingBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="208" column="17" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
+          <folding>
+            <element signature="e#7047#7048#0" expanded="true" />
+            <element signature="e#7106#7107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/Dish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2499">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="-546">
+          <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+          <folding>
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4252#4253#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
+        <state relative-caret-position="-485">
           <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
           <folding>
             <element signature="e#1303#1304#0" expanded="true" />
@@ -3146,20 +3066,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1162">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/viewdish/ViewDish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="256" column="42" lean-forward="true" selection-start-line="256" selection-start-column="42" selection-end-line="256" selection-end-column="42" />
+        <state relative-caret-position="911">
+          <caret line="165" column="52" selection-start-line="165" selection-start-column="52" selection-end-line="165" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4812#4961#0" expanded="true" />
-            <element signature="e#4960#4961#0" expanded="true" />
             <element signature="method#getDishIdFromIntent#0;class#ViewDish#0" />
-            <element signature="e#5256#6586#0" expanded="true" />
-            <element signature="e#6585#6586#0" expanded="true" />
             <element signature="method#initCommentDish#0;class#ViewDish#0" />
-            <element signature="e#7073#11233#0" expanded="true" />
-            <element signature="e#11232#11233#0" expanded="true" />
+            <element signature="method#initInfoDish#0;class#ViewDish#0" />
             <element signature="method#initDishImage#0;class#ViewDish#0" />
           </folding>
         </state>
