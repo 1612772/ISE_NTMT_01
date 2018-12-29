@@ -41,11 +41,25 @@
       <file leaf-file-name="ViewDish.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/ViewDish/ViewDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4859">
-              <caret line="309" column="33" selection-start-line="309" selection-start-column="33" selection-end-line="309" selection-end-column="33" />
+            <state relative-caret-position="-405">
+              <caret line="241" column="62" selection-start-line="241" selection-start-column="62" selection-end-line="241" selection-end-column="62" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#initDishImage#0;class#ViewDish#0" />
+                <element signature="e#3195#3777#0" expanded="true" />
+                <element signature="e#3776#3777#0" expanded="true" />
+                <element signature="e#3824#4418#0" expanded="true" />
+                <element signature="e#4417#4418#0" expanded="true" />
+                <element signature="e#4926#5075#0" expanded="true" />
+                <element signature="e#5074#5075#0" expanded="true" />
+                <element signature="e#5370#7018#0" expanded="true" />
+                <element signature="e#7017#7018#0" expanded="true" />
+                <element signature="e#7493#12618#0" expanded="true" />
+                <element signature="e#9851#11380#0" expanded="true" />
+                <element signature="e#11379#11380#0" expanded="true" />
+                <element signature="e#11452#11888#0" expanded="true" />
+                <element signature="e#11887#11888#0" expanded="true" />
+                <element signature="e#12617#12618#0" expanded="true" />
+                <element signature="e#12956#13746#0" expanded="true" />
+                <element signature="e#13745#13746#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,7 +68,7 @@
       <file leaf-file-name="CommentDish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1701">
+            <state relative-caret-position="27">
               <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#1303#1304#0" expanded="true" />
@@ -94,7 +108,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="C:\Users\HoangViet-PC\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\NGUYENHUUTU\.gradle\wrapper\dists\gradle-4.6-all\bcst21l2brirad8k2ben1letg\gradle-4.6" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -2429,6 +2443,28 @@
           <expand>
             <path>
               <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="convenientmenu" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="ViewDish" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ConvenientMenu" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
@@ -2441,7 +2477,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Nexus_5X_API_21" />
+    <property name="device.picker.selection" value="110198339a5aa24a" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
   </component>
@@ -2572,9 +2608,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
@@ -2583,13 +2618,13 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50079364" side_tool="true" weight="0.35603714" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286638" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32956383" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.3279483" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18042813" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49920633" visible="true" weight="0.35541195" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49920633" weight="0.35541195" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -2638,8 +2673,22 @@
         <state relative-caret-position="3297">
           <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2649,8 +2698,22 @@
         <state relative-caret-position="2331">
           <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2691,8 +2754,22 @@
         <state relative-caret-position="3045">
           <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2716,8 +2793,22 @@
         <state relative-caret-position="1596">
           <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2738,8 +2829,22 @@
         <state relative-caret-position="1008">
           <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2955,17 +3060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1701">
-          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-          <folding>
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1334#1335#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_dish.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1674">
@@ -2976,13 +3070,38 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/CommentDish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#1303#1304#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/nguyenhuutu/convenientmenu/ViewDish/ViewDish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4859">
-          <caret line="309" column="33" selection-start-line="309" selection-start-column="33" selection-end-line="309" selection-end-column="33" />
+        <state relative-caret-position="-405">
+          <caret line="241" column="62" selection-start-line="241" selection-start-column="62" selection-end-line="241" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initDishImage#0;class#ViewDish#0" />
+            <element signature="e#3195#3777#0" expanded="true" />
+            <element signature="e#3776#3777#0" expanded="true" />
+            <element signature="e#3824#4418#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+            <element signature="e#4926#5075#0" expanded="true" />
+            <element signature="e#5074#5075#0" expanded="true" />
+            <element signature="e#5370#7018#0" expanded="true" />
+            <element signature="e#7017#7018#0" expanded="true" />
+            <element signature="e#7493#12618#0" expanded="true" />
+            <element signature="e#9851#11380#0" expanded="true" />
+            <element signature="e#11379#11380#0" expanded="true" />
+            <element signature="e#11452#11888#0" expanded="true" />
+            <element signature="e#11887#11888#0" expanded="true" />
+            <element signature="e#12617#12618#0" expanded="true" />
+            <element signature="e#12956#13746#0" expanded="true" />
+            <element signature="e#13745#13746#0" expanded="true" />
           </folding>
         </state>
       </provider>
