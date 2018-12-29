@@ -1527,6 +1527,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
@@ -1698,6 +1699,7 @@ id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
+id close
 id collapseActionView
 id comment_content
 id comment_content_1
@@ -1915,6 +1917,7 @@ id notification_main_column
 id notification_main_column_container
 id number_of_star
 id number_of_star_1
+id ok
 id outline
 id packed
 id parallax
@@ -2022,6 +2025,7 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id title_delete_route
 id title_template
 id toolbar
 id toolbarAddOrUpdate
@@ -2068,6 +2072,7 @@ id view_pager_menu
 id view_pager_restaurant_detail
 id viewgroup
 id visible
+id warningText
 id wide
 id withText
 id wrap
@@ -2145,6 +2150,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialogdelete
 layout fragment_draft
 layout frame_icon_caption
 layout high_rating_dish_fragment

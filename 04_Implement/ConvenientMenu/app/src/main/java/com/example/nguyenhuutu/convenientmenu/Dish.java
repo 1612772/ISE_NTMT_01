@@ -72,7 +72,6 @@ public class Dish implements Comparable {
         long getDiff = date.getTime() - _createdate.getTime();
         // using TimeUnit class from java.util.concurrent package
         long getDaysDiff = TimeUnit.MILLISECONDS.toDays(getDiff);
-        Log.d("THOI GIAN KHOI TAO", String.valueOf(getDaysDiff));
         if (getDaysDiff <= 7) {
             this.eventType = -1;
         } else {

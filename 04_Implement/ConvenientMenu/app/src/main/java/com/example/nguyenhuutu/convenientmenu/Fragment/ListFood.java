@@ -20,11 +20,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.DialogDelete;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
 import com.example.nguyenhuutu.convenientmenu.Update_Dish;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +38,7 @@ public class ListFood extends BaseAdapter {
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public ListFood(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
@@ -58,7 +64,7 @@ public class ListFood extends BaseAdapter {
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View row = inflater.inflate(inflat, null);
 
@@ -82,7 +88,34 @@ public class ListFood extends BaseAdapter {
                         int id = menuItem.getItemId();
                         if(id==R.id.delete)
                         {
+                            final DialogDelete dialogDelete = new DialogDelete(context);
 
+                            dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    /*StorageReference storageRef = storage.getReference();
+
+                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId());
+                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
+                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            // File deleted successfully
+                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                                    .delete()
+                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
+                                                            search.remove(position);
+                                                            notifyDataSetChanged();
+                                                        }
+                                                    });
+                                        }
+                                    });*/
+                                    dialogDelete.dialog.dismiss();
+                                }
+                            });
                         }else if (id==R.id.edit)
                         {
                             context.startActivity(new Intent(context,Update_Dish.class));

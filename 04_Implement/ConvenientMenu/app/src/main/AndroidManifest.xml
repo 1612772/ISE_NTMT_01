@@ -20,7 +20,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <!-- android:theme="@style/Theme.AppCompat.Light"> -->
-        <activity android:name=".Manage_Menu">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,7 @@
         <activity
             android:name=".register.CustomerRegister"
             android:label="Đăng ký - Thực khách" />
-        <activity android:name=".main.MainActivity" />
+        <activity android:name=".Manage_Menu" />
         <activity android:name=".Update_Dish"></activity>
     </application>
 

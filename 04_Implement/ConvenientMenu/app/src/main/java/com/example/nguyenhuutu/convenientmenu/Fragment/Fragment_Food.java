@@ -58,7 +58,7 @@ public class Fragment_Food extends Fragment {
                     int mount = dataList.size();
                     for (int i = 0; i < mount; i++) {
                         final int finalI = i;
-                        CMStorage.storage.child("images/dish/" + dataList.get(i).getDishHomeImage())
+                        CMStorage.storage.child("images/dish/" + dataList.get(i).getDishId() +"/"+ dataList.get(i).getDishHomeImage())
                                 .getDownloadUrl()
                                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override

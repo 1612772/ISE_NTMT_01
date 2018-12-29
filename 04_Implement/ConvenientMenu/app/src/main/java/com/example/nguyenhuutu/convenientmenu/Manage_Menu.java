@@ -21,8 +21,9 @@ public class Manage_Menu extends AppCompatActivity {
 
     ViewPager viewpager;
     PagerAdapterRestaurant pagerAdapterRestaurant;
-    Fragment_Food food = new Fragment_Food("restphuongdong");
-    Fragment_Drink drink = new Fragment_Drink("restphuongdong");
+    String idRestaurant = "restphuongdong";
+    Fragment_Food food = new Fragment_Food(idRestaurant);
+    Fragment_Drink drink = new Fragment_Drink(idRestaurant);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

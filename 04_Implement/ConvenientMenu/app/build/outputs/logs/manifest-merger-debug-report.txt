@@ -203,10 +203,10 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Us
 		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:19:9-56
 	android:name
 		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:13:9-68
-activity#com.example.nguyenhuutu.convenientmenu.Manage_Menu
+activity#com.example.nguyenhuutu.convenientmenu.main.MainActivity
 ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:23:9-29:20
 	android:name
-		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:23:19-46
+		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:23:19-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
@@ -233,10 +233,10 @@ ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\sr
 		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:36:13-49
 	android:name
 		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:35:13-54
-activity#com.example.nguyenhuutu.convenientmenu.main.MainActivity
-ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:37:9-55
+activity#com.example.nguyenhuutu.convenientmenu.Manage_Menu
+ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:37:9-49
 	android:name
-		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:37:19-52
+		ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:37:19-46
 activity#com.example.nguyenhuutu.convenientmenu.Update_Dish
 ADDED from C:\Users\Thanh\Desktop\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:38:9-58
 	android:name
