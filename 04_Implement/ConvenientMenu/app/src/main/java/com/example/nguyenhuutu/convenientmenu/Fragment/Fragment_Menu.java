@@ -1,6 +1,7 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,6 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
+@SuppressLint("ValidFragment")
 public class Fragment_Menu extends Fragment {
 
     ViewPager viewpager;
@@ -39,10 +41,10 @@ public class Fragment_Menu extends Fragment {
     Fragment_Food food;
     Fragment_Drink drink;
     TabLayout tabLayout;
-    public Fragment_Menu() {
+    public Fragment_Menu(String id) {
         // Required empty public constructor
-          food = new Fragment_Food();
-          drink = new Fragment_Drink();
+          food = new Fragment_Food(id);
+          drink = new Fragment_Drink(id);
     }
 
     @Override

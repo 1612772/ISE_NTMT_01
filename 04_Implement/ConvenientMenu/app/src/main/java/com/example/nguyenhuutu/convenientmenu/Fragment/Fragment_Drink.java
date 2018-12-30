@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,14 +28,15 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressLint("ValidFragment")
 public class Fragment_Drink extends Fragment {
     ListView listDish;
     public static ListDrink adapter;
-    public Fragment_Drink() {
+    public Fragment_Drink(String id) {
         // Required empty public constructor
         final List<Dish> dataList = new ArrayList<Dish>();
         CMDB.db.collection("dish")
-                .whereEqualTo("rest_account",Restaurant_Detail.idRestaurant)
+                .whereEqualTo("rest_account",id)
                 .whereEqualTo("dish_type_id","DTYPE2")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

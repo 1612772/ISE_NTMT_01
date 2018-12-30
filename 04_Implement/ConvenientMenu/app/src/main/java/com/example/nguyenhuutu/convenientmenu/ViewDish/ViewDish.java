@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.viewdish;
+package com.example.nguyenhuutu.convenientmenu.ViewDish;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;

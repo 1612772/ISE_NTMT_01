@@ -54,7 +54,7 @@ public class Restaurant_Detail extends AppCompatActivity {
     TabLayout tabLayout;
     AppCompatRatingBar ratingRestaurant;
     Restaurant infoRestaurant;
-    public static String idRestaurant, idUser = "user1", avatarUser = "avatar.png";
+    public static String idRestaurant="restphuongdong", idUser = "user1", avatarUser = "avatar.png";
     public static Bitmap imageAvatarUser;
 
     public static String covertToUnsigned(String str) {
@@ -76,7 +76,7 @@ public class Restaurant_Detail extends AppCompatActivity {
         idRestaurant = data.getString("rest_account");
 
         event = new Fragment_Event();
-        menu = new Fragment_Menu();
+        menu = new Fragment_Menu(idRestaurant);
         comment = new Fragment_Comment();
 
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);

@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.viewdish;
+package com.example.nguyenhuutu.convenientmenu.ViewDish;
 
 import android.content.Context;
 import android.net.Uri;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 public class DishCommentAdapter extends BaseAdapter {
     Context context;
-    ArrayList<CommentDish> commentDishList;
+    public ArrayList<CommentDish> commentDishList;
     int inflat;
 
     public DishCommentAdapter(Context context,int inflat,ArrayList<CommentDish> commentDishList) {

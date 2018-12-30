@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
@@ -160,6 +161,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_menu_list_mark:
                         break;
                     case R.id.main_menu_manage_menu:
+                        if (!(contentFragment instanceof Manage_Menu)) {
+                            setTitle("Quản lý thực đơn");
+                            contentFragment = new Manage_Menu();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_manage_event:
                         break;
@@ -210,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
             case Helper.FRAGMENT_MARK_LIST:
                 break;
             case Helper.FRAGMENT_MANAGE_MENU:
+                fragment = new Manage_Menu();
                 break;
             case Helper.FRAGMENT_MANAGE_EVENT:
                 break;
