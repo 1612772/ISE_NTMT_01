@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
@@ -78,7 +77,7 @@ public class RestListAdapter extends RecyclerView.Adapter<RestListAdapter.MyView
     public RestListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         LinearLayout v = (LinearLayout) LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_restaurant_item, parent, false);
+                .inflate(R.layout.item_list_restaurant, parent, false);
 
         MyViewHolder vh = new MyViewHolder(v, mContext);
         return vh;
