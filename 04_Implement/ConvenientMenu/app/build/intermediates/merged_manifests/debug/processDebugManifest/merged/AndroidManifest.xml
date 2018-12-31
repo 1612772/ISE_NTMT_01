@@ -43,8 +43,7 @@
         </activity>
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.ViewDish" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
@@ -52,6 +51,7 @@
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister"
             android:label="Đăng ký - Nhà hàng" />
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_information.activity.UpdateInformationActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

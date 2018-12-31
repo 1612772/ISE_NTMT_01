@@ -210,12 +210,4 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         return result;
     }
-
-    class LoginTask extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... strings) {
-            return null;
-        }
-    }
 }
