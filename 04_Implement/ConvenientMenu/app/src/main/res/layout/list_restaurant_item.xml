@@ -53,7 +53,7 @@
                     android:textSize="5sp"
                     android:fontFamily="@font/montserrat"
                     android:textColor="#595342"
-                    android:text="(134 phiếu)"
+                    android:text="(0 phiếu)"
                     android:textStyle="italic"
                     android:gravity="center"/>
 

@@ -1559,6 +1559,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
@@ -1656,6 +1657,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable password
 drawable password_shape
+drawable price
 drawable rectangle12
 drawable register_button_border
 drawable res
@@ -1726,6 +1728,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnUpdateOrAdd
 id buttonPanel
 id cancel_action
 id center
@@ -1737,8 +1740,10 @@ id checkbox
 id chronometer
 id clip_horizontal
 id clip_vertical
+id close
 id code
 id collapseActionView
+id commentForm
 id comment_content
 id comment_date
 id comment_dish
@@ -1758,6 +1763,7 @@ id cvEvent
 id dark
 id decor_content_parent
 id default_activity_button
+id delete
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1779,6 +1785,7 @@ id dish_price
 id dish_rating
 id dish_rating_wrapper
 id drawer_layout
+id edit
 id editInformation
 id edit_query
 id email
@@ -1806,6 +1813,7 @@ id fixed
 id forever
 id ghost_view
 id gone
+id groupSearch
 id group_divider
 id groups
 id headerMenu
@@ -1822,6 +1830,7 @@ id homeAsUp
 id homePageContent
 id homePageContentWrapper__scrollable
 id horizontal
+id hsvListImage
 id icon
 id icon_group
 id icon_only
@@ -1834,10 +1843,12 @@ id imageEvent
 id imageRestaurant
 id imageSlider
 id imageView
+id imgAdd
 id imgAvatar
 id imgBackground
 id imgEvent
 id imgFoodDrink
+id imgPopupMenu
 id indicator
 id info
 id invisible
@@ -1854,10 +1865,12 @@ id line1
 id line3
 id list
 id listComment
+id listImageAddOrUpdate
 id listMode
 id list_drink
 id list_food
 id list_item
+id listviewRes
 id loginBtn
 id lvComment
 id lvEvents
@@ -1949,6 +1962,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id number_of_star
+id ok
 id outline
 id packed
 id parallax
@@ -1964,6 +1978,9 @@ id progressBarComment
 id progress_circular
 id progress_horizontal
 id radio
+id radioDrink
+id radioFood
+id radioTypeDish
 id ratComment
 id ratingDish
 id ratingDishWrapper
@@ -2009,6 +2026,7 @@ id search_src_text
 id search_voice_btn
 id searchingFormWrapper
 id searchingText
+id searchview
 id select_dialog_listview
 id selected
 id shortInfoDish
@@ -2036,6 +2054,7 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id svInfo
 id tabMenu
 id tabMode
 id tabRestaurantDetail
@@ -2062,8 +2081,10 @@ id textinput_helper_text
 id time
 id title
 id titleDividerNoCustom
+id title_delete_route
 id title_template
 id toolbar
+id toolbarAddOrUpdate
 id toolbarDish_layout
 id toolbarRestaurant
 id toolbar_layout
@@ -2087,6 +2108,9 @@ id tvTimeEvent
 id tvTimeRating
 id tvTitleEvent
 id txtComment
+id txtDesDish
+id txtNameDish
+id txtPriceDish
 id txtRating
 id underline
 id uniform
@@ -2105,8 +2129,10 @@ id viewPagerRestaurantList
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
+id viewgroup
 id visible
 id vote
+id warningText
 id wide
 id withText
 id wrap
@@ -2166,7 +2192,13 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_customer_register
 layout activity_main
+layout activity_manage__menu
 layout activity_restaurant_register
+<<<<<<< Updated upstream
+layout activity_update__dish
+=======
+layout activity_search
+>>>>>>> Stashed changes
 layout activity_view_dish
 layout all_restaurant_fragment
 layout confirm_restaurant
@@ -2185,21 +2217,25 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialogdelete
 layout dish_comment_item
 layout dish_items
 layout evaluate_comment_dish
 layout fragment_draft
 layout fragment_recentrestaurant_list
+layout frame_icon_caption
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
 layout home_page_fragment
 layout homepage_dish_item
 layout homepage_event_item
 layout homepage_restaurant_item
+layout image
 layout image_slider
 layout item_comment
 layout item_event
 layout item_menu
+layout item_search
 layout list_restaurant_item
 layout login_fragment
 layout main_menu
@@ -2261,6 +2297,7 @@ layout tab_menu
 menu main_menu_customer_login
 menu main_menu_non_login
 menu main_menu_restaurant_login
+menu popup_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

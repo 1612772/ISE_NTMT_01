@@ -48,6 +48,7 @@ public class LoadImage extends AsyncTask<Object, String, Bitmap> {
                 try {
                     Fragment_Comment.adapter.commentRestaurants.get(i).setImageAvatar(bitmap);
                 } catch (Exception ex) {
+                    Log.e("AddImage", ex.toString());
                     onCancelled();
                 }
             } else if (Const.FOOD == id) {

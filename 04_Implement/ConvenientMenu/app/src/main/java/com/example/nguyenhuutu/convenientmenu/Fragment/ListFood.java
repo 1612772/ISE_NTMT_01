@@ -3,24 +3,21 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.DialogDelete;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +26,7 @@ public class ListFood extends BaseAdapter {
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
 
     public ListFood(Context context, int inflat, List<Dish> dish) {
         this.inflat = inflat;
@@ -54,7 +52,7 @@ public class ListFood extends BaseAdapter {
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View row = inflater.inflate(inflat, null);
 
@@ -64,7 +62,58 @@ public class ListFood extends BaseAdapter {
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
         RatingBar rbRatingItem = (RatingBar) row.findViewById(R.id.rbRatingItem);
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
+        ImageView imgPopupmenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
 
+        imgPopupmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup = new PopupMenu(context, v);
+
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        int id = menuItem.getItemId();
+                        if(id==R.id.delete)
+                        {
+                            final DialogDelete dialogDelete = new DialogDelete(context);
+
+                            dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    /*StorageReference storageRef = storage.getReference();
+
+                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId());
+                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
+                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            // File deleted successfully
+                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                                    .delete()
+                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
+                                                            search.remove(position);
+                                                            notifyDataSetChanged();
+                                                        }
+                                                    });
+                                        }
+                                    });*/
+                                    dialogDelete.dialog.dismiss();
+                                }
+                            });
+                        }else if (id==R.id.edit)
+                        {
+                            //context.startActivity(new Intent(context,Update_Dish.class));
+                        }
+                        return false;
+                    }
+                });
+                popup.show();
+            }
+        });
         Dish item = search.get(position);
 
         tvFood.setText(item.getDishName());

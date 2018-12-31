@@ -12,15 +12,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
@@ -111,6 +114,22 @@ public class RestListAdapter extends RecyclerView.Adapter<RestListAdapter.MyView
                     @Override
                     public void onFailure(@NonNull Exception exception) {
                         //database err
+                    }
+                });
+
+        CMDB.db
+                .collection("comment_restaurant")
+                .whereEqualTo("rest_account", mDataSet.get(position).getRestAccount())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            holder.restListRatingNumber.setText("(" + task.getResult().size() + " phiếu)");
+                        }
+                        else {
+
+                        }
                     }
                 });
     }

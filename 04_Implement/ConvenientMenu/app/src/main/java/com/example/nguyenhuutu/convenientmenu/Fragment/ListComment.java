@@ -2,30 +2,23 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.TransitionOptions;
-import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class ListComment extends BaseAdapter {
@@ -60,15 +53,38 @@ public class ListComment extends BaseAdapter {
         View row = inflater.inflate(inflat, null);
 
         CircularImageView imgComment = (CircularImageView) row.findViewById(R.id.imgAvatar);
-        TextView tvName = (TextView) row.findViewById(R.id.tvName);
+        final TextView tvName = (TextView) row.findViewById(R.id.tvName);
         TextView tvTimeRating = (TextView) row.findViewById(R.id.tvTimeRating);
         TextView tvComment = (TextView) row.findViewById(R.id.tvComment);
         RatingBar rbRating = (RatingBar) row.findViewById(R.id.rbRating);
 
-        CommentRestaurant item = commentRestaurants.get(position);
+        final CommentRestaurant item = commentRestaurants.get(position);
 
-        tvName.setText(item.getUserAccount());
-        tvTimeRating.setText(item.getCmtRestDate());
+        CMDB.db
+                .collection("customer")
+                .document(item.getUserAccount())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                tvName.setText(document.getString("cus_firstname") + " " + document.getString("cus_lastname"));
+                            } else {
+                                // notify something
+                            }
+                        } else {
+                            // notify something
+                        }
+                    }
+                });
+//        tvName.setText(item.getUserAccount());
+
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        String dateString = format.format(item.getCmtRestDate());
+        tvTimeRating.setText(dateString);
+
         tvComment.setText(item.getCmtRestContent());
         rbRating.setRating(item.getCmtRestStar());
 
