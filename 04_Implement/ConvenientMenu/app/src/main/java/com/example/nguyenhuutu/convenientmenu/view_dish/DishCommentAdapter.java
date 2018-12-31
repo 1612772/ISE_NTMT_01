@@ -52,15 +52,15 @@ public class DishCommentAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //View v = inflater.inflate(inflat, null);
+
         View v = inflater.inflate(inflat, parent, false);
-        TextView fullName = v.findViewById(R.id.user_fullname);
+        final TextView fullName = v.findViewById(R.id.user_fullname);
         RatingBar star = v.findViewById(R.id.number_of_star);
         TextView commentDate = v.findViewById(R.id.comment_date);
         TextView content = v.findViewById(R.id.comment_content);
         final ImageView avatar = v.findViewById(R.id.user_avatar);
 
-        fullName.setText(commentDishList.get(position).getUsername());
+
         star.setRating(commentDishList.get(position).getScore());
         commentDate.setText(commentDishList.get(position).getCmtDishDate());
         content.setText(commentDishList.get(position).getCmtDishContent());
@@ -74,7 +74,8 @@ public class DishCommentAdapter extends BaseAdapter {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 String avatarStr = document.getString("cus_avatar_image_file").toString();
-
+                                String name = document.getString("cus_lastname") +" "+document.getString("cus_firstname");
+                                fullName.setText(name);
                                 CMStorage.storage.child("images/customer/" + avatarStr)
                                         .getDownloadUrl()
                                         .addOnSuccessListener(new OnSuccessListener<Uri>() {

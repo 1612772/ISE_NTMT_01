@@ -77,36 +77,48 @@ public class ViewDish extends AppCompatActivity {
         // init for dish detail
         initInfoDish();
 
-        mdish_txtComment.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    switch (keyCode) {
-                        case KeyEvent.KEYCODE_DPAD_CENTER:
-                        case KeyEvent.KEYCODE_ENTER:
+        user = Helper.getLoginedUser(this);
+        //Log.e("user",user.getUsername());
+        if(user.isExists()== true) {
+            mdish_txtComment.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View v, int keyCode, KeyEvent event) {
+                    if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                        switch (keyCode) {
+                            case KeyEvent.KEYCODE_DPAD_CENTER:
+                            case KeyEvent.KEYCODE_ENTER:
+                                SendComment();
+                                return true;
+                            default:
+                                break;
+                        }
+                    }
+                    return false;
+                }
+            });
+            mdish_txtComment.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    final int DRAWABLE_RIGHT = 2;
+                    if (event.getAction() == MotionEvent.ACTION_UP) {
+                        if (event.getRawX() >= (mdish_txtComment.getRight() - mdish_txtComment.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                            // your action here
                             SendComment();
                             return true;
-                        default:
-                            break;
+                        }
                     }
+                    return false;
                 }
-                return false;
-            }
-        });
-        mdish_txtComment.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                final int DRAWABLE_RIGHT = 2;
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    if (event.getRawX() >= (mdish_txtComment.getRight() - mdish_txtComment.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        // your action here
-                        SendComment();
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
+            });
+        }
+        else
+        {
+            mdish_txtComment.setFocusable(false);
+            mdish_txtComment.setHint("Mời bạn đăng nhập để bình luận");
+            mdish_txtComment.setClickable(false);
+            mdish_evaluteDish.setClickable(false);
+            mdish_evaluteDish.setFocusable(false);
+        }
         // get dish data from database
         getDataFromFireBase(dishId);
         //get comment and store in firebase
@@ -147,15 +159,16 @@ public class ViewDish extends AppCompatActivity {
                                     listImage.add(s);
                                 }
                                 rating = dish.getMaxStar();
+
                                 initDishImage();
                                 mdish_name.setText(dish.getDishName());
                                 mdish_rating.setRating(dish.getMaxStar());
                                 mdish_descriptionDish.setText(dish.getDishDescription());
                                 mdish_price.setText("$" + dish.getDishPrice().toString());
-                                if(rating*10 %10!=0)
+                                if(rating*10 %10 == 0)
                                     totalRate.setText("("+rating.toString()+"/5)");
                                 else
-                                    totalRate.setText("("+Math.round(rating)+"/5)");
+                                    totalRate.setText("("+Helper.round(rating,1)+"/5)");
                             } else {
                                 // code here
                             }
@@ -172,11 +185,6 @@ public class ViewDish extends AppCompatActivity {
     }
 
     private void SendComment() {
-    //err get user logined
-        user = Helper.getLoginedUser(this);
-        Log.e("user",user.getUsername());
-        if(user.isExists()== true) {
-
             CMDB.db.collection("information").document("cmt_dish_max_id")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -255,9 +263,8 @@ public class ViewDish extends AppCompatActivity {
                         }
                     });
 
-        }
-        else
-             Toast.makeText(getApplicationContext(), "Mời bạn đăng nhập", Toast.LENGTH_LONG).show();
+
+
     }
 
     private void getDataComment(String dishId) {

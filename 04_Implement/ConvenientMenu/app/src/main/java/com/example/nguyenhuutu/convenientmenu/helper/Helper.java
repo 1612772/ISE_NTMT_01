@@ -20,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -55,7 +56,12 @@ public class Helper {
 
         return size;
     }
-
+    //phhviet: làm tròn số thập phân, decimalPlace số chữ số thập phân . Đang làm tròn lên
+    public static float round(float d, int decimalPlace){
+        BigDecimal bd = new BigDecimal(Float.toString(d));
+        bd = bd.setScale(decimalPlace,BigDecimal.ROUND_HALF_UP);
+        return bd.floatValue();
+    }
     public static void changeUserSession(Activity activity, UserSession userSession) {
         SharedPreferences pref = activity.getSharedPreferences(UserSessionSharedDocument, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();

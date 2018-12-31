@@ -1563,6 +1563,7 @@ drawable add
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
+drawable black_search
 drawable border_input_bottom
 drawable button_primary_background
 drawable button_secondary_background
@@ -1710,6 +1711,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id address
 id addressRestaurantDetail
 id adjust_height
 id adjust_width
@@ -1784,6 +1786,7 @@ id dish_name
 id dish_price
 id dish_rating
 id dish_rating_wrapper
+id dishlayout
 id drawer_layout
 id edit
 id editInformation
@@ -1848,6 +1851,7 @@ id imgAvatar
 id imgBackground
 id imgEvent
 id imgFoodDrink
+id imgObj
 id imgPopupMenu
 id indicator
 id info
@@ -1870,6 +1874,7 @@ id listMode
 id list_drink
 id list_food
 id list_item
+id listviewDish
 id listviewRes
 id loginBtn
 id lvComment
@@ -1993,6 +1998,7 @@ id rbRating
 id rbRatingItem
 id register
 id registerBtn
+id reslayout
 id rest_list_holder
 id rest_list_image
 id rest_list_name
@@ -2026,6 +2032,7 @@ id search_src_text
 id search_voice_btn
 id searchingFormWrapper
 id searchingText
+id searchrate
 id searchview
 id select_dialog_listview
 id selected
@@ -2109,9 +2116,12 @@ id tvTimeRating
 id tvTitleEvent
 id txtComment
 id txtDesDish
+id txtDish
+id txtName
 id txtNameDish
 id txtPriceDish
 id txtRating
+id txtRes
 id underline
 id uniform
 id unlabeled
@@ -2194,11 +2204,8 @@ layout activity_customer_register
 layout activity_main
 layout activity_manage__menu
 layout activity_restaurant_register
-<<<<<<< Updated upstream
-layout activity_update__dish
-=======
 layout activity_search
->>>>>>> Stashed changes
+layout activity_update__dish
 layout activity_view_dish
 layout all_restaurant_fragment
 layout confirm_restaurant
