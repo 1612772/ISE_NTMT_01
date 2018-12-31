@@ -3,9 +3,6 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +11,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,7 +18,8 @@ import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.viewdish.ViewDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -87,6 +90,16 @@ public class Fragment_Drink extends Fragment {
         View view = inflater.inflate(R.layout.tab_drink, container, false);
         listDish = view.findViewById(R.id.list_drink);
         listDish.setAdapter(adapter);
+
+        listDish.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent dishIntent = new Intent(getActivity(), ViewDish.class);
+                dishIntent.putExtra("dish_id", ListDrink.dish.get(position).getDishId());
+                startActivity(dishIntent);
+            }
+        });
+
         return view;
     }
 

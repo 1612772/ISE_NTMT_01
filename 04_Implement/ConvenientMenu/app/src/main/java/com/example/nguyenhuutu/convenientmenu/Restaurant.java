@@ -152,7 +152,7 @@ public class Restaurant extends User implements Comparable {
         String _restAccount = (String)document.get("rest_account");
         String _restPassword= (String)document.get("rest_password");
         String _restName = (String)document.get("rest_name");
-        String _restDdescription = (String)document.get("rest_description");
+        String _restDescription = (String)document.get("rest_description");
         List<String> _restAddresses = (ArrayList)document.get("rest_addresses");
         String _restHomeImage = (String)document.get("rest_home_image_file");
         List<String> _restMoreImages = (ArrayList)document.get("rest_more_image_files");
@@ -163,7 +163,7 @@ public class Restaurant extends User implements Comparable {
         String _restFacebook = (String)document.get("rest_facebook");
         String _restEmail = (String)document.get("rest_email");
 
-        return new Restaurant(_restAccount, _restPassword, _restName, _restDdescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber,_totalRating,_restPhone,_restFacebook,_restEmail);
+        return new Restaurant(_restAccount, _restPassword, _restName, _restDescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber,_totalRating,_restPhone,_restFacebook,_restEmail);
     }
 
 

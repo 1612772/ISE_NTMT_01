@@ -43,7 +43,6 @@ public class HighRatingDishFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        //homePage = (HomePage)getActivity();
         dataList = new ArrayList<Dish>();
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,7 +59,6 @@ public class HighRatingDishFragment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 dataList.add(Dish.loadDish(document.getData()));
                             }
-                            Toast.makeText(getActivity(), "dish count" + String.valueOf(dataList.size()), Toast.LENGTH_SHORT).show();
                             sortDishFlowStar(dataList);
 
                             try {
@@ -98,7 +96,6 @@ public class HighRatingDishFragment extends Fragment {
                                             });
 
                                     CMDB.db.collection("comment_dish")
-                                            .whereEqualTo("cmt_dish_star", dish.getMaxStar())
                                             .whereEqualTo("dish_id", dish.getDishId())
                                             .get()
                                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

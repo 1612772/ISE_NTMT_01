@@ -154,7 +154,7 @@ public class NewEventFragment extends Fragment {
         int index = 0;
         while (index < count) {
             if (eventList.get(index).getEndDate().compareTo(nowDate) < 0) {
-                dataList.remove(index);
+                eventList.remove(index);
                 count--;
             } else {
                 index++;

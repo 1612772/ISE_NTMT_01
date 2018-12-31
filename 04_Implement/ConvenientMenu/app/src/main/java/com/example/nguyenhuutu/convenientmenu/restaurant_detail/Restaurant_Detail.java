@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu;
+package com.example.nguyenhuutu.convenientmenu.restaurant_detail;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -23,14 +23,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
+import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Comment;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Event;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Menu;
 import com.example.nguyenhuutu.convenientmenu.Fragment.PagerAdapterRestaurant;
+import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
+import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -54,7 +61,7 @@ public class Restaurant_Detail extends AppCompatActivity {
     TabLayout tabLayout;
     AppCompatRatingBar ratingRestaurant;
     Restaurant infoRestaurant;
-    public static String idRestaurant, idUser = "user1", avatarUser = "avatar.png";
+    public static String idRestaurant, idUser = "", avatarUser = "avatar.png", userFullName = "";
     public static Bitmap imageAvatarUser;
 
     public static String covertToUnsigned(String str) {
@@ -67,10 +74,38 @@ public class Restaurant_Detail extends AppCompatActivity {
         }
     }
 
+    private void loadInfoUser() {
+        UserSession user = Helper.getLoginedUser(this);
+        idUser = user.getUsername();
+
+        CMDB.db
+                .collection("customer")
+                .document(idUser)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                userFullName = document.getString("cus_first_name");
+                            } else {
+
+                            }
+                        } else {
+
+                        }
+                    }
+                });
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_detail);
+
+        loadInfoUser();
+
         imageAvatarUser = BitmapFactory.decodeResource(getResources(), R.drawable.user);
         Bundle data = getIntent().getExtras();
         idRestaurant = data.getString("rest_account");
@@ -167,7 +202,21 @@ public class Restaurant_Detail extends AppCompatActivity {
                                 if (!infoRestaurant.getRestFacebook().isEmpty()) {
                                     facebookRestaurantDetail.setText("Facebook: " + infoRestaurant.getRestFacebook());
                                 }
-                                ratingPerTotal.setText(infoRestaurant.getMaxStar() + " (" + infoRestaurant.getTotalRating() + " phiếu)");
+                                CMDB.db
+                                        .collection("comment_restaurant")
+                                        .whereEqualTo("rest_account", infoRestaurant.getRestAccount())
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()) {
+
+                                                } else {
+                                                    ratingPerTotal.setText("(" + task.getResult().size() + " phiếu)");
+                                                }
+                                            }
+                                        });
+//                                ratingPerTotal.setText(infoRestaurant.getMaxStar() + " (" + infoRestaurant.getTotalRating() + " phiếu)");
                                 ratingRestaurant.setRating(infoRestaurant.getMaxStar().floatValue());
                             } catch (Exception ex) {
                             }
