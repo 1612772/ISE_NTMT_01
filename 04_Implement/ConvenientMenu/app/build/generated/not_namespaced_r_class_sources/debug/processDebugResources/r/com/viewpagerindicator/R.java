@@ -96,22 +96,22 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int vpi__tab_indicator = 0x7f0700cc;
-        public static final int vpi__tab_selected_focused_holo = 0x7f0700cd;
-        public static final int vpi__tab_selected_holo = 0x7f0700ce;
-        public static final int vpi__tab_selected_pressed_holo = 0x7f0700cf;
-        public static final int vpi__tab_unselected_focused_holo = 0x7f0700d0;
-        public static final int vpi__tab_unselected_holo = 0x7f0700d1;
-        public static final int vpi__tab_unselected_pressed_holo = 0x7f0700d2;
+        public static final int vpi__tab_indicator = 0x7f0700cd;
+        public static final int vpi__tab_selected_focused_holo = 0x7f0700ce;
+        public static final int vpi__tab_selected_holo = 0x7f0700cf;
+        public static final int vpi__tab_selected_pressed_holo = 0x7f0700d0;
+        public static final int vpi__tab_unselected_focused_holo = 0x7f0700d1;
+        public static final int vpi__tab_unselected_holo = 0x7f0700d2;
+        public static final int vpi__tab_unselected_pressed_holo = 0x7f0700d3;
     }
     public static final class id {
         private id() {}
 
-        public static final int bottom = 0x7f09002d;
-        public static final int none = 0x7f090111;
-        public static final int top = 0x7f090194;
-        public static final int triangle = 0x7f09019c;
-        public static final int underline = 0x7f0901ac;
+        public static final int bottom = 0x7f090032;
+        public static final int none = 0x7f090117;
+        public static final int top = 0x7f09019b;
+        public static final int triangle = 0x7f0901a3;
+        public static final int underline = 0x7f0901b3;
     }
     public static final class integer {
         private integer() {}

@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\c00a2f58a39fd366de92b16d324c08de\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "2698",
-                        "endLines": "40",
-                        "endColumns": "12",
-                        "endOffsets": "2843"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\589d06413fcf7fc74dc26384b676ddb2\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\683950041e1ca6650fb981feede50fe1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\656a737ba634df8d2f0b1b941a0f1b9d\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -49,6 +30,25 @@
                         "endLines": "3,4,5,6,19,32,33,34,35,36,37",
                         "endColumns": "134,134,74,86,12,12,126,104,114,106,112",
                         "endOffsets": "237,372,447,534,1324,2126,2253,2358,2473,2580,2693"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\97b8695fef08c87a7f2d1bc69f3a8c83\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "2698",
+                        "endLines": "40",
+                        "endColumns": "12",
+                        "endOffsets": "2843"
                     }
                 }
             ]

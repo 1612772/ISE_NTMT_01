@@ -1871,7 +1871,6 @@ id left
 id light
 id line1
 id line3
-id list
 id listComment
 id listImageAddOrUpdate
 id listMode
@@ -2127,7 +2126,15 @@ id useLogo
 id userAccountName
 id userAvatar
 id user_avatar
+id user_cover
+id user_email
+id user_firstName
 id user_fullname
+id user_lastName
+id user_name
+id user_role
+id user_sex
+id user_username
 id username
 id usernameBound
 id vertical
@@ -2203,6 +2210,7 @@ layout activity_main
 layout activity_manage__menu
 layout activity_restaurant_register
 layout activity_update__dish
+layout activity_update_information
 layout activity_view_dish
 layout all_restaurant_fragment
 layout confirm_restaurant
@@ -2226,7 +2234,9 @@ layout dish_comment_item
 layout dish_items
 layout evaluate_comment_dish
 layout fragment_draft
-layout fragment_recentrestaurant_list
+layout fragment_login
+layout fragment_restaurant_list
+layout fragment_view_information
 layout frame_icon_caption
 layout high_rating_dish_fragment
 layout high_rating_restaurant_fragment
