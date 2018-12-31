@@ -15,18 +15,18 @@ import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.restaurant_list.fragment.AllRestaurantFragment;
 import com.example.nguyenhuutu.convenientmenu.restaurant_list.fragment.RecentRestaurantFragment;
 
-public class RestaurantList extends Fragment {
+public class RestaurantListFragment extends Fragment {
     ViewPager viewPager;
     PagerAdapterRestaurant pagerAdapterRestaurant;
     TabLayout tabLayout;
 
-    public RestaurantList() {
+    public RestaurantListFragment() {
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //inflate the view
-        View view = inflater.inflate(R.layout.restaurant_list_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_restaurant_list, container, false);
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabRestaurantList);
         viewPager = (ViewPager) view.findViewById(R.id.viewPagerRestaurantList);

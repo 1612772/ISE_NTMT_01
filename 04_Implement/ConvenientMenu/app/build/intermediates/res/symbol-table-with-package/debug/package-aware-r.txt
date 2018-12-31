@@ -1564,6 +1564,7 @@ drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable border_input_bottom
+drawable border_input_bottom_main_color
 drawable button_primary_background
 drawable button_secondary_background
 drawable checkbox_border
@@ -1688,6 +1689,11 @@ id FUNCTION
 id META
 id SHIFT
 id SYM
+id _user_email
+id _user_firstName
+id _user_lastName
+id _user_sex
+id _user_username
 id account
 id action0
 id action_bar
@@ -1730,6 +1736,8 @@ id blocking
 id bottom
 id btnUpdateOrAdd
 id buttonPanel
+id button_update_info
+id button_update_user_information
 id cancel_action
 id center
 id center_horizontal
@@ -2085,6 +2093,7 @@ id toolbar
 id toolbarAddOrUpdate
 id toolbarDish_layout
 id toolbarRestaurant
+id toolbarUpdate
 id toolbar_layout
 id top
 id topPanel
@@ -2124,6 +2133,7 @@ id usernameBound
 id vertical
 id viewDishToolbar
 id viewPagerRestaurantList
+id view_information_layout
 id view_offset_helper
 id view_pager_menu
 id view_pager_restaurant_detail
@@ -2228,9 +2238,8 @@ layout image
 layout image_slider
 layout item_comment
 layout item_event
+layout item_list_restaurant
 layout item_menu
-layout list_restaurant_item
-layout login_fragment
 layout main_menu
 layout material_drawer
 layout material_drawer_compact_header
@@ -2276,7 +2285,6 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout restaurant_detail
-layout restaurant_list_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
