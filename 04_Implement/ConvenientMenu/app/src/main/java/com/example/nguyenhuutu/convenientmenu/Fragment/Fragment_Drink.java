@@ -1,6 +1,7 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,8 +19,7 @@ import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
-import com.example.nguyenhuutu.convenientmenu.viewdish.ViewDish;
+import com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,14 +30,15 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressLint("ValidFragment")
 public class Fragment_Drink extends Fragment {
     ListView listDish;
     public static ListDrink adapter;
-    public Fragment_Drink() {
+    public Fragment_Drink(String id) {
         // Required empty public constructor
         final List<Dish> dataList = new ArrayList<Dish>();
         CMDB.db.collection("dish")
-                .whereEqualTo("rest_account",Restaurant_Detail.idRestaurant)
+                .whereEqualTo("rest_account",id)
                 .whereEqualTo("dish_type_id","DTYPE2")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

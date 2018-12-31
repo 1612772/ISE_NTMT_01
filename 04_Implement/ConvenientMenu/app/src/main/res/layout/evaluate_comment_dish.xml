@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".viewdish.ViewDish"
+    tools:context=".view_dish.ViewDish"
     tools:showIn="@layout/activity_view_dish"
     android:id="@+id/nestedScrollViewDish"
     android:background="#fff"

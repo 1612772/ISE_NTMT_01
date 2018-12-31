@@ -13,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
@@ -43,6 +45,7 @@ public class Fragment_Comment extends Fragment {
     public static ListComment adapter;
     RatingBar rbRating;
     EditText txtComment;
+    LinearLayout commentForm;
     ProgressBar progressBarComment;
 
     public Fragment_Comment() {
@@ -144,6 +147,7 @@ public class Fragment_Comment extends Fragment {
         listComment = view.findViewById(R.id.lvComment);
         listComment.setAdapter(adapter);
 
+        commentForm = view.findViewById(R.id.commentForm);
         txtComment = view.findViewById(R.id.txtComment);
         rbRating = view.findViewById(R.id.ratComment);
         progressBarComment = view.findViewById(R.id.progressBarComment);
@@ -184,6 +188,14 @@ public class Fragment_Comment extends Fragment {
                 // Nhấp vào item comment
             }
         });
+
+        if (Restaurant_Detail.idUser.equals("")) {
+            commentForm.setVisibility(View.INVISIBLE);
+            ViewGroup.LayoutParams params = commentForm.getLayoutParams();
+            params.height = 0;
+            commentForm.setLayoutParams(params);
+        }
+
         return view;
     }
 

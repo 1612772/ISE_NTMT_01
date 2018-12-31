@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.viewdish;
+package com.example.nguyenhuutu.convenientmenu.view_dish;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Parcelable;

@@ -41,7 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.viewdish.ViewDish" />
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail"
             android:screenOrientation="portrait" >

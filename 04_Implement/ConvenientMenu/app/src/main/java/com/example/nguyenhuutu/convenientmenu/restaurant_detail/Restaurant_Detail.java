@@ -61,6 +61,7 @@ public class Restaurant_Detail extends AppCompatActivity {
     TabLayout tabLayout;
     AppCompatRatingBar ratingRestaurant;
     Restaurant infoRestaurant;
+
     public static String idRestaurant, idUser = "", avatarUser = "avatar.png", userFullName = "";
     public static Bitmap imageAvatarUser;
 
@@ -76,27 +77,38 @@ public class Restaurant_Detail extends AppCompatActivity {
 
     private void loadInfoUser() {
         UserSession user = Helper.getLoginedUser(this);
-        idUser = user.getUsername();
 
-        CMDB.db
-                .collection("customer")
-                .document(idUser)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                userFullName = document.getString("cus_first_name");
-                            } else {
+        if (user.isExists()) {
+            if (!user.isRest()) {
+                idUser = user.getUsername();
 
+                CMDB.db
+                        .collection("customer")
+                        .document(idUser)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        userFullName = document.getString("cus_first_name");
+                                    } else {
+
+                                    }
+                                } else {
+
+                                }
                             }
-                        } else {
-
-                        }
-                    }
-                });
+                        });
+            }
+            else {
+                idUser = "";
+            }
+        }
+        else {
+            idUser = "";
+        }
     }
 
     @Override
@@ -111,7 +123,7 @@ public class Restaurant_Detail extends AppCompatActivity {
         idRestaurant = data.getString("rest_account");
 
         event = new Fragment_Event();
-        menu = new Fragment_Menu();
+        menu = new Fragment_Menu(idRestaurant);
         comment = new Fragment_Comment();
 
         viewpager = (ViewPager) findViewById(R.id.view_pager_restaurant_detail);

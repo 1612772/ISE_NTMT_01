@@ -211,10 +211,10 @@ category#android.intent.category.LAUNCHER
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:24:27-74
-activity#com.example.nguyenhuutu.convenientmenu.viewdish.ViewDish
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:9-64
+activity#com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:9-65
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:19-52
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:27:19-53
 activity#com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:28:9-31:20
 	android:screenOrientation

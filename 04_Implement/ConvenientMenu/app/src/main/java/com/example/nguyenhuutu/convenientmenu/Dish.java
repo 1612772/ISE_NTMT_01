@@ -24,7 +24,7 @@ public class Dish implements Comparable {
     public static String NEW = "mới";
     public static String HOT = "hot";
     public static int colorNew = R.color.yellow;
-    public  static int colorHot = R.color.red;
+    public static int colorHot = R.color.red;
     private String dishId;
     private String dishName;
     private Integer dishPrice;
@@ -66,19 +66,18 @@ public class Dish implements Comparable {
         this.dishTypeId = _dishTypeId;
         this.maxStar = _maxStar;
         this.restAccount = _restAccount;
+
         this.createDate=_createdate;
+
         //DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date(); // lấy thời gian hệ thống
         long getDiff = date.getTime() - _createdate.getTime();
         // using TimeUnit class from java.util.concurrent package
         long getDaysDiff = TimeUnit.MILLISECONDS.toDays(getDiff);
-        Log.d("THOI GIAN KHOI TAO", String.valueOf(getDaysDiff));
-        if(getDaysDiff<=7)
-        {
+        if (getDaysDiff <= 7) {
             this.eventType = -1;
-        }else
-        {
-            this.eventType=0;
+        } else {
+            this.eventType = 0;
         }
     }
 
@@ -122,9 +121,12 @@ public class Dish implements Comparable {
     }
 
     public void setDishImage(Bitmap dishImage) {
-        try{
-        this.dishImage = dishImage;}catch (Exception ex){}
+        try {
+            this.dishImage = dishImage;
+        } catch (Exception ex) {
+        }
     }
+
     public String getDishId() {
         return this.dishId;
     }
@@ -165,11 +167,10 @@ public class Dish implements Comparable {
         return eventType;
     }
 
-    public Bitmap getDishImage(Context context){
+    public Bitmap getDishImage(Context context) {
         if (dishImage != null) {
             return dishImage;
-        }else
-        {
+        } else {
             return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
         }
     }
@@ -216,7 +217,7 @@ public class Dish implements Comparable {
         String _restAccount = (String) document.get("rest_account");
         //Number _event_type = (Number)document.get("event_type");
         Date _createdate = (Date) document.get("create_date");
-        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount,_createdate);
+        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount, _createdate);
     }
 
     /**
@@ -233,7 +234,16 @@ public class Dish implements Comparable {
      * @param _restAccount
      * @return
      */
-    public static Map<String, Object> createDishData(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, double _maxStar, String _restAccount) {
+    public static Map<String, Object> createDishData(String _dishId,
+                                                     String _dishName,
+                                                     Integer _dishPrice,
+                                                     String _dishDescription,
+                                                     String _dishHomeImage,
+                                                     List<String> _dishMoreImages,
+                                                     String _dishTypeId,
+                                                     double _maxStar,
+                                                     String _restAccount,
+                                                     Date _createdate) {
         Map<String, Object> dishData = new HashMap<>(); // Save data of dish
 
         dishData.put("dish_id", _dishId);
@@ -245,7 +255,7 @@ public class Dish implements Comparable {
         dishData.put("max_star", _maxStar);
         dishData.put("dish_type_id", _dishTypeId);
         dishData.put("rest_account", _restAccount);
-
+        dishData.put("create_date", _createdate);
         return dishData;
     }
 

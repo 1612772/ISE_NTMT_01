@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.viewdish;
+package com.example.nguyenhuutu.convenientmenu.view_dish;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
