@@ -1546,7 +1546,6 @@ drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
 drawable border_input_bottom
-drawable border_input_bottom_main_color
 drawable button_primary_background
 drawable button_secondary_background
 drawable checkbox_border
@@ -1669,8 +1668,6 @@ id META
 id SHIFT
 id SYM
 id _user_email
-id _user_firstName
-id _user_lastName
 id _user_sex
 id _user_username
 id account
@@ -1716,7 +1713,6 @@ id btn_comment_dish
 id btn_more
 id buttonPanel
 id button_update_info
-id button_update_user_information
 id cancel_action
 id center
 id center_horizontal
@@ -2058,7 +2054,6 @@ id titleDividerNoCustom
 id title_template
 id toolbar
 id toolbarRestaurant
-id toolbarUpdate
 id toolbar_layout
 id top
 id topPanel
@@ -2090,10 +2085,8 @@ id user_avatar
 id user_avatar_1
 id user_cover
 id user_email
-id user_firstName
 id user_fullname
 id user_fullname_1
-id user_lastName
 id user_name
 id user_rating_date
 id user_rating_date_1
@@ -2168,7 +2161,6 @@ layout abc_tooltip
 layout activity_customer_register
 layout activity_main
 layout activity_restaurant_register
-layout activity_update_information
 layout activity_view_dish
 layout all_restaurant_fragment
 layout confirm_restaurant

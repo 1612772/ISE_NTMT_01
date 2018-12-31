@@ -1,6 +1,5 @@
 package com.example.nguyenhuutu.convenientmenu.view_information;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +18,6 @@ import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
 import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
-import com.example.nguyenhuutu.convenientmenu.view_information.activity.UpdateInformationActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -34,9 +31,6 @@ public class ViewInformationFragment extends Fragment {
     TextView user_sex;
     TextView user_email;
     ImageView user_avatar;
-    Button button_update_info;
-    UserSession loginedUserJson;
-    Intent toUpdateInformationActivityIntent;
 
     public ViewInformationFragment() {
     }
@@ -52,11 +46,8 @@ public class ViewInformationFragment extends Fragment {
         user_sex = (TextView)view.findViewById(R.id.user_sex);
         user_email = (TextView)view.findViewById(R.id.user_email);
         user_avatar = (ImageView)view.findViewById(R.id.user_avatar);
-        button_update_info = (Button)view.findViewById(R.id.button_update_info);
 
-        loginedUserJson = Helper.getLoginedUser(getActivity());
-        toUpdateInformationActivityIntent = new Intent(getActivity(), UpdateInformationActivity.class);
-        toUpdateInformationActivityIntent.putExtra("username", loginedUserJson.getUsername());
+        UserSession loginedUserJson = Helper.getLoginedUser(getActivity());
         GetUserInformation userInformation = new GetUserInformation();
         userInformation.execute(loginedUserJson.getUsername(), loginedUserJson.isRest());
 
@@ -98,25 +89,10 @@ public class ViewInformationFragment extends Fragment {
         }
     }
 
-    private void putInformationToIntent(JSONObject result) {
-        try {
-            toUpdateInformationActivityIntent.putExtra("email", result.getJSONObject("data").getString("email"));
-            toUpdateInformationActivityIntent.putExtra("firstname", result.getJSONObject("data").getString("firstname"));
-            toUpdateInformationActivityIntent.putExtra("lastname", result.getJSONObject("data").getString("lastname"));
-            button_update_info.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    getActivity().startActivity(toUpdateInformationActivityIntent);
-                }
-            });
-        }catch (Exception e)       {        }
-    }
-
     private void udpateUserInformation(String data) {
         //is rest
         try {
             JSONObject result = new JSONObject(data);
-            putInformationToIntent(result);
 
             if (result.getBoolean("isSuccess")) {
                 if (result.getJSONObject("data").getBoolean("isRest")) {
