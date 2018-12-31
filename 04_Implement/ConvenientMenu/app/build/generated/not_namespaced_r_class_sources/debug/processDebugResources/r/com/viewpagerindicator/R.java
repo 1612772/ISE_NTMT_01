@@ -108,10 +108,17 @@ public final class R {
         private id() {}
 
         public static final int bottom = 0x7f09002d;
+<<<<<<< Updated upstream
         public static final int none = 0x7f090111;
         public static final int top = 0x7f090194;
         public static final int triangle = 0x7f09019c;
         public static final int underline = 0x7f0901ac;
+=======
+        public static final int none = 0x7f090108;
+        public static final int top = 0x7f090185;
+        public static final int triangle = 0x7f09018d;
+        public static final int underline = 0x7f09019a;
+>>>>>>> Stashed changes
     }
     public static final class integer {
         private integer() {}

@@ -85,6 +85,7 @@ public final class R {
         public static final int actions = 0x7f090019;
         public static final int async = 0x7f090026;
         public static final int blocking = 0x7f09002c;
+<<<<<<< Updated upstream
         public static final int chronometer = 0x7f090037;
         public static final int forever = 0x7f090080;
         public static final int icon = 0x7f090095;
@@ -106,6 +107,29 @@ public final class R {
         public static final int text2 = 0x7f09017b;
         public static final int time = 0x7f09018a;
         public static final int title = 0x7f09018b;
+=======
+        public static final int chronometer = 0x7f090036;
+        public static final int forever = 0x7f09007b;
+        public static final int icon = 0x7f09008e;
+        public static final int icon_group = 0x7f09008f;
+        public static final int info = 0x7f09009f;
+        public static final int italic = 0x7f0900a1;
+        public static final int line1 = 0x7f0900aa;
+        public static final int line3 = 0x7f0900ab;
+        public static final int normal = 0x7f090109;
+        public static final int notification_background = 0x7f09010a;
+        public static final int notification_main_column = 0x7f09010b;
+        public static final int notification_main_column_container = 0x7f09010c;
+        public static final int right_icon = 0x7f090132;
+        public static final int right_side = 0x7f090133;
+        public static final int tag_transition_group = 0x7f09016a;
+        public static final int tag_unhandled_key_event_manager = 0x7f09016b;
+        public static final int tag_unhandled_key_listeners = 0x7f09016c;
+        public static final int text = 0x7f09016d;
+        public static final int text2 = 0x7f09016e;
+        public static final int time = 0x7f09017d;
+        public static final int title = 0x7f09017e;
+>>>>>>> Stashed changes
     }
     public static final class integer {
         private integer() {}
@@ -115,12 +139,21 @@ public final class R {
     public static final class layout {
         private layout() {}
 
+<<<<<<< Updated upstream
         public static final int notification_action = 0x7f0c0064;
         public static final int notification_action_tombstone = 0x7f0c0065;
         public static final int notification_template_custom_big = 0x7f0c006c;
         public static final int notification_template_icon_group = 0x7f0c006d;
         public static final int notification_template_part_chronometer = 0x7f0c0071;
         public static final int notification_template_part_time = 0x7f0c0072;
+=======
+        public static final int notification_action = 0x7f0c0061;
+        public static final int notification_action_tombstone = 0x7f0c0062;
+        public static final int notification_template_custom_big = 0x7f0c0069;
+        public static final int notification_template_icon_group = 0x7f0c006a;
+        public static final int notification_template_part_chronometer = 0x7f0c006e;
+        public static final int notification_template_part_time = 0x7f0c006f;
+>>>>>>> Stashed changes
     }
     public static final class string {
         private string() {}

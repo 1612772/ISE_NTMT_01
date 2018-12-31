@@ -1870,6 +1870,7 @@ id listMode
 id list_drink
 id list_food
 id list_item
+id listviewRes
 id loginBtn
 id lvComment
 id lvEvents
@@ -2025,6 +2026,7 @@ id search_src_text
 id search_voice_btn
 id searchingFormWrapper
 id searchingText
+id searchview
 id select_dialog_listview
 id selected
 id shortInfoDish
@@ -2192,7 +2194,11 @@ layout activity_customer_register
 layout activity_main
 layout activity_manage__menu
 layout activity_restaurant_register
+<<<<<<< Updated upstream
 layout activity_update__dish
+=======
+layout activity_search
+>>>>>>> Stashed changes
 layout activity_view_dish
 layout all_restaurant_fragment
 layout confirm_restaurant
@@ -2229,6 +2235,7 @@ layout image_slider
 layout item_comment
 layout item_event
 layout item_menu
+layout item_search
 layout list_restaurant_item
 layout login_fragment
 layout main_menu
