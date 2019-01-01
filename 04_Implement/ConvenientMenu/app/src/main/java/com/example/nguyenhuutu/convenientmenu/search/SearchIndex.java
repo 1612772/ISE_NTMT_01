@@ -2,6 +2,7 @@ package com.example.nguyenhuutu.convenientmenu.search;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -48,12 +49,14 @@ public class SearchIndex extends AppCompatActivity  {
     TextView txtDish;
     RelativeLayout resL,dishL;
     TextView txtNotFound;
+    TextView txtsearch;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        //list res
+        //create
+        searchView = (SearchView) findViewById(R.id.searchview);
         resView = findViewById(R.id.listviewRes);
         dishView= findViewById(R.id.listviewDish);
         txtDish = findViewById(R.id.txtDish);
@@ -61,9 +64,13 @@ public class SearchIndex extends AppCompatActivity  {
         resL = findViewById(R.id.reslayout);
         dishL = findViewById(R.id.dishlayout);
         txtNotFound = findViewById(R.id.notfound);
+        int id = searchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
+        txtsearch = searchView.findViewById(id);
+        txtsearch.setTextColor(Color.BLACK);
         txtNotFound.setVisibility(View.INVISIBLE);
         txtDish.setVisibility(View.INVISIBLE);
         txtRes.setVisibility(View.INVISIBLE);
+
         try {
             CMDB.db.collection("restaurant")
                     .get()
@@ -129,7 +136,7 @@ public class SearchIndex extends AppCompatActivity  {
                     }
                 });
 
-        searchView = (SearchView) findViewById(R.id.searchview);
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
