@@ -47,6 +47,7 @@ public class SearchIndex extends AppCompatActivity  {
     TextView txtRes;
     TextView txtDish;
     RelativeLayout resL,dishL;
+    TextView txtNotFound;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,10 @@ public class SearchIndex extends AppCompatActivity  {
         txtRes = findViewById(R.id.txtRes);
         resL = findViewById(R.id.reslayout);
         dishL = findViewById(R.id.dishlayout);
+        txtNotFound = findViewById(R.id.notfound);
+        txtNotFound.setVisibility(View.INVISIBLE);
+        txtDish.setVisibility(View.INVISIBLE);
+        txtRes.setVisibility(View.INVISIBLE);
         try {
             CMDB.db.collection("restaurant")
                     .get()
@@ -79,7 +84,7 @@ public class SearchIndex extends AppCompatActivity  {
 
 
                                 adapterRes = new ListSearchResViewAdapter(getApplicationContext(), R.layout.item_search, resList);
-                                resView.setAdapter(adapterRes);
+
                                 if(resList.size() >= 4)
                                 {
                                     resL.getLayoutParams().height=700;
@@ -117,7 +122,7 @@ public class SearchIndex extends AppCompatActivity  {
 
 
                             adapterDish = new ListSearchDishViewAdapter(getApplicationContext(), R.layout.item_search, dishList);
-                            dishView.setAdapter(adapterDish);
+
                         } else {
                             // code here
                         }
@@ -137,6 +142,20 @@ public class SearchIndex extends AppCompatActivity  {
                 String text = newText;
                 adapterRes.filter(text);
                 adapterDish.filter(text);
+                txtDish.setVisibility(View.VISIBLE);
+                txtRes.setVisibility(View.VISIBLE);
+                resView.setAdapter(adapterRes);
+                dishView.setAdapter(adapterDish);
+                if(dishList.size()==0 && resList.size()==0 && text.length()!=0)
+                {
+                    txtNotFound.setVisibility(View.VISIBLE);
+                    txtNotFound.setText("Không tìm thấy kết quả");
+
+                }
+                else
+                {
+                    txtNotFound.setVisibility(View.INVISIBLE);
+                }
                 if(dishList.size()==0)
                 {
                     dishL.setVisibility(View.INVISIBLE);

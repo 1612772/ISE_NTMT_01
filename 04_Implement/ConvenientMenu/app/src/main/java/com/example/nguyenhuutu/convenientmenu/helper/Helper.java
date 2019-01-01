@@ -48,7 +48,11 @@ public class Helper {
 
         return oneDP;
     }
-
+    //phhviet: convert px->dp
+    public static int convertPxToDp(Context context, float number)
+    {
+        return Math.round(number / (context.getResources().getDisplayMetrics().density));
+    }
     public static Point getDisplaySize(Display display) {
         // display size in pixels
         Point size = new Point();

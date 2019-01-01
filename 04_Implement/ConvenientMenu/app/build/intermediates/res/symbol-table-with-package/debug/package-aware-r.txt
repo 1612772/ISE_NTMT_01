@@ -1664,6 +1664,7 @@ drawable register_button_border
 drawable res
 drawable restaurant_placeholder
 drawable restaurant_register
+drawable search_border
 drawable search_form_border
 drawable searching_image
 drawable searching_image_placeholder
@@ -1963,6 +1964,7 @@ id newEventListWrapperFragment
 id newEventWrapper
 id none
 id normal
+id notfound
 id notification_background
 id notification_main_column
 id notification_main_column_container

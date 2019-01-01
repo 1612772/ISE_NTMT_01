@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhile"
     android:fitsSystemWindows="true"
-
     xmlns:tools="http://schemas.android.com/tools"
 
     android:orientation="vertical">
@@ -20,11 +19,21 @@
         android:searchIcon="@drawable/black_search"
         android:focusable="true"
         android:clickable="true"
-        android:backgroundTint="@color/md_grey_400"
-        android:background="@drawable/search_form_border"
+        android:background="@drawable/search_border"
         >
         <requestFocus/>
     </SearchView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchview"
+        android:text="aasd"
+        android:id="@+id/notfound"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="italic"
+        android:textColor="@color/md_grey_400"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +68,6 @@
     <TextView android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/txtDish"
-
         android:text="Dish"
         android:textStyle="bold"
         android:fontFamily="@font/montserrat"
