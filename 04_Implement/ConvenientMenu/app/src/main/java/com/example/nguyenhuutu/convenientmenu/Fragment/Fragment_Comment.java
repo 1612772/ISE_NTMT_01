@@ -1,12 +1,10 @@
 package com.example.nguyenhuutu.convenientmenu.Fragment;
 
 
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.AppCompatRatingBar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -15,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
@@ -26,26 +26,18 @@ import com.example.nguyenhuutu.convenientmenu.CommentRestaurant;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.Restaurant;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.ByteArrayOutputStream;
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class Fragment_Comment extends Fragment {
 
@@ -53,11 +45,13 @@ public class Fragment_Comment extends Fragment {
     public static ListComment adapter;
     RatingBar rbRating;
     EditText txtComment;
-    FirebaseStorage storage = FirebaseStorage.getInstance();
+    LinearLayout commentForm;
     ProgressBar progressBarComment;
+
     public Fragment_Comment() {
         // Required empty public constructor
         final List<CommentRestaurant> dataList = new ArrayList<CommentRestaurant>();
+        // get all comment restaurant
         CMDB.db.collection("comment_restaurant")
                 .whereEqualTo("rest_account", Restaurant_Detail.idRestaurant)
                 .get()
@@ -68,34 +62,72 @@ public class Fragment_Comment extends Fragment {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 try {
+                                    // add CommentRestaurant to list
                                     dataList.add(CommentRestaurant.loadCommentRestaurant(document.getData()));
-
                                 } catch (Exception ex) {
-                                    Toast.makeText(getContext(), ex.toString(), Toast.LENGTH_LONG).show();
+                                    Log.e("AddCommentRestaurant", ex.toString());
                                 }
                             }
+
+                            Collections.sort(dataList);
+
                             int mount = dataList.size();
                             for (int i = 0; i < mount; i++) {
                                 final int finalI = i;
 
-                                CMStorage.storage.child("images/comment/" + dataList.get(i).getAvatar())
-                                        .getDownloadUrl()
-                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                CMDB.db
+                                        .collection("customer")
+                                        .document(dataList.get(i).getUserAccount())
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                                             @Override
-                                            public void onSuccess(Uri uri) {
-                                                try {
+                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                if (task.isSuccessful()) {
+                                                    DocumentSnapshot document = task.getResult();
+                                                    if (document.exists()) {
+                                                        CMStorage.storage.child("images/customer/" + document.getString("cus_avatar_image_file"))
+                                                                .getDownloadUrl()
+                                                                .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                                    @Override
+                                                                    public void onSuccess(Uri uri) {
+                                                                        try {
+                                                                            LoadImage loadImage = new LoadImage();
+                                                                            loadImage.execute(uri.toString(), finalI, Const.COMMENT);
+                                                                        } catch (Exception ex) {
+                                                                        }
+                                                                    }
+                                                                })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception exception) {
+                                                                    }
+                                                                });
+                                                    } else {
 
-                                                    LoadImage loadImage = new LoadImage();
-                                                    loadImage.execute(uri.toString(), finalI, Const.COMMENT);
-                                                } catch (Exception ex) {
+                                                    }
+                                                } else {
+
                                                 }
                                             }
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception exception) {
-                                            }
                                         });
+//                                CMStorage.storage.child("images/comment/" + dataList.get(i).getAvatar())
+//                                        .getDownloadUrl()
+//                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                                            @Override
+//                                            public void onSuccess(Uri uri) {
+//                                                try {
+//
+//                                                    LoadImage loadImage = new LoadImage();
+//                                                    loadImage.execute(uri.toString(), finalI, Const.COMMENT);
+//                                                } catch (Exception ex) {
+//                                                }
+//                                            }
+//                                        })
+//                                        .addOnFailureListener(new OnFailureListener() {
+//                                            @Override
+//                                            public void onFailure(@NonNull Exception exception) {
+//                                            }
+//                                        });
                             }
                             adapter = new ListComment(getActivity(), R.layout.item_comment, dataList);
                             listComment.setAdapter(adapter);
@@ -115,6 +147,7 @@ public class Fragment_Comment extends Fragment {
         listComment = view.findViewById(R.id.lvComment);
         listComment.setAdapter(adapter);
 
+        commentForm = view.findViewById(R.id.commentForm);
         txtComment = view.findViewById(R.id.txtComment);
         rbRating = view.findViewById(R.id.ratComment);
         progressBarComment = view.findViewById(R.id.progressBarComment);
@@ -155,73 +188,68 @@ public class Fragment_Comment extends Fragment {
                 // Nhấp vào item comment
             }
         });
+
+        if (Restaurant_Detail.idUser.equals("")) {
+            commentForm.setVisibility(View.INVISIBLE);
+            ViewGroup.LayoutParams params = commentForm.getLayoutParams();
+            params.height = 0;
+            commentForm.setLayoutParams(params);
+        }
+
         return view;
     }
 
-    void SendComment() {
-        progressBarComment.setVisibility(View.VISIBLE);
-        if (rbRating.getRating() != 0 && txtComment.getText().toString()!="") {
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = new Date(); // lấy thời gian hệ thống
-            final String stringDate = dateFormat.format(date);
-            Map<String, Object> commentRestaurant = CommentRestaurant.createCommentRestaurantData(
-                    CommentRestaurant.createCommentRestId(10),
-                    txtComment.getText().toString(),
-                    stringDate,
-                    Restaurant_Detail.idRestaurant,
-                    Restaurant_Detail.idUser,
-                    rbRating.getRating(),
-                    Restaurant_Detail.idUser+Restaurant_Detail.avatarUser
-            );
-
-            CMDB.db.collection("comment_restaurant").document().set(commentRestaurant).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-
-                    StorageReference mountainImagesRef = storage.getReference().child("images/comment/"+Restaurant_Detail.idUser+Restaurant_Detail.avatarUser);
-
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                    Restaurant_Detail.imageAvatarUser.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-                    byte[] data = baos.toByteArray();
-
-                    UploadTask uploadTask = mountainImagesRef.putBytes(data);
-                    uploadTask.addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            // Handle unsuccessful uploads
-                            Toast.makeText(getContext(),"Xảy ra lỗi khi gửi bình luận",Toast.LENGTH_LONG).show();
-                            progressBarComment.setVisibility(View.INVISIBLE);
+    public void notifySendCommentSuccess(final CommentRestaurant cmtRest) {
+        CMDB.db
+                .collection("customer")
+                .document(cmtRest.getUserAccount())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                CMStorage.storage.child("images/customer/" + document.getString("cus_avatar_image_file"))
+                                        .getDownloadUrl()
+                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                            @Override
+                                            public void onSuccess(Uri uri) {
+                                                try {
+                                                    LoadImage loadImage = new LoadImage();
+                                                    loadImage.execute(uri.toString(), 0, Const.COMMENT);
+                                                } catch (Exception ex) {
+                                                    Log.e("AddLoadImage", ex.toString());
+                                                }
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception exception) {
+                                            }
+                                        });
+                            } else {
+                                // notify something
+                            }
+                        } else {
+                            // notify something
                         }
-                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Toast.makeText(getContext(),"Bình luận của bạn đã được gửi",Toast.LENGTH_LONG).show();
+                    }
+                });
+        Fragment_Comment.adapter.commentRestaurants.add(cmtRest);
+        Collections.sort(adapter.commentRestaurants);
+        Fragment_Comment.adapter.notifyDataSetChanged();
 
-                            CommentRestaurant addComment = new CommentRestaurant(
-                                    CommentRestaurant.createCommentRestId(10),
-                                    txtComment.getText().toString(),
-                                    stringDate,
-                                    Restaurant_Detail.idRestaurant,
-                                    Restaurant_Detail.idUser,
-                                    rbRating.getRating(),
-                                    Restaurant_Detail.idUser+Restaurant_Detail.avatarUser
-                            );
-                            addComment.setImageAvatar(Restaurant_Detail.imageAvatarUser);
-                            adapter.commentRestaurants.add(addComment);
-                            adapter.notifyDataSetChanged();
-
-                            txtComment.setText("");
-                            rbRating.setRating(0);
-                            progressBarComment.setVisibility(View.INVISIBLE);
-                        }
-                    });
-                }
-            });
-
-        }else {
-            progressBarComment.setVisibility(View.INVISIBLE);
-            Toast.makeText(getContext(),"Bạn chưa đánh giá sao cho chúng tôi hoặc chưa nhập lời bình luận",Toast.LENGTH_LONG).show();
-        }
+        txtComment.setText("");
+        rbRating.setRating(0);
     }
 
+    void SendComment() {
+        if (rbRating.getRating() != 0 && txtComment.getText().toString()!="") {
+            CommentRestaurant cmtRest = new CommentRestaurant(txtComment.getText().toString(), Restaurant_Detail.idRestaurant, Restaurant_Detail.idUser, rbRating.getRating());
+            cmtRest.sendCommentRestaurant(this);
+        }else {
+            Toast.makeText(getContext(),"Hãy đánh giá sao cho chúng tôi", Toast.LENGTH_LONG).show();
+        }
+    }
 }

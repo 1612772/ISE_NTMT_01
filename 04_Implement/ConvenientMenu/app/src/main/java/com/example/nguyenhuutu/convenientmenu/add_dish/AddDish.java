@@ -1,6 +1,7 @@
 package com.example.nguyenhuutu.convenientmenu.add_dish;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
@@ -31,6 +32,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
+import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.add_dish.adapter.DishImageAdapter;
@@ -42,6 +44,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
+
+import static java.sql.Types.NULL;
 
 public class AddDish extends AppCompatActivity implements View.OnClickListener, OnItemSelectedListener {
     private Toolbar toolbar;
@@ -60,6 +65,9 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
     private ArrayList<String> dishTypeNames;
     private String selectedDishTypeId;
     private String restAccount;
+    private Dish existsDish;
+    private boolean isEdit;
+    private ProgressDialog process;
 
     private final int PICK_IMAGE_REQUEST = 71;
 
@@ -68,8 +76,24 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_dish);
 
-        UserSession loginedUser = Helper.getLoginedUser(this);
-        restAccount = loginedUser.getUsername();
+        // init some values
+        isEdit = false;
+        
+        toolbar = findViewById(R.id.addDishToolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        process = new ProgressDialog(this);
+        process.setMessage("Đang Thực hiện. Vui lòng đợi");
+        process.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         dishName = findViewById(R.id.dishName);
         dishPrice = findViewById(R.id.dishPrice);
@@ -84,18 +108,6 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
         dishTypeNames = new ArrayList<String>();
         setupDishTypeList();
 
-        toolbar = findViewById(R.id.addDishToolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
         dishImageLinks = new ArrayList<String>();
         dishImageList = findViewById(R.id.dishImageList);
         LinearLayoutManager myLayoutManager = new LinearLayoutManager(this);
@@ -108,6 +120,62 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
 
         addDishButton = findViewById(R.id.addDishButton);
         addDishButton.setOnClickListener(this);
+
+        getExistsDish();
+        if (isEdit == true) {
+            ((DishImageAdapter)dishImageList.getAdapter()).setDishId(existsDish.getDishId());
+
+            updateUI();
+            showExistsDishInfo();
+        }
+        else {
+            // get restAccount
+            UserSession loginedUser = Helper.getLoginedUser(this);
+            restAccount = loginedUser.getUsername();
+        }
+    }
+
+    private void getExistsDish() {
+        Bundle data = getIntent().getExtras();
+
+        if (data != null && data.containsKey("edit_dish")) {
+            isEdit = true;
+            existsDish = new Dish(
+                    (String) data.get("dish_id"),
+                    (String) data.get("dish_name"),
+                    (Integer) data.get("dish_price"),
+                    (String) data.get("dish_Description"),
+                    (String) data.get("dish_home_image"),
+                    (ArrayList<String>) data.get("dish_more_images"),
+                    (String) data.get("dish_type_id"),
+                    (Float) data.get("max_star"),
+                    (String) data.get("rest_account"),
+                    (Date) data.get("dish_create_date")
+            );
+        }
+    }
+
+    private void updateUI() {
+        getSupportActionBar().setTitle("Cập nhật món ăn");
+        dishName.setText(existsDish.getDishName());
+
+        addDishButton.setText("Cập nhật món ăn");
+    }
+
+    private void showExistsDishInfo() {
+        dishPrice.setText(String.valueOf(existsDish.getDishPrice()));
+        dishInfo.setText(existsDish.getDishDescription());
+
+        ArrayList<String> dishImages = new ArrayList<>();
+        dishImages.add(existsDish.getDishHomeImage());
+        ArrayList<String> dishMoreImages = existsDish.getDishMoreImages();
+        int count = dishMoreImages.size();
+        for (int index = 0; index < count; index++) {
+            dishImages.add(dishMoreImages.get(index));
+        }
+
+        ((DishImageAdapter)dishImageList.getAdapter()).setDishImageLinks(dishImages);
+        dishImageList.getAdapter().notifyDataSetChanged();
     }
 
     private void setupDishTypeList() {
@@ -131,6 +199,30 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.dish_type_spinner_item, dishTypeNames);
                             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             dishType.setAdapter(adapter);
+
+                            dishType.setOnItemSelectedListener(new OnItemSelectedListener() {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                    selectedDishTypeId = dishTypeIds.get(position);
+//                                    Toast.makeText(AddDish.this, selectedDishTypeId, Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent) {
+
+                                }
+                            });
+
+                            if (isEdit == true) {
+                                int count = dishTypeIds.size();
+                                for (int index = 0; index < count; index++) {
+                                    if (dishTypeIds.get(index).equals(existsDish.getDishTypeId())) {
+//                                        Toast.makeText(AddDish.this, "select dish type", Toast.LENGTH_SHORT).show();
+                                        dishType.setSelection(index);
+                                        break;
+                                    }
+                                }
+                            }
                         } else {
 
                         }
@@ -155,7 +247,6 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.addDishImageButton) {
-//            Intent chooseImageFile = new Intent(Intent.ACTION_GET_CONTENT);
             Intent chooseImageFile = new Intent();
             chooseImageFile.addCategory(Intent.CATEGORY_OPENABLE);
 
@@ -184,15 +275,44 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
             }
 
             if (ready == true) {
-                String dishNameStr = dishName.getText().toString();
-                Integer dishPriceNumber = Integer.parseInt(dishPrice.getText().toString());
-                String dishInfoStr = dishInfo.getText().toString();
-                dishImageLinks = ((DishImageAdapter)dishImageList.getAdapter()).getDishImageLinks();
-                String dishHomeImage = dishImageLinks.get(0);
-                dishImageLinks.remove(0);
+                dishImageLinks = ((DishImageAdapter) dishImageList.getAdapter()).getDishImageLinks();
+                
+                if (dishImageLinks.size() == 0) {
+                    Helper.showAlert(this, "Thông tin", "Món ăn phải có ít nhất một hình ảnh");
+                }
+                else {
+                    try {
+                        String dishNameStr = dishName.getText().toString();
+                        Integer dishPriceNumber = Integer.parseInt(dishPrice.getText().toString());
+                        String dishInfoStr = dishInfo.getText().toString();
+                        String dishHomeImage = dishImageLinks.get(0);
+                        dishImageLinks.remove(0);
 
-                Dish dish = new Dish(dishNameStr, dishPriceNumber, dishInfoStr, dishHomeImage, dishImageLinks, selectedDishTypeId, restAccount);
-                dish.addDish(this);
+                        process.show();
+                        Dish dish;
+                        if (isEdit == true) {
+                            //Toast.makeText(this, "edit", Toast.LENGTH_SHORT).show();
+                            dish = new Dish(
+                                    existsDish.getDishId(),
+                                    dishNameStr,
+                                    dishPriceNumber,
+                                    dishInfoStr,
+                                    dishHomeImage,
+                                    dishImageLinks,
+                                    selectedDishTypeId,
+                                    existsDish.getMaxStar(),
+                                    existsDish.getRestAccount(),
+                                    existsDish.getCreateDateRaw()
+                            );
+                        } else {
+                            dish = new Dish(dishNameStr, dishPriceNumber, dishInfoStr, dishHomeImage, dishImageLinks, selectedDishTypeId, restAccount);
+                        }
+
+                        dish.addDish(this);
+                    } catch (Exception ex) {
+                        //Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         }
     }
@@ -207,9 +327,34 @@ public class AddDish extends AppCompatActivity implements View.OnClickListener, 
 
     }
 
-    public void notifyAddDishSuccess() {
+    public void notifyAddDishSuccess(String _dishId) {
         // process something
-        Toast.makeText(this, "Add dish success", Toast.LENGTH_SHORT).show();
+        process.hide();
+        Intent intent=new Intent();
+        if (selectedDishTypeId.equals(Const.DISH_TYPE_FOOD)) {
+            intent.putExtra("isFood", true);
+        }
+        else {
+            intent.putExtra("isFood", false);
+        }
+        intent.putExtra("dishId", _dishId);
+
+        if (isEdit == true) {
+            if (selectedDishTypeId.equals(existsDish.getDishTypeId())) {
+                intent.putExtra("changeDishType", false);
+            }
+            else {
+                intent.putExtra("changeDishType", true);
+            }
+
+            setResult(Const.EDIT_DISH, intent);
+        }
+        else{
+            setResult(Const.ADD_DISH, intent);
+        }
+
+//        Toast.makeText(this, "Add dish success", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     public void notifyAddDishFailed() {

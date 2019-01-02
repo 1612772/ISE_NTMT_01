@@ -12,12 +12,20 @@ public class CommentDish {
     private String cmtDishDate;
     private String dishId;
     private String username;
-    private Integer score;
+    private Float score;
 
     /**
      * Constructor Methods
      */
-    public CommentDish(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Integer _score) {
+    public CommentDish() {
+        this.cmtDishid = "";
+        this.cmtDishContent = "";
+        this.cmtDishDate = "";
+        this.dishId = "";
+        this.username = "";
+        this.score = 0.0f;
+    }
+    public CommentDish(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Float _score) {
         this.cmtDishid = _cmtDishId;
         this.cmtDishContent = _cmtDishContent;
         this.cmtDishDate = _cmtDishDate;
@@ -49,7 +57,7 @@ public class CommentDish {
         return username;
     }
 
-    public Integer getScore() {
+    public Float getScore() {
         return score;
     }
 
@@ -91,13 +99,13 @@ public class CommentDish {
      * @param document
      * @return CommentDish
      */
-    public CommentDish loadCommentDish(Map<String, Object> document) {
+    public static CommentDish loadCommentDish(Map<String, Object> document) {
         String _cmtDishId = document.get("cmt_dish_id").toString();
         String _cmtDishContent = document.get("cmt_dish_content").toString();
         String _cmtDishDate = document.get("cmt_dish_date").toString();
         String _dishId = document.get("dish_id").toString();
-        String _username = document.get("username").toString();
-        Integer _score = ((Number)document.get("score")).intValue();
+        String _username = document.get("user_account").toString();
+        Float _score = ((Number)document.get("cmt_dish_star")).floatValue();
 
         return new CommentDish(_cmtDishId, _cmtDishContent, _cmtDishDate, _dishId, _username, _score);
     }
@@ -113,15 +121,15 @@ public class CommentDish {
      * @param _score
      * @return Map<String, Object>
      */
-    public static Map<String, Object> createCommentDishData(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Integer _score) {
+    public static Map<String, Object> createCommentDishData(String _cmtDishId, String _cmtDishContent, String _cmtDishDate, String _dishId, String _username, Float _score) {
         Map<String, Object> document = new HashMap<>();
 
         document.put("cmt_dish_id", _cmtDishId);
         document.put("cmt_dish_content", _cmtDishContent);
         document.put("cmt_dish_date", _cmtDishDate);
         document.put("dish_id", _dishId);
-        document.put("username", _username);
-        document.put("score", _score);
+        document.put("user_account", _username);
+        document.put("cmt_dish_star", _score);
 
         return document;
     }

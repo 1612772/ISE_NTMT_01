@@ -16,10 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
@@ -27,10 +30,14 @@ import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
+import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONObject;
+
+//import static org.json.JSONObject.NULL;
+import static android.os.Bundle.EMPTY;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
@@ -42,8 +49,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bundle dataIntent = getIntent().getExtras();
 
-        contentFragment = new HomePageFragment();
+        if (dataIntent == null || !dataIntent.containsKey("fragment")) {
+            contentFragment = new HomePageFragment();
+        }
+        else {
+            contentFragment = getChosenFragment(dataIntent.getInt("fragment"));
+        }
 
         mToolbar= findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -125,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
         //mainMenu.getMenu().findItem(R.id.main_menu_home).setVisible(false);
         mainMenu.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            private static final Object NullPointerException = NULL;
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 menuItem.setChecked(false);
@@ -137,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_restaurant_list:
+                        if (!(contentFragment instanceof RestaurantList)) {
+                            setTitle("Restaurant List");
+                            contentFragment = new RestaurantList();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_info_account:
                         break;
@@ -145,6 +165,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_menu_list_mark:
                         break;
                     case R.id.main_menu_manage_menu:
+                        if (!(contentFragment instanceof Manage_Menu)) {
+                            setTitle("Quản lý thực đơn");
+                            contentFragment = new Manage_Menu();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_manage_event:
                         break;
@@ -165,6 +190,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_menu_logout:
                         Helper.changeUserSession(MainActivity.this, new UserSession());
                         updateMainMenu();
+
+                        if (!(contentFragment instanceof HomePageFragment)) {
+                            setTitle("Trang chủ");
+                            contentFragment = new HomePageFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_setting:
                         break;
@@ -180,6 +211,38 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
 
 //        checkMenuItem();
+    }
+
+    private Fragment getChosenFragment(int fragmentId) {
+        Fragment fragment = new HomePageFragment();
+
+        switch (fragmentId) {
+            case Helper.FRAGMENT_RESTAURANT_LIST:
+                break;
+            case Helper.FRAGMENT_ACCOUNT_INFO:
+                break;
+            case Helper.FRAGMENT_CHANGE_PASSWORD:
+                break;
+            case Helper.FRAGMENT_MARK_LIST:
+                break;
+            case Helper.FRAGMENT_MANAGE_MENU:
+                fragment = new Manage_Menu();
+                break;
+            case Helper.FRAGMENT_MANAGE_EVENT:
+                break;
+            case Helper.FRAGMENT_LOGIN:
+                fragment = new LoginFragment();
+                break;
+            case Helper.FRAGMENT_LOGOUT:
+                break;
+            case Helper.FRAGMENT_REGISTER:
+                fragment = new SwitchRegisterFragment();
+                break;
+            case Helper.FRAGMENT_SETTING:
+                break;
+        }
+
+        return fragment;
     }
 
 //    public void checkMenuItem() {
@@ -330,6 +393,16 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(result);
 
             updateInfoHeaderMainMenu(result);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Const.ADD_DISH || requestCode == Const.EDIT_DISH) {
+            ((Manage_Menu)contentFragment).onActivityResult(requestCode, resultCode, data);
         }
     }
 }

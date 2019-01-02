@@ -7,20 +7,28 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.UploadTask;
-
 import java.io.File;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 public class Dish implements Comparable {
     /**
@@ -29,21 +37,22 @@ public class Dish implements Comparable {
     public static String NEW = "mới";
     public static String HOT = "hot";
     public static int colorNew = R.color.yellow;
-    public  static int colorHot = R.color.red;
+    public static int colorHot = R.color.red;
     private String dishId;
     private String dishName;
     private Integer dishPrice;
     private String dishDescription;
     private String dishHomeImage;
-    private Bitmap dishImage;
-    private List<String> dishMoreImages;
+    private Bitmap dishImage = null;
+    private ArrayList<String> dishMoreImages;
     private String dishTypeId;
-    private int eventTypeId; // <0:New, >0:Hot
+    private Date createDate;
+    private int eventType; // <0:New, >0:Hot
 
     private String restAccount;
     private float maxStar;
 
-    protected Integer dishNumber = 0;
+    protected static Integer dishNumber = 0;
 
     public static int compareProperty;
     public final static int STAR = 0;
@@ -52,7 +61,17 @@ public class Dish implements Comparable {
      * constructor methods
      */
 
-    public Dish(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, float _maxStar, String _restAccount) {
+    public Dish(String _dishId,
+                String _dishName,
+                Integer _dishPrice,
+                String _dishDescription,
+                String _dishHomeImage,
+                ArrayList<String> _dishMoreImages,
+                String _dishTypeId,
+                float _maxStar,
+                String _restAccount,
+                Date _createdate) {
+
         this.dishId = _dishId;
         this.dishName = _dishName;
         this.dishPrice = _dishPrice;
@@ -62,9 +81,22 @@ public class Dish implements Comparable {
         this.dishTypeId = _dishTypeId;
         this.maxStar = _maxStar;
         this.restAccount = _restAccount;
+
+        this.createDate=_createdate;
+
+        //DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date(); // lấy thời gian hệ thống
+        long getDiff = date.getTime() - _createdate.getTime();
+        // using TimeUnit class from java.util.concurrent package
+        long getDaysDiff = TimeUnit.MILLISECONDS.toDays(getDiff);
+        if (getDaysDiff <= 7) {
+            this.eventType = -1;
+        } else {
+            this.eventType = 0;
+        }
     }
 
-    public Dish(String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, String _restAccount) {
+    public Dish(String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, ArrayList<String> _dishMoreImages, String _dishTypeId, String _restAccount) {
         this.dishId = "";
         this.dishName = _dishName;
         this.dishPrice = _dishPrice;
@@ -74,6 +106,7 @@ public class Dish implements Comparable {
         this.dishTypeId = _dishTypeId;
         this.maxStar = 0;
         this.restAccount = _restAccount;
+        this.createDate = new Date();
     }
 
     public Dish() {
@@ -86,6 +119,7 @@ public class Dish implements Comparable {
         this.dishTypeId = "";
         this.maxStar = 0;
         this.restAccount = "";
+        this.createDate = new Date();
     }
 
     public Dish(String _dishId) {
@@ -98,16 +132,35 @@ public class Dish implements Comparable {
         this.dishTypeId = "";
         this.maxStar = 0;
         this.restAccount = "";
+        this.createDate = new Date();
     }
 
     /**
      * Getter methods for properties
      */
 
-    public void setDishImage(Bitmap dishImage) {
-        try{
-        this.dishImage = dishImage;}catch (Exception ex){}
+    public String getCreateDate() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        return simpleDateFormat.format(createDate);
     }
+
+    public Date getCreateDateRaw() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        createDate = createDate;
+    }
+
+    public void setDishImage(Bitmap dishImage) {
+        try {
+            this.dishImage = dishImage;
+        } catch (Exception ex) {
+        }
+    }
+
     public String getDishId() {
         return this.dishId;
     }
@@ -128,7 +181,7 @@ public class Dish implements Comparable {
         return this.dishHomeImage;
     }
 
-    public List<String> getDishMoreImages() {
+    public ArrayList<String> getDishMoreImages() {
         return this.dishMoreImages;
     }
 
@@ -144,15 +197,14 @@ public class Dish implements Comparable {
         return this.restAccount;
     }
 
-    public int getEventTypeId() {
-        return eventTypeId;
+    public int getEventType() {
+        return eventType;
     }
 
-    public Bitmap getDishImage(Context context){
+    public Bitmap getDishImage(Context context) {
         if (dishImage != null) {
             return dishImage;
-        }else
-        {
+        } else {
             return BitmapFactory.decodeResource(context.getResources(), R.drawable.app_logo);
         }
     }
@@ -193,12 +245,13 @@ public class Dish implements Comparable {
         Number _price = (Number) document.get("dish_price");
         String _description = (String) document.get("dish_description");
         String _homeImage = (String) document.get("dish_home_image_file");
-        List<String> _moreImages = (ArrayList) document.get("dish_more_image_files");
+        ArrayList<String> _moreImages = (ArrayList) document.get("dish_more_image_files");
         float _maxStar = ((Number) document.get("max_star")).floatValue();
         String _dishTypeId = (String) document.get("dish_type_id");
         String _restAccount = (String) document.get("rest_account");
+        Date _createdate = (Date) document.get("create_date");
 
-        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount);
+        return new Dish(_id, _name, _price.intValue(), _description, _homeImage, _moreImages, _dishTypeId, _maxStar, _restAccount, _createdate);
     }
 
     /**
@@ -215,7 +268,16 @@ public class Dish implements Comparable {
      * @param _restAccount
      * @return
      */
-    public static Map<String, Object> createDishData(String _dishId, String _dishName, Integer _dishPrice, String _dishDescription, String _dishHomeImage, List<String> _dishMoreImages, String _dishTypeId, double _maxStar, String _restAccount) {
+    public static Map<String, Object> createDishData(String _dishId,
+                                                     String _dishName,
+                                                     Integer _dishPrice,
+                                                     String _dishDescription,
+                                                     String _dishHomeImage,
+                                                     List<String> _dishMoreImages,
+                                                     String _dishTypeId,
+                                                     double _maxStar,
+                                                     String _restAccount,
+                                                     Date _createdate) {
         Map<String, Object> dishData = new HashMap<>(); // Save data of dish
 
         dishData.put("dish_id", _dishId);
@@ -227,6 +289,7 @@ public class Dish implements Comparable {
         dishData.put("max_star", _maxStar);
         dishData.put("dish_type_id", _dishTypeId);
         dishData.put("rest_account", _restAccount);
+        dishData.put("create_date", new Timestamp(_createdate.getTime()));
 
         return dishData;
     }
@@ -243,6 +306,7 @@ public class Dish implements Comparable {
         dishData.put("max_star", this.maxStar);
         dishData.put("dish_type_id", this.dishTypeId);
         dishData.put("rest_account", this.restAccount);
+        dishData.put("create_date", new Timestamp(this.createDate.getTime()));
 
         return dishData;
     }
@@ -282,53 +346,79 @@ public class Dish implements Comparable {
 
     public void addDish(final Activity activity) {
         CMDB.db
-                .collection("dish")
+                .collection("information")
+                .document("dish_max_id")
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
-                            dishNumber = task.getResult().size();
-                            dishId = createDishId(dishNumber);
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // create dish id
+                                if (dishId.equals("")) {
+                                    dishNumber = ((Number)document.get("dish_max_id")).intValue() + 1;
+                                    dishId = createDishId(dishNumber);
+                                }
 
-                            Integer imageNumber = 1;
+                                // upload image files to storage on server
+                                if (!dishHomeImage.equals("")) {
+                                    Integer imageNumber = 1;
 
-                            Uri file = Uri.fromFile(new File(dishHomeImage));
-                            dishHomeImage = uploadImageFile(file, imageNumber);
+                                    if (dishHomeImage.indexOf("\\") > -1 || dishHomeImage.indexOf("/") > -1) {
+                                        Uri file = Uri.fromFile(new File(dishHomeImage));
+                                        dishHomeImage = uploadImageFile(file, imageNumber);
+                                    }
 
-                            ArrayList<String> dishImagesTemp = new ArrayList<String>();
-                            int count = dishMoreImages.size();
-                            for (int index = 0; index < count; index++) {
-                                imageNumber++;
-                                file = Uri.fromFile(new File(dishMoreImages.get(index).toString()));
-                                dishImagesTemp.add(uploadImageFile(file, imageNumber));
+                                    if (dishMoreImages.size() > 0){
+                                        Uri file;
+                                        int count = dishMoreImages.size();
+                                        for (int index = 0; index < count; index++) {
+                                            imageNumber++;
+                                            if (dishMoreImages.get(index).indexOf("\\") > -1 || dishMoreImages.get(index).indexOf("/") > -1) {
+                                                file = Uri.fromFile(new File(dishMoreImages.get(index)));
+                                                dishMoreImages.remove(index);
+                                                dishMoreImages.add(index, uploadImageFile(file, imageNumber));
+                                            }
+                                        }
+                                    }
+                                }
+
+                                CMDB.db
+                                        .collection("dish")
+                                        .document(dishId)
+                                        .set(createDishData())
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                updateDishMaxId();
+                                                //Toast.makeText(activity, "new dish id: " + dishId, Toast.LENGTH_SHORT).show();
+                                                ((AddDish)activity).notifyAddDishSuccess(dishId);
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                ((AddDish)activity).notifyAddDishFailed();
+                                            }
+                                        });
+                            } else {
+
                             }
-
-                            dishMoreImages.clear();
-                            dishMoreImages = dishImagesTemp;
-
-                            CMDB.db
-                                    .collection("dish")
-                                    .document(dishId)
-                                    .set(createDishData())
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            ((AddDish)activity).notifyAddDishSuccess();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            ((AddDish)activity).notifyAddDishFailed();
-                                        }
-                                    });
-
                         } else {
 
                         }
                     }
                 });
+    }
+
+    private void updateDishMaxId() {
+        Map<String, Object> document = new HashMap<>();
+        document.put("dish_max_id", dishNumber);
+        CMDB.db
+                .collection("information")
+                .document("dish_max_id")
+                .set(document);
     }
 
     public int compareTo(@NonNull Object o) {

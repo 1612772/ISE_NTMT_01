@@ -26,15 +26,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Restaurant_Detail"></activity>
-        <activity android:name=".ViewDish" />
-        <activity
-            android:name=".register.CustomerRegister"
-            android:label="Đăng ký - Thực khách" />
-        <activity
-            android:name=".add_dish.AddDish"
+        <activity android:name=".add_dish.AddDish"
             android:label="Thêm món ăn">
         </activity>
+        <activity android:name=".view_dish.ViewDish"></activity>
+        <activity android:name=".restaurant_detail.Restaurant_Detail"
+            android:screenOrientation="portrait" >
+
+        </activity>
+        <activity
+            android:name=".register.CustomerRegister"
+            android:label="Đăng ký - Thực khách"/>
+        <activity
+            android:name=".register.RestaurantRegister"
+            android:label="Đăng ký - Nhà hàng"/>
     </application>
 
 </manifest>

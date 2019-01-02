@@ -1,13 +1,17 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\2623d66e522699bfd7f152deb3975461\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:2:1-13:12
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circleindicator-1.2.2.aar\707e9323d7597c1973447578bc7c9970\AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c00a2f58a39fd366de92b16d324c08de\AndroidManifest.xml:17:1-22:12
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:2:1-15:12
+MERGED from [com.borjabravo:readmoretextview:2.1.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\readmoretextview-2.1.0.aar\abcbb6dd308a779d14d8a1699c96bbcc\AndroidManifest.xml:2:1-12:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\539a03e5824ccff259ba9f63784d7a0b\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\09fdc6a0b0791a7dcd0ccef9cb8b4dfe\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.3.aar\670ada744092519d5e7a77ae6a9b3327\AndroidManifest.xml:2:1-9:12
@@ -15,10 +19,8 @@ MERGED from [com.google.firebase:firebase-firestore:17.0.1] C:\Users\NGUYENHUUTU
 MERGED from [com.google.firebase:firebase-storage:16.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-storage-16.0.1.aar\44a1cbc8a87ed44579d3d9e2df1a5fae\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\f8a74fa6720076b00dc2d653ef55a9b8\AndroidManifest.xml:17:1-38:12
 MERGED from [com.github.JakeWharton:ViewPagerIndicator:2.4.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\ViewPagerIndicator-2.4.1.aar\978d1e57b1c1e66f946fb110a3728cbe\AndroidManifest.xml:2:1-11:12
-MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\ca9653e0895495a3dba7f4da843f9ec6\AndroidManifest.xml:2:1-11:12
 MERGED from [com.mikepenz:materialdrawer:5.9.5] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.5.aar\c2a53aa8443840054789c7c0859f0760\AndroidManifest.xml:2:1-12:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:transition:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\fd8d00f1beefd07349d9b7b02759344e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\667f473dd43f2f4beb5f4793ff169cda\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\c83bb51287eb83ebbf726141be58037e\AndroidManifest.xml:17:1-22:12
@@ -54,11 +56,11 @@ MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\NGUYENHUUTU
 MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\ad9e31b55b282c8316e0e1fd69421f56\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\59a36e7695ca589e8531eda979fe1113\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6072fc39d1aa5a71d4d5e3c9da9839a3\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\96284799d81f6ad58da947c8881ecf20\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\5f11489626213a55efe76dc61ad0e57a\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2ff34785b0d6e2f3c12e1c5958f0ab10\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\f16c07cc1501fbc5b42d1993ec8a278a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\e06d5ba4f780cce9b7d8cb4db24c74b2\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\cec4448a6dc4cfacdb831b92bab1f838\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:documentfile:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\3d682c2cc423e2ce8c857f10b8f58c98\AndroidManifest.xml:17:1-22:12
@@ -70,22 +72,22 @@ MERGED from [com.mikepenz:materialize:1.0.3] C:\Users\NGUYENHUUTU\.gradle\caches
 MERGED from [com.mikepenz:iconics-core:2.9.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\iconics-core-2.9.1.aar\8ee1d62b88629c9b54a4f507b42d5dab\AndroidManifest.xml:2:1-12:12
 MERGED from [com.mikepenz:fastadapter:2.6.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\fastadapter-2.6.3.aar\63135a74a9fd6f3a3dc9d7e03b80037b\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-16.0.2.aar\b38a2101aecb4f197f7e87123c1341b1\AndroidManifest.xml:2:1-9:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:4:5-53
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:2:11-69
@@ -126,9 +128,11 @@ ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\m
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:9:22-77
 application
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:11:5-38:19
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:11:5-43:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:22:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:11:5-20
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:11:5-13:38
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:11:5-13:38
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\09fdc6a0b0791a7dcd0ccef9cb8b4dfe\AndroidManifest.xml:9:5-20
@@ -137,8 +141,6 @@ MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\NGUYENHUUTU\.gra
 MERGED from [com.google.firebase:firebase-core:16.0.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.3.aar\670ada744092519d5e7a77ae6a9b3327\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\f8a74fa6720076b00dc2d653ef55a9b8\AndroidManifest.xml:22:5-36:19
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\f8a74fa6720076b00dc2d653ef55a9b8\AndroidManifest.xml:22:5-36:19
-MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:11:5-20
-MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:11:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\ca9653e0895495a3dba7f4da843f9ec6\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\ca9653e0895495a3dba7f4da843f9ec6\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-17.0.1.aar\65b5f9fb3b7e659289c8f1d25eb12769\AndroidManifest.xml:26:5-32:19
@@ -213,26 +215,34 @@ category#android.intent.category.LAUNCHER
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:26:27-74
-activity#com.example.nguyenhuutu.convenientmenu.Restaurant_Detail
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:9-64
-	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:19-52
-activity#com.example.nguyenhuutu.convenientmenu.ViewDish
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:9-46
-	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:19-43
-activity#com.example.nguyenhuutu.convenientmenu.register.CustomerRegister
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:31:9-33:52
-	android:label
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:33:13-49
-	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:13-54
 activity#com.example.nguyenhuutu.convenientmenu.add_dish.AddDish
-ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:34:9-37:20
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:9-31:20
 	android:label
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:36:13-40
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:13-40
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:35:13-45
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:19-51
+activity#com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:9-65
+	android:name
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:19-53
+activity#com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:33:9-36:20
+	android:screenOrientation
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:34:13-49
+	android:name
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:33:19-70
+activity#com.example.nguyenhuutu.convenientmenu.register.CustomerRegister
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:37:9-39:51
+	android:label
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:39:13-49
+	android:name
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:38:13-54
+activity#com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister
+ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:40:9-42:49
+	android:label
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:42:13-47
+	android:name
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:41:13-56
 uses-sdk
 INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml
@@ -241,10 +251,18 @@ MERGED from [com.android.support:multidex:1.0.3] C:\Users\NGUYENHUUTU\.gradle\ca
 MERGED from [com.android.support:multidex:1.0.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\multidex-1.0.3.aar\2623d66e522699bfd7f152deb3975461\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\56177a710aa1228aea3a16127744d673\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:7:5-9:41
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circleindicator-1.2.2.aar\707e9323d7597c1973447578bc7c9970\AndroidManifest.xml:8:5-10:41
+MERGED from [me.relex:circleindicator:1.2.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circleindicator-1.2.2.aar\707e9323d7597c1973447578bc7c9970\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c00a2f58a39fd366de92b16d324c08de\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\c00a2f58a39fd366de92b16d324c08de\AndroidManifest.xml:20:5-44
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mikhaellopez:circularimageview:3.0.2] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\circularimageview-3.0.2.aar\1633b0f945a17d8a6d5dedf43286d0c4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.borjabravo:readmoretextview:2.1.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\readmoretextview-2.1.0.aar\abcbb6dd308a779d14d8a1699c96bbcc\AndroidManifest.xml:8:5-10:41
+MERGED from [com.borjabravo:readmoretextview:2.1.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\readmoretextview-2.1.0.aar\abcbb6dd308a779d14d8a1699c96bbcc\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\539a03e5824ccff259ba9f63784d7a0b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\539a03e5824ccff259ba9f63784d7a0b\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\09fdc6a0b0791a7dcd0ccef9cb8b4dfe\AndroidManifest.xml:5:5-7:41
@@ -259,14 +277,10 @@ MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\NGUYENHUUTU\.gra
 MERGED from [com.google.firebase:firebase-auth:16.0.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\firebase-auth-16.0.1.aar\f8a74fa6720076b00dc2d653ef55a9b8\AndroidManifest.xml:20:5-44
 MERGED from [com.github.JakeWharton:ViewPagerIndicator:2.4.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\ViewPagerIndicator-2.4.1.aar\978d1e57b1c1e66f946fb110a3728cbe\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.JakeWharton:ViewPagerIndicator:2.4.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\ViewPagerIndicator-2.4.1.aar\978d1e57b1c1e66f946fb110a3728cbe\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:7:5-9:41
-MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\glide-4.7.1.aar\336ec8de2d9cc981af33789c6814d145\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\ca9653e0895495a3dba7f4da843f9ec6\AndroidManifest.xml:7:5-43
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\ca9653e0895495a3dba7f4da843f9ec6\AndroidManifest.xml:7:5-43
 MERGED from [com.mikepenz:materialdrawer:5.9.5] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.5.aar\c2a53aa8443840054789c7c0859f0760\AndroidManifest.xml:8:5-10:41
 MERGED from [com.mikepenz:materialdrawer:5.9.5] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\materialdrawer-5.9.5.aar\c2a53aa8443840054789c7c0859f0760\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\e8c70c205f4c2adad7ca8e356be0886e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\fd8d00f1beefd07349d9b7b02759344e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:transition:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\fd8d00f1beefd07349d9b7b02759344e\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\667f473dd43f2f4beb5f4793ff169cda\AndroidManifest.xml:20:5-44
@@ -337,8 +351,6 @@ MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NGUYENHUUTU\.gr
 MERGED from [com.android.support:support-compat:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\59a36e7695ca589e8531eda979fe1113\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6072fc39d1aa5a71d4d5e3c9da9839a3\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6072fc39d1aa5a71d4d5e3c9da9839a3\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\96284799d81f6ad58da947c8881ecf20\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\96284799d81f6ad58da947c8881ecf20\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\5f11489626213a55efe76dc61ad0e57a\AndroidManifest.xml:20:5-44
@@ -347,6 +359,8 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NGUYENHUUTU\.g
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\2ff34785b0d6e2f3c12e1c5958f0ab10\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\f16c07cc1501fbc5b42d1993ec8a278a\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\f16c07cc1501fbc5b42d1993ec8a278a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\48c00434983b2f518af4171daa7bcfcc\AndroidManifest.xml:20:5-44
 MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\e06d5ba4f780cce9b7d8cb4db24c74b2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.7.1.aar\e06d5ba4f780cce9b7d8cb4db24c74b2\AndroidManifest.xml:5:5-7:41
 MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\NGUYENHUUTU\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\cec4448a6dc4cfacdb831b92bab1f838\AndroidManifest.xml:20:5-44

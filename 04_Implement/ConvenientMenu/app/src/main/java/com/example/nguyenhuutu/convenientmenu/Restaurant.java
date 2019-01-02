@@ -1,13 +1,19 @@
 package com.example.nguyenhuutu.convenientmenu;
 
+import android.app.Activity;
 import android.support.annotation.NonNull;
+
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
+import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Restaurant implements Comparable {
+public class Restaurant extends User implements Comparable {
     /**
      * Properties
      */
@@ -16,6 +22,7 @@ public class Restaurant implements Comparable {
     private String restAccount;
     private String restPassword;
     private String restName;
+    private String restEmail;
     private List<String> restAddresses;
     private String restDescription;
     private List<String> restMoreImages;
@@ -33,11 +40,11 @@ public class Restaurant implements Comparable {
     /**
      * Methods List
      */
-
-    public Restaurant(){
+    public Restaurant(String name){
         this.restAccount = "";
         this.restPassword = "";
-        this.restName = "";
+        this.restName = name;
+        this.restEmail= "";
         this.restAddresses = new ArrayList<>();
         this.restDescription = "";
         this.restHomeImage = "";
@@ -46,10 +53,36 @@ public class Restaurant implements Comparable {
         this.viewedNumber = ZERO.longValue();
     }
 
-    public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber, Long _totalRating, String _restPhone, String _restFacebook) {
+    public Restaurant(){
+        this.restAccount = "";
+        this.restPassword = "";
+        this.restName = "";
+        this.restEmail= "";
+        this.restAddresses = new ArrayList<>();
+        this.restDescription = "";
+        this.restHomeImage = "";
+        this.restMoreImages = new ArrayList<>();
+        this.maxStar = ZERO.doubleValue();
+        this.viewedNumber = ZERO.longValue();
+    }
+
+    public Restaurant(String accountStr,String passwordStr,String emailStr,String resNameStr){
+        this.restAccount = accountStr;
+        this.restPassword = Helper.getCompressPassword(passwordStr);
+        this.restName = resNameStr;
+        this.restEmail=emailStr;
+        this.restAddresses = new ArrayList<>();
+        this.restDescription = "";
+        this.restHomeImage = "";
+        this.restMoreImages = new ArrayList<>();
+        this.maxStar = ZERO.doubleValue();
+        this.viewedNumber = ZERO.longValue();
+    }
+
+    public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber, Long _totalRating, String _restPhone, String _restFacebook,String _restEmail) {
 
         this.restAccount = _restAccount;
-        this.restPassword = _restPassword;
+        this.restPassword = Helper.getCompressPassword(_restPassword);
         this.restName = _restName;
         this.restAddresses = _restAddresses;
         this.restDescription = _restDescription;
@@ -60,6 +93,7 @@ public class Restaurant implements Comparable {
         this.totalRating = _totalRating;
         this.restPhone = _restPhone;
         this.restFacebook = _restFacebook;
+        this.restEmail= _restEmail;
     }
 
     /**
@@ -104,6 +138,11 @@ public class Restaurant implements Comparable {
     public String getRestPhone(){return this.restPhone;}
     public String getRestFacebook(){return this.restFacebook;}
 
+    public String getRestEmail() {
+        return this.restEmail;
+    }
+
+
     /**
      * loadRestaurant()
      *  - Load data of a restaurant
@@ -113,7 +152,7 @@ public class Restaurant implements Comparable {
         String _restAccount = (String)document.get("rest_account");
         String _restPassword= (String)document.get("rest_password");
         String _restName = (String)document.get("rest_name");
-        String _restDdescription = (String)document.get("rest_description");
+        String _restDescription = (String)document.get("rest_description");
         List<String> _restAddresses = (ArrayList)document.get("rest_addresses");
         String _restHomeImage = (String)document.get("rest_home_image_file");
         List<String> _restMoreImages = (ArrayList)document.get("rest_more_image_files");
@@ -122,8 +161,29 @@ public class Restaurant implements Comparable {
         Long _totalRating = (Long)document.get("rest_total_rating");
         String _restPhone = (String)document.get("rest_phone");
         String _restFacebook = (String)document.get("rest_facebook");
+        String _restEmail = (String)document.get("rest_email");
 
-        return new Restaurant(_restAccount, _restPassword, _restName, _restDdescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber,_totalRating,_restPhone,_restFacebook);
+        return new Restaurant(_restAccount, _restPassword, _restName, _restDescription, _restAddresses, _restHomeImage, _restMoreImages, _maxStar, _viewedNumber,_totalRating,_restPhone,_restFacebook,_restEmail);
+    }
+
+
+    public Map<String, Object> createRestaurantData() {
+        Map<String, Object> restData = new HashMap<>(); // Save data of dish
+
+        restData.put("rest_account", restAccount);
+        restData.put("rest_password", restPassword);
+        restData.put("rest_name", restName);
+        restData.put("rest_description", restDescription);
+        restData.put("rest_addresses", restAddresses);
+        restData.put("rest_home_image", restHomeImage);
+        restData.put("rest_more_images", restMoreImages);
+        restData.put("max_star", maxStar);
+        restData.put("viewed_number", viewedNumber);
+        restData.put("rest_total_rating",totalRating);
+        restData.put("rest_phone",restPhone);
+        restData.put("rest_facebook",restFacebook);
+        restData.put("rest_email",restEmail);
+        return restData;
     }
 
     /**
@@ -138,7 +198,7 @@ public class Restaurant implements Comparable {
      * @param _restMoreImages
      * @return Map<String, Object>
      */
-    public static Map<String, Object> createRestaurantData(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber,Long _totalRating, String _restPhone, String _restFacebook) {
+    public static Map<String, Object> createRestaurantData(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber,Long _totalRating, String _restPhone, String _restFacebook,String _RestEmail) {
         Map<String, Object> restData = new HashMap<>(); // Save data of dish
 
         restData.put("rest_account", _restAccount);
@@ -153,9 +213,9 @@ public class Restaurant implements Comparable {
         restData.put("rest_total_rating",_totalRating);
         restData.put("rest_phone",_restPhone);
         restData.put("rest_facebook",_restFacebook);
+        restData.put("rest_email",_RestEmail);
         return restData;
     }
-
 
     @Override
     public int compareTo(@NonNull Object o) {
@@ -178,5 +238,42 @@ public class Restaurant implements Comparable {
         }
 
         return result;
+    }
+
+    @Override
+    public void login(Activity activity) {
+
+    }
+
+    @Override
+    public void register(Activity activity) {
+        final RestaurantRegister act = (RestaurantRegister)activity;
+        Map<String, Object> data = createRestaurantData();
+
+        CMDB.db.collection("restaurant")
+                .document(this.restAccount)
+                .set(data)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        act.callbackRegister(true);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        act.callbackRegister(false);
+                    }
+                });
+    }
+
+    @Override
+    public boolean checkRegisterInfo() {
+        return false;
+    }
+
+    @Override
+    public boolean checkLoginInfo() {
+        return false;
     }
 }

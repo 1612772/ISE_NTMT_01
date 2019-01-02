@@ -20,7 +20,7 @@ import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
-import com.example.nguyenhuutu.convenientmenu.Restaurant_Detail;
+import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -98,7 +98,6 @@ public class HighRatingRestaurantFragment extends Fragment {
 
 
                                     CMDB.db.collection("comment_restaurant")
-                                            .whereEqualTo("cmt_rest_star", rest.getMaxStar())
                                             .whereEqualTo("rest_account", rest.getRestAccount())
                                             .get()
                                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -112,7 +111,6 @@ public class HighRatingRestaurantFragment extends Fragment {
                                                 }
                                             });
 
-                                    //((TextView) restItemLayout.findViewById(R.id.addressRestaurant)).setText(rest.getRestAddresses().get(0));
                                     restItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
@@ -126,7 +124,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                 }
                             }
                             catch(Exception ex){
-                                //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
+
                             }
                         }
                         else {

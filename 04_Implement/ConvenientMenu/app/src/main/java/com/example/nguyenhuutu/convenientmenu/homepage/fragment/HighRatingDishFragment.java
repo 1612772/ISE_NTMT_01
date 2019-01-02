@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.homepage.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -41,7 +43,6 @@ public class HighRatingDishFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
-        //homePage = (HomePage)getActivity();
         dataList = new ArrayList<Dish>();
     }
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,14 +57,8 @@ public class HighRatingDishFragment extends Fragment {
                         if (task.isSuccessful()) {
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                try {
-                                    dataList.add(Dish.loadDish(document.getData()));
-                                }
-                                catch (Exception ex){
-                                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_LONG).show();
-                                }
+                                dataList.add(Dish.loadDish(document.getData()));
                             }
-
                             sortDishFlowStar(dataList);
 
                             try {
@@ -77,7 +72,7 @@ public class HighRatingDishFragment extends Fragment {
                                     ((TextView) dishItemLayout.findViewById(R.id.dishName)).setText(dish.getDishName());
                                     ((RatingBar) dishItemLayout.findViewById(R.id.ratingDish)).setRating(((Number) dish.getMaxStar()).floatValue());
 
-                                    CMStorage.storage.child("images/dish/" + dish.getDishHomeImage())
+                                    CMStorage.storage.child("images/dish/" + dish.getDishId() + "/" + dish.getDishHomeImage())
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override
@@ -101,7 +96,6 @@ public class HighRatingDishFragment extends Fragment {
                                             });
 
                                     CMDB.db.collection("comment_dish")
-                                            .whereEqualTo("cmt_dish_star", dish.getMaxStar())
                                             .whereEqualTo("dish_id", dish.getDishId())
                                             .get()
                                             .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -138,10 +132,9 @@ public class HighRatingDishFragment extends Fragment {
                                     dishItemLayout.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            //Intent dishIntent = new Intent(getActivity(), DishDetail.class);
-                                            //dishIntent.putExtra("dish_id", dish.getDishId());
-                                            //startActivity(dishIntent);
-                                            Toast.makeText(getActivity(), dish.getRestAccount() + "-" + dish.getDishName(), Toast.LENGTH_SHORT).show();
+                                            Intent dishIntent = new Intent(getActivity(), ViewDish.class);
+                                            dishIntent.putExtra("dish_id", dish.getDishId());
+                                            startActivity(dishIntent);
                                         }
                                     });
 

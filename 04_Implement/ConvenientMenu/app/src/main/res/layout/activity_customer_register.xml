@@ -58,7 +58,8 @@
                         android:fontFamily="@font/montserrat"
                         android:textColor="@color/colorTextRegister"
                         android:inputType="text"
-                        android:textSize="@dimen/register_text_size" />
+                        android:textSize="@dimen/register_text_size"
+                        android:drawableLeft="@drawable/edit" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -80,7 +81,8 @@
                         android:fontFamily="@font/montserrat"
                         android:inputType="text"
                         android:textSize="@dimen/register_text_size"
-                        android:textColor="@color/colorTextRegister"/>
+                        android:textColor="@color/colorTextRegister"
+                        android:drawableLeft="@drawable/edit" />
                 </android.support.design.widget.TextInputLayout>
 
             </RelativeLayout>
@@ -104,7 +106,8 @@
                     android:fontFamily="@font/montserrat"
                     android:inputType="text"
                     android:textColor="@color/colorTextRegister"
-                    android:textSize="@dimen/register_text_size" />
+                    android:textSize="@dimen/register_text_size"
+                    android:drawableLeft="@drawable/user_shape" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -125,7 +128,8 @@
                     android:fontFamily="@font/montserrat"
                     android:inputType="textEmailAddress"
                     android:textSize="@dimen/register_text_size"
-                    android:textColor="@color/colorTextRegister"/>
+                    android:textColor="@color/colorTextRegister"
+                    android:drawableLeft="@drawable/email_shape" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -148,7 +152,8 @@
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword"
                     android:textSize="@dimen/register_text_size"
-                    android:textColor="@color/colorTextRegister"/>
+                    android:textColor="@color/colorTextRegister"
+                    android:drawableLeft="@drawable/password_shape" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -171,7 +176,8 @@
                     android:fontFamily="@font/montserrat"
                     android:inputType="textPassword"
                     android:textSize="@dimen/register_text_size"
-                    android:textColor="@color/colorTextRegister"/>
+                    android:textColor="@color/colorTextRegister"
+                    android:drawableLeft="@drawable/password_shape" />
             </android.support.design.widget.TextInputLayout>
 
             <CheckBox

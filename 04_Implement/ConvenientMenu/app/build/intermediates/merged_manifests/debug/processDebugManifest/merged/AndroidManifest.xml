@@ -42,15 +42,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.Restaurant_Detail" />
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.ViewDish" />
-        <activity
-            android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
-            android:label="Đăng ký - Thực khách" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.add_dish.AddDish"
             android:label="Thêm món ăn" >
         </activity>
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />
+        <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
+            android:label="Đăng ký - Thực khách" />
+        <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister"
+            android:label="Đăng ký - Nhà hàng" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
