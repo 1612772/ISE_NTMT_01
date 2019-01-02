@@ -7,20 +7,16 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,6 +47,7 @@ public class Dish implements Comparable {
 
     private String restAccount;
     private float maxStar;
+    private boolean isEdit = true;
 
     protected static Integer dishNumber = 0;
 
@@ -359,6 +356,7 @@ public class Dish implements Comparable {
                                 if (dishId.equals("")) {
                                     dishNumber = ((Number)document.get("dish_max_id")).intValue() + 1;
                                     dishId = createDishId(dishNumber);
+                                    isEdit = false;
                                 }
 
                                 // upload image files to storage on server
@@ -391,7 +389,9 @@ public class Dish implements Comparable {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                updateDishMaxId();
+                                                if (isEdit == false) {
+                                                    updateDishMaxId();
+                                                }
                                                 //Toast.makeText(activity, "new dish id: " + dishId, Toast.LENGTH_SHORT).show();
                                                 ((AddDish)activity).notifyAddDishSuccess(dishId);
                                             }

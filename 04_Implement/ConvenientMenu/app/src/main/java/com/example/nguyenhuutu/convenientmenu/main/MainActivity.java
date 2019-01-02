@@ -16,13 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.Const;
-import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
-import com.example.nguyenhuutu.convenientmenu.Manage_Menu;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
@@ -37,7 +35,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import org.json.JSONObject;
 
 //import static org.json.JSONObject.NULL;
-import static android.os.Bundle.EMPTY;
+
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;

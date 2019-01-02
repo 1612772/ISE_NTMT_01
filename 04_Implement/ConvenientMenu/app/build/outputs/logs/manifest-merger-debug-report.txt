@@ -215,12 +215,12 @@ category#android.intent.category.LAUNCHER
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:26:27-74
-activity#com.example.nguyenhuutu.convenientmenu.add_dish.AddDish
+activity#com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:9-31:20
 	android:label
 		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:30:13-40
 	android:name
-		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:19-51
+		ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:29:19-63
 activity#com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish
 ADDED from E:\documents\NMCNPM\ISE_NTMT_01\04_Implement\ConvenientMenu\app\src\main\AndroidManifest.xml:32:9-65
 	android:name

@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu;
+package com.example.nguyenhuutu.convenientmenu.manage_menu;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -7,10 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.PopupMenu;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -18,18 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
+import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Drink;
 import com.example.nguyenhuutu.convenientmenu.Fragment.Fragment_Food;
 import com.example.nguyenhuutu.convenientmenu.Fragment.PagerAdapterRestaurant;
-import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
+import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentSnapshot;
 
 public class Manage_Menu extends Fragment {
 

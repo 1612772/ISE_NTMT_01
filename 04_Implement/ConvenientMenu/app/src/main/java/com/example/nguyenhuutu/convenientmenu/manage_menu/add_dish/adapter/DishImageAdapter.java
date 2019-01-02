@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.add_dish.adapter;
+package com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.adapter;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -7,14 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.add_dish.AddDish;
-import com.example.nguyenhuutu.convenientmenu.add_dish.viewholder.DishImageViewHolder;
-import com.google.android.gms.tasks.OnFailureListener;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.viewholder.DishImageViewHolder;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;

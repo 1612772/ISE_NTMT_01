@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.nguyenhuutu.convenientmenu.add_dish.AddDish"
+            android:name="com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish"
             android:label="Thêm món ăn" >
         </activity>
         <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />

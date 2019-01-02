@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.add_dish.viewholder;
+package com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.viewholder;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

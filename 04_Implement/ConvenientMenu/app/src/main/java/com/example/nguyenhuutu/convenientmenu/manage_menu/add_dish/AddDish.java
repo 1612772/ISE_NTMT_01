@@ -1,4 +1,4 @@
-package com.example.nguyenhuutu.convenientmenu.add_dish;
+package com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -30,12 +29,11 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
-import com.example.nguyenhuutu.convenientmenu.add_dish.adapter.DishImageAdapter;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.adapter.DishImageAdapter;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -45,8 +43,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Date;
-
-import static java.sql.Types.NULL;
 
 public class AddDish extends AppCompatActivity implements View.OnClickListener, OnItemSelectedListener {
     private Toolbar toolbar;
