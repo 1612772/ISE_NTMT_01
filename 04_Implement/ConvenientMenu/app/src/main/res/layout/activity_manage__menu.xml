@@ -24,7 +24,7 @@
         android:textColor="#000"
         android:layout_weight="1"
         android:background="@drawable/search_form_border"/>
-    <ImageView
+    <ImageButton
         android:id="@+id/imgAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

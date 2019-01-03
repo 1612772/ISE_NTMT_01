@@ -2,9 +2,11 @@ package com.example.nguyenhuutu.convenientmenu.helper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Display;
 
@@ -168,5 +170,24 @@ public class Helper {
                         }
                     }
                 });
+    }
+
+    public static void showAlert(Context context, String title, String message) {
+        (new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }))
+//                .setNegativeButton("Abort", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                    }
+//                })
+                .show();
     }
 }
