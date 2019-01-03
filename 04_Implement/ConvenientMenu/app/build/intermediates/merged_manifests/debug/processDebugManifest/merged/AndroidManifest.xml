@@ -52,10 +52,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity android:name="com.example.nguyenhuutu.convenientmenu.search.SearchIndex" />
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />
-        <activity
-            android:name="com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail"
-            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.register.CustomerRegister"
             android:label="Đăng ký - Thực khách" />
