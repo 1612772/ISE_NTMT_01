@@ -33,6 +33,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class ListFood extends BaseAdapter {
     Context context;
     int inflat;
@@ -68,7 +69,7 @@ public class ListFood extends BaseAdapter {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View row = inflater.inflate(inflat, null);
 
-        ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
+        ImageView imgFoodDrink = (ImageView) row.findViewById(R.id.imgFoodDrink);
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
@@ -86,38 +87,32 @@ public class ListFood extends BaseAdapter {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         int id = menuItem.getItemId();
-                        if(id==R.id.delete)
-                        {
+                        if (id == R.id.delete) {
                             final DialogDelete dialogDelete = new DialogDelete(context);
 
                             dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    /*StorageReference storageRef = storage.getReference();
+                                    StorageReference storageRef = storage.getReference();
 
-                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId());
-                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
-                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            // File deleted successfully
-                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
-                                                    .delete()
-                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
-                                                            search.remove(position);
-                                                            notifyDataSetChanged();
-                                                        }
-                                                    });
-                                        }
-                                    });*/
+                                    for (int i = 0; i < dish.get(position).getDishMoreImages().size(); i++) {
+                                        StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishMoreImages().get(i));
+                                        desertRef.delete();
+                                    }
+
+                                    CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                            .delete()
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    search.remove(position);
+                                                    notifyDataSetChanged();
+                                                }
+                                            });
                                     dialogDelete.dialog.dismiss();
                                 }
                             });
-                        }else if (id==R.id.edit)
-                        {
+                        } else if (id == R.id.edit) {
                             //context.startActivity(new Intent(context,Update_Dish.class));
                         }
                         return false;
@@ -137,12 +132,11 @@ public class ListFood extends BaseAdapter {
         {
             tvEvent.setText(Dish.HOT);
             //cvEvent.setCardBackgroundColor(Dish.colorHot);
-        }else
-        {
+        } else {
             cvEvent.setVisibility(View.INVISIBLE);
         }
         rbRatingItem.setRating(item.getMaxStar());
-        tvPrice.setText("$ "+item.getDishPrice()+" đ");
+        tvPrice.setText("$ " + item.getDishPrice() + " đ");
         imgFoodDrink.setImageBitmap(item.getDishImage(context));
         return row;
     }
@@ -152,16 +146,13 @@ public class ListFood extends BaseAdapter {
 
         search = new ArrayList<Dish>();
         if (charText.length() != 0) {
-            for (int i=0;i<dish.size();i++)
-            {
-                if(Restaurant_Detail.covertToUnsigned(dish.get(i).getDishName().toLowerCase()).contains(Restaurant_Detail.covertToUnsigned(charText)))
-                {
+            for (int i = 0; i < dish.size(); i++) {
+                if (Restaurant_Detail.covertToUnsigned(dish.get(i).getDishName().toLowerCase()).contains(Restaurant_Detail.covertToUnsigned(charText))) {
                     search.add(dish.get(i));
                 }
             }
-        }else
-        {
-            search=dish;
+        } else {
+            search = dish;
         }
         notifyDataSetChanged();
     }

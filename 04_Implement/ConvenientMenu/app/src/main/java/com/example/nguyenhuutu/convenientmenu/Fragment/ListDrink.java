@@ -94,26 +94,22 @@ public class ListDrink extends BaseAdapter {
                             dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    /*StorageReference storageRef = storage.getReference();
+                                    StorageReference storageRef = storage.getReference();
 
-                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId()+"/*");
-                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
-                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            // File deleted successfully
-                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
-                                                    .delete()
-                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
-                                                            search.remove(position);
-                                                            notifyDataSetChanged();
-                                                        }
-                                                    });
-                                        }
-                                    });*/
+                                    for (int i = 0; i < dish.get(position).getDishMoreImages().size(); i++) {
+                                        StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishMoreImages().get(i));
+                                        desertRef.delete();
+                                    }
+
+                                    CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                            .delete()
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    search.remove(position);
+                                                    notifyDataSetChanged();
+                                                }
+                                            });
                                     dialogDelete.dialog.dismiss();
                                 }
                             });
