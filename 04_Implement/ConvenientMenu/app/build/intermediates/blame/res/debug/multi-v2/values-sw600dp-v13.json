@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\truong quang tu\\Documents\\GitHub\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\56177a710aa1228aea3a16127744d673\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a85b7d353b73ce57933de2d55ed414a9\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\589d06413fcf7fc74dc26384b676ddb2\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\materialdrawer-5.9.5.aar\\aaed5d01d1e8d4f29e8f38f542ca1ff3\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    },
+                    "to": {
+                        "startLines": "19",
+                        "startColumns": "4",
+                        "startOffsets": "1173",
+                        "endColumns": "63",
+                        "endOffsets": "1232"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\8706a06d2742c406acc682aa23e7ebd5\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -40,30 +57,13 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aad5e6aeae2500265810c6e345d2ab39\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
                         "startOffsets": "55,124,193,263,337,413,472,543",
                         "endColumns": "68,68,69,73,75,58,70,67",
                         "endOffsets": "119,188,258,332,408,467,538,606"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\materialdrawer-5.9.5.aar\\c2a53aa8443840054789c7c0859f0760\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "63",
-                        "endOffsets": "114"
-                    },
-                    "to": {
-                        "startLines": "19",
-                        "startColumns": "4",
-                        "startOffsets": "1173",
-                        "endColumns": "63",
-                        "endOffsets": "1232"
                     }
                 }
             ]

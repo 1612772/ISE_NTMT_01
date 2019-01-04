@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.eventmanage.ManageEvent;
 import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         switchContent(contentFragment);
     }
 
-    private void setTitle(String title) {
+    public void setTitle(String title) {
         getSupportActionBar().setTitle(title);
     }
 
@@ -170,6 +171,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_manage_event:
+                        if (!(contentFragment instanceof ManageEvent)) {
+                            setTitle("Quản lý sự kiện");
+                            contentFragment = new ManageEvent();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_login:
                         if (!(contentFragment instanceof LoginFragment)) {

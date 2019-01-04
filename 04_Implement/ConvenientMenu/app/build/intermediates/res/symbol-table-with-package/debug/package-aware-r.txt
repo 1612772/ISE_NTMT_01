@@ -1564,6 +1564,7 @@ drawable add_dish_image
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_border_editbox
 drawable black_search
 drawable border_input_area
 drawable border_input_bottom
@@ -1608,9 +1609,11 @@ drawable event_placeholder
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_account_info
+drawable ic_add_circle_black_24dp
 drawable ic_back
 drawable ic_bookmark
 drawable ic_change_password
+drawable ic_date_range_black_24dp
 drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1633,7 +1636,9 @@ drawable image_01
 drawable image_02
 drawable image_03
 drawable line
+drawable line_bottom
 drawable line_long
+drawable line_top
 drawable logo_for_register
 drawable main_menu_icon
 drawable material_drawer_badge
@@ -1737,7 +1742,10 @@ id beginning
 id blocking
 id bottom
 id btnUpdateOrAdd
+id button
 id buttonPanel
+id calendar_image_from
+id calendar_image_to
 id cancel_action
 id center
 id center_horizontal
@@ -1813,7 +1821,14 @@ id enterAlwaysCollapsed
 id evaluate_dish
 id evaluate_dish_rating
 id evaluate_title
-id eventName
+id event_description
+id event_description_static
+id event_image
+id event_image_static
+id event_name
+id event_time_static
+id event_topic
+id event_topic_static
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1827,11 +1842,14 @@ id filled
 id firstName
 id fixed
 id forever
+id from_edit_text
+id from_static
 id ghost_view
 id gone
 id groupSearch
 id group_divider
 id groups
+id guiline_middle
 id headerMenu
 id highRatingDishList
 id highRatingDishListWrapper
@@ -2032,6 +2050,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_view
 id scrollable
 id search_Dish
 id search_badge
@@ -2104,6 +2123,8 @@ id title
 id titleDividerNoCustom
 id title_delete_route
 id title_template
+id to_edit_text
+id to_static
 id toolbar
 id toolbarAddOrUpdate
 id toolbarDish_layout
@@ -2121,6 +2142,7 @@ id triangle
 id trimModeLength
 id trimModeLine
 id tvComment
+id tvDescriptionEvent
 id tvEvent
 id tvFood
 id tvName
@@ -2222,6 +2244,7 @@ layout activity_restaurant_register
 layout activity_search
 layout activity_update__dish
 layout activity_view_dish
+layout add_new_event
 layout all_restaurant_fragment
 layout confirm_restaurant
 layout content_restaurant_detail
@@ -2263,6 +2286,7 @@ layout item_search
 layout list_restaurant_item
 layout login_fragment
 layout main_menu
+layout manage_event
 layout material_drawer
 layout material_drawer_compact_header
 layout material_drawer_fits_not
