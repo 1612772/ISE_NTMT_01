@@ -53,6 +53,9 @@ public class Restaurant extends User implements Comparable {
         this.restMoreImages = new ArrayList<>();
         this.maxStar = ZERO.doubleValue();
         this.viewedNumber = ZERO.longValue();
+        this.restFacebook = "";
+        this.restPhone = "";
+        this.totalRating = (long)0;
     }
 
     public Restaurant(){
@@ -66,6 +69,9 @@ public class Restaurant extends User implements Comparable {
         this.restMoreImages = new ArrayList<>();
         this.maxStar = ZERO.doubleValue();
         this.viewedNumber = ZERO.longValue();
+        this.restFacebook = "";
+        this.restPhone = "";
+        this.totalRating = (long)0;
     }
 
     public Restaurant(String accountStr,String passwordStr,String emailStr,String resNameStr){
@@ -79,6 +85,9 @@ public class Restaurant extends User implements Comparable {
         this.restMoreImages = new ArrayList<>();
         this.maxStar = ZERO.doubleValue();
         this.viewedNumber = ZERO.longValue();
+        this.restFacebook = "";
+        this.restPhone = "";
+        this.totalRating = (long)0;
     }
 
     public Restaurant(String _restAccount, String _restPassword, String _restName, String _restDescription, List<String> _restAddresses, String _restHomeImage, List<String> _restMoreImages, Double _maxStar, Long _viewedNumber, Long _totalRating, String _restPhone, String _restFacebook,String _restEmail) {
@@ -177,14 +186,15 @@ public class Restaurant extends User implements Comparable {
         restData.put("rest_name", restName);
         restData.put("rest_description", restDescription);
         restData.put("rest_addresses", restAddresses);
-        restData.put("rest_home_image", restHomeImage);
-        restData.put("rest_more_images", restMoreImages);
+        restData.put("rest_home_image_file", restHomeImage);
+        restData.put("rest_more_image_files", restMoreImages);
         restData.put("max_star", maxStar);
         restData.put("viewed_number", viewedNumber);
         restData.put("rest_total_rating",totalRating);
         restData.put("rest_phone",restPhone);
         restData.put("rest_facebook",restFacebook);
         restData.put("rest_email",restEmail);
+
         return restData;
     }
 
@@ -208,14 +218,15 @@ public class Restaurant extends User implements Comparable {
         restData.put("rest_name", _restName);
         restData.put("rest_description", _restDescription);
         restData.put("rest_addresses", _restAddresses);
-        restData.put("rest_home_image", _restHomeImage);
-        restData.put("rest_more_images", _restMoreImages);
+        restData.put("rest_home_image_file", _restHomeImage);
+        restData.put("rest_more_image_files", _restMoreImages);
         restData.put("max_star", _maxStar);
         restData.put("viewed_number", _viewedNumber);
         restData.put("rest_total_rating",_totalRating);
         restData.put("rest_phone",_restPhone);
         restData.put("rest_facebook",_restFacebook);
         restData.put("rest_email",_RestEmail);
+
         return restData;
     }
 
