@@ -2,9 +2,11 @@ package com.example.nguyenhuutu.convenientmenu.helper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Display;
 
@@ -20,6 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -47,7 +50,11 @@ public class Helper {
 
         return oneDP;
     }
-
+    //phhviet: convert px->dp
+    public static int convertPxToDp(Context context, float number)
+    {
+        return Math.round(number / (context.getResources().getDisplayMetrics().density));
+    }
     public static Point getDisplaySize(Display display) {
         // display size in pixels
         Point size = new Point();
@@ -55,7 +62,12 @@ public class Helper {
 
         return size;
     }
-
+    //phhviet: làm tròn số thập phân, decimalPlace số chữ số thập phân . Đang làm tròn lên
+    public static float round(float d, int decimalPlace){
+        BigDecimal bd = new BigDecimal(Float.toString(d));
+        bd = bd.setScale(decimalPlace,BigDecimal.ROUND_HALF_UP);
+        return bd.floatValue();
+    }
     public static void changeUserSession(Activity activity, UserSession userSession) {
         SharedPreferences pref = activity.getSharedPreferences(UserSessionSharedDocument, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
@@ -158,5 +170,24 @@ public class Helper {
                         }
                     }
                 });
+    }
+
+    public static void showAlert(Context context, String title, String message) {
+        (new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }))
+//                .setNegativeButton("Abort", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                    }
+//                })
+                .show();
     }
 }

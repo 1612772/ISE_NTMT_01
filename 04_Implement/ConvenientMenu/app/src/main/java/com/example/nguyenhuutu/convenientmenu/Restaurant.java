@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
+import com.example.nguyenhuutu.convenientmenu.search.ListSearchResViewAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
@@ -19,6 +20,7 @@ public class Restaurant extends User implements Comparable {
      */
 
     private static final Number ZERO = 0;
+
     private String restAccount;
     private String restPassword;
     private String restName;

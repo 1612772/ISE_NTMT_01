@@ -3,6 +3,8 @@ package com.example.nguyenhuutu.convenientmenu.Fragment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
@@ -13,10 +15,17 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish;
+import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
 import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.example.nguyenhuutu.convenientmenu.DialogDelete;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
@@ -28,11 +37,11 @@ public class ListFood extends BaseAdapter {
     List<Dish> search;
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public ListFood(Context context, int inflat, List<Dish> dish) {
+    public ListFood(Context context, int inflat, List<Dish> _dish) {
         this.inflat = inflat;
         this.context = context;
-        this.dish = dish;
-        this.search = dish;
+//        this.dish = _dish;
+        this.search = _dish;
     }
 
     @Override
@@ -41,8 +50,31 @@ public class ListFood extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public Dish getItem(int position) {
         return search.get(position);
+    }
+
+    public void replace(int position, Dish _dish) {
+        search.remove(position);
+//        dish.remove(position);
+
+        search.add(position, _dish);
+//        dish.add(position, _dish);
+    }
+
+    public void remove(int position) {
+        search.remove(position);
+//        dish.remove(position);
+    }
+
+    public void add(Dish _dish) {
+        search.add(_dish);
+//        dish.add(_dish);
+    }
+
+    public void add(int position, Dish _dish) {
+        search.add(position, _dish);
+//        dish.add(position, _dish);
     }
 
     @Override
@@ -52,11 +84,13 @@ public class ListFood extends BaseAdapter {
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View row = inflater.inflate(inflat, null);
 
-        ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
+        final Dish item = search.get(position);
+
+        final ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
@@ -106,15 +140,28 @@ public class ListFood extends BaseAdapter {
                             });
                         }else if (id==R.id.edit)
                         {
-                            //context.startActivity(new Intent(context,Update_Dish.class));
+                            Intent editDishIntent = new Intent(context, AddDish.class);
+                            editDishIntent.putExtra("edit_dish", true);
+                            editDishIntent.putExtra("dish_id", item.getDishId());
+                            editDishIntent.putExtra("dish_name", item.getDishName());
+                            editDishIntent.putExtra("dish_create_date", item.getCreateDateRaw());
+                            editDishIntent.putExtra("max_star", item.getMaxStar());
+                            editDishIntent.putExtra("rest_account", item.getRestAccount());
+                            editDishIntent.putExtra("dish_type_id", item.getDishTypeId());
+                            editDishIntent.putExtra("dish_price", item.getDishPrice());
+                            editDishIntent.putExtra("dish_description", item.getDishDescription());
+                            editDishIntent.putExtra("dish_home_image", item.getDishHomeImage());
+                            editDishIntent.putCharSequenceArrayListExtra("dish_more_images", new ArrayList<CharSequence>(item.getDishMoreImages()));
+
+                            ((MainActivity) context).startActivityForResult(editDishIntent, Const.EDIT_DISH);
                         }
-                        return false;
+                        return true;
                     }
                 });
                 popup.show();
             }
         });
-        Dish item = search.get(position);
+
 
         tvFood.setText(item.getDishName());
         if (item.getEventType() < 0) //new
@@ -130,8 +177,22 @@ public class ListFood extends BaseAdapter {
             cvEvent.setVisibility(View.INVISIBLE);
         }
         rbRatingItem.setRating(item.getMaxStar());
-        tvPrice.setText("$ "+item.getDishPrice()+" đ");
-        imgFoodDrink.setImageBitmap(item.getDishImage(context));
+        tvPrice.setText("$ "+item.getDishPrice()+" vnđ");
+        if (!item.getDishHomeImage().equals("")) {
+//            imgFoodDrink.setImageBitmap(item.getDishImage(context));
+            CMStorage.storage.child("images/dish/" + item.getDishId() + "/" + item.getDishHomeImage())
+                    .getDownloadUrl()
+                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Glide
+                                    .with(context)
+                                    .load(uri.toString())
+                                    .into(imgFoodDrink);
+                        }
+                    });
+        }
+
         return row;
     }
 

@@ -72,7 +72,7 @@ public class HighRatingDishFragment extends Fragment {
                                     ((TextView) dishItemLayout.findViewById(R.id.dishName)).setText(dish.getDishName());
                                     ((RatingBar) dishItemLayout.findViewById(R.id.ratingDish)).setRating(((Number) dish.getMaxStar()).floatValue());
 
-                                    CMStorage.storage.child("images/dish/" + dish.getDishHomeImage())
+                                    CMStorage.storage.child("images/dish/" + dish.getDishId() + "/" + dish.getDishHomeImage())
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override

@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -34,11 +35,39 @@ import java.util.List;
 public class Fragment_Drink extends Fragment {
     ListView listDish;
     public static ListDrink adapter;
-    public Fragment_Drink(String id) {
-        // Required empty public constructor
-        final List<Dish> dataList = new ArrayList<Dish>();
+    private String restAccount;
+    final List<Dish> dataList = new ArrayList<Dish>();
+
+    public Fragment_Drink(String _restAccount) {
+        restAccount = _restAccount;
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.tab_drink, container, false);
+
+        listDish = view.findViewById(R.id.list_drink);
+        loadDrinkList();
+
+        return view;
+    }
+
+    private void setItemClickListener() {
+        listDish.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent dishIntent = new Intent(getActivity(), ViewDish.class);
+                dishIntent.putExtra("dish_id", ((ListDrink)listDish.getAdapter()).getItem(position).getDishId());
+                startActivity(dishIntent);
+            }
+        });
+    }
+
+    private void loadDrinkList() {
         CMDB.db.collection("dish")
-                .whereEqualTo("rest_account",id)
+                .whereEqualTo("rest_account", restAccount)
                 .whereEqualTo("dish_type_id","DTYPE2")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -53,29 +82,30 @@ public class Fragment_Drink extends Fragment {
 
                                 }
                             }
-                            int mount = dataList.size();
-                            for (int i = 0; i < mount; i++) {
-                                final int finalI = i;
-                                CMStorage.storage.child("images/dish/" + dataList.get(i).getDishHomeImage())
-                                        .getDownloadUrl()
-                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                            @Override
-                                            public void onSuccess(Uri uri) {
-                                                try {
-                                                    LoadImage loadImage = new LoadImage();
-                                                    loadImage.execute(uri.toString(), finalI, Const.DRINK);
-                                                } catch (Exception ex) {
-                                                }
-                                            }
-                                        })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception exception) {
-                                            }
-                                        });
-                            }
+//                            int mount = dataList.size();
+//                            for (int i = 0; i < mount; i++) {
+//                                final int finalI = i;
+//                                CMStorage.storage.child("images/dish/" + dataList.get(i).getDishId() + "/" + dataList.get(i).getDishHomeImage())
+//                                        .getDownloadUrl()
+//                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                                            @Override
+//                                            public void onSuccess(Uri uri) {
+//                                                try {
+//                                                    LoadImage loadImage = new LoadImage();
+//                                                    loadImage.execute(uri.toString(), finalI, Const.DRINK);
+//                                                } catch (Exception ex) {
+//                                                }
+//                                            }
+//                                        })
+//                                        .addOnFailureListener(new OnFailureListener() {
+//                                            @Override
+//                                            public void onFailure(@NonNull Exception exception) {
+//                                            }
+//                                        });
+//                            }
                             adapter = new ListDrink(getActivity(), R.layout.item_menu, dataList);
                             listDish.setAdapter(adapter);
+                            setItemClickListener();
                         } else {
                             Toast.makeText(getContext(), "Kết nối server thất bại", Toast.LENGTH_LONG).show();
                         }
@@ -83,25 +113,71 @@ public class Fragment_Drink extends Fragment {
                 });
     }
 
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.tab_drink, container, false);
-        listDish = view.findViewById(R.id.list_drink);
-        listDish.setAdapter(adapter);
-
-        listDish.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent dishIntent = new Intent(getActivity(), ViewDish.class);
-                dishIntent.putExtra("dish_id", ListDrink.dish.get(position).getDishId());
-                startActivity(dishIntent);
-            }
-        });
-
-        return view;
+    public void addDishIntoList(String _dishId) {
+        CMDB.db
+                .collection("dish")
+                .document(_dishId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                ((ListDrink)listDish.getAdapter()).add(0, Dish.loadDish(document.getData()));
+                                ((ListDrink)listDish.getAdapter()).notifyDataSetChanged();
+                            } else {
+                                // code here
+                            }
+                        } else {
+                            // code here
+                        }
+                    }
+                });
     }
 
+    public void updateDishInList(String _dishId) {
+        CMDB.db
+                .collection("dish")
+                .document(_dishId)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                Dish tempDish = Dish.loadDish(document.getData());
+
+                                int count = ((ListDrink)listDish.getAdapter()).getCount();
+                                for (int index = 0; index < count; index++) {
+                                    if (tempDish.getDishId().equals(((ListDrink)listDish.getAdapter()).getItem(index).getDishId())) {
+                                        ((ListDrink)listDish.getAdapter()).replace(index, tempDish);
+                                        ((ListDrink)listDish.getAdapter()).notifyDataSetChanged();
+                                        break;
+                                    }
+                                }
+                            } else {
+                                // code here
+                            }
+                        } else {
+                            // code here
+                        }
+                    }
+                });
+    }
+
+    public void removeDishInList(String _dishId) {
+        int count = ((ListDrink)listDish.getAdapter()).getCount();
+        for (int index = 0; index < count; index++) {
+            if (((ListDrink)listDish.getAdapter()).getItem(index).getDishId().equals(_dishId)) {
+                ((ListDrink)listDish.getAdapter()).remove(index);
+                break;
+            }
+        }
+    }
+
+    public void notifyDataChanged() {
+        ((ListDrink)listDish.getAdapter()).notifyDataSetChanged();
+    }
 }

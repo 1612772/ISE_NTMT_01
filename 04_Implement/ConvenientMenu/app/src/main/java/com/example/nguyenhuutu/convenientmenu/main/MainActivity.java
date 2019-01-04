@@ -1,5 +1,6 @@
 package com.example.nguyenhuutu.convenientmenu.main;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -17,8 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
-import com.example.nguyenhuutu.convenientmenu.Manage_Menu;
+import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.helper.RequestServer;
@@ -192,6 +194,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_menu_logout:
                         Helper.changeUserSession(MainActivity.this, new UserSession());
                         updateMainMenu();
+
+                        if (!(contentFragment instanceof HomePageFragment)) {
+                            setTitle("Trang chủ");
+                            contentFragment = new HomePageFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_setting:
                         break;
@@ -389,6 +397,16 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(result);
 
             updateInfoHeaderMainMenu(result);
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == Const.ADD_DISH || requestCode == Const.EDIT_DISH) {
+            ((Manage_Menu)contentFragment).onActivityResult(requestCode, resultCode, data);
         }
     }
 }

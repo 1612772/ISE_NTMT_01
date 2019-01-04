@@ -1560,9 +1560,12 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable add_dish_image
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
+drawable black_search
+drawable border_input_area
 drawable border_input_bottom
 drawable border_input_bottom_main_color
 drawable button_primary_background
@@ -1664,6 +1667,7 @@ drawable register_button_border
 drawable res
 drawable restaurant_placeholder
 drawable restaurant_register
+drawable search_border
 drawable search_form_border
 drawable searching_image
 drawable searching_image_placeholder
@@ -1716,6 +1720,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addDishButton
+id addDishImageButton
+id addDishToolbar
+id address
 id addressRestaurantDetail
 id adjust_height
 id adjust_width
@@ -1780,7 +1788,14 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id dishImageList
+id dishInfo
+id dishInfoBound
 id dishName
+id dishNameBound
+id dishPrice
+id dishPriceBound
+id dishType
 id dish_description
 id dish_description_title
 id dish_description_wrapper
@@ -1792,6 +1807,7 @@ id dish_name
 id dish_price
 id dish_rating
 id dish_rating_wrapper
+id dishlayout
 id drawer_layout
 id edit
 id editInformation
@@ -1856,6 +1872,7 @@ id imgAvatar
 id imgBackground
 id imgEvent
 id imgFoodDrink
+id imgObj
 id imgPopupMenu
 id indicator
 id info
@@ -1877,6 +1894,8 @@ id listMode
 id list_drink
 id list_food
 id list_item
+id listviewDish
+id listviewRes
 id loginBtn
 id lvComment
 id lvEvents
@@ -1964,6 +1983,7 @@ id newEventListWrapperFragment
 id newEventWrapper
 id none
 id normal
+id notfound
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -1999,6 +2019,7 @@ id rbRating
 id rbRatingItem
 id register
 id registerBtn
+id reslayout
 id rest_list_holder
 id rest_list_image
 id rest_list_name
@@ -2032,6 +2053,8 @@ id search_src_text
 id search_voice_btn
 id searchingFormWrapper
 id searchingText
+id searchrate
+id searchview
 id select_dialog_listview
 id selected
 id shortInfoDish
@@ -2115,9 +2138,12 @@ id tvTimeRating
 id tvTitleEvent
 id txtComment
 id txtDesDish
+id txtDish
+id txtName
 id txtNameDish
 id txtPriceDish
 id txtRating
+id txtRes
 id underline
 id uniform
 id unlabeled
@@ -2205,10 +2231,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_dish
 layout activity_customer_register
 layout activity_main
 layout activity_manage__menu
 layout activity_restaurant_register
+layout activity_search
 layout activity_update__dish
 layout activity_update_information
 layout activity_view_dish
@@ -2232,6 +2260,7 @@ layout design_text_input_password_icon
 layout dialogdelete
 layout dish_comment_item
 layout dish_items
+layout dish_type_spinner_item
 layout evaluate_comment_dish
 layout fragment_draft
 layout fragment_login
@@ -2245,11 +2274,15 @@ layout homepage_dish_item
 layout homepage_event_item
 layout homepage_restaurant_item
 layout image
+layout image_item
 layout image_slider
 layout item_comment
 layout item_event
 layout item_list_restaurant
 layout item_menu
+layout item_search
+layout list_restaurant_item
+layout login_fragment
 layout main_menu
 layout material_drawer
 layout material_drawer_compact_header
