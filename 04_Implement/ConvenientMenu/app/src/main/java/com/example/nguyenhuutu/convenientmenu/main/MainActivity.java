@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.change_password.ChangePasswordFragment;
 import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.helper.Helper;
@@ -158,13 +159,18 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_info_account:
-                        if (!(contentFragment instanceof RestaurantListFragment)) {
+                        if (!(contentFragment instanceof ViewInformationFragment)) {
                             setTitle("Thông Tin Tài Khoản");
                             contentFragment = new ViewInformationFragment();
                             switchContent(contentFragment);
                         }
                         break;
                     case R.id.main_menu_change_password:
+                        if (!(contentFragment instanceof ChangePasswordFragment)) {
+                            setTitle("Thay đổi mật khẩu");
+                            contentFragment = new ChangePasswordFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_list_mark:
                         break;

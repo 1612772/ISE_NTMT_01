@@ -31,6 +31,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/Theme.Design.NoActionBar" >
 
         <!-- android:theme="@style/Theme.AppCompat.Light"> -->
@@ -45,6 +46,7 @@
             android:name="com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish"
             android:label="Thêm món ăn" >
         </activity>
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_information.activity.UpdateInformationActivity" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail"
@@ -57,7 +59,6 @@
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister"
             android:label="Đăng ký - Nhà hàng" />
-        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_information.activity.UpdateInformationActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

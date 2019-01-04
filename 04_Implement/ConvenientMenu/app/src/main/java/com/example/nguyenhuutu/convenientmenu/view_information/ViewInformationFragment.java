@@ -29,43 +29,67 @@ import org.json.JSONObject;
 
 public class ViewInformationFragment extends Fragment {
     TextView user_name;
-    TextView user_role;
-    TextView user_username;
-    TextView user_sex;
     TextView user_email;
+
     ImageView user_avatar;
     Button button_update_info;
+
+    TextView user_address;
+    TextView user_description;
+    TextView user_fb;
+    TextView user_phone;
+
     UserSession loginedUserJson;
     Intent toUpdateInformationActivityIntent;
+    GetUserInformation userInformation;
+
+    boolean isRest;
 
     public ViewInformationFragment() {
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @  Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //inflate the view
-        View view = inflater.inflate(R.layout.fragment_view_information, container, false);
-
-        user_name = (TextView)view.findViewById(R.id.user_name);
-        user_role = (TextView)view.findViewById(R.id.user_role);
-        user_username = (TextView)view.findViewById(R.id.user_username);
-        user_sex = (TextView)view.findViewById(R.id.user_sex);
-        user_email = (TextView)view.findViewById(R.id.user_email);
-        user_avatar = (ImageView)view.findViewById(R.id.user_avatar);
-        button_update_info = (Button)view.findViewById(R.id.button_update_info);
-
         loginedUserJson = Helper.getLoginedUser(getActivity());
-        toUpdateInformationActivityIntent = new Intent(getActivity(), UpdateInformationActivity.class);
-        toUpdateInformationActivityIntent.putExtra("username", loginedUserJson.getUsername());
-        GetUserInformation userInformation = new GetUserInformation();
+        isRest = loginedUserJson.isRest();
+        userInformation = new GetUserInformation();
         userInformation.execute(loginedUserJson.getUsername(), loginedUserJson.isRest());
+        View view;
+        if(!isRest) {
+            view = inflater.inflate(R.layout.fragment_user_view_information, container, false);
 
-        user_username.setText(loginedUserJson.getUsername());
+            //hold view
+            user_name = (TextView)view.findViewById(R.id.user_name);
+            user_avatar = (ImageView)view.findViewById(R.id.user_avatar);
+            button_update_info = (Button)view.findViewById(R.id.button_update_info);
+            user_email = (TextView)view.findViewById(R.id.user_email);
 
-        String role = loginedUserJson.isRest() ? "Chủ Nhà hàng" : "Thực khách";
-        user_role.setText(role);
 
-        return view;
+            return view;
+        }
+        else
+        {
+            view = inflater.inflate(R.layout.fragment_rest_view_information, container, false);
+
+            //hold view
+            user_name = (TextView)view.findViewById(R.id.user_name);
+            user_avatar = (ImageView)view.findViewById(R.id.user_avatar);
+            user_email = (TextView)view.findViewById(R.id.user_email);
+            user_address = (TextView)view.findViewById(R.id.user_address);
+            user_description = (TextView)view.findViewById(R.id.user_description);
+            user_fb = (TextView)view.findViewById(R.id.user_fb);
+            user_phone = (TextView)view.findViewById(R.id.user_phone);
+            button_update_info = (Button)view.findViewById(R.id.button_update_info);
+
+            return view;
+        }
     }
 
     @Override
@@ -94,26 +118,25 @@ public class ViewInformationFragment extends Fragment {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            udpateUserInformation(result);
+            updateUserInformation(result);
         }
     }
 
     private void putInformationToIntent(JSONObject result) {
         try {
-            toUpdateInformationActivityIntent.putExtra("email", result.getJSONObject("data").getString("email"));
-            toUpdateInformationActivityIntent.putExtra("firstname", result.getJSONObject("data").getString("firstname"));
-            toUpdateInformationActivityIntent.putExtra("lastname", result.getJSONObject("data").getString("lastname"));
             button_update_info.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getActivity().startActivity(toUpdateInformationActivityIntent);
+                    toUpdateInformationActivityIntent = new Intent(getActivity(), UpdateInformationActivity.class);
+                    toUpdateInformationActivityIntent.putExtra("username", loginedUserJson.getUsername());
+                    toUpdateInformationActivityIntent.putExtra("isRest", isRest);
+                    startActivity(toUpdateInformationActivityIntent);
                 }
             });
         }catch (Exception e)       {        }
     }
 
-    private void udpateUserInformation(String data) {
-        //is rest
+    private void updateUserInformation(String data) {
         try {
             JSONObject result = new JSONObject(data);
             putInformationToIntent(result);
@@ -122,6 +145,10 @@ public class ViewInformationFragment extends Fragment {
                 if (result.getJSONObject("data").getBoolean("isRest")) {
                     user_name.setText(result.getJSONObject("data").getString("name"));
                     user_email.setText(result.getJSONObject("data").getString("email"));
+                    user_address.setText(result.getJSONObject("data").getString("addresses"));
+                    user_description.setText(result.getJSONObject("data").getString("description"));
+                    user_fb.setText(result.getJSONObject("data").getString("facebook"));
+                    user_phone.setText(result.getJSONObject("data").getString("phone"));
 
                     CMStorage.storage.child("images/restaurant/" + result.getJSONObject("data").getString("homeImageFile"))
                             .getDownloadUrl()
@@ -148,9 +175,9 @@ public class ViewInformationFragment extends Fragment {
                 }
                 //is normal user
                 else {
-                    String name = result.getJSONObject("data").getString("lastname");
+                    String name = result.getJSONObject("data").getString("firstname");
                     name += " ";
-                    name += result.getJSONObject("data").getString("firstname");
+                    name += result.getJSONObject("data").getString("lastname");
                     user_name.setText(name);
                     user_email.setText(result.getJSONObject("data").getString("email"));
 
