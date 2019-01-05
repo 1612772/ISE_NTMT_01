@@ -1364,6 +1364,10 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\cc11d067921ba08f52f0f05bd6255e86\\res\\color\\mtrl_text_btn_text_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_list_address.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\item_list_address.xml"
+    },
+    {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_light.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\48a80a9f3b9ceee6c8bd655a919ea03b\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
@@ -1752,12 +1756,12 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\ViewPagerIndicator-2.4.1.aar\\724b5fb7875edbf366e8b16047e6fced\\res\\drawable-hdpi-v4\\vpi__tab_unselected_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_username.png.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\username.png"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_user_view_information.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\fragment_user_view_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_username.png.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\drawable\\username.png"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
@@ -1832,16 +1836,16 @@
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\48a80a9f3b9ceee6c8bd655a919ea03b\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rest_update_information.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\activity_rest_update_information.xml"
+    },
+    {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_text.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\cc11d067921ba08f52f0f05bd6255e86\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
         "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\8065b6be900a59aceb8e922d3772c569\\res\\drawable\\notification_icon_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rest_update_information.xml.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\activity_rest_update_information.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -2654,6 +2658,10 @@
     {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_image_item.xml.flat",
         "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\image_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_image_rest.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\src\\main\\res\\layout\\item_image_rest.xml"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",

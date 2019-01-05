@@ -19,8 +19,10 @@ import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +32,7 @@ public class UpdateInformationActivity extends AppCompatActivity {
     String name;
     String description;
     String fb;
+    String address;
     String phone;
 
     String firstName = "";
@@ -91,10 +94,7 @@ public class UpdateInformationActivity extends AppCompatActivity {
             user_fb = (EditText) findViewById(R.id.user_fb);
             user_phone = (EditText) findViewById(R.id.user_phone);
             button_update = (Button) findViewById(R.id.button_update_user_information);
-
-
         }
-
 
         toolbar = (Toolbar) findViewById(R.id.toolbarUpdate);
         setSupportActionBar(toolbar);
@@ -178,11 +178,12 @@ public class UpdateInformationActivity extends AppCompatActivity {
                 try {
                     JSONObject data = new JSONObject(remoteData);
                     name = data.getJSONObject("data").getString("name");
-                    //String address = data.getJSONObject("data").getString("addresses");
+                    address = data.getJSONObject("data").getString("addresses");
                     email = data.getJSONObject("data").getString("email");
                     description = data.getJSONObject("data").getString("description");
                     phone = data.getJSONObject("data").getString("phone");
                     fb = data.getJSONObject("data").getString("facebook");
+
 
                     user_name.setText(name);
                     user_email.setText(email);

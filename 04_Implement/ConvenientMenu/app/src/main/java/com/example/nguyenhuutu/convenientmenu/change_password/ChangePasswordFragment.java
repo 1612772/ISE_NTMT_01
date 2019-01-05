@@ -86,10 +86,10 @@ public class ChangePasswordFragment extends Fragment {
                                                 if (task.isSuccessful()) {
                                                     DocumentSnapshot document = task.getResult();
                                                     if (document.exists()) {
-                                                        oldEncryptedPassword =document.getString("cus_password");
-                                                        }
+                                                        oldEncryptedPassword = document.getString("cus_password");
                                                     }
                                                 }
+                                            }
                                         });
                             }
                         }
@@ -109,7 +109,7 @@ public class ChangePasswordFragment extends Fragment {
                     newPassword = user_new_password.getText().toString();
                     confirmNewPassword = user_confirm_new_password.getText().toString();
 
-                    if (newPassword.equals(confirmNewPassword)) {
+                    if (!newPassword.equals("") && newPassword.equals(confirmNewPassword)) {
                         if(newPassword.length() >= 8) {
 
                             Map<String, Object> dataUpdate = new HashMap<>();

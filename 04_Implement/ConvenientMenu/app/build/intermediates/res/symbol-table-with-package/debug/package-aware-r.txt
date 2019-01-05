@@ -1873,6 +1873,8 @@ id imageEvent
 id imageRestaurant
 id imageSlider
 id imageView
+id image_rest_list
+id image_rest_list_item
 id imgAdd
 id imgAvatar
 id imgBackground
@@ -1884,6 +1886,8 @@ id indicator
 id info
 id invisible
 id italic
+id item_list_address_button
+id item_list_address_text
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1897,6 +1901,7 @@ id line3
 id listComment
 id listImageAddOrUpdate
 id listMode
+id list_address
 id list_drink
 id list_food
 id list_item
@@ -2024,6 +2029,7 @@ id ratingRestaurantWrapper
 id rating_score
 id rbRating
 id rbRatingItem
+id red
 id register
 id registerBtn
 id reslayout
@@ -2291,6 +2297,8 @@ layout image_item
 layout image_slider
 layout item_comment
 layout item_event
+layout item_image_rest
+layout item_list_address
 layout item_list_restaurant
 layout item_menu
 layout item_search
