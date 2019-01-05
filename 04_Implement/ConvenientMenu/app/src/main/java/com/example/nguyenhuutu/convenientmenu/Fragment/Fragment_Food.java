@@ -86,7 +86,6 @@ public class Fragment_Food extends Fragment {
                                     Log.e("Add dish to list", ex.toString());
                                 }
                             }
-
 //                    int mount = dataList.size();
 //                    for (int i = 0; i < mount; i++) {
 //                        final int finalI = i;
@@ -113,7 +112,7 @@ public class Fragment_Food extends Fragment {
 //                                    });
 //                        }
 //                    }
-                            adapter = new ListFood(getActivity(), R.layout.item_menu, dataList);
+                            adapter = new ListFood(getActivity(), R.layout.item_menu, dataList,restAccount);
                             listDish.setAdapter(adapter);
                             setItemClickListener();
                         } else {

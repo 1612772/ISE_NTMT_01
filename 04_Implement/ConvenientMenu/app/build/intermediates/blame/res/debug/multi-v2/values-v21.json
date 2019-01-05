@@ -1,67 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\Thanh\\Desktop\\CMPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\a07ac90756a5640b533055facef97856\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,5,8,11",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,223,386,554",
-                        "endLines": "4,7,10,13",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "218,381,549,716"
-                    },
-                    "to": {
-                        "startLines": "308,311,315,319",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "22106,22274,22563,22859",
-                        "endLines": "310,313,317,321",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "22269,22432,22726,23021"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\589d06413fcf7fc74dc26384b676ddb2\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,3,7,12,16,21,26,30,35,40",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,107,283,606,794,1153,1488,1700,2039,2354",
-                        "endLines": "2,6,11,15,20,25,29,34,39,44",
-                        "endColumns": "51,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "102,278,601,789,1148,1483,1695,2034,2349,2652"
-                    },
-                    "to": {
-                        "startLines": "6,226,230,235,239,244,249,253,258,263",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "354,16965,17141,17464,17652,18011,18346,18558,18897,19212",
-                        "endLines": "6,229,234,238,243,248,252,257,262,267",
-                        "endColumns": "51,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "401,17136,17459,17647,18006,18341,18553,18892,19207,19510"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\59a36e7695ca589e8531eda979fe1113\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
-                        "endLines": "2,3,4,5,6,7,8,9,12,17",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,306,307,314,318,354,357",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,159,223,290,21864,21980,22437,22731,24739,24911",
-                        "endLines": "2,3,4,5,306,307,314,318,356,361",
-                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
-                        "endOffsets": "154,218,285,349,21975,22101,22558,22854,24906,25244"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\53c1a279a2ee1596dd28b20204afc139\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -80,7 +23,64 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\56177a710aa1228aea3a16127744d673\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\188680098b6a63e9ac6e4df90c5285f7\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,7,12,16,21,26,30,35,40",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,283,606,794,1153,1488,1700,2039,2354",
+                        "endLines": "2,6,11,15,20,25,29,34,39,44",
+                        "endColumns": "51,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "102,278,601,789,1148,1483,1695,2034,2349,2652"
+                    },
+                    "to": {
+                        "startLines": "6,226,230,235,239,244,249,253,258,263",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "354,16965,17141,17464,17652,18011,18346,18558,18897,19212",
+                        "endLines": "6,229,234,238,243,248,252,257,262,267",
+                        "endColumns": "51,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "401,17136,17459,17647,18006,18341,18553,18892,19207,19510"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\87c551b5e1815bbeb94a79bccebc8353\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,5,8,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,223,386,554",
+                        "endLines": "4,7,10,13",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "218,381,549,716"
+                    },
+                    "to": {
+                        "startLines": "308,311,315,319",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "22106,22274,22563,22859",
+                        "endLines": "310,313,317,321",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "22269,22432,22726,23021"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\4585509ec66bb330e2603305b38d23ba\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,354,470,596,722,850,1022",
+                        "endLines": "2,3,4,5,6,7,8,9,12,17",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,465,591,717,845,1017,1355"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,306,307,314,318,354,357",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,159,223,290,21864,21980,22437,22731,24739,24911",
+                        "endLines": "2,3,4,5,306,307,314,318,356,361",
+                        "endColumns": "103,63,66,63,115,125,125,127,12,12",
+                        "endOffsets": "154,218,285,349,21975,22101,22558,22854,24906,25244"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Thanh\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\d4f3ad79f2b55f821405a03c610df018\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,10,18,26",
                         "startColumns": "4,4,4,4",

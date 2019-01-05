@@ -17,6 +17,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.DialogDelete;
@@ -27,6 +28,7 @@ import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
 import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,18 +38,21 @@ public class ListDrink extends BaseAdapter {
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
+    String _id;
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public ListDrink(Context context, int inflat, List<Dish> _dish) {
+    public ListDrink(Context context, int inflat, List<Dish> _dish, String id) {
         this.inflat = inflat;
         this.context = context;
 //        this.dish = _dish;
         this.search = _dish;
+        this._id = id;
     }
 
     public void copyToSearch() {
 
     }
+
     @Override
     public int getCount() {
         return search.size();
@@ -101,6 +106,9 @@ public class ListDrink extends BaseAdapter {
         RatingBar rbRatingItem = (RatingBar) row.findViewById(R.id.rbRatingItem);
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
         ImageView imgPopupmenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
+        if (_id.equals("")) {
+            imgPopupmenu.setVisibility(View.INVISIBLE);
+        }
 
         imgPopupmenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,26 +127,23 @@ public class ListDrink extends BaseAdapter {
                             dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    /*StorageReference storageRef = storage.getReference();
+                                    StorageReference storageRef = storage.getReference();
 
-                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId()+"/*");
-                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
-                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            // File deleted successfully
-                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
-                                                    .delete()
-                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
-                                                            search.remove(position);
-                                                            notifyDataSetChanged();
-                                                        }
-                                                    });
-                                        }
-                                    });*/
+                                    for (int i = 0; i < dish.get(position).getDishMoreImages().size(); i++) {
+                                        StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId() + "/" + dish.get(position).getDishMoreImages().get(i));
+                                        desertRef.delete();
+                                    }
+                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId() + "/" + dish.get(position).getDishHomeImage());
+                                    desertRef.delete();
+                                    CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                            .delete()
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    search.remove(position);
+                                                    notifyDataSetChanged();
+                                                }
+                                            });
                                     dialogDelete.dialog.dismiss();
                                 }
                             });
