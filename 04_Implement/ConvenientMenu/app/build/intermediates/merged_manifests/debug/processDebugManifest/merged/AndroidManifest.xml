@@ -59,6 +59,9 @@
             android:name="com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister"
             android:label="Đăng ký - Nhà hàng" />
         <activity
+            android:name="com.example.nguyenhuutu.convenientmenu.eventmanage.AddNewEvent"
+            android:label="Thêm sự kiện" />
+        <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"
             android:exported="true"
