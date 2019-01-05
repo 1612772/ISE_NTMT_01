@@ -29,6 +29,8 @@
         <activity android:name=".manage_menu.add_dish.AddDish"
             android:label="Thêm món ăn">
         </activity>
+        <activity android:name=".view_information.activity.UpdateInformationActivity" />
+
         <activity android:name=".view_dish.ViewDish"></activity>
         <activity android:name=".restaurant_detail.Restaurant_Detail"
             android:screenOrientation="portrait" >

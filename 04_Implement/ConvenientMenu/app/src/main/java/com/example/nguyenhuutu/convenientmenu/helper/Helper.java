@@ -27,6 +27,8 @@ import org.json.JSONObject;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.json.JSONObject.NULL;
 
@@ -198,5 +200,21 @@ public class Helper {
 //                    }
 //                })
                 .show();
+    }
+
+    public static boolean checkEmptyPassword(String password) {
+        return password.isEmpty();
+    }
+
+    public static boolean checkLengthPassword(String password) {
+        return password.length() >= 8;
+    }
+
+    public static boolean checkFormatPassword(String password) {
+        Pattern patternUpper = Pattern.compile("[A-Z]+");
+        Pattern patternNumber = Pattern.compile("[0-9]+");
+        Matcher matcher;
+
+        return (patternUpper.matcher(password).find() && patternNumber.matcher(password).find());
     }
 }

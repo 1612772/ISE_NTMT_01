@@ -79,7 +79,7 @@ public class ViewDish extends AppCompatActivity {
 
         user = Helper.getLoginedUser(this);
         //Log.e("user",user.getUsername());
-        if(user.isExists()== true) {
+        if(user.isExists()== true && !user.isRest()) {
             mdish_txtComment.setOnKeyListener(new View.OnKeyListener() {
                 @Override
                 public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -113,6 +113,7 @@ public class ViewDish extends AppCompatActivity {
         }
         else
         {
+            mdish_evaluteDish.setIsIndicator(true);
             mdish_txtComment.setFocusable(false);
             mdish_txtComment.setHint("Mời bạn đăng nhập để bình luận");
             mdish_txtComment.setClickable(false);

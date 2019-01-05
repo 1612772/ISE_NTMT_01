@@ -50,12 +50,12 @@ public class HighRatingDishFragment extends Fragment {
 
         // get all dish in database
         CMDB.db.collection("dish")
+                .whereGreaterThan("max_star", 0)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 dataList.add(Dish.loadDish(document.getData()));
                             }

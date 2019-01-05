@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.change_password.ChangePasswordFragment;
 import com.example.nguyenhuutu.convenientmenu.eventmanage.ManageEvent;
 import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;
@@ -29,7 +30,8 @@ import com.example.nguyenhuutu.convenientmenu.helper.UserSession;
 import com.example.nguyenhuutu.convenientmenu.homepage.fragment.HomePageFragment;
 import com.example.nguyenhuutu.convenientmenu.login.LoginFragment;
 import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFragment;
-import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantList;
+import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantListFragment;
+import com.example.nguyenhuutu.convenientmenu.view_information.ViewInformationFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -152,15 +154,25 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.main_menu_restaurant_list:
-                        if (!(contentFragment instanceof RestaurantList)) {
-                            setTitle("Restaurant List");
-                            contentFragment = new RestaurantList();
+                        if (!(contentFragment instanceof RestaurantListFragment)) {
+                            setTitle("Danh Sách Nhà Hàng");
+                            contentFragment = new RestaurantListFragment();
                             switchContent(contentFragment);
                         }
                         break;
                     case R.id.main_menu_info_account:
+                        if (!(contentFragment instanceof ViewInformationFragment)) {
+                            setTitle("Thông Tin Tài Khoản");
+                            contentFragment = new ViewInformationFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_change_password:
+                        if (!(contentFragment instanceof ChangePasswordFragment)) {
+                            setTitle("Thay đổi mật khẩu");
+                            contentFragment = new ChangePasswordFragment();
+                            switchContent(contentFragment);
+                        }
                         break;
                     case R.id.main_menu_list_mark:
                         break;
@@ -180,14 +192,14 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.main_menu_login:
                         if (!(contentFragment instanceof LoginFragment)) {
-                            setTitle("Đăng nhập");
+                            setTitle("Đăng Nhập");
                             contentFragment = new LoginFragment();
                             switchContent(contentFragment);
                         }
                         break;
                     case R.id.main_menu_register:
                         if (!(contentFragment instanceof SwitchRegisterFragment)) {
-                            setTitle("Đăng ký");
+                            setTitle("Đăng Ký");
                             contentFragment = new SwitchRegisterFragment();
                             switchContent(contentFragment);
                         }

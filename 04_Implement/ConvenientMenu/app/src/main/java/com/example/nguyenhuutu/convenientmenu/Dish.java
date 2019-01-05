@@ -238,6 +238,7 @@ public class Dish implements Comparable {
      */
     public static Dish loadDish(Map<String, Object> document) {
         String _id = (String) document.get("dish_id");
+        Log.i("dishId", _id);
         String _name = (String) document.get("dish_name");
         Number _price = (Number) document.get("dish_price");
         String _description = (String) document.get("dish_description");

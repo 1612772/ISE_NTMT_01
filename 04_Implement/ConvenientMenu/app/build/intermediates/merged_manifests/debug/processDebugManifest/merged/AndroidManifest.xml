@@ -46,6 +46,7 @@
             android:name="com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish"
             android:label="Thêm món ăn" >
         </activity>
+        <activity android:name="com.example.nguyenhuutu.convenientmenu.view_information.activity.UpdateInformationActivity" />
         <activity android:name="com.example.nguyenhuutu.convenientmenu.view_dish.ViewDish" />
         <activity
             android:name="com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail"
