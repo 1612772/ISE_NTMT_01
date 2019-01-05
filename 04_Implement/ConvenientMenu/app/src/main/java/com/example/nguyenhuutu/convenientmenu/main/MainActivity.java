@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
+import com.example.nguyenhuutu.convenientmenu.change_password.ChangePasswordFragment;
 import com.example.nguyenhuutu.convenientmenu.eventmanage.ManageEvent;
 import com.example.nguyenhuutu.convenientmenu.manage_menu.Manage_Menu;
 import com.example.nguyenhuutu.convenientmenu.R;

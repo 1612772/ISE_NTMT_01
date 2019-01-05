@@ -1758,6 +1758,8 @@ id bottom
 id btnUpdateOrAdd
 id button
 id buttonPanel
+id button_update_info
+id button_update_user_information
 id calendar_image_from
 id calendar_image_to
 id cancel_action
