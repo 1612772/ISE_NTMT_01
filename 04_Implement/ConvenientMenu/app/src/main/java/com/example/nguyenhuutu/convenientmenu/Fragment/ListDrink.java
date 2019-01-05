@@ -15,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.nguyenhuutu.convenientmenu.CMDB;
@@ -129,19 +130,24 @@ public class ListDrink extends BaseAdapter {
                                 public void onClick(View v) {
                                     StorageReference storageRef = storage.getReference();
 
-                                    for (int i = 0; i < dish.get(position).getDishMoreImages().size(); i++) {
-                                        StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId() + "/" + dish.get(position).getDishMoreImages().get(i));
+//                                    for (int i = 0; i < search.get(position).getDishMoreImages().size(); i++) {
+//                                        StorageReference desertRef = storageRef.child("images/dish/" + search.get(position).getDishId() + "/" + dish.get(position).getDishMoreImages().get(i));
+//                                        desertRef.delete();
+//                                    }
+                                    for (int i = 0; i < item.getDishMoreImages().size(); i++) {
+                                        StorageReference desertRef = storageRef.child("images/dish/" + search.get(position).getDishId() + "/" + item.getDishMoreImages().get(i));
                                         desertRef.delete();
                                     }
-                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId() + "/" + dish.get(position).getDishHomeImage());
+                                    StorageReference desertRef = storageRef.child("images/dish/" + item.getDishId() + "/" + item.getDishHomeImage());
                                     desertRef.delete();
-                                    CMDB.db.collection("dish").document(dish.get(position).getDishId())
+                                    CMDB.db.collection("dish").document(item.getDishId())
                                             .delete()
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
                                                     search.remove(position);
                                                     notifyDataSetChanged();
+                                                    Toast.makeText(context, "Xóa món ăn thành công", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
                                     dialogDelete.dialog.dismiss();
