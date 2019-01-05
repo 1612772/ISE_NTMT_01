@@ -38,15 +38,13 @@ public class ListFood extends BaseAdapter {
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
-    String _id;
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public ListFood(Context context, int inflat, List<Dish> _dish, String id) {
+    public ListFood(Context context, int inflat, List<Dish> _dish) {
         this.inflat = inflat;
         this.context = context;
 //        this.dish = _dish;
         this.search = _dish;
-        this._id = id;
     }
 
     @Override
@@ -103,9 +101,10 @@ public class ListFood extends BaseAdapter {
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
         ImageView imgPopupmenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
 
-        if (_id.equals("")) {
+        if (!Restaurant_Detail.idUser.equals("")) {
             imgPopupmenu.setVisibility(View.INVISIBLE);
         }
+
         imgPopupmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

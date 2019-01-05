@@ -38,15 +38,13 @@ public class ListDrink extends BaseAdapter {
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
-    String _id;
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public ListDrink(Context context, int inflat, List<Dish> _dish, String id) {
+    public ListDrink(Context context, int inflat, List<Dish> _dish) {
         this.inflat = inflat;
         this.context = context;
 //        this.dish = _dish;
         this.search = _dish;
-        this._id = id;
     }
 
     public void copyToSearch() {
@@ -106,7 +104,8 @@ public class ListDrink extends BaseAdapter {
         RatingBar rbRatingItem = (RatingBar) row.findViewById(R.id.rbRatingItem);
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
         ImageView imgPopupmenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
-        if (_id.equals("")) {
+
+        if (!Restaurant_Detail.idUser.equals("")) {
             imgPopupmenu.setVisibility(View.INVISIBLE);
         }
 

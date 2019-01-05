@@ -103,7 +103,7 @@ public class Fragment_Drink extends Fragment {
 //                                            }
 //                                        });
 //                            }
-                            adapter = new ListDrink(getActivity(), R.layout.item_menu, dataList,restAccount);
+                            adapter = new ListDrink(getActivity(), R.layout.item_menu, dataList);
                             listDish.setAdapter(adapter);
                             setItemClickListener();
                         } else {

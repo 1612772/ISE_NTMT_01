@@ -112,7 +112,7 @@ public class Fragment_Food extends Fragment {
 //                                    });
 //                        }
 //                    }
-                            adapter = new ListFood(getActivity(), R.layout.item_menu, dataList,restAccount);
+                            adapter = new ListFood(getActivity(), R.layout.item_menu, dataList);
                             listDish.setAdapter(adapter);
                             setItemClickListener();
                         } else {
