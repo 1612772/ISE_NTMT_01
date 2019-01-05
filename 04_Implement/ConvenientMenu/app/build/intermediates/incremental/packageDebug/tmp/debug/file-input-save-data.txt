@@ -1,8 +1,7 @@
 #Internal package file, do not edit.
-#Fri Jan 04 22:51:25 ICT 2019
-4.path=classes.dex
-8.set=DEX
-6.path=classes.dex
+#Sat Jan 05 17:29:23 ICT 2019
+1.base=E\:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+2.path=classes2.dex
 0.baseType=DIRECTORY
 10.path=classes.dex
 5.baseType=DIRECTORY

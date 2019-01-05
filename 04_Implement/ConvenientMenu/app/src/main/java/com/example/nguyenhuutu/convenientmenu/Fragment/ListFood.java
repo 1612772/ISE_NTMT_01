@@ -15,8 +15,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Dish;
@@ -27,21 +29,25 @@ import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detai
 import com.example.nguyenhuutu.convenientmenu.DialogDelete;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class ListFood extends BaseAdapter {
     Context context;
     int inflat;
     public static List<Dish> dish;
     List<Dish> search;
+    String _id;
     FirebaseStorage storage = FirebaseStorage.getInstance();
 
-    public ListFood(Context context, int inflat, List<Dish> _dish) {
+    public ListFood(Context context, int inflat, List<Dish> _dish, String id) {
         this.inflat = inflat;
         this.context = context;
 //        this.dish = _dish;
         this.search = _dish;
+        this._id = id;
     }
 
     @Override
@@ -90,7 +96,7 @@ public class ListFood extends BaseAdapter {
 
         final Dish item = search.get(position);
 
-        final ImageView imgFoodDrink = (ImageView)row.findViewById(R.id.imgFoodDrink);
+        final ImageView imgFoodDrink = (ImageView) row.findViewById(R.id.imgFoodDrink);
         TextView tvFood = (TextView) row.findViewById(R.id.tvFood);
         CardView cvEvent = (CardView) row.findViewById(R.id.cvEvent);
         TextView tvEvent = (TextView) row.findViewById(R.id.tvEvent);
@@ -98,6 +104,9 @@ public class ListFood extends BaseAdapter {
         TextView tvPrice = (TextView) row.findViewById(R.id.tvPrice);
         ImageView imgPopupmenu = (ImageView) row.findViewById(R.id.imgPopupMenu);
 
+        if (_id.equals("")) {
+            imgPopupmenu.setVisibility(View.INVISIBLE);
+        }
         imgPopupmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,38 +117,34 @@ public class ListFood extends BaseAdapter {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         int id = menuItem.getItemId();
-                        if(id==R.id.delete)
-                        {
+                        if (id == R.id.delete) {
                             final DialogDelete dialogDelete = new DialogDelete(context);
 
                             dialogDelete.btnOK.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    /*StorageReference storageRef = storage.getReference();
+                                    StorageReference storageRef = storage.getReference();
 
-                                    StorageReference desertRef = storageRef.child("images/dish/" + dish.get(position).getDishId());
-                                    Toast.makeText(context, desertRef.getPath(), Toast.LENGTH_SHORT).show();
-                                    desertRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            // File deleted successfully
-                                            CMDB.db.collection("dish").document(dish.get(position).getDishId())
-                                                    .delete()
-                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            Toast.makeText(context,"TC",Toast.LENGTH_SHORT).show();
-                                                            search.remove(position);
-                                                            notifyDataSetChanged();
-                                                        }
-                                                    });
-                                        }
-                                    });*/
+                                    for (int i = 0; i < item.getDishMoreImages().size(); i++) {
+                                        StorageReference desertRef = storageRef.child("images/dish/" + item.getDishId() + "/" + item.getDishMoreImages().get(i));
+                                        desertRef.delete();
+                                    }
+                                    StorageReference desertRef = storageRef.child("images/dish/" + item.getDishId() + "/" + item.getDishHomeImage());
+                                    desertRef.delete();
+                                    CMDB.db.collection("dish").document(item.getDishId())
+                                            .delete()
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    search.remove(position);
+                                                    notifyDataSetChanged();
+                                                    Toast.makeText(context, "Xóa món ăn thành công", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
                                     dialogDelete.dialog.dismiss();
                                 }
                             });
-                        }else if (id==R.id.edit)
-                        {
+                        } else if (id == R.id.edit) {
                             Intent editDishIntent = new Intent(context, AddDish.class);
                             editDishIntent.putExtra("edit_dish", true);
                             editDishIntent.putExtra("dish_id", item.getDishId());
@@ -172,12 +177,11 @@ public class ListFood extends BaseAdapter {
         {
             tvEvent.setText(Dish.HOT);
             //cvEvent.setCardBackgroundColor(Dish.colorHot);
-        }else
-        {
+        } else {
             cvEvent.setVisibility(View.INVISIBLE);
         }
         rbRatingItem.setRating(item.getMaxStar());
-        tvPrice.setText("$ "+item.getDishPrice()+" vnđ");
+        tvPrice.setText("$ " + item.getDishPrice() + " vnđ");
         if (!item.getDishHomeImage().equals("")) {
 //            imgFoodDrink.setImageBitmap(item.getDishImage(context));
             CMStorage.storage.child("images/dish/" + item.getDishId() + "/" + item.getDishHomeImage())
@@ -201,16 +205,13 @@ public class ListFood extends BaseAdapter {
 
         search = new ArrayList<Dish>();
         if (charText.length() != 0) {
-            for (int i=0;i<dish.size();i++)
-            {
-                if(Restaurant_Detail.covertToUnsigned(dish.get(i).getDishName().toLowerCase()).contains(Restaurant_Detail.covertToUnsigned(charText)))
-                {
+            for (int i = 0; i < dish.size(); i++) {
+                if (Restaurant_Detail.covertToUnsigned(dish.get(i).getDishName().toLowerCase()).contains(Restaurant_Detail.covertToUnsigned(charText))) {
                     search.add(dish.get(i));
                 }
             }
-        }else
-        {
-            search=dish;
+        } else {
+            search = dish;
         }
         notifyDataSetChanged();
     }

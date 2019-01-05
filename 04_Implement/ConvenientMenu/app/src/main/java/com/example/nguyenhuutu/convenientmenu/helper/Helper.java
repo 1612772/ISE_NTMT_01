@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 
@@ -55,6 +57,13 @@ public class Helper {
     {
         return Math.round(number / (context.getResources().getDisplayMetrics().density));
     }
+
+    public static int convertDpToPixel(int dp){
+        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
+        float px = dp * (metrics.densityDpi / 160f);
+        return Math.round(px);
+    }
+
     public static Point getDisplaySize(Display display) {
         // display size in pixels
         Point size = new Point();

@@ -42,6 +42,9 @@
         <activity
             android:name=".register.RestaurantRegister"
             android:label="Đăng ký - Nhà hàng" />
+        <activity
+            android:name=".eventmanage.AddNewEvent"
+            android:label="Thêm sự kiện"/>
     </application>
 
 </manifest>
