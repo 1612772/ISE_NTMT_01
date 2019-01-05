@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\truong quang tu\\Documents\\GitHub\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "E:\\documents\\NMCNPM\\ISE_NTMT_01\\04_Implement\\ConvenientMenu\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\4e7764ce68b7f91ab7bc7f52baa2f936\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-28.0.0.aar\\c00a2f58a39fd366de92b16d324c08de\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\8706a06d2742c406acc682aa23e7ebd5\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\materialize-1.0.3.aar\\589d06413fcf7fc74dc26384b676ddb2\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -33,7 +33,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\truong quang tu\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\aad5e6aeae2500265810c6e345d2ab39\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\NGUYENHUUTU\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\539a03e5824ccff259ba9f63784d7a0b\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

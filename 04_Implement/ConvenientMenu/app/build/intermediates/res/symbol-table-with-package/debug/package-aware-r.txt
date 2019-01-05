@@ -1640,6 +1640,7 @@ drawable line_bottom
 drawable line_long
 drawable line_top
 drawable logo_for_register
+drawable main_menu_header_user_image_border
 drawable main_menu_icon
 drawable material_drawer_badge
 drawable material_drawer_circle_mask
@@ -1722,6 +1723,7 @@ id add
 id addDishButton
 id addDishImageButton
 id addDishToolbar
+id addEventToolbar
 id address
 id addressRestaurantDetail
 id adjust_height
@@ -1973,6 +1975,7 @@ id material_drawer_toggle
 id materialize_root
 id media_actions
 id message
+id messageNoEvent
 id middle
 id mini
 id mtrl_child_content_container

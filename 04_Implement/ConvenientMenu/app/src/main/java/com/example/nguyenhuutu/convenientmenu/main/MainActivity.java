@@ -32,6 +32,7 @@ import com.example.nguyenhuutu.convenientmenu.register.fragment.SwitchRegisterFr
 import com.example.nguyenhuutu.convenientmenu.restaurant_list.RestaurantList;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import org.json.JSONObject;
 
@@ -306,7 +307,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject result = new JSONObject(data);
             View headerView = mainMenu.getHeaderView(0);
 
-            final ImageView userAvatar = headerView.findViewById(R.id.userAvatar);
+            final CircularImageView userAvatar = headerView.findViewById(R.id.userAvatar);
             TextView userAccountName = headerView.findViewById(R.id.userAccountName);
             if (result.getBoolean("isSuccess") == true) {
                 if (result.getJSONObject("data").getBoolean("isRest") == true) {
