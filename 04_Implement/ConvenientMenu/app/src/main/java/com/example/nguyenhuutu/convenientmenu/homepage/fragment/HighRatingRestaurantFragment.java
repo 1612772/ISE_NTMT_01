@@ -20,6 +20,7 @@ import com.example.nguyenhuutu.convenientmenu.CMDB;
 import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -73,7 +74,7 @@ public class HighRatingRestaurantFragment extends Fragment {
                                     ((TextView) restItemLayout.findViewById(R.id.restaurantName)).setText(rest.getRestName());
                                     ((RatingBar) restItemLayout.findViewById(R.id.ratingRestaurant)).setRating(((Number) rest.getMaxStar()).floatValue());
 
-                                    CMStorage.storage.child("images/restaurant/" + rest.getRestHomeImage())
+                                    CMStorage.storage.child(Helper.getRestaurantImageFilePath(rest.getRestAccount(), rest.getRestHomeImage()))
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override

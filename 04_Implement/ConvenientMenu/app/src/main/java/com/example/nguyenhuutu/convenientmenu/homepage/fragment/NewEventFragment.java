@@ -19,6 +19,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -78,7 +79,7 @@ public class NewEventFragment extends Fragment {
                                     event = dataList.get(index);
                                     ((TextView) eventItemLayout.findViewById(R.id.event_name)).setText(event.getEvent_name());
 
-                                    CMStorage.storage.child("images/event/" + event.getEvent_image_files().get(0).toString())
+                                    CMStorage.storage.child(Helper.getEventImageFilePath(event.getEvent_id(), event.getEvent_image_files().get(0)))
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override

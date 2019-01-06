@@ -18,6 +18,7 @@ import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.Event;
 import com.example.nguyenhuutu.convenientmenu.LoadImage;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -57,7 +58,7 @@ public class Fragment_Event extends Fragment {
                     int mount = dataList.size();
                     for (int i = 0; i < mount; i++) {
                         final int finalI = i;
-                        CMStorage.storage.child("images/event/" + dataList.get(i).getEvent_image_files().get(0))
+                        CMStorage.storage.child(Helper.getEventImageFilePath(dataList.get(i).getEvent_id(), dataList.get(i).getEvent_image_files().get(0)))
                                 .getDownloadUrl()
                                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override

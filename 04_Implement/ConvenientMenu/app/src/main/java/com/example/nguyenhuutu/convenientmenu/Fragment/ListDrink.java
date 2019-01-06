@@ -24,6 +24,7 @@ import com.example.nguyenhuutu.convenientmenu.Const;
 import com.example.nguyenhuutu.convenientmenu.DialogDelete;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.example.nguyenhuutu.convenientmenu.manage_menu.add_dish.AddDish;
 import com.example.nguyenhuutu.convenientmenu.main.MainActivity;
 import com.example.nguyenhuutu.convenientmenu.restaurant_detail.Restaurant_Detail;
@@ -192,7 +193,7 @@ public class ListDrink extends BaseAdapter {
         tvPrice.setText("$ " + item.getDishPrice() + " đ");
         if (!item.getDishHomeImage().equals("")) {
 //            imgFoodDrink.setImageBitmap(item.getDishImage(context));
-            CMStorage.storage.child("images/dish/" + item.getDishId() + "/" + item.getDishHomeImage())
+            CMStorage.storage.child(Helper.getDishImageFilePath(item.getDishId(), item.getDishHomeImage()))
                     .getDownloadUrl()
                     .addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override

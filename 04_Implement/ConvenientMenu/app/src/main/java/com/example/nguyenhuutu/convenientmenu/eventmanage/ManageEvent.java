@@ -65,7 +65,7 @@ public class ManageEvent extends Fragment implements AdapterView.OnItemClickList
                             else {
                                 for (int i = 0; i < mount; i++) {
                                     final int finalI = i;
-                                    CMStorage.storage.child("images/event/" + dataList.get(i).getEvent_image_files().get(0))
+                                    CMStorage.storage.child(Helper.getEventImageFilePath(dataList.get(i).getEvent_id(), dataList.get(i).getEvent_image_files().get(0)))
                                             .getDownloadUrl()
                                             .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override

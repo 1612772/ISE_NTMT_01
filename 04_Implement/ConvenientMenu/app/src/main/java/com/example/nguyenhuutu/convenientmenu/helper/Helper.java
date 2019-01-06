@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Display;
 
 import com.example.nguyenhuutu.convenientmenu.CMDB;
+import com.example.nguyenhuutu.convenientmenu.Restaurant;
 import com.example.nguyenhuutu.convenientmenu.User;
 import com.example.nguyenhuutu.convenientmenu.register.CustomerRegister;
 import com.example.nguyenhuutu.convenientmenu.register.RestaurantRegister;
@@ -216,5 +217,17 @@ public class Helper {
         Matcher matcher;
 
         return (patternUpper.matcher(password).find() && patternNumber.matcher(password).find());
+    }
+
+    public static String getRestaurantImageFilePath(String restAccount, String filename) {
+        return "images/restaurant/" + filename;
+    }
+
+    public static String getDishImageFilePath(String dishId, String filename) {
+        return "images/dish/" + dishId + "/" + filename;
+    }
+
+    public static String getEventImageFilePath(String eventId, String filename) {
+        return "images/event/" + eventId + "/" + filename;
     }
 }

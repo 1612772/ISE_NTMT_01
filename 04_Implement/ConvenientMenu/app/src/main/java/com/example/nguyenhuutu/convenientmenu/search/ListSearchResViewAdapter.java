@@ -19,6 +19,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -70,7 +71,7 @@ public class ListSearchResViewAdapter extends BaseAdapter {
         Log.e("rate",String.valueOf(resList.get(position).getMaxStar().floatValue()));
 
         addr.setText(resList.get(position).getRestAddresses().get(0));
-        CMStorage.storage.child("images/restaurant/" + resList.get(position).getRestHomeImage())
+        CMStorage.storage.child(Helper.getRestaurantImageFilePath(resList.get(position).getRestAccount(), resList.get(position).getRestHomeImage()))
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                             @Override

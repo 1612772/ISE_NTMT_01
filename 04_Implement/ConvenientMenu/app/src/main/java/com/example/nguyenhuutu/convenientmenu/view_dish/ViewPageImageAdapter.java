@@ -13,6 +13,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.bumptech.glide.Glide;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class ViewPageImageAdapter extends PagerAdapter {
         assert imageLayout != null;
         final ImageView imageView = imageLayout.findViewById(R.id.imageView);
 
-        CMStorage.storage.child("images/dish/"+dish.getDishId()+"/" + image.get(position))
+        CMStorage.storage.child(Helper.getDishImageFilePath(dish.getDishId(), image.get(position)))
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override

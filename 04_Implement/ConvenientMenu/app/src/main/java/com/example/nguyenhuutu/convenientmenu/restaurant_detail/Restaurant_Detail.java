@@ -184,7 +184,7 @@ public class Restaurant_Detail extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             try {
                                 infoRestaurant = Restaurant.loadRestaurant(task.getResult().getDocuments().get(0).getData());
-                                CMStorage.storage.child("images/restaurant/" + infoRestaurant.getRestHomeImage())
+                                CMStorage.storage.child(Helper.getRestaurantImageFilePath(infoRestaurant.getRestAccount(), infoRestaurant.getRestHomeImage()))
                                         .getDownloadUrl()
                                         .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                             @Override

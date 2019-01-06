@@ -19,6 +19,7 @@ import com.example.nguyenhuutu.convenientmenu.CMStorage;
 import com.example.nguyenhuutu.convenientmenu.Dish;
 import com.example.nguyenhuutu.convenientmenu.R;
 import com.example.nguyenhuutu.convenientmenu.Restaurant;
+import com.example.nguyenhuutu.convenientmenu.helper.Helper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -85,7 +86,7 @@ public class ListSearchDishViewAdapter extends BaseAdapter {
                     }
                 });
 
-        CMStorage.storage.child("images/dish/" + dishList.get(position).getDishHomeImage())
+        CMStorage.storage.child(Helper.getDishImageFilePath(dishList.get(position).getDishId(), dishList.get(position).getDishHomeImage()))
                 .getDownloadUrl()
                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
